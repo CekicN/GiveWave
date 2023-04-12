@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiveWaveAPI", "GiveWaveAPI\GiveWaveAPI.csproj", "{F9675276-3A6E-49A5-AFB7-2B66EB97B093}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9675276-3A6E-49A5-AFB7-2B66EB97B093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9675276-3A6E-49A5-AFB7-2B66EB97B093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9675276-3A6E-49A5-AFB7-2B66EB97B093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9675276-3A6E-49A5-AFB7-2B66EB97B093}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D45BC6CF-E7C0-4E65-8D81-441A05B3F6C9}
+	EndGlobalSection
+EndGlobal
