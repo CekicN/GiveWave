@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterBarComponent } from './components/core/footer-bar/footer-bar.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FooterBarComponent } from './components/core/footer-bar/footer-bar.comp
     HomeComponent,
     AboutUsComponent,
     NavigationBarComponent,
-    FooterBarComponent
+    FooterBarComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
