@@ -6,20 +6,20 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ContainerComponent } from './container/container.component';
-import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { AppComponent } from './components/app/app.component';
+import { NavigationBarComponent } from './components/core/navigation-bar/navigation-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { FooterBarComponent } from './components/core/footer-bar/footer-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContainerComponent,
-    NavigationBarComponent,
     HomeComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    NavigationBarComponent,
+    FooterBarComponent
   ],
   imports: [
     BrowserModule,
