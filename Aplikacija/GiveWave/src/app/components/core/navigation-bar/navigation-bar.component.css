@@ -1,8 +1,11 @@
 .Log
 {
-    background-color: rgb(9, 226, 103);
+    background-color: rgb(27, 139, 225);
 }
 .navigacija
 {
     margin-right: 25px;
+}
+nav{
+    background-color: transparent;
 }
