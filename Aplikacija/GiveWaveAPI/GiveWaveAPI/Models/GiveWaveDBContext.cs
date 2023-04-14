@@ -7,7 +7,7 @@ namespace GiveWaveAPI.Models
 {
     public partial class GiveWaveDBContext : DbContext
     {
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<ProfilKorisnika> ProfilKorisnikas { get; set; }
 
         public GiveWaveDBContext(DbContextOptions<GiveWaveDBContext> options) : base(options)
         {
@@ -24,41 +24,39 @@ namespace GiveWaveAPI.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>(entity =>
+            modelBuilder.Entity<ProfilKorisnika>(entity =>
             {
-                entity.ToTable("User");
+                entity.HasNoKey();
+
+                entity.ToTable("ProfilKorisnika");
+
+                entity.Property(e => e.Adresa)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DatumRegistracije).HasColumnType("date");
+
+                entity.Property(e => e.DatumRodjenja).HasColumnType("date");
 
                 entity.Property(e => e.Email)
                     .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.FirstName)
+                entity.Property(e => e.Ime)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.LastName)
+                entity.Property(e => e.Pol)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.Password)
+                entity.Property(e => e.Prezime)
                     .IsRequired()
-                    .IsUnicode(false);
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.Role)
+                entity.Property(e => e.StatusAktivnosti)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Token)
-                    .IsRequired()
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Username)
-                    .IsRequired()
-                    .IsUnicode(false);
+                    .HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

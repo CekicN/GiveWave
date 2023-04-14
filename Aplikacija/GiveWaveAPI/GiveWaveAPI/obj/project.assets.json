@@ -2123,19 +2123,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nikola\\.nuget\\packages\\": {}
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Projekat\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Prokuplje\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
       "projectName": "GiveWaveAPI",
-      "projectPath": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Projekat\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
-      "packagesPath": "C:\\Users\\Nikola\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Projekat\\GiveWaveAPI\\GiveWaveAPI\\obj\\",
+      "projectPath": "C:\\Users\\Prokuplje\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
+      "packagesPath": "C:\\Users\\Prokuplje\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Prokuplje\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nikola\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Prokuplje\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2143,7 +2143,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\Nikola\\Desktop\\Nova fascikla (3)": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2182,24 +2181,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.12, 6.0.12]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.12, 6.0.12]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.12, 6.0.12]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.12, 6.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2208,7 +2189,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
