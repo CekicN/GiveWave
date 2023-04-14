@@ -2,10 +2,55 @@
 {
     background-color: rgb(27, 139, 225);
 }
+.Log:hover
+{
+    background-color: rgb(25, 105, 167);   
+}
 .navigacija
 {
     margin-right: 25px;
 }
 nav{
-    background-color: transparent;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px -2px 8px 3px rgba(0,0,0,0.62);
 }
+/* @media screen and (min-width: 992px) {
+    .navbar {
+      padding: 0;
+    }
+    .navbar .navbar-nav .nav-link {
+      padding: 1em 0;
+    }
+    .navbar .navbar-nav .nav-item {
+      margin: 0 1em;
+    }
+  } */
+  .navbar {
+    padding: 0;
+  }
+  .navbar .navbar-nav .nav-item {
+    position: relative;
+    margin: 0 2em;
+    height: 46px;
+  }
+  
+  .navbar-nav .hover>a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background-color: rgb(16, 162, 246);
+    width: 0%;
+    height: 4px;
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .navbar-nav .hover>a:hover::after {
+    width: 100%;
+  }
+
+  .active{
+    border-bottom: 4px solid rgb(16, 162, 246);
+    border-radius: 2px;
+    pointer-events: none;
+  }
