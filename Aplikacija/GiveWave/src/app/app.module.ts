@@ -8,6 +8,7 @@ import { NavigationBarComponent } from './components/core/navigation-bar/navigat
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterBarComponent } from './components/core/footer-bar/footer-bar.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterBarComponent } from './components/core/footer-bar/footer-bar.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserAuthModule
+    UserAuthModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
