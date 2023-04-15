@@ -15,7 +15,43 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
+         "Name": "[dbo].[Hrana]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Igracka]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Kategorija]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Krv]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Novac]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Obuca]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Odeca]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Ostalo]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[ProfilKorisnika]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tehnika]",
          "ObjectType": 0
       }
    ],
