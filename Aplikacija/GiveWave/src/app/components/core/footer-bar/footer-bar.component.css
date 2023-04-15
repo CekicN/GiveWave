@@ -1,0 +1,34 @@
+footer
+{
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    background-color: white;
+    box-shadow: -1px -7px 10px 0px rgba(0,0,0,0.75);
+}
+.container
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    height: 100%;
+    align-items: center;
+}
+a
+{
+    text-decoration: none;
+    color: black;
+}
+a:hover
+{
+    color: rgb(59, 61, 63);
+}
+fa-icon
+{
+    margin-right: 30px;
+}
+.linkovi
+{
+    display: flex;
+    justify-content: space-around;
+}
