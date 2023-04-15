@@ -7,6 +7,7 @@ namespace GiveWaveAPI.Models
 {
     public partial class GiveWaveDBContext : DbContext
     {
+
         public virtual DbSet<Hrana> Hranas { get; set; }
         public virtual DbSet<Igracka> Igrackas { get; set; }
         public virtual DbSet<Kategorija> Kategorijas { get; set; }

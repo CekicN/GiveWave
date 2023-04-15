@@ -13,5 +13,8 @@ namespace GiveWaveAPI.Models
         public string Marka { get; set; }
         public string Model { get; set; }
         public string Specifikacije { get; set; }
+
+
+
     }
 }
