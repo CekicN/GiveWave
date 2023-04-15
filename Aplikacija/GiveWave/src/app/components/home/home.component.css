@@ -8,6 +8,9 @@
 img
 {
     z-index: -1;
+    box-sizing: border-box;
+    width: 20cm;
+    top: 120px;
 }
 p {
     font-family: Lato;
@@ -19,12 +22,17 @@ p {
     left: 5%;
 }
 .carousel-container {
-    width: 200px;
+    width: 250px;
     min-height: 200px;
     position: relative;
     margin: 0 auto;
     overflow: hidden;
     box-sizing: border-box;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgb(27, 139, 225);
+    margin-bottom: 15px;
+    box-shadow: 6px -6px 10px -1px rgba(0,0,0,0.68);
 }
 .carousel-item {
     width: 100%;
@@ -32,8 +40,7 @@ p {
     left: -100%;
     box-sizing: border-box;
     transition: left 0.5s;
-    background-color: rgb(27, 139, 225);
-    color: white;
+    color: rgb(255, 255, 255);
     height: 190px;
 }
 .carousel-item.active {
