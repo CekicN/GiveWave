@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer-bar.component.css']
 })
 export class FooterBarComponent {
-
+ 
 }
