@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterBarComponent } from './components/core/footer-bar/footer-bar.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { ProductsModule } from './components/products/products.module';
+import { DonateModule } from './components/donate/donate.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     UserAuthModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ProductsModule,
+    DonateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
