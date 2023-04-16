@@ -104,6 +104,263 @@ button:hover
     background-color: rgb(25, 105, 167);
 }
 
+/*RESPONSIVE*/
+@media screen and (max-width:1326px) {
+    .poklon
+    {
+        left:38%;
+    }
+    .pozadina
+    {
+        top: 77px;
+    }
+}
+@media screen and (min-width:1228px) and (max-width:1300px) {
+    .poklon
+    {
+        width: 4cm;
+        top: 78%;
+        left: 37%;
+    }
+}
+@media screen and (min-width:1174px) and (max-width:1228px) {
+    .poklon
+    {
+        width: 4cm;
+        top: 78%;
+        left: 34%;
+    }
+}
+@media screen and (min-width:1093px) and (max-width:1174px) {
+    .poklon
+    {
+        width: 4cm;
+        top: 78%;
+        left: 28%;
+    }
+    .carousel
+    {
+        left: -2%;
+    }
+}
+@media screen and (min-width:1000px) and (max-width:1093px) {
+    .poklon
+    {
+        width: 4cm;
+        top: 73%;
+        left: 36%;
+    }
+    .carousel
+    {
+        left: 0%;
+    }
+    .pozadina
+    {
+        width: 16cm;
+        top:120px
+    }
+}
+@media screen and (min-width:950px) and (max-width:1000px) {
+    .poklon
+    {
+        width: 4cm;
+        top: 73%;
+        left: 33%;
+    }
+    .carousel
+    {
+        left: -5%;
+    }
+    .pozadina
+    {
+        width: 16cm;
+        top:100px
+    }
+}
+@media screen and (max-width:950px) {
+    .poklon
+    {
+        width: 4cm;
+        top: 73%;
+        left: 25%;
+    }
+    .pozadina
+    {
+        width: 16cm;
+        top:120px
+    }
+    .carousel{
+        left: -3%;
+    }
+    .carousel-container
+    {
+        width: 215px;
+    }
+    .d-flex{
+        max-width: 430px;
+    }
+}
 
+@media screen and (max-width:874px) {
+    .poklon
+    {
+        top: 77%;
+        left: 22%;
+    }
+    .pozadina
+    {
+        width: 15cm;
+        top:175px;
+    }
+    .carousel{
+        left: -4%;
+        top: 20%;
+    }
+    .carousel-container
+    {
+        width: 215px;
+    }
+    .d-flex{
+        max-width: 378px;
+    }
+}
+@media screen and (max-width:778px) {
+    .poklon
+    {
+        width: 6cm;
+        top: 70%;
+        left: 10%;
+    }
+    .pozadina
+    {
+        width: 12cm;
+        top:268px;
+    }
+    .carousel-container
+    {
+        width: 266px;
+        min-height: 170px;
+    }
+    .d-flex{
+        max-width: 424px;
+    }
+    .carousel{
+    left: 20%;
+    top: 11%;
+    }
+}
+@media screen and (max-width:642px) {
+    .poklon
+    {
+        left: -4%;
+    }
+    .carousel{
+        top:10%;
+    }
+    .carousel-container
+    {
+        width: 300px;
+        min-height: 150px;
+    }
+}
+@media screen and (max-width:620px) {
+    .carousel{
+        left:15%;
+    }
+}
+@media screen and (max-width:546px) {
+    .poklon
+    {
+        width: 5cm;
+        top: 76%;
+        left: -7%;
+    }
+    .carousel{
+        left:12%;
+    }
+}
+@media screen and (max-width:507px) {
+    
+ .pozadina{
+    width: 11cm;
+    top:286px;
+ }
+}
+@media screen and (max-width:488px) {
+    .carousel{
+        left:10%;
+    }
+}
+@media screen and (max-width:475px) {
+    .carousel{
+        left:5%;
+    }
+    .poklon
+    {
+        width: 4cm;
+        top:80%;
+    }
+}
+@media screen and (max-width:470px) {
+    .carousel{
+        left:7%;
+    }
+}
+@media screen and (max-width:454px) {
+    .carousel-container{
+        width: 276px;
+    }
+    .d-flex
+    {
+        max-width: 400px;
+    }
+}
+@media screen and (max-width:438px) {
+    .pozadina
+    {
+        width: 10cm;
+        top:310px;
+    }
+    .d-flex
+    {
+        max-width: 390px;
+    }
+}
+@media screen and (max-width:418px) {
+    .pozadina
+    {
+        width: 9cm;
+        top:333px;
+    }
+    .poklon
+    {
+        width: 3cm;
+        top:85%;
+    }
+    .carousel-container
+    {
+        width: 250px;
+        max-height: 143px;
+    }
+    .d-flex
+    {
+        max-width: 350px;
+    }
+}
+@media screen and (max-width:360px) {
+    .pozadina
+    {
+        width: 8cm;
+        top:351px;
+    }
+    .carousel-container
+    {
+        width: 232px;
+    }
+    .d-flex
+    {
+        max-width: 310px;
+    }
+}
 
 

@@ -32,3 +32,26 @@ fa-icon
     display: flex;
     justify-content: space-around;
 }
+@media  screen and (max-width:520px) {
+    fa-icon
+    {   
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width:460px) {
+    .container
+    {
+        --bs-gutter-x: 0.5rem
+    }
+    fa-icon{
+        margin-right: 3px;
+    }
+}
+@media screen and (max-width:418px) {
+   p{
+    margin-bottom: 0rem;
+    font-size: 10px;
+   }
+}
+
+    

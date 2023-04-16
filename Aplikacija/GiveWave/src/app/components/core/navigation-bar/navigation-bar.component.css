@@ -57,3 +57,30 @@ nav{
   .dropdown-menu>.dropdown-item:hover{
     background-color: rgb(16, 162, 246);
   }
+
+@media screen and (max-width:1326px)
+{
+  .navbar .navbar-nav .nav-item {
+    margin: 0 1em;
+  }
+}
+@media  screen and (max-width:1000px) {
+  .navbar .navbar-nav .nav-item {
+    margin: 0 10px;
+  }
+}
+@media  screen and (max-width:714px) {
+  .navbar .navbar-nav .nav-item {
+    margin: 0 5px;
+  }
+}
+@media  screen and (max-width:650px) {
+  .navbar .navbar-nav .nav-item {
+    margin: 0 0px;
+  }
+}
+@media  screen and (max-width:585px) {
+  .navbar .navbar-nav .nav-item {
+    margin: 0 -2px;
+  }
+}
