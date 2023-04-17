@@ -40,7 +40,7 @@
                             </div>
                             <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" class="text-danger">*Password is required</small>
                             <button type="submit" class="btn btn-primary btn-blcok mt-4 w-100" (click)="onSignup()"> Sign Up </button>
-                            <div class="text-center pt-4 text-muted">Already have an account?<a id="forget" routerLink="/login">Login</a> </div>
+                            <div class="text-center pt-4 text-muted">Already have an account?<a id="forget" routerLink="/login" href="login">Login</a> </div>
                         </form>
                     </div>
                     <!--<div class="mx-3 my-2 py-2 bordert">

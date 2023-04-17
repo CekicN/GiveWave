@@ -66,7 +66,6 @@ img{
     border-radius:50;
     position: relative;
 }
-<<<<<<< HEAD:Aplikacija/GiveWave/src/app/components/login/login.component.css
 .bordert{
     border-top:1px solid #aaa;
     position: relative;
@@ -79,10 +78,4 @@ img{
     background-color: #fff;
     padding:0px;
 
-=======
-.sign
-{
-    text-decoration: none;
-    cursor: pointer;
->>>>>>> e73a1557ff337c603b4164c7c9d51ff3c0c47e4f:Aplikacija/GiveWave/src/app/components/user-auth/login/login.component.css
 }
