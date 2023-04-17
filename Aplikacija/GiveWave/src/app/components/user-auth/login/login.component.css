@@ -66,3 +66,8 @@ img{
     border-radius:50;
     position: relative;
 }
+.sign
+{
+    text-decoration: none;
+    cursor: pointer;
+}
