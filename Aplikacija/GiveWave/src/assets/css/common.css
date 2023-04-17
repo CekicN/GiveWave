@@ -71,7 +71,7 @@ img{
     position: relative;
 }
 .bordert:after{
-    content:"or connect with:";
+    content:"or connect with";
     position: absolute;
     top:-13px;
     left:33%;
