@@ -9,10 +9,7 @@ import { NavigationBarComponent } from './components/core/navigation-bar/navigat
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterBarComponent } from './components/core/footer-bar/footer-bar.component';
-//import { LoginComponent } from './components/user-auth/login/login.component';
-//import { SignupComponent } from './components/user-auth/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { ProductsModule } from './components/products/products.module';
 import { DonateModule } from './components/donate/donate.module';
 
@@ -28,7 +25,6 @@ import { DonateModule } from './components/donate/donate.module';
     BrowserModule,
     AppRoutingModule,
     UserAuthModule,
-    FontAwesomeModule,
     ProductsModule,
     DonateModule,
     ReactiveFormsModule

@@ -2,7 +2,9 @@
 import { group } from '@angular/animations';
 import { Component} from '@angular/core';
 import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
-
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faFacebook, faGithub, faGoogle} from '@fortawesome/free-brands-svg-icons';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -19,8 +21,10 @@ export class LoginComponent {
   isText : boolean = false;
   eyeIcon: string = "fa-eye-slash"
   loginForm!: FormGroup;
-  constructor(private fb: FormBuilder){
-    
+
+
+  constructor(private fb: FormBuilder, library:FaIconLibrary){
+    library.addIcons(faFacebook, faGithub, faGoogle, faLock);
 
   }
   ngOnInit():void{
