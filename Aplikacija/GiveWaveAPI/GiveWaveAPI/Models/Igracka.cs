@@ -10,5 +10,6 @@ namespace GiveWaveAPI.Models
         public string Vrsta { get; set; }
         public string Stanje { get; set; }
         public string Opis { get; set; }
+        
     }
 }
