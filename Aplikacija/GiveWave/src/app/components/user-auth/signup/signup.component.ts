@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl,Validators } from '@angular/forms';
-;
+
 
 
 @Component({
