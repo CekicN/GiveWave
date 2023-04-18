@@ -15,8 +15,7 @@ export class HomeComponent {
   text:string[] = [
     "a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut at eos minima repudiandae. Assumenda repudiandae neque distinctio, minima perferendis voluptas?",
     "a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut at eos minima repudiandae. ",
-    "a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut",
-    "orem ipsum, dolor sit amet consectetur adipisicing elit. Ut at eos minima repudiandae. Assumenda repudiandae neque distinctio, minima perferendis voluptas?"
+    "a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut"
   ];
   isActive = 1;
   next() {

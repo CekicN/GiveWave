@@ -59,7 +59,7 @@ input[type='password']{
     outline:none;
     box-shadow: none;
 }
-img{
+.img{
     width:40px;
     height: 40px;
     object-fit: cover;
@@ -71,7 +71,7 @@ img{
     position: relative;
 }
 .bordert:after{
-    content:"or connect with:";
+    content:"or connect with";
     position: absolute;
     top:-13px;
     left:33%;
@@ -79,7 +79,3 @@ img{
     padding:0px;
 
 }
-
-  
-  
-  

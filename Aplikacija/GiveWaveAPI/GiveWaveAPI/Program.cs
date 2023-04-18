@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<GiveWaveDBContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ProjekatSWE"));
+     options.UseSqlServer(builder.Configuration.GetConnectionString("ProjekatSWE"));
 });
 
 builder.Services.AddCors(options =>

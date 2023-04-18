@@ -7,25 +7,37 @@
                         <h3 class="pt-3 font-weight-bold">Login</h3>
                     </div>
                     <div class="panel-body p-3">
-                        <form >
+                        <form [formGroup]= "loginForm">
                             <div class="form-group pt-3">
-                                <div class="input-field">
-                                    <span class="fa fa-user p-2"></span>
-                                    <input type="text" placeholder="Username">
+                                <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">
+                                    <img src="https://th.bing.com/th/id/R.f29406735baf0861647a78ae9c4bf5af?rik=GKTBhov2iZge9Q&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_206976.png&ehk=gCH45Zmryw3yqyqG%2fhd8WDQ53zwYfmC8K9OIkNHP%2fNU%3d&risl=&pid=ImgRaw&r=0" alt="">
+                                    <input formControlName="username" type="text" placeholder="Username">
                                 </div>
                             </div>
+                            <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" class="text-danger">*Username is required</small>
                             <div class="form-group pt-3">
-                                <div class="input-field">
-                                    <span class="fa fa-lock p-2"></span>
-                                    <input type="text" placeholder="Password">
+                                <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                                    <fa-icon [icon]="['fas', 'lock']" style="color:rgb(78, 76, 76);"></fa-icon>
+                                    <input formControlName="password" type="password" placeholder="Password">
+                                    <span (click)="hideShowPass()" class="fa fa-eye-slash"></span>
                                 </div>
                             </div>
+                            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Password is required</small>
                             <div class="form-inline fr mt-4">
                                 <a id="forget" class="font-weight-bold">Forget Password?</a>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-blcok mt-4 w-100"> Login </button>
-                            <div class="text-center pt-4 text-muted">Don't have an account?<a id="forget" routerLink="/signup">Sign Up</a> </div>
+                            <button (click)="onSubmit()" type="submit" class="btn btn-primary btn-blcok mt-4 w-100"> Login </button>
+                            <!--<div class="text-center pt-4 text-muted">Don't have an account?<a routerLink="/signup">Sign Up</a> </div>-->
+                            <div class="text-center pt-4 text-muted">Don't have an account?<a id="forget" routerLink="/signup" class="sign" href="signup">Sign Up</a> </div>
                         </form>
+                    </div>
+                    <div class="mx-3 my-2 py-2 bordert">
+                        <div class="text-center py-3">
+                            <a href="https://www.facebook.com" target="_blank" class="px-2"><fa-icon [icon]="['fab', 'facebook']" size="2xl"></fa-icon></a>
+                            <a href="https://www.google.com" target="_blank" class="px-2"><fa-icon [icon]="['fab', 'google']" size="2xl" class="fa-google"></fa-icon></a>
+                            <a href="https://www.github.com" target="_blank" class="px-2"><fa-icon [icon]="['fab', 'github']" size="2xl" style="color:black;"></fa-icon></a>
+
+                        </div>
                     </div>
                 </div>
             </div>
