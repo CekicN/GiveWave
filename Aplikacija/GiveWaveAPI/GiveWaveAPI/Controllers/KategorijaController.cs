@@ -22,7 +22,7 @@ namespace GiveWaveAPI.Controllers
             {
                 Context.Kategorijas.Add(kategorija);
                 await Context.SaveChangesAsync();
-                return Ok("Kategorija je dodata");
+                return Ok("Kategorija je dodata !");
             }
             catch (Exception e)
             {
@@ -33,10 +33,35 @@ namespace GiveWaveAPI.Controllers
         [Route("PreuzmiKategoriju")]
         [HttpGet]
 
-        public async Task<ActionResult> preuzmi()
+        public async Task<ActionResult> preuzmiKategoriju()
         {
             return Ok(Context.Kategorijas);
         }
 
+        [Route("ObrisiKategoriju")]
+        [HttpDelete]
+        public async Task<ActionResult> obrisiKategoriju(int id)
+        {
+            try
+            {
+                var kategorija = Context.Kategorijas.Where(p => p.ID == id).FirstOrDefault();
+                if (kategorija == null)
+                {
+                    return BadRequest("Ta kategorija ne postoji !");
+                }
+                else
+                {
+                    Context.Kategorijas.Remove(kategorija);
+                    await Context.SaveChangesAsync();
+                    return Ok("Kategorija je obrisana !");
+                }
+
+               
+            }
+            catch (Exception e) 
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }
