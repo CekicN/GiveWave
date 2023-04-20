@@ -4,12 +4,7 @@ import { Component} from '@angular/core';
 import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faFacebook, faGithub, faGoogle} from '@fortawesome/free-brands-svg-icons';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
-
-
-
-
-
+import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +19,7 @@ export class LoginComponent {
 
 
   constructor(private fb: FormBuilder, library:FaIconLibrary){
-    library.addIcons(faFacebook, faGithub, faGoogle, faLock);
+    library.addIcons(faFacebook, faGithub, faGoogle, faLock, faUser);
 
   }
   ngOnInit():void{

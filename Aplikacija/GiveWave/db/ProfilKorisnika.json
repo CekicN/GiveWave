@@ -1,0 +1,37 @@
+{
+    "users":[
+        {
+            "id": 1,
+            "ime":"Nikola",
+            "prezime":"Cekic",
+            "email":"cekicn668@gmail.com",
+            "brTelefona":"0621013311",
+            "datumRodjenja":"2002-01-31T18:25:43.511Z",
+            "pol":"Muski",
+            "statusAktivnosti":true,
+            "datumRegistracije":"2012-04-23T18:25:43.511Z"
+        },
+        {
+            "id": 2,
+            "ime":"Stevan",
+            "prezime":"Ruzic",
+            "email":"ruzics668@gmail.com",
+            "brTelefona":"045683311",
+            "datumRodjenja":"2001-02-17T18:25:43.511Z",
+            "pol":"Muski",
+            "statusAktivnosti":true,
+            "datumRegistracije":"2012-04-23T18:25:43.511Z"
+        },
+        {
+            "id": 3,
+            "ime":"Dusan",
+            "prezime":"Simic",
+            "email":"dusans@gmail.com",
+            "brTelefona":"0458158618",
+            "datumRodjenja":"2001-01-31T18:25:43.511Z",
+            "pol":"Muski",
+            "statusAktivnosti":true,
+            "datumRegistracije":"2012-04-23T18:25:43.511Z"
+        } 
+    ]
+}

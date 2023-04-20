@@ -18,9 +18,13 @@ namespace GiveWaveAPI.Controllers
         [HttpPost]
         public async Task<ActionResult> dodajKategoriju([FromBody] Kategorija kategorija)
         {
+            if(kategorija == null)
+            {
+                return BadRequest("Kategorija is null");
+            }
             try
             {
-                Context.Kategorijas.Add(kategorija);
+                await Context.Kategorijas.AddAsync(kategorija);
                 await Context.SaveChangesAsync();
                 return Ok("Kategorija je dodata");
             }
