@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import {UserAuthModule} from './components/user-auth/user-auth.module';
@@ -12,6 +13,8 @@ import { FooterBarComponent } from './components/core/footer-bar/footer-bar.comp
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductsModule } from './components/products/products.module';
 import { DonateModule } from './components/donate/donate.module';
+import { AuthService } from 'app/services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { DonateModule } from './components/donate/donate.module';
     UserAuthModule,
     ProductsModule,
     DonateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,9 +2,11 @@
 import { group } from '@angular/animations';
 import { Component} from '@angular/core';
 import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faFacebook, faGithub, faGoogle} from '@fortawesome/free-brands-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'app/services/auth.service';
 
 
 
@@ -23,7 +25,7 @@ export class LoginComponent {
   loginForm!: FormGroup;
 
 
-  constructor(private fb: FormBuilder, library:FaIconLibrary){
+  constructor(private fb: FormBuilder, library:FaIconLibrary, private auth:AuthService, private router:Router){
     library.addIcons(faFacebook, faGithub, faGoogle, faLock);
 
   }
@@ -39,10 +41,22 @@ export class LoginComponent {
     this.isText ? this.type = "text" : this.type="password";
 
   }
-  onSubmit(){
+  onLogin(){
     if(this.loginForm.valid){
-      console.log(this.loginForm.value);
       //send the obj to database
+      this.auth.login(this.loginForm.value)
+      .subscribe({
+        next:(res)=>{
+          alert(res.message)
+          this.loginForm.reset();
+          this.router.navigate(['home']);
+        },
+        error:(err)=>{
+          alert(err?.error.message);
+          
+        }
+        })
+    
     }else{
       //throw the error using toaster and required fields
       this.validateAllFormsFields(this.loginForm)
