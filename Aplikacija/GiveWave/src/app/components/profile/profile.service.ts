@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { User } from 'app/Models/User';
 
-const ENDPOINT = "localhost:3000/users"
+const ENDPOINT = "http://localhost:3000/users"
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +15,6 @@ export class ProfileService {
   }
   getById(id:number)
   {
-    return this.http.get<User[]>(`${ENDPOINT}/${id}`);
+    return this.http.get<User>(`${ENDPOINT}/${id}`);
   }
 }

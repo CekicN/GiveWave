@@ -8,5 +8,18 @@ export interface User
             datumRodjenja:string,
             pol:string,
             statusAktivnosti:boolean,
-            datumRegistracije:string  
+            datumRegistracije:string,
+            slika:slika,
+            lajkovi:number
+}
+interface slika
+{
+    type:string,
+    media:media
+
+}
+interface media
+{
+    binaryEncoding: string,
+    type: string
 }
