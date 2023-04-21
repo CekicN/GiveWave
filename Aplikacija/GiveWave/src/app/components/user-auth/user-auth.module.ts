@@ -20,8 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   exports:[
     LoginComponent,
-    SignupComponent,
-    FontAwesomeModule
+    SignupComponent
   ]
 })
 export class UserAuthModule { }

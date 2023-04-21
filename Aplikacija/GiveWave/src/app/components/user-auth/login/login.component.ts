@@ -5,6 +5,8 @@ import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faFacebook, faGithub, faGoogle} from '@fortawesome/free-brands-svg-icons';
 import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
+import { LoginService } from 'app/components/services/login.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -12,14 +14,18 @@ import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  public loggedIn$!: Observable<boolean>;
+
+
   type: string = "password";
   isText : boolean = false;
   eyeIcon: string = "fa-eye-slash"
   loginForm!: FormGroup;
 
 
-  constructor(private fb: FormBuilder, library:FaIconLibrary){
+  constructor(private fb: FormBuilder, library:FaIconLibrary, private loginService:LoginService){
     library.addIcons(faFacebook, faGithub, faGoogle, faLock, faUser);
+    this.loggedIn$ = loginService.loggedIn$;
 
   }
   ngOnInit():void{
@@ -37,6 +43,7 @@ export class LoginComponent {
   onSubmit(){
     if(this.loginForm.valid){
       console.log(this.loginForm.value);
+      this.logIn();//Funkcija koja postavlja status u logovan
       //send the obj to database
     }else{
       //throw the error using toaster and required fields
@@ -60,7 +67,10 @@ export class LoginComponent {
 
   }
  
-
+  public logIn()
+  {
+    this.loginService.logIn();
+  }
 
 
 }

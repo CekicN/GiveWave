@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,8 @@ import { ProductsModule } from './components/products/products.module';
 import { DonateModule } from './components/donate/donate.module';
 import { ProfileModule } from './components/profile/profile.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LastActiveService } from './components/services/last-active.service';
 
 @NgModule({
   declarations: [
@@ -26,14 +28,23 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserAuthModule,
     ProductsModule,
+    UserAuthModule,
     DonateModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,   
     ProfileModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:APP_INITIALIZER,
+      multi:true,
+      deps:[LastActiveService],
+      useFactory:(LastActiveService:LastActiveService) => () =>
+      LastActiveService.setUp(),
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
