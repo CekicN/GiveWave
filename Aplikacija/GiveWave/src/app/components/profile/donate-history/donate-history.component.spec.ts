@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SocialMediaComponent } from './social-media.component';
+import { DonateHistoryComponent } from './donate-history.component';
 
-describe('SocialMediaComponent', () => {
-  let component: SocialMediaComponent;
-  let fixture: ComponentFixture<SocialMediaComponent>;
+describe('DonateHistoryComponent', () => {
+  let component: DonateHistoryComponent;
+  let fixture: ComponentFixture<DonateHistoryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SocialMediaComponent ]
+      declarations: [ DonateHistoryComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SocialMediaComponent);
+    fixture = TestBed.createComponent(DonateHistoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

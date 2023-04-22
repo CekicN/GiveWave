@@ -4,7 +4,7 @@ import { User } from 'app/Models/User';
 import { MyProducts } from 'app/Models/MyProducts';
 
 const Users = "http://localhost:3000/users";
-const produc = "http://localhost:3001/MyProducts";
+const produc = "http://localhost:3000/MyProducts";
 @Injectable({
   providedIn: 'root'
 })

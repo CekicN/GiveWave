@@ -20,6 +20,4 @@ export class ProfileDataComponent implements OnInit {
       this.user = user;
     })
   }
-
-
 }

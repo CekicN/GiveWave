@@ -1,25 +1,20 @@
 <section>
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-lg-4">
-          <app-profile-image></app-profile-image>
-          <app-social-media></app-social-media>
-        </div>
-        <div class="col-lg-8">
-          <app-profile-data></app-profile-data>
-          <div class="row">
-            <!-- Trenutno postavljeni proizvodi -->
-            <app-my-products class="col-md-8"></app-my-products>
-            <!--Istorija proizvoda...-->
-            <div class="col-md-4">
-              <div class="card mb-4 mb-md-0">
-                <div class="card-body">
-                  <h3>rrrr</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-4">
+        <app-profile-image></app-profile-image>
+      </div>
+      <div class="col-lg-8">
+        <app-profile-data></app-profile-data>
       </div>
     </div>
-  </section>
+    <div class="row">
+      <div class="col-md-6">
+        <app-my-products></app-my-products>
+      </div>
+      <div class="col-md-6">
+        <app-donate-history></app-donate-history>
+      </div>
+    </div>
+  </div>
+</section>

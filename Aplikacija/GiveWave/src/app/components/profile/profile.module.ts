@@ -4,8 +4,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileDataComponent } from './profile-data/profile-data.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfileImageComponent } from './profile-image/profile-image.component';
-import { SocialMediaComponent } from './social-media/social-media.component';
 import { MyProductsComponent } from './my-products/my-products.component';
+import { DonateHistoryComponent } from './donate-history/donate-history.component';
 
 
 
@@ -14,8 +14,8 @@ import { MyProductsComponent } from './my-products/my-products.component';
     ProfileComponent,
     ProfileDataComponent,
     ProfileImageComponent,
-    SocialMediaComponent,
-    MyProductsComponent
+    MyProductsComponent,
+    DonateHistoryComponent
   ],
   imports: [
     CommonModule,
