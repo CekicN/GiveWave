@@ -1,21 +1,11 @@
-
 import { group } from '@angular/animations';
 import { Component} from '@angular/core';
 import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faFacebook, faGithub, faGoogle} from '@fortawesome/free-brands-svg-icons';
-<<<<<<< HEAD
-import { faLock } from '@fortawesome/free-solid-svg-icons';
-import { AuthService } from 'app/services/auth.service';
-
-
-
-
-
-=======
 import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
->>>>>>> 6400b6ec6e186fc93adf523113794f6a400988b4
+import { LoginService } from 'app/components/services/login.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -23,19 +13,18 @@ import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  public loggedIn$!: Observable<boolean>;
+
+
   type: string = "password";
   isText : boolean = false;
   eyeIcon: string = "fa-eye-slash"
   loginForm!: FormGroup;
 
 
-<<<<<<< HEAD
-  constructor(private fb: FormBuilder, library:FaIconLibrary, private auth:AuthService, private router:Router){
-    library.addIcons(faFacebook, faGithub, faGoogle, faLock);
-=======
-  constructor(private fb: FormBuilder, library:FaIconLibrary){
+  constructor(private fb: FormBuilder, library:FaIconLibrary, private loginService:LoginService){
     library.addIcons(faFacebook, faGithub, faGoogle, faLock, faUser);
->>>>>>> 6400b6ec6e186fc93adf523113794f6a400988b4
+    this.loggedIn$ = loginService.loggedIn$;
 
   }
   ngOnInit():void{
@@ -50,22 +39,11 @@ export class LoginComponent {
     this.isText ? this.type = "text" : this.type="password";
 
   }
-  onLogin(){
+  onSubmit(){
     if(this.loginForm.valid){
+      console.log(this.loginForm.value);
+      this.logIn();//Funkcija koja postavlja status u logovan
       //send the obj to database
-      this.auth.login(this.loginForm.value)
-      .subscribe({
-        next:(res)=>{
-          alert(res.message)
-          this.loginForm.reset();
-          this.router.navigate(['home']);
-        },
-        error:(err)=>{
-          alert(err?.error.message);
-          
-        }
-        })
-    
     }else{
       //throw the error using toaster and required fields
       this.validateAllFormsFields(this.loginForm)
@@ -88,7 +66,10 @@ export class LoginComponent {
 
   }
  
-
+  public logIn()
+  {
+    this.loginService.logIn();
+  }
 
 
 }

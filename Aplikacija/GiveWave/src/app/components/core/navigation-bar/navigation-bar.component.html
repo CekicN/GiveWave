@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm" >
+<nav class="navbar navbar-expand-sm" *ngIf="{loggedIn:loggedIn$ | async} as loginStatus">
     <a class="navbar-brand" routerLink="/"><h1>GiveWave</h1></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,16 +9,16 @@
         <li class="nav-item hover"><a class="nav-link" routerLink="products" routerLinkActive="active">Products</a></li>
         <li class="nav-item hover"><a class="nav-link" routerLink="donate" routerLinkActive="active">Donate</a></li>
         <li class="nav-item hover"><a class="nav-link" routerLink="about" routerLinkActive="active">About Us</a></li>
-        <li class="nav-item Log rounded"><a class="nav-link" routerLink="/login">Log In</a></li>
+        <li class="nav-item Log rounded" ><a class="nav-link" routerLink="/login" [class.disabled]="loginStatus.loggedIn ? true : null">Log In</a></li>
         
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#"  id="navbardrop" data-bs-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">
                 <img src="../../../../assets/images/user.png" width="40" height="40" class="rounded-circle">
             </a>
-              <div class="dropdown-menu dropdown-menu-end">
+              <div class="dropdown-menu dropdown-menu-end" [style.display]="loginStatus.loggedIn ? '' : 'none'">
                 <a class="dropdown-item" href="#" routerLink="profile">View Profile</a>
                 <a class="dropdown-item" href="#">Friends</a>
-                <a class="dropdown-item" href="#">Log Out</a>
+                <a (click)="logOut()" class="dropdown-item">Log Out</a>
             </div>
         </li>
     </ul>

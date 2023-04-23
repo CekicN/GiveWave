@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../profile.service';
 import { User } from 'app/Models/User';
-import { DomSanitizer } from '@angular/platform-browser';
+import {faInstagram, faFacebook, faTwitter, faGithub} from '@fortawesome/free-brands-svg-icons';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-profile-data',
@@ -11,12 +12,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ProfileDataComponent implements OnInit {
   
   public user!:User;
-  constructor(private service:ProfileService, private sanitizer: DomSanitizer){}
+  constructor(private service:ProfileService, library:FaIconLibrary){
+    library.addIcons(faInstagram, faFacebook, faTwitter, faGithub);
+  }
   ngOnInit(): void {
-    this.service.getById(1).subscribe(user => {
+    this.service.getUsersById(1).subscribe(user => {
       this.user = user;
     })
   }
-
-
 }

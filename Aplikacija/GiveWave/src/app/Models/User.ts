@@ -5,10 +5,10 @@ export interface User
             prezime:string,
             email:string,
             brTelefona:string,
-            datumRodjenja:string,
+            datumRodjenja:Date,
             pol:string,
             statusAktivnosti:boolean,
-            datumRegistracije:string,
+            datumRegistracije:Date,
             slika:slika,
             lajkovi:number
 }
