@@ -13,8 +13,13 @@ import { FooterBarComponent } from './components/core/footer-bar/footer-bar.comp
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductsModule } from './components/products/products.module';
 import { DonateModule } from './components/donate/donate.module';
+<<<<<<< HEAD
 import { AuthService } from 'app/services/auth.service';
 
+=======
+import { ProfileModule } from './components/profile/profile.module';
+import { HttpClientModule } from '@angular/common/http';
+>>>>>>> 6400b6ec6e186fc93adf523113794f6a400988b4
 
 @NgModule({
   declarations: [
@@ -31,8 +36,13 @@ import { AuthService } from 'app/services/auth.service';
     ProductsModule,
     DonateModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     HttpClientModule
 
+=======
+    ProfileModule,
+    HttpClientModule
+>>>>>>> 6400b6ec6e186fc93adf523113794f6a400988b4
   ],
   providers: [],
   bootstrap: [AppComponent]

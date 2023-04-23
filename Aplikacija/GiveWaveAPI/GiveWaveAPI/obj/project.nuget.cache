@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aAYZFHCvgQhWSvZtyUZ7OPUWhJXw2epoIH08koTEoKMH3rHYeHO6v6fZAUEdPsO5sUzGgUDfxb7K2c5acJVprQ==",
+  "dgSpecHash": "TfVhfdmtczZyDuCNtyg3gltYKFyPqPlKopqcF0PYmEHOXwFhTrTCKIuxDQPqrgnk/pU/K4qhhyC6LM4FwDnPdQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kuca\\Desktop\\Softversko inzenjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
   "expectedPackageFiles": [
@@ -71,6 +71,7 @@
     "C:\\Users\\Kuca\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Kuca\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Kuca\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Kuca\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Kuca\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Kuca\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Kuca\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

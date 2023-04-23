@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
 
 namespace GiveWaveAPI.Controllers;
 
@@ -32,7 +34,7 @@ public class AuthenticationController : ControllerBase
     }
     [Route(template:"Register")]
     [HttpPost]
-    public async Task<IActionResult> Register([FromBody] UserRegisterRequest registerRequest)
+    public async Task<IActionResult> Register([FromBody] UserRegisterRequestDto registerRequest)
     {
         //validate incoming req
         if(ModelState.IsValid)
@@ -51,12 +53,15 @@ public class AuthenticationController : ControllerBase
                 });
             }
             //ako ne postoji user, pravimo novog user-a
-            var new_user = new User()
+            var new_user = new IdentityUser()
             {
-                FirstName = registerRequest.FirstName,
-                LastName = registerRequest.LastName,
+
+                //FirstName = registerRequest.FirstName,
+                //LastName = registerRequest.LastName,
                 Email = registerRequest.Email,
-                UserName = registerRequest.Username
+                UserName = registerRequest.Username,
+               // Password = registerRequest.Password,
+               
 
             };
             var is_created = await _userManager.CreateAsync(new_user,registerRequest.Password);
@@ -94,7 +99,7 @@ public class AuthenticationController : ControllerBase
             //da li user postoji?
             var existing_user = await _userManager.FindByEmailAsync(loginRequest.Email);
             //ako ne postoji
-            if(existing_user == null) 
+            if (existing_user == null)
             {
                 return BadRequest(new AuthResult()
                 {
@@ -104,29 +109,31 @@ public class AuthenticationController : ControllerBase
                     },
                     Result = false
                 });
-                var is_correct =  await _userManager.CheckPasswordAsync(existing_user, loginRequest.Password);
-
-
-                if (!is_correct)
-                {
-                    return BadRequest(new AuthResult()
-                    {
-                        Errors = new List<string>()
-                        {
-                            "Invalid credentials"
-                        },
-                        Result = false
-                    });
-                    var jwtToken = GenerateJWTToken(existing_user);
-
-                    return Ok(new AuthResult()
-                    {
-                        Token = jwtToken,
-                        Result = true
-                    });
-                }
-
             }
+            var is_correct =  await _userManager.CheckPasswordAsync(existing_user, loginRequest.Password);
+
+
+            if (!is_correct)
+            {
+                return BadRequest(new AuthResult()
+                {
+                    Errors = new List<string>()
+                       {
+                           "Invalid credentials"
+                       },
+                    Result = false
+                });
+            }
+            var jwtToken = GenerateJWTToken(existing_user);
+
+             return Ok(new AuthResult()
+             {
+                  Token = jwtToken,
+                  Result = true
+             });
+             
+
+            
         }
         return BadRequest(new AuthResult()
         {
@@ -142,12 +149,13 @@ public class AuthenticationController : ControllerBase
     {
         //tocken handler
         var jwtTokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.UTF8.GetBytes(_configuration.GetSection("JWTConfig").Value);
-        //Token descriptor
+        var key = Encoding.UTF8.GetBytes(_configuration.GetSection("JWTConfig:Secret").Value);
+        
+            //Token descriptor
         var tokenDescriptor = new SecurityTokenDescriptor()
-        {
-            Subject = new ClaimsIdentity(new []
             {
+                Subject = new ClaimsIdentity(new[]
+                {
 
                 new Claim("Id",user.Id),
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email),
@@ -156,14 +164,15 @@ public class AuthenticationController : ControllerBase
                 new Claim(JwtRegisteredClaimNames.Iat, DateTime.Now.ToUniversalTime().ToString())
 
             }),
-            //trajanje tokena 1 sat od generisanja
-            Expires = DateTime.Now.AddHours(1),
-            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
+                //trajanje tokena 1 sat od generisanja
+                Expires = DateTime.Now.AddHours(1),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
 
-        };
+            };
 
-        var token = jwtTokenHandler.CreateToken(tokenDescriptor);
-        return jwtTokenHandler.WriteToken(token);
+            var token = jwtTokenHandler.CreateToken(tokenDescriptor);
+            return jwtTokenHandler.WriteToken(token);
+        
         
 
     }

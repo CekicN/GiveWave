@@ -1,4 +1,5 @@
-﻿namespace GiveWaveAPI.Models
+﻿using System.Text.Json;
+namespace GiveWaveAPI.Models
 {
     public class AuthResult
     {

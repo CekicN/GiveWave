@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
-    [Migration("20230420165525_v1")]
+    [Migration("20230423114606_v1")]
     partial class v1
     {
         /// <inheritdoc />
@@ -33,7 +33,7 @@ namespace GiveWaveAPI.Migrations
                     b.Property<DateTime>("DatumIsteka")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("KategorijaID")
+                    b.Property<string>("KategorijaId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Opis")
@@ -45,7 +45,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KategorijaID");
+                    b.HasIndex("KategorijaId");
 
                     b.ToTable("Hranas");
                 });
@@ -55,7 +55,7 @@ namespace GiveWaveAPI.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("KategorijeID")
+                    b.Property<string>("KategorijeId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Opis")
@@ -70,20 +70,20 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KategorijeID");
+                    b.HasIndex("KategorijeId");
 
                     b.ToTable("Igrackas");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.Kategorija", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Ime")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Kategorijas");
                 });
@@ -96,7 +96,7 @@ namespace GiveWaveAPI.Migrations
                     b.Property<DateTime>("DatumDoniranja")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("KategorijeID")
+                    b.Property<string>("KategorijeId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<double>("KolicinaDoniraneKrvi")
@@ -111,7 +111,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KategorijeID");
+                    b.HasIndex("KategorijeId");
 
                     b.ToTable("Krvs");
                 });
@@ -134,12 +134,12 @@ namespace GiveWaveAPI.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("KategorijeID")
+                    b.Property<string>("KategorijeId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KategorijeID");
+                    b.HasIndex("KategorijeId");
 
                     b.ToTable("Novacs");
                 });
@@ -149,7 +149,7 @@ namespace GiveWaveAPI.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("KategorijeID")
+                    b.Property<string>("KategorijeId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Namena")
@@ -169,7 +169,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KategorijeID");
+                    b.HasIndex("KategorijeId");
 
                     b.ToTable("Obucas");
                 });
@@ -179,7 +179,7 @@ namespace GiveWaveAPI.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("KategorijeID")
+                    b.Property<string>("KategorijeId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Namena")
@@ -207,7 +207,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KategorijeID");
+                    b.HasIndex("KategorijeId");
 
                     b.ToTable("Odecas");
                 });
@@ -229,7 +229,7 @@ namespace GiveWaveAPI.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("KategorijeID")
+                    b.Property<string>("KategorijeId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Knjige")
@@ -274,7 +274,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KategorijeID");
+                    b.HasIndex("KategorijeId");
 
                     b.ToTable("Ostalos");
                 });
@@ -338,7 +338,7 @@ namespace GiveWaveAPI.Migrations
                         .HasMaxLength(4)
                         .HasColumnType("int");
 
-                    b.Property<string>("KategorijeID")
+                    b.Property<string>("KategorijeId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Marka")
@@ -363,77 +363,9 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KategorijeID");
+                    b.HasIndex("KategorijeId");
 
                     b.ToTable("Tehnikas");
-                });
-
-            modelBuilder.Entity("GiveWaveAPI.Models.User", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -488,6 +420,71 @@ namespace GiveWaveAPI.Migrations
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -516,10 +513,12 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -556,10 +555,12 @@ namespace GiveWaveAPI.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -573,7 +574,7 @@ namespace GiveWaveAPI.Migrations
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorija")
                         .WithMany()
-                        .HasForeignKey("KategorijaID");
+                        .HasForeignKey("KategorijaId");
 
                     b.Navigation("Kategorija");
                 });
@@ -582,7 +583,7 @@ namespace GiveWaveAPI.Migrations
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
                         .WithMany()
-                        .HasForeignKey("KategorijeID");
+                        .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
                 });
@@ -591,7 +592,7 @@ namespace GiveWaveAPI.Migrations
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
                         .WithMany()
-                        .HasForeignKey("KategorijeID");
+                        .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
                 });
@@ -600,7 +601,7 @@ namespace GiveWaveAPI.Migrations
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
                         .WithMany()
-                        .HasForeignKey("KategorijeID");
+                        .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
                 });
@@ -609,7 +610,7 @@ namespace GiveWaveAPI.Migrations
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
                         .WithMany()
-                        .HasForeignKey("KategorijeID");
+                        .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
                 });
@@ -618,7 +619,7 @@ namespace GiveWaveAPI.Migrations
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
                         .WithMany()
-                        .HasForeignKey("KategorijeID");
+                        .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
                 });
@@ -627,7 +628,7 @@ namespace GiveWaveAPI.Migrations
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
                         .WithMany()
-                        .HasForeignKey("KategorijeID");
+                        .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
                 });
@@ -636,7 +637,7 @@ namespace GiveWaveAPI.Migrations
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
                         .WithMany()
-                        .HasForeignKey("KategorijeID");
+                        .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
                 });
@@ -652,7 +653,7 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("GiveWaveAPI.Models.User", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -661,7 +662,7 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("GiveWaveAPI.Models.User", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -676,7 +677,7 @@ namespace GiveWaveAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GiveWaveAPI.Models.User", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -685,7 +686,7 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("GiveWaveAPI.Models.User", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

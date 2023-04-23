@@ -1,4 +1,4 @@
-
+using System.Text.Json;
 using GiveWaveAPI.Models;
 using GiveWaveAPI.Models.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -7,10 +7,23 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Cryptography;
 using System.Text;
-
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
+builder.Services.AddDbContext<GiveWaveDBContext>(options =>
+{
+     options.UseSqlServer(builder.Configuration.GetConnectionString("ProjekatSWE"));
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CORS", policy =>
+    {
+        policy.AllowAnyHeader()
+              .AllowAnyMethod()
+              .WithOrigins("https://localhost:5555/",
+                           "https://localhost:5555/");
+    });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -30,7 +43,7 @@ builder.Services.AddDbContext<GiveWaveDBContext>(options=>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnStr"));
 });
 
-builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection(key: "JWTConfig"));
+builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("JWTConfig"));
 
 
 builder.Services.AddAuthentication(configureOptions: options =>
@@ -42,7 +55,7 @@ builder.Services.AddAuthentication(configureOptions: options =>
 })//Authentication Builder
     .AddJwtBearer(jwt =>
     {
-        var key = Encoding.ASCII.GetBytes(builder.Configuration.GetSection(key: "JWTConfig:Secret").Value);
+        var key = Encoding.ASCII.GetBytes(builder.Configuration.GetSection("JWTConfig:Secret").Value);
 
         jwt.SaveToken = true;
         jwt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
@@ -85,6 +98,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("CORS");
 
 app.UseHttpsRedirection();
 

@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl,Validators } from '@angular/forms';
+<<<<<<< HEAD
 import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
+=======
+
+>>>>>>> 6400b6ec6e186fc93adf523113794f6a400988b4
 
 
 @Component({
