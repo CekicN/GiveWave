@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<GiveWaveDBContext>(options =>
@@ -29,20 +32,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddCors(option =>
-{
-    option.AddPolicy("MyPolicy", builder =>
-    {
-        builder.AllowAnyOrigin()
-        .AllowAnyMethod()
-        .AllowAnyHeader();
-    });
-});
-builder.Services.AddDbContext<GiveWaveDBContext>(options=>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnStr"));
-});
-
 builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("JWTConfig"));
 
 
@@ -80,7 +69,33 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 //    .AddRoleManager<RoleManager<IdentityRole>>()
 //    .AddDefaultTokenProviders();
 
-
+builder.Services.AddSwaggerGen(option =>
+{
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "GiveWaveAPI", Version = "v1" });
+    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter a valid token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+    option.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
+});
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("User", policy =>

@@ -1,4 +1,5 @@
 ﻿using GiveWaveAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Text.Json;
@@ -36,7 +37,7 @@ namespace GiveWaveAPI.Controllers
         }
 
         [Route("PreuzmiKategoriju")]
-        [HttpGet]
+        [HttpGet, Authorize]
 
         public async Task<ActionResult> preuzmiKategoriju()
         {
