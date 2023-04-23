@@ -1,28 +1,27 @@
 ﻿using GiveWaveAPI.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
 
 namespace GiveWaveAPI.Controllers
 {
     [ApiController]
     [Route("controller")]
-    public class OdecaController : ControllerBase
+    public class KrvController : ControllerBase
     {
         public GiveWaveDBContext Context { get; set; }
-        public OdecaController(GiveWaveDBContext context)
+        public KrvController(GiveWaveDBContext context)
         {
             Context = context;
         }
 
-        [Route("DodajOdecu")]
+        [Route("DodajKrv")]
         [HttpPost]
-        public async Task<ActionResult> dodajOdecu([FromBody] Odeca odeca)
+        public async Task<ActionResult> dodajKrv([FromBody] Krv krv)
         {
             try
             {
-                Context.Odecas.Add(odeca);
+                Context.Krvs.Add(krv);
                 await Context.SaveChangesAsync();
-                return Ok("Odeca je dodata !");
+                return Ok("Krv je dodata !");
             }
             catch (Exception e)
             {
@@ -30,30 +29,30 @@ namespace GiveWaveAPI.Controllers
             }
         }
 
-        [Route("PreuzmiOdecu")]
+        [Route("PreuzmiKrv")]
         [HttpGet]
 
-        public async  Task<ActionResult> preuzmiOdecu()
+        public async Task<ActionResult> preuzmiKrv()
         {
-            return  Ok(Context.Odecas);
+            return Ok(Context.Krvs);
         }
 
-        [Route("ObrisiOdecu")]
+        [Route("ObrisiKrv")]
         [HttpDelete]
-        public async Task<ActionResult> obrisiOdecu(int id)
+        public async Task<ActionResult> obrisiKrv(int id)
         {
             try
             {
-                var odeca = Context.Odecas.Where(p => p.Id == id).FirstOrDefault();
-                if (odeca == null)
+                var krv = Context.Krvs.Where(p => p.Id == id).FirstOrDefault();
+                if (krv == null)
                 {
                     return BadRequest("Ta kategorija ne postoji !");
                 }
                 else
                 {
-                    Context.Odecas.Remove(odeca);
+                    Context.Krvs.Remove(krv);
                     await Context.SaveChangesAsync();
-                    return Ok("Odeca je obrisana !");
+                    return Ok("Krv je obrisana !");
                 }
 
 
@@ -64,5 +63,4 @@ namespace GiveWaveAPI.Controllers
             }
         }
     }
-
 }

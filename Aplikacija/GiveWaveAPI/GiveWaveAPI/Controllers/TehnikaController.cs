@@ -1,28 +1,27 @@
 ﻿using GiveWaveAPI.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
 
 namespace GiveWaveAPI.Controllers
 {
     [ApiController]
     [Route("controller")]
-    public class OdecaController : ControllerBase
+    public class TehnikaController : ControllerBase
     {
         public GiveWaveDBContext Context { get; set; }
-        public OdecaController(GiveWaveDBContext context)
+        public TehnikaController(GiveWaveDBContext context)
         {
             Context = context;
         }
 
-        [Route("DodajOdecu")]
+        [Route("DodajTehniku")]
         [HttpPost]
-        public async Task<ActionResult> dodajOdecu([FromBody] Odeca odeca)
+        public async Task<ActionResult> dodajTehniku([FromBody] Tehnika tehnika)
         {
             try
             {
-                Context.Odecas.Add(odeca);
+                Context.Tehnikas.Add(tehnika);
                 await Context.SaveChangesAsync();
-                return Ok("Odeca je dodata !");
+                return Ok("Tehnika je dodata !");
             }
             catch (Exception e)
             {
@@ -30,30 +29,30 @@ namespace GiveWaveAPI.Controllers
             }
         }
 
-        [Route("PreuzmiOdecu")]
+        [Route("PreuzmiTehniku")]
         [HttpGet]
 
-        public async  Task<ActionResult> preuzmiOdecu()
+        public async Task<ActionResult> preuzmiTehniku()
         {
-            return  Ok(Context.Odecas);
+            return Ok(Context.Tehnikas);
         }
 
-        [Route("ObrisiOdecu")]
+        [Route("ObrisiTehniku")]
         [HttpDelete]
-        public async Task<ActionResult> obrisiOdecu(int id)
+        public async Task<ActionResult> obrisiTehniku(int id)
         {
             try
             {
-                var odeca = Context.Odecas.Where(p => p.Id == id).FirstOrDefault();
-                if (odeca == null)
+                var tehnika = Context.Tehnikas.Where(p => p.Id == id).FirstOrDefault();
+                if (tehnika == null)
                 {
                     return BadRequest("Ta kategorija ne postoji !");
                 }
                 else
                 {
-                    Context.Odecas.Remove(odeca);
+                    Context.Tehnikas.Remove(tehnika);
                     await Context.SaveChangesAsync();
-                    return Ok("Odeca je obrisana !");
+                    return Ok("Tehnika je obrisana !");
                 }
 
 
@@ -63,6 +62,6 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
-    }
 
+    }
 }

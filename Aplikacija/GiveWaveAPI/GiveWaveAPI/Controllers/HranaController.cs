@@ -1,28 +1,27 @@
 ﻿using GiveWaveAPI.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
 
 namespace GiveWaveAPI.Controllers
 {
     [ApiController]
     [Route("controller")]
-    public class OdecaController : ControllerBase
+    public class HranaController : ControllerBase
     {
         public GiveWaveDBContext Context { get; set; }
-        public OdecaController(GiveWaveDBContext context)
+        public HranaController(GiveWaveDBContext context)
         {
             Context = context;
         }
 
-        [Route("DodajOdecu")]
+        [Route("DodajHranu")]
         [HttpPost]
-        public async Task<ActionResult> dodajOdecu([FromBody] Odeca odeca)
+        public async Task<ActionResult> dodajHranu([FromBody] Hrana hrana)
         {
             try
             {
-                Context.Odecas.Add(odeca);
+                Context.Hranas.Add(hrana);
                 await Context.SaveChangesAsync();
-                return Ok("Odeca je dodata !");
+                return Ok("Hrana je dodata !");
             }
             catch (Exception e)
             {
@@ -30,30 +29,31 @@ namespace GiveWaveAPI.Controllers
             }
         }
 
-        [Route("PreuzmiOdecu")]
+        [Route("PreuzmiHranu")]
         [HttpGet]
 
-        public async  Task<ActionResult> preuzmiOdecu()
+        public async Task<ActionResult> preuzmiHranu()
         {
-            return  Ok(Context.Odecas);
+            return Ok(Context.Hranas);
         }
 
-        [Route("ObrisiOdecu")]
+
+        [Route("ObrisiHranu")]
         [HttpDelete]
-        public async Task<ActionResult> obrisiOdecu(int id)
+        public async Task<ActionResult> obrisiHranu(int id)
         {
             try
             {
-                var odeca = Context.Odecas.Where(p => p.Id == id).FirstOrDefault();
-                if (odeca == null)
+                var hrana = Context.Hranas.Where(p => p.Id == id).FirstOrDefault();
+                if (hrana == null)
                 {
                     return BadRequest("Ta kategorija ne postoji !");
                 }
                 else
                 {
-                    Context.Odecas.Remove(odeca);
+                    Context.Hranas.Remove(hrana);
                     await Context.SaveChangesAsync();
-                    return Ok("Odeca je obrisana !");
+                    return Ok("Hrana je obrisana !");
                 }
 
 
@@ -65,4 +65,7 @@ namespace GiveWaveAPI.Controllers
         }
     }
 
+
+
 }
+

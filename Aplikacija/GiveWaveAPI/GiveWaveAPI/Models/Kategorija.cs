@@ -8,7 +8,9 @@ namespace GiveWaveAPI.Models
     public partial class Kategorija
     {
         [Key]
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Ime { get; set; }
+
+
     }
 }

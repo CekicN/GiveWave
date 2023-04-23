@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
-    [Migration("20230423114606_v1")]
-    partial class v1
+    [Migration("20230423192041_V1")]
+    partial class V1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,14 +27,17 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Hrana", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DatumIsteka")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("KategorijaId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("KategorijaId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Opis")
                         .HasColumnType("nvarchar(max)");
@@ -52,11 +55,14 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Igracka", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("KategorijeId")
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("KategorijeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Opis")
                         .HasColumnType("nvarchar(max)");
@@ -77,8 +83,11 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Kategorija", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Ime")
                         .HasColumnType("nvarchar(max)");
@@ -90,14 +99,17 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Krv", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DatumDoniranja")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("KategorijeId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("KategorijeId")
+                        .HasColumnType("int");
 
                     b.Property<double>("KolicinaDoniraneKrvi")
                         .HasColumnType("float");
@@ -118,8 +130,11 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Novac", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("BrojTransakcije")
                         .HasColumnType("int");
@@ -134,8 +149,8 @@ namespace GiveWaveAPI.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("KategorijeId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("KategorijeId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -146,11 +161,14 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Obuca", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("KategorijeId")
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("KategorijeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Namena")
                         .HasMaxLength(30)
@@ -176,11 +194,14 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Odeca", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("KategorijeId")
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("KategorijeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Namena")
                         .HasMaxLength(50)
@@ -214,8 +235,11 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Ostalo", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Alat")
                         .HasMaxLength(100)
@@ -229,8 +253,8 @@ namespace GiveWaveAPI.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("KategorijeId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("KategorijeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Knjige")
                         .HasMaxLength(100)
@@ -281,8 +305,11 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.ProfilKorisnika", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Adresa")
                         .HasMaxLength(100)
@@ -331,15 +358,18 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Tehnika", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("GodinaProizvodnje")
                         .HasMaxLength(4)
                         .HasColumnType("int");
 
-                    b.Property<string>("KategorijeId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("KategorijeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Marka")
                         .HasMaxLength(50)
@@ -350,8 +380,8 @@ namespace GiveWaveAPI.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Specifikacije")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Stanje")
                         .HasMaxLength(100)
