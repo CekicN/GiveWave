@@ -23,8 +23,11 @@ builder.Services.AddCors(options =>
     {
         policy.AllowAnyHeader()
               .AllowAnyMethod()
-              .WithOrigins("https://localhost:5555/",
-                           "https://localhost:5555/");
+              .AllowAnyOrigin();
+              //.WithOrigins("https://localhost:5555/",
+              //             "https://localhost:5555/",
+              //             "https://localhost:4200/",
+              //             "http://localhost:4200/");
     });
 });
 
@@ -117,8 +120,6 @@ if (app.Environment.IsDevelopment())
 app.UseCors("CORS");
 
 app.UseHttpsRedirection();
-
-app.UseCors("MyPolicy");
 
 app.UseAuthentication();
 

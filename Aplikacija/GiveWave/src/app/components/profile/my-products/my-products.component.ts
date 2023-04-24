@@ -11,6 +11,7 @@ export class MyProductsComponent implements OnInit {
 
   naslov:string[] = ["Name", "Description"]
   searchText = '';
+  ownUsername!:string;
   products:MyProducts[] = [];
   constructor(private services:ProfileService) {}
   ngOnInit(): void {
@@ -18,6 +19,7 @@ export class MyProductsComponent implements OnInit {
       this.products = p;
       console.log(this.products);
     })
+    console.log(localStorage);
   }
 
   

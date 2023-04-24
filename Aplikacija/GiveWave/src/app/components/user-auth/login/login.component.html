@@ -9,17 +9,17 @@
                     <div class="panel-body p-3">
                         <form [formGroup]= "loginForm" *ngIf="{loggedIn:loggedIn$ | async} as loginStatus">
                             <div class="form-group pt-3">
-                                <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">
+                                <div class="input-field" [class.error]="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">
                                     <fa-icon [icon]="['far', 'user']" style="color:rgb(63, 62, 62);"></fa-icon>
-                                    <input formControlName="username" type="text" placeholder="Username">
+                                    <input formControlName="email" type="text" placeholder="Email">
                                 </div>
                             </div>
-                            <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" class="text-danger">*Username is required</small>
+                            <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')" class="text-danger">*Username is required</small>
                             <div class="form-group pt-3">
                                 <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
                                     <fa-icon [icon]="['fas', 'lock']" style="color:rgb(78, 76, 76);"></fa-icon>
-                                    <input formControlName="password" type="password" placeholder="Password">
-                                    <span (click)="hideShowPass()" class="fa fa-eye-slash"></span>
+                                    <input formControlName="password" [type]="type" placeholder="Password">
+                                    <fa-icon (click)="hideShowPass()" [icon]="['fas', eyeIcon]"></fa-icon>
                                 </div>
                             </div>
                             <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Password is required</small>

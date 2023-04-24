@@ -6,7 +6,8 @@ import { HttpClient,HttpClientModule } from "@angular/common/http"
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl:string="https://localhost:7200/api/User/"
+  
+  private baseUrl:string="https://localhost:7200/api/"
 
   constructor(private http: HttpClient) { }
 
@@ -14,8 +15,9 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}register`,userObj)
 
   }
+  //https://localhost:7200/api/Authentication/Login
   login(loginObj:any){
-    return this.http.post<any>(`${this.baseUrl}authenticate`,loginObj)
+    return this.http.post<any>(`${this.baseUrl}Authentication/Login`,loginObj)
 
   }
 }

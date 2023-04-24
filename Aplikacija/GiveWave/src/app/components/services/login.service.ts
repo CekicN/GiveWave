@@ -7,7 +7,7 @@ import { LastActiveService } from './last-active.service';
 })
 export class LoginService {
   private localStorageKey:string = '__loggedIn';
-
+  // private userKey:string = '_user';
   private loggedIn!: BehaviorSubject<boolean>;
   public loggedIn$!: Observable<boolean>;
 
