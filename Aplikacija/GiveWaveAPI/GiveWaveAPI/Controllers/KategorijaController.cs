@@ -46,7 +46,7 @@ namespace GiveWaveAPI.Controllers
 
         [Route("ObrisiKategoriju")]
         [HttpDelete]
-        public async Task<ActionResult> obrisiKategoriju(string id)
+        public async Task<ActionResult> obrisiKategoriju(int id)
         {
             try
             {

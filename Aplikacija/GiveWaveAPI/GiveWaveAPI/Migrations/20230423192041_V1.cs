@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GiveWaveAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class v1 : Migration
+    public partial class V1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,7 +54,8 @@ namespace GiveWaveAPI.Migrations
                 name: "Kategorijas",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Ime = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -66,7 +67,8 @@ namespace GiveWaveAPI.Migrations
                 name: "ProfilKorisnikas",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Ime = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Prezime = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
@@ -194,11 +196,12 @@ namespace GiveWaveAPI.Migrations
                 name: "Hranas",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    KategorijaId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Vrsta = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     DatumIsteka = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Opis = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Opis = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    KategorijaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -214,11 +217,12 @@ namespace GiveWaveAPI.Migrations
                 name: "Igrackas",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    KategorijeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Vrsta = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Stanje = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Opis = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Opis = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    KategorijeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -234,12 +238,13 @@ namespace GiveWaveAPI.Migrations
                 name: "Krvs",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    KategorijeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     KrvnaGrupa = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: true),
                     DatumDoniranja = table.Column<DateTime>(type: "datetime2", nullable: false),
                     KolicinaDoniraneKrvi = table.Column<double>(type: "float", nullable: false),
-                    LokacijaDoniranja = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    LokacijaDoniranja = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    KategorijeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -255,12 +260,13 @@ namespace GiveWaveAPI.Migrations
                 name: "Novacs",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     BrojTransakcije = table.Column<int>(type: "int", nullable: false),
-                    KategorijeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Iznos = table.Column<int>(type: "int", nullable: false),
                     IzvorNovca = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    DatumDonacije = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DatumDonacije = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    KategorijeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -276,12 +282,13 @@ namespace GiveWaveAPI.Migrations
                 name: "Obucas",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    KategorijeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Stanje = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     Velicina = table.Column<int>(type: "int", maxLength: 2, nullable: false),
                     Namena = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
-                    Opis = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Opis = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    KategorijeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -297,14 +304,15 @@ namespace GiveWaveAPI.Migrations
                 name: "Odecas",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    KategorijeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     VrstaOdece = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Stanje = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Velicina = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Namena = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Uzrast = table.Column<int>(type: "int", nullable: false),
-                    Opis = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
+                    Opis = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    KategorijeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -320,8 +328,8 @@ namespace GiveWaveAPI.Migrations
                 name: "Ostalos",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    KategorijeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Kozmetika = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     HigijenskiProizvodi = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Elektronika = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
@@ -334,7 +342,8 @@ namespace GiveWaveAPI.Migrations
                     Lekovi = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     KucniAparati = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Vozila = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    ZdravstvenaOprema = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
+                    ZdravstvenaOprema = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    KategorijeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -350,14 +359,15 @@ namespace GiveWaveAPI.Migrations
                 name: "Tehnikas",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    KategorijeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Vrsta = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Stanje = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     GodinaProizvodnje = table.Column<int>(type: "int", maxLength: 4, nullable: false),
                     Marka = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Model = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    Specifikacije = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
+                    Specifikacije = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    KategorijeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
