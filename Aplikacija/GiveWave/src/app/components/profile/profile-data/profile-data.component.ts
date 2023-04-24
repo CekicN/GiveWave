@@ -19,5 +19,7 @@ export class ProfileDataComponent implements OnInit {
     this.service.getUsersById(1).subscribe(user => {
       this.user = user;
     })
+    this.service.data = this.user;
   }
+  
 }

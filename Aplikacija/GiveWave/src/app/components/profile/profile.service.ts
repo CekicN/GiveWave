@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { User } from 'app/Models/User';
 import { MyProducts } from 'app/Models/MyProducts';
@@ -11,6 +11,8 @@ const donations = "http://localhost:3000/DonationHistory"
   providedIn: 'root'
 })
 export class ProfileService {
+  user!:User;
+  userChanged:EventEmitter<User> = new EventEmitter();
 
   constructor(private http: HttpClient) {}
   getAllUsers()
@@ -28,5 +30,13 @@ export class ProfileService {
   getDonations()
   {
     return this.http.get<DonationHistory[]>(donations);
+  }
+
+  get data(): any {
+    return this.user;
+  }
+  set data(val: any) {
+    this.user = val;
+    this.userChanged.emit(val);
   }
 }

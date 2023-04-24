@@ -7,17 +7,17 @@ import { HttpClient,HttpClientModule } from "@angular/common/http"
 })
 export class AuthService {
   
-  private baseUrl:string="https://localhost:7200/api/"
+  private baseUrl:string="https://localhost:7200/api/Authentication/"
 
   constructor(private http: HttpClient) { }
 
   signUp(userObj:any){
-    return this.http.post<any>(`${this.baseUrl}register`,userObj)
+    return this.http.post<any>(`${this.baseUrl}Register`,userObj)
 
   }
   //https://localhost:7200/api/Authentication/Login
   login(loginObj:any){
-    return this.http.post<any>(`${this.baseUrl}Authentication/Login`,loginObj)
+    return this.http.post<any>(`${this.baseUrl}Login`,loginObj)
 
   }
 }
