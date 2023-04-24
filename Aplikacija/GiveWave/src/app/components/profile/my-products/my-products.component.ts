@@ -3,6 +3,7 @@ import { ProfileService } from '../profile.service';
 import { MyProducts } from 'app/Models/MyProducts';
 import { MyProductsFilterPipe } from 'app/pipes/my-products-filter.pipe';
 import { ProfileDataComponent } from '../profile-data/profile-data.component';
+import { User } from 'app/Models/User';
 @Component({
   selector: 'app-my-products',
   templateUrl: './my-products.component.html',
@@ -12,7 +13,6 @@ export class MyProductsComponent implements OnInit {
 
   naslov:string[] = ["Name", "Description"]
   searchText = '';
-  ownEmail = localStorage.getItem('email');
   products:MyProducts[] = [];
   constructor(private services:ProfileService) {
   }
@@ -23,13 +23,9 @@ export class MyProductsComponent implements OnInit {
     })
     console.log(localStorage);
   }
-  
   isVisible():boolean
   {
-    if(this.services.user.email === this.ownEmail)
-    {
-      return true;
-    }
-    return false;
+    //Email iz profila === email iz prijave
+    return this.services.email === localStorage.getItem('email');
   }
 }

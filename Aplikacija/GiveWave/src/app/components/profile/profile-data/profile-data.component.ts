@@ -18,8 +18,8 @@ export class ProfileDataComponent implements OnInit {
   ngOnInit(): void {
     this.service.getUsersById(1).subscribe(user => {
       this.user = user;
+      this.service.email = user.email
     })
-    this.service.data = this.user;
   }
   
 }

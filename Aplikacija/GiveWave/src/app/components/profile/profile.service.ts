@@ -11,9 +11,7 @@ const donations = "http://localhost:3000/DonationHistory"
   providedIn: 'root'
 })
 export class ProfileService {
-  user!:User;
-  userChanged:EventEmitter<User> = new EventEmitter();
-
+  public email:string = '';
   constructor(private http: HttpClient) {}
   getAllUsers()
   {
@@ -32,11 +30,4 @@ export class ProfileService {
     return this.http.get<DonationHistory[]>(donations);
   }
 
-  get data(): any {
-    return this.user;
-  }
-  set data(val: any) {
-    this.user = val;
-    this.userChanged.emit(val);
-  }
 }

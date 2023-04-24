@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'app/components/services/login.service';
 import { Observable } from 'rxjs';
 
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class NavigationBarComponent {
 
   public loggedIn$!: Observable<boolean>;
-  constructor(private loginService:LoginService)
+  constructor(private loginService:LoginService, private router:Router)
   {
     this.loggedIn$ = loginService.loggedIn$;
   }
@@ -18,5 +19,7 @@ export class NavigationBarComponent {
   public logOut()
   {
     this.loginService.logOut();
+    localStorage.removeItem('email');
+    this.router.navigate(['/']);
   }
 }
