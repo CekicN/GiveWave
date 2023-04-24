@@ -101,6 +101,111 @@
                     "opis": "Farmerice su stare, iznosene..."
                 }
             }
+        },
+        {
+            
+        "id":1,
+            "Naziv": "Majca",
+            "Kategorija": {
+                "type": "odeca",
+                "podaci": {
+                    "VrstaOdece": "majca",
+                    "Stanje": "Novo",
+                    "Velicina": "XL",
+                    "Uzrast": "od 15 god.",
+                    "opis": "Majca je nova, dajem je jer mi se ne svidja..."
+                }
+            }
+        },
+        {
+            "id":2,
+            "Naziv": "Farmerice",
+            "Kategorija": {
+                "type": "odeca",
+                "podaci": {
+                    "VrstaOdece": "Farmerice",
+                    "Stanje": "Staro",
+                    "Velicina": "L",
+                    "Uzrast": "od 5 do 15 god",
+                    "opis": "Farmerice su stare, iznosene..."
+                }
+            }
+        },
+        {
+            "id":3,
+            "Naziv": "Farmerice",
+            "Kategorija": {
+                "type": "odeca",
+                "podaci": {
+                    "VrstaOdece": "Farmerice",
+                    "Stanje": "Staro",
+                    "Velicina": "L",
+                    "Uzrast": "od 5 do 15 god",
+                    "opis": "Farmerice su stare, iznosene..."
+                }
+            }
+        }
+    ],
+    "DonationHistory":[
+        {
+            "id":1,
+            "Naziv":"Porodica Cekic",
+            "Adresa":"Kraljevica Marka 108",
+            "opis":"Porodica Cekic je ...",
+            "donacija":{
+                "naziv":"carape",
+                "kolicina":3
+            }
+        },
+        {
+            "id":2,
+            "Naziv":"Porodica Mihajlovic",
+            "Adresa":"Kraljevica Marka 108",
+            "opis":"Porodica Cekic je ...",
+            "donacija":{
+                "naziv":"carape",
+                "kolicina":3
+            }
+        },
+        {
+            "id":3,
+            "Naziv":"Porodica Dinkic",
+            "Adresa":"Kraljevica Marka 108",
+            "opis":"Porodica Cekic je ...",
+            "donacija":{
+                "naziv":"carape",
+                "kolicina":3
+            }
+        },
+        {
+            "id":1,
+            "Naziv":"Porodica Cekic",
+            "Adresa":"Kraljevica Marka 108",
+            "opis":"Porodica Cekic je ...",
+            "donacija":{
+                "naziv":"carape",
+                "kolicina":3
+            }
+        },
+        {
+            "id":2,
+            "Naziv":"Porodica Mihajlovic",
+            "Adresa":"Kraljevica Marka 108",
+            "opis":"Porodica Cekic je ...",
+            "donacija":{
+                "naziv":"carape",
+                "kolicina":3
+            }
+        },
+        {
+            "id":3,
+            "Naziv":"Porodica Dinkic",
+            "Adresa":"Kraljevica Marka 108",
+            "opis":"Porodica Cekic je ...",
+            "donacija":{
+                "naziv":"carape",
+                "kolicina":3
+            }
         }
     ]
 }

@@ -13,18 +13,14 @@ import { FooterBarComponent } from './components/core/footer-bar/footer-bar.comp
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductsModule } from './components/products/products.module';
 import { DonateModule } from './components/donate/donate.module';
-<<<<<<< HEAD
+
 import { AuthService } from 'app/services/auth.service';
 
-=======
+
 import { ProfileModule } from './components/profile/profile.module';
-import { HttpClientModule } from '@angular/common/http';
-<<<<<<< HEAD
->>>>>>> 6400b6ec6e186fc93adf523113794f6a400988b4
-=======
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LastActiveService } from './components/services/last-active.service';
->>>>>>> b0467c72077708ea8df7e449cf4691955126062a
 
 @NgModule({
   declarations: [
@@ -32,7 +28,7 @@ import { LastActiveService } from './components/services/last-active.service';
     HomeComponent,
     AboutUsComponent,
     NavigationBarComponent,
-    FooterBarComponent,
+    FooterBarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,19 +36,9 @@ import { LastActiveService } from './components/services/last-active.service';
     ProductsModule,
     UserAuthModule,
     DonateModule,
-<<<<<<< HEAD
     ReactiveFormsModule,
-<<<<<<< HEAD
-    HttpClientModule
-
-=======
-    ProfileModule,
-    HttpClientModule
->>>>>>> 6400b6ec6e186fc93adf523113794f6a400988b4
-=======
-    ReactiveFormsModule,   
-    ProfileModule,
     HttpClientModule,
+    ProfileModule,
     FontAwesomeModule
   ],
   providers: [
@@ -63,7 +49,6 @@ import { LastActiveService } from './components/services/last-active.service';
       useFactory:(LastActiveService:LastActiveService) => () =>
       LastActiveService.setUp(),
     }
->>>>>>> b0467c72077708ea8df7e449cf4691955126062a
   ],
   bootstrap: [AppComponent]
 })

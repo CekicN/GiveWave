@@ -1,6 +1,7 @@
 import { group } from '@angular/animations';
 import { Component} from '@angular/core';
 import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faFacebook, faGithub, faGoogle} from '@fortawesome/free-brands-svg-icons';
 import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -22,11 +23,12 @@ export class LoginComponent {
   loginForm!: FormGroup;
 
 
-  constructor(private fb: FormBuilder, library:FaIconLibrary, private loginService:LoginService){
+  constructor(private fb: FormBuilder, library:FaIconLibrary, private loginService:LoginService, private route:Router){
     library.addIcons(faFacebook, faGithub, faGoogle, faLock, faUser);
     this.loggedIn$ = loginService.loggedIn$;
 
   }
+  
   ngOnInit():void{
     this.loginForm=this.fb.group({
       username: ['',[Validators.required]],
@@ -43,6 +45,7 @@ export class LoginComponent {
     if(this.loginForm.valid){
       console.log(this.loginForm.value);
       this.logIn();//Funkcija koja postavlja status u logovan
+      this.route.navigate(['/']);
       //send the obj to database
     }else{
       //throw the error using toaster and required fields
@@ -69,7 +72,6 @@ export class LoginComponent {
   public logIn()
   {
     this.loginService.logIn();
-  }
-
+  }
 
 }

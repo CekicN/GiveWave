@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { User } from 'app/Models/User';
 import { MyProducts } from 'app/Models/MyProducts';
+import { DonationHistory } from 'app/Models/DonationsHistory';
 
 const Users = "http://localhost:3000/users";
-const produc = "http://localhost:3000/MyProducts";
+const product = "http://localhost:3000/MyProducts";
+const donations = "http://localhost:3000/DonationHistory"
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +23,10 @@ export class ProfileService {
   }
   getMyProducts()
   {
-    return this.http.get<MyProducts[]>(produc);
+    return this.http.get<MyProducts[]>(product);
+  }
+  getDonations()
+  {
+    return this.http.get<DonationHistory[]>(donations);
   }
 }

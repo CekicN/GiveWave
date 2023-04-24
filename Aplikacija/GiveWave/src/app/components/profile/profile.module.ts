@@ -6,7 +6,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfileImageComponent } from './profile-image/profile-image.component';
 import { MyProductsComponent } from './my-products/my-products.component';
 import { DonateHistoryComponent } from './donate-history/donate-history.component';
-
+import { MyProductsFilterPipe } from 'app/pipes/my-products-filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,11 +16,13 @@ import { DonateHistoryComponent } from './donate-history/donate-history.componen
     ProfileDataComponent,
     ProfileImageComponent,
     MyProductsComponent,
-    DonateHistoryComponent
+    DonateHistoryComponent,
+    MyProductsFilterPipe
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   exports:[]
 })
