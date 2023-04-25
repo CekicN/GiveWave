@@ -15,5 +15,6 @@ namespace GiveWaveAPI.Models
         public double KolicinaDoniraneKrvi { get; set; }
         public string LokacijaDoniranja { get; set; }
         public Kategorija Kategorije { get; set; }
+
     }
 }

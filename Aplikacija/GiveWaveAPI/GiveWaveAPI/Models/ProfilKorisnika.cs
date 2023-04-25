@@ -36,6 +36,11 @@ namespace GiveWaveAPI.Models
         public int BrojLajkova { get; set; }
         public byte[] Image { get; set; }
         public DateTime DatumRegistracije { get; set; }
+        public List<Proizvod> Proizvodi { get; set; }
+        public List<User> Useri { get; set; }
+       
+
+
 
     }
 }

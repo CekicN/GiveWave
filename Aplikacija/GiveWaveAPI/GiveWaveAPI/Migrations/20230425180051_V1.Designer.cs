@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
-    [Migration("20230423192041_V1")]
+    [Migration("20230425180051_V1")]
     partial class V1
     {
         /// <inheritdoc />
@@ -303,6 +303,37 @@ namespace GiveWaveAPI.Migrations
                     b.ToTable("Ostalos");
                 });
 
+            modelBuilder.Entity("GiveWaveAPI.Models.Porodica", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Adresa")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("BrClanova")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NajpotrebnijeStvari")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Opis")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<byte[]>("Slika")
+                        .HasColumnType("varbinary(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Porodica");
+                });
+
             modelBuilder.Entity("GiveWaveAPI.Models.ProfilKorisnika", b =>
                 {
                     b.Property<int>("Id")
@@ -356,6 +387,47 @@ namespace GiveWaveAPI.Migrations
                     b.ToTable("ProfilKorisnikas");
                 });
 
+            modelBuilder.Entity("GiveWaveAPI.Models.Proizvod", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("KategorijaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Naziv")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Opis")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int?>("PorodicaId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProfilKorisnikaId")
+                        .HasColumnType("int");
+
+                    b.Property<byte[]>("Slika")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("KategorijaId");
+
+                    b.HasIndex("PorodicaId");
+
+                    b.HasIndex("ProfilKorisnikaId");
+
+                    b.ToTable("Proizvod");
+                });
+
             modelBuilder.Entity("GiveWaveAPI.Models.Tehnika", b =>
                 {
                     b.Property<int>("Id")
@@ -396,6 +468,21 @@ namespace GiveWaveAPI.Migrations
                     b.HasIndex("KategorijeId");
 
                     b.ToTable("Tehnikas");
+                });
+
+            modelBuilder.Entity("KategorijaPorodica", b =>
+                {
+                    b.Property<int>("KategorijeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PorodicaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("KategorijeId", "PorodicaId");
+
+                    b.HasIndex("PorodicaId");
+
+                    b.ToTable("KategorijaPorodica");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -462,6 +549,10 @@ namespace GiveWaveAPI.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -513,6 +604,10 @@ namespace GiveWaveAPI.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -600,10 +695,34 @@ namespace GiveWaveAPI.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("GiveWaveAPI.Models.User", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ProfilKorisnikaId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("ProfilKorisnikaId");
+
+                    b.HasDiscriminator().HasValue("User");
+                });
+
             modelBuilder.Entity("GiveWaveAPI.Models.Hrana", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorija")
-                        .WithMany()
+                        .WithMany("Hrana")
                         .HasForeignKey("KategorijaId");
 
                     b.Navigation("Kategorija");
@@ -612,7 +731,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Igracka", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
-                        .WithMany()
+                        .WithMany("Igracka")
                         .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
@@ -621,7 +740,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Krv", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
-                        .WithMany()
+                        .WithMany("Krv")
                         .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
@@ -630,7 +749,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Novac", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
-                        .WithMany()
+                        .WithMany("Novac")
                         .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
@@ -639,7 +758,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Obuca", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
-                        .WithMany()
+                        .WithMany("Obuca")
                         .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
@@ -648,7 +767,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Odeca", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
-                        .WithMany()
+                        .WithMany("Odeca")
                         .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
@@ -657,19 +776,53 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Ostalo", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
-                        .WithMany()
+                        .WithMany("Ostalo")
                         .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
                 });
 
+            modelBuilder.Entity("GiveWaveAPI.Models.Proizvod", b =>
+                {
+                    b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorija")
+                        .WithMany("Proizvod")
+                        .HasForeignKey("KategorijaId");
+
+                    b.HasOne("GiveWaveAPI.Models.Porodica", null)
+                        .WithMany("Proizvodi")
+                        .HasForeignKey("PorodicaId");
+
+                    b.HasOne("GiveWaveAPI.Models.ProfilKorisnika", "ProfilKorisnika")
+                        .WithMany("Proizvodi")
+                        .HasForeignKey("ProfilKorisnikaId");
+
+                    b.Navigation("Kategorija");
+
+                    b.Navigation("ProfilKorisnika");
+                });
+
             modelBuilder.Entity("GiveWaveAPI.Models.Tehnika", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
-                        .WithMany()
+                        .WithMany("Tehnika")
                         .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
+                });
+
+            modelBuilder.Entity("KategorijaPorodica", b =>
+                {
+                    b.HasOne("GiveWaveAPI.Models.Kategorija", null)
+                        .WithMany()
+                        .HasForeignKey("KategorijeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GiveWaveAPI.Models.Porodica", null)
+                        .WithMany()
+                        .HasForeignKey("PorodicaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -721,6 +874,48 @@ namespace GiveWaveAPI.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("GiveWaveAPI.Models.User", b =>
+                {
+                    b.HasOne("GiveWaveAPI.Models.ProfilKorisnika", "ProfilKorisnika")
+                        .WithMany("Useri")
+                        .HasForeignKey("ProfilKorisnikaId");
+
+                    b.Navigation("ProfilKorisnika");
+                });
+
+            modelBuilder.Entity("GiveWaveAPI.Models.Kategorija", b =>
+                {
+                    b.Navigation("Hrana");
+
+                    b.Navigation("Igracka");
+
+                    b.Navigation("Krv");
+
+                    b.Navigation("Novac");
+
+                    b.Navigation("Obuca");
+
+                    b.Navigation("Odeca");
+
+                    b.Navigation("Ostalo");
+
+                    b.Navigation("Proizvod");
+
+                    b.Navigation("Tehnika");
+                });
+
+            modelBuilder.Entity("GiveWaveAPI.Models.Porodica", b =>
+                {
+                    b.Navigation("Proizvodi");
+                });
+
+            modelBuilder.Entity("GiveWaveAPI.Models.ProfilKorisnika", b =>
+                {
+                    b.Navigation("Proizvodi");
+
+                    b.Navigation("Useri");
                 });
 #pragma warning restore 612, 618
         }

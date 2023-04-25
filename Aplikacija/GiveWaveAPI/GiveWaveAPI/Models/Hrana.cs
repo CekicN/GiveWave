@@ -15,5 +15,6 @@ namespace GiveWaveAPI.Models
         public DateTime DatumIsteka { get; set; }
         public string Opis { get; set; }
         public Kategorija Kategorija { get; set; }
+
     }
 }
