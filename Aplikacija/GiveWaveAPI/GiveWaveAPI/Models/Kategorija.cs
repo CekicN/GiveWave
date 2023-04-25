@@ -21,7 +21,5 @@ namespace GiveWaveAPI.Models
         public List<Porodica> Porodica { get; set; }
         public List<Proizvod> Proizvod { get; set; }
 
-
-
     }
 }
