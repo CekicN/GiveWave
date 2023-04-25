@@ -12,7 +12,7 @@ import { IconName, faFloppyDisk, faPenToSquare } from '@fortawesome/free-solid-s
 export class ProfileDataComponent implements OnInit {
   
   public user!:User;
-  icon:IconName = 'pen-to-square';
+  iconsName:IconName[] = ['pen-to-square','pen-to-square','pen-to-square','pen-to-square'];
   constructor(private service:ProfileService, library:FaIconLibrary){
     library.addIcons(faPenToSquare, faFloppyDisk);
   }
@@ -22,21 +22,45 @@ export class ProfileDataComponent implements OnInit {
       this.service.email = user.email
     })
   }
-  EditData(event:Event)
+  EditData(event:Event, num:number)
   {
-    const edit = this.icon === 'pen-to-square'?"true" :"false";
-    const kliknut = event.target as HTMLElement;
-    const input = kliknut.closest('div')?.querySelector('p');
+    const edit = this.iconsName[num] === 'pen-to-square'?"true" :"false";
+    const clicked = event.target as HTMLElement;
+    
+    const input = clicked.closest('div')?.querySelector('p');
     input!.setAttribute('contenteditable', edit);
 
-    this.icon = this.icon === 'floppy-disk' ? 'pen-to-square' : 'floppy-disk';
-    if(this.icon === 'floppy-disk')
+    
+    if(this.iconsName[num] === 'floppy-disk')
     {
-      this.SaveChanges(input);
+      this.SaveChanges(input, num);
     }
+    this.iconsName[num] = this.iconsName[num] === 'floppy-disk' ? 'pen-to-square' : 'floppy-disk';
   }
-  SaveChanges(input:HTMLElement|undefined|null)
+  SaveChanges(input:HTMLElement|undefined|null, num:number)
   {
-    //metoda koja cuva izmene
+    console.log(input?.innerHTML);
+    if(input)
+    {
+      switch(num)
+      {
+        case 0:
+          this.user.ime = input?.innerHTML.substring(0,input.innerHTML.indexOf(" "));
+          this.user.prezime = input?.innerHTML.substring(input.innerHTML.indexOf(" ")+1);
+        break;
+        case 1:
+          this.user.email = input?.innerHTML;
+        break;
+        case 2:
+          this.user.brTelefona = input?.innerHTML;
+        break;
+        case 3:
+          this.user.datumRodjenja = new Date(input?.innerHTML);
+        break;
+        default:
+      }
+      //poziv apija za update podataka update(user);
+      console.log(this.user);
+    }
   }
 }

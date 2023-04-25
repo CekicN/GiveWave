@@ -18,4 +18,19 @@ export class ProfileImageComponent implements OnInit {
       this.user = user;
     })
   }
+  like()
+  {
+    
+    const icon = document.querySelector('.srce');
+    if(icon!.getAttribute('style') === null)
+    {
+      this.user.lajkovi++;
+      icon?.setAttribute('style', 'color:red;');
+    }
+    else
+    {
+      this.user.lajkovi--;
+      icon?.removeAttribute('style');
+    }
+  }
 }
