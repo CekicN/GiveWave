@@ -1,0 +1,13 @@
+.col-sm-9
+{
+    display: flex;
+    justify-content: space-between;
+}
+.text-muted
+{
+    width: 50%;
+}
+fa-icon
+{
+    margin-right: 20px;
+}
