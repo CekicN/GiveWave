@@ -39,7 +39,7 @@ namespace GiveWaveAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Porodica",
+                name: "Porodice",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -52,7 +52,7 @@ namespace GiveWaveAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Porodica", x => x.Id);
+                    table.PrimaryKey("PK_Porodice", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -303,9 +303,9 @@ namespace GiveWaveAPI.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_KategorijaPorodica_Porodica_PorodicaId",
+                        name: "FK_KategorijaPorodica_Porodice_PorodicaId",
                         column: x => x.PorodicaId,
-                        principalTable: "Porodica",
+                        principalTable: "Porodice",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -346,7 +346,7 @@ namespace GiveWaveAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Proizvod",
+                name: "Proizvods",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -360,19 +360,19 @@ namespace GiveWaveAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Proizvod", x => x.Id);
+                    table.PrimaryKey("PK_Proizvods", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Proizvod_Kategorijas_KategorijaId",
+                        name: "FK_Proizvods_Kategorijas_KategorijaId",
                         column: x => x.KategorijaId,
                         principalTable: "Kategorijas",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Proizvod_Porodica_PorodicaId",
+                        name: "FK_Proizvods_Porodice_PorodicaId",
                         column: x => x.PorodicaId,
-                        principalTable: "Porodica",
+                        principalTable: "Porodice",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Proizvod_ProfilKorisnikas_ProfilKorisnikaId",
+                        name: "FK_Proizvods_ProfilKorisnikas_ProfilKorisnikaId",
                         column: x => x.ProfilKorisnikaId,
                         principalTable: "ProfilKorisnikas",
                         principalColumn: "Id");
@@ -548,18 +548,18 @@ namespace GiveWaveAPI.Migrations
                 column: "KategorijeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Proizvod_KategorijaId",
-                table: "Proizvod",
+                name: "IX_Proizvods_KategorijaId",
+                table: "Proizvods",
                 column: "KategorijaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Proizvod_PorodicaId",
-                table: "Proizvod",
+                name: "IX_Proizvods_PorodicaId",
+                table: "Proizvods",
                 column: "PorodicaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Proizvod_ProfilKorisnikaId",
-                table: "Proizvod",
+                name: "IX_Proizvods_ProfilKorisnikaId",
+                table: "Proizvods",
                 column: "ProfilKorisnikaId");
 
             migrationBuilder.CreateIndex(
@@ -611,7 +611,7 @@ namespace GiveWaveAPI.Migrations
                 name: "Ostalos");
 
             migrationBuilder.DropTable(
-                name: "Proizvod");
+                name: "Proizvods");
 
             migrationBuilder.DropTable(
                 name: "Tehnikas");
@@ -623,7 +623,7 @@ namespace GiveWaveAPI.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Porodica");
+                name: "Porodice");
 
             migrationBuilder.DropTable(
                 name: "Kategorijas");

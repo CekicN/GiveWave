@@ -22,6 +22,11 @@ export class ProfileDataComponent implements OnInit {
       this.service.email = user.email
     })
   }
+  isVisible():boolean
+  {
+    //Email iz profila === email iz prijave
+    return this.service.email === localStorage.getItem('email');
+  }
   EditData(event:Event, num:number)
   {
     const edit = this.iconsName[num] === 'pen-to-square'?"true" :"false";

@@ -29,5 +29,4 @@ export class ProfileService {
   {
     return this.http.get<DonationHistory[]>(donations);
   }
-
 }

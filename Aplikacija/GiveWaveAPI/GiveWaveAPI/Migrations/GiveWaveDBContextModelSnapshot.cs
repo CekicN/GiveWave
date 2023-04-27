@@ -328,7 +328,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Porodica");
+                    b.ToTable("Porodice");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.ProfilKorisnika", b =>
@@ -422,7 +422,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasIndex("ProfilKorisnikaId");
 
-                    b.ToTable("Proizvod");
+                    b.ToTable("Proizvods");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.Tehnika", b =>

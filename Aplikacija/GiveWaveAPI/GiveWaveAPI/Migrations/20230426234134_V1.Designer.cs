@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
-    [Migration("20230425180051_V1")]
+    [Migration("20230426234134_V1")]
     partial class V1
     {
         /// <inheritdoc />
@@ -331,7 +331,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Porodica");
+                    b.ToTable("Porodice");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.ProfilKorisnika", b =>
@@ -425,7 +425,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasIndex("ProfilKorisnikaId");
 
-                    b.ToTable("Proizvod");
+                    b.ToTable("Proizvods");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.Tehnika", b =>
