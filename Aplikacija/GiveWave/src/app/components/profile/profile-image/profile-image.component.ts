@@ -17,7 +17,7 @@ export class ProfileImageComponent implements OnInit {
     library.addIcons(faHeart, faPen);
   }
   ngOnInit(): void {
-    this.service.getUsersById(1).subscribe(user => {
+    this.service.getUser(localStorage.getItem('email')).subscribe(user => {
       this.user = user;
     })
   }

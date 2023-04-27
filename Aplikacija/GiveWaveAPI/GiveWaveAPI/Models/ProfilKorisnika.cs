@@ -1,23 +1,29 @@
-﻿using System;
+﻿using GiveWaveAPI.Models.DTOs;
+using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json;
 
 namespace GiveWaveAPI.Models
 {
     public partial class ProfilKorisnika
     {
+
         [Key]
         public int Id { get; set; }
 
-        [MaxLength(50)]
-        public string Ime { get; set; }
+        public string userID { get; set; }
+        public IdentityUser user { get; set; }
+        //[MaxLength(50)]
+        //public string Ime { get; set; }
 
-        [MaxLength(50)]
-        public string Prezime { get; set; }
+        //[MaxLength(50)]
+        //public string Prezime { get; set; }
 
-        [MaxLength(50)]
-        public string Email { get; set; }
+        //[MaxLength(50)]
+        //public string Email { get; set; }
 
         [MaxLength(50)]
         [RegularExpression("###-###-####\r\n(###) ###-####\r\n### ### ####\r\n###.###.####")]
@@ -37,7 +43,7 @@ namespace GiveWaveAPI.Models
         public byte[] Image { get; set; }
         public DateTime DatumRegistracije { get; set; }
         public List<Proizvod> Proizvodi { get; set; }
-        public List<User> Useri { get; set; }
+       // public List<User> Useri { get; set; }
        
 
 

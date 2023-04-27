@@ -8,7 +8,7 @@
         <img src="{{'data:'+user.slika.media.type+';'+user.slika.media.binaryEncoding+',' + user.slika.type}}"
           class="rounded-circle img-fluid" style="width: 150px;">
       </span>
-      <h5 class="my-3">{{user.ime}} {{user.prezime}}</h5>
+      <h5 class="my-3">{{user.username}}</h5>
       <p class="text-muted mb-1" (click)="like()"><fa-icon [icon]="['fas','heart']" class="srce"></fa-icon>{{user.lajkovi}}</p>
       <div class="d-flex justify-content-center mb-2">
         <button *ngIf="isVisible()" type="button" class="btn btn-primary">Add Product</button>

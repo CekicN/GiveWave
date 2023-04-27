@@ -55,6 +55,7 @@ export class LoginComponent {
           },
           error:(err)=> {
             alert("doslo je do greske");
+            console.log(err);
           }
         }) 
       //send the obj to database
