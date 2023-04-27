@@ -17,10 +17,16 @@ export class ProfileDataComponent implements OnInit {
     library.addIcons(faPenToSquare, faFloppyDisk);
   }
   ngOnInit(): void {
-    this.service.getUsersById(1).subscribe(user => {
+    this.service.getUser("aca123@gmail.com").subscribe(user => {
       this.user = user;
-      this.service.email = user.email
+      console.log(this.user);
+      this.service.email = user.mail
     })
+  }
+  isVisible():boolean
+  {
+    //Email iz profila === email iz prijave
+    return this.service.email === localStorage.getItem('email');
   }
   EditData(event:Event, num:number)
   {
@@ -45,14 +51,13 @@ export class ProfileDataComponent implements OnInit {
       switch(num)
       {
         case 0:
-          this.user.ime = input?.innerHTML.substring(0,input.innerHTML.indexOf(" "));
-          this.user.prezime = input?.innerHTML.substring(input.innerHTML.indexOf(" ")+1);
+          this.user.username = input?.innerHTML.substring(input.innerHTML.indexOf(" ")+1);
         break;
         case 1:
-          this.user.email = input?.innerHTML;
+          this.user.mail = input?.innerHTML;
         break;
         case 2:
-          this.user.brTelefona = input?.innerHTML;
+          this.user.brTelefona = Number.parseInt(input?.innerHTML);
         break;
         case 3:
           this.user.datumRodjenja = new Date(input?.innerHTML);

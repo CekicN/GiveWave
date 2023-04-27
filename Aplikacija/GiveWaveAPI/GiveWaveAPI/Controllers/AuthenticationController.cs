@@ -21,15 +21,18 @@ public class AuthenticationController : ControllerBase
     private readonly UserManager<IdentityUser>  _userManager;
     //private readonly JWTConfig _jwtConfig;
     private readonly IConfiguration _configuration;
+    private readonly GiveWaveDBContext context;
     public AuthenticationController(
         UserManager<IdentityUser> userManager,
-        IConfiguration configuration
+        IConfiguration configuration,
+        GiveWaveDBContext c
        // JWTConfig jwtConfig
        )
     {
         _userManager = userManager;
         _configuration = configuration;
         //_jwtConfig = jwtConfig;
+        context = c;
         
     }
     [Route(template:"Register")]
@@ -62,12 +65,19 @@ public class AuthenticationController : ControllerBase
                 UserName = registerRequest.Username,
                // Password = registerRequest.Password,
                
-
             };
             var is_created = await _userManager.CreateAsync(new_user,registerRequest.Password);
 
             if(is_created.Succeeded) 
             {
+                if(new_user.Id != null)
+                {
+                    var profil = new ProfilKorisnika();
+                    profil.userID = new_user.Id;
+                    profil.DatumRegistracije = new DateTime(DateTime.Now.Ticks);
+                    context.Add(profil);
+                    context.SaveChanges();
+                }
                //generisemo token
                var token = GenerateJWTToken(new_user);
                 {

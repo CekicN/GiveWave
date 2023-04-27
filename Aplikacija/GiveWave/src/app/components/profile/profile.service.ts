@@ -1,10 +1,10 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { User } from 'app/Models/User';
 import { MyProducts } from 'app/Models/MyProducts';
 import { DonationHistory } from 'app/Models/DonationsHistory';
 
-const Users = "http://localhost:3000/users";
+const Users = "https://localhost:7200/controller/PreuzmiProfil";
 const product = "http://localhost:3000/MyProducts";
 const donations = "http://localhost:3000/DonationHistory"
 @Injectable({
@@ -17,9 +17,9 @@ export class ProfileService {
   {
     return this.http.get<User[]>(Users);
   }
-  getUsersById(id:number)
+  getUser(email:String|null)
   {
-    return this.http.get<User>(`${Users}/${id}`);
+    return this.http.post<User>(Users, `"${email}"`, { headers: { 'Content-Type': 'application/json' }});
   }
   getMyProducts()
   {
@@ -29,5 +29,4 @@ export class ProfileService {
   {
     return this.http.get<DonationHistory[]>(donations);
   }
-
 }

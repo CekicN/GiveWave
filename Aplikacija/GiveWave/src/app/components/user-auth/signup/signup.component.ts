@@ -36,7 +36,6 @@ export class SignupComponent {
       this.auth.signUp(this.signUpForm.value)
       .subscribe({
         next:(res=>{
-          alert(res.message)
           this.signUpForm.reset();
           this.router.navigate(['login']);
         })

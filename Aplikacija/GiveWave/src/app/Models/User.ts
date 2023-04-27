@@ -1,14 +1,13 @@
 export interface User
 {
-            id: number,
-            ime:string,
-            prezime:string,
-            email:string,
-            brTelefona:string,
+            mail:string,
+            username:string,
+            brTelefona:number,
+            adresa:string,
             datumRodjenja:Date,
+            datumRegistracije:Date,
             pol:string,
             statusAktivnosti:boolean,
-            datumRegistracije:Date,
             slika:slika,
             lajkovi:number
 }

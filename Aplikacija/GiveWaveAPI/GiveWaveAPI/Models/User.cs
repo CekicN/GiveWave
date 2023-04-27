@@ -16,7 +16,7 @@ namespace GiveWaveAPI.Models
         public string UserName { get; set; }
         [Required]
         public string Password { get; set; }
-        public ProfilKorisnika ProfilKorisnika { get; set; }
+       // public ProfilKorisnika ProfilKorisnika { get; set; }
 
 
     }

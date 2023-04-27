@@ -1,0 +1,11 @@
+fa-icon
+{
+    cursor: pointer;
+}
+span
+{
+    transform: translate(-26%);
+}
+input{
+    display: none;
+}

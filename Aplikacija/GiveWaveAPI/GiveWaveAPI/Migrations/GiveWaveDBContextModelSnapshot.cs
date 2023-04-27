@@ -328,7 +328,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Porodica");
+                    b.ToTable("Porodice");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.ProfilKorisnika", b =>
@@ -356,30 +356,23 @@ namespace GiveWaveAPI.Migrations
                     b.Property<DateTime>("DatumRodjenja")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Email")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<byte[]>("Image")
                         .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("Ime")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Pol")
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("Prezime")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("StatusAktivnosti")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("userID")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("userID");
 
                     b.ToTable("ProfilKorisnikas");
                 });
@@ -422,7 +415,7 @@ namespace GiveWaveAPI.Migrations
 
                     b.HasIndex("ProfilKorisnikaId");
 
-                    b.ToTable("Proizvod");
+                    b.ToTable("Proizvods");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.Tehnika", b =>
@@ -546,10 +539,6 @@ namespace GiveWaveAPI.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -601,10 +590,6 @@ namespace GiveWaveAPI.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -692,30 +677,6 @@ namespace GiveWaveAPI.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("GiveWaveAPI.Models.User", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ProfilKorisnikaId")
-                        .HasColumnType("int");
-
-                    b.HasIndex("ProfilKorisnikaId");
-
-                    b.HasDiscriminator().HasValue("User");
-                });
-
             modelBuilder.Entity("GiveWaveAPI.Models.Hrana", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorija")
@@ -777,6 +738,15 @@ namespace GiveWaveAPI.Migrations
                         .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
+                });
+
+            modelBuilder.Entity("GiveWaveAPI.Models.ProfilKorisnika", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "user")
+                        .WithMany()
+                        .HasForeignKey("userID");
+
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.Proizvod", b =>
@@ -873,15 +843,6 @@ namespace GiveWaveAPI.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("GiveWaveAPI.Models.User", b =>
-                {
-                    b.HasOne("GiveWaveAPI.Models.ProfilKorisnika", "ProfilKorisnika")
-                        .WithMany("Useri")
-                        .HasForeignKey("ProfilKorisnikaId");
-
-                    b.Navigation("ProfilKorisnika");
-                });
-
             modelBuilder.Entity("GiveWaveAPI.Models.Kategorija", b =>
                 {
                     b.Navigation("Hrana");
@@ -911,8 +872,6 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.ProfilKorisnika", b =>
                 {
                     b.Navigation("Proizvodi");
-
-                    b.Navigation("Useri");
                 });
 #pragma warning restore 612, 618
         }
