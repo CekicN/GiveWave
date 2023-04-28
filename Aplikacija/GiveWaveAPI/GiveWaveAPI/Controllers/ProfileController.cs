@@ -23,18 +23,18 @@ namespace GiveWaveAPI.Controllers
         {
             try
             {
-                var profil = Context.ProfilKorisnikas.Include(x => x.user).Where(x => x.user.Email == mail).FirstOrDefault();
+                var profil = Context.ProfilKorisnikas.Where(x => x.Email == mail).FirstOrDefault();
                 if(profil == null)
                 {
                     return BadRequest("Profil nije nadjen");
                 }
                 return Ok(new
                 {
-                    mail = profil.user.Email,
-                    username = profil.user.UserName,
-                    brTelefona = profil.BrojTelefona,
+                    email = profil.Email,
+                    username = profil.Username,
+                    brojTelefona = profil.BrojTelefona,
                     adresa = profil.Adresa,
-                    datumrodjenja = profil.DatumRodjenja,
+                    datumRodjenja = profil.DatumRodjenja,
                     datumRegistracije = profil.DatumRegistracije,
                     pol = profil.Pol
                 });
@@ -44,6 +44,47 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [Route("updateData")]
+        [HttpPut]
+        public async Task<ActionResult> updateData([FromBody] ProfilKorisnika profil)
+        {
+            try
+            {
+                var profile = Context.ProfilKorisnikas.Where(pr => pr.Email == profil.Email).FirstOrDefault();
+                if (profile == null)
+                    return BadRequest("Profil nije pronadjen");
+                if (profile.Adresa != profil.Adresa)
+                    profile.Adresa = profil.Adresa;
+                if(profile.Pol != profil.Pol)
+                    profile.Pol = profil.Pol;
+                if (profile.Username != profil.Username)
+                    profile.Username = profil.Username;
+                if (profile.BrojTelefona != profil.BrojTelefona)
+                    profile.BrojTelefona = profil.BrojTelefona;
+                if (profile.DatumRodjenja != profil.DatumRodjenja)
+                    profile.DatumRodjenja = profil.DatumRodjenja;
+
+                Context.ProfilKorisnikas.Update(profile);
+                await Context.SaveChangesAsync();
+
+                return Ok(new
+                {
+                    email = profile.Email,
+                    username = profile.Username,
+                    brojTelefona = profile.BrojTelefona,
+                    adresa = profile.Adresa,
+                    datumRodjenja = profile.DatumRodjenja,
+                    datumRegistracije = profile.DatumRegistracije,
+                    pol = profile.Pol
+                });
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+
         //[Route("PreuzmiProfil")]
         //[HttpPost, Authorize]
         //public async Task<ActionResult> PreuzmiProfil([FromBody] String email)
@@ -92,7 +133,7 @@ namespace GiveWaveAPI.Controllers
         //    {
         //        return BadRequest(ex.Message);
         //    }
-            
+
         //}
     }
 }

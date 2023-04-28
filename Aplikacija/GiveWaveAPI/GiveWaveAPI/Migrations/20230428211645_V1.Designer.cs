@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
-    [Migration("20230427122411_V1")]
+    [Migration("20230428211645_V1")]
     partial class V1
     {
         /// <inheritdoc />
@@ -349,15 +349,18 @@ namespace GiveWaveAPI.Migrations
                     b.Property<int>("BrojLajkova")
                         .HasColumnType("int");
 
-                    b.Property<int>("BrojTelefona")
-                        .HasMaxLength(50)
-                        .HasColumnType("int");
+                    b.Property<string>("BrojTelefona")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DatumRegistracije")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DatumRodjenja")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<byte[]>("Image")
                         .HasColumnType("varbinary(max)");
@@ -370,12 +373,11 @@ namespace GiveWaveAPI.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("userID")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<string>("Username")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("userID");
 
                     b.ToTable("ProfilKorisnikas");
                 });
@@ -741,15 +743,6 @@ namespace GiveWaveAPI.Migrations
                         .HasForeignKey("KategorijeId");
 
                     b.Navigation("Kategorije");
-                });
-
-            modelBuilder.Entity("GiveWaveAPI.Models.ProfilKorisnika", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "user")
-                        .WithMany()
-                        .HasForeignKey("userID");
-
-                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.Proizvod", b =>

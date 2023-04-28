@@ -72,8 +72,10 @@ public class AuthenticationController : ControllerBase
             {
                 if(new_user.Id != null)
                 {
+                    //Kreiramo profil za registrovanog korisnika
                     var profil = new ProfilKorisnika();
-                    profil.userID = new_user.Id;
+                    profil.Email = new_user.Email;
+                    profil.Username = new_user.UserName;
                     profil.DatumRegistracije = new DateTime(DateTime.Now.Ticks);
                     context.Add(profil);
                     context.SaveChanges();

@@ -81,6 +81,28 @@ namespace GiveWaveAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProfilKorisnikas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Username = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    BrojTelefona = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Adresa = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    DatumRodjenja = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Pol = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    StatusAktivnosti = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    BrojLajkova = table.Column<int>(type: "int", nullable: false),
+                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    DatumRegistracije = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProfilKorisnikas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -184,32 +206,6 @@ namespace GiveWaveAPI.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProfilKorisnikas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    userID = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    BrojTelefona = table.Column<int>(type: "int", maxLength: 50, nullable: false),
-                    Adresa = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    DatumRodjenja = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Pol = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
-                    StatusAktivnosti = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    BrojLajkova = table.Column<int>(type: "int", nullable: false),
-                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
-                    DatumRegistracije = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProfilKorisnikas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProfilKorisnikas_AspNetUsers_userID",
-                        column: x => x.userID,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -536,11 +532,6 @@ namespace GiveWaveAPI.Migrations
                 column: "KategorijeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProfilKorisnikas_userID",
-                table: "ProfilKorisnikas",
-                column: "userID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Proizvods_KategorijaId",
                 table: "Proizvods",
                 column: "KategorijaId");
@@ -613,6 +604,9 @@ namespace GiveWaveAPI.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
                 name: "Porodice");
 
             migrationBuilder.DropTable(
@@ -620,9 +614,6 @@ namespace GiveWaveAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "Kategorijas");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
         }
     }
 }

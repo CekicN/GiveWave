@@ -12,15 +12,16 @@ import { IconName, faFloppyDisk, faPenToSquare } from '@fortawesome/free-solid-s
 export class ProfileDataComponent implements OnInit {
   
   public user!:User;
-  iconsName:IconName[] = ['pen-to-square','pen-to-square','pen-to-square','pen-to-square'];
+  editRadio = false;
+  iconsName:IconName[] = ['pen-to-square','pen-to-square','pen-to-square','pen-to-square', 'pen-to-square','pen-to-square'];
   constructor(private service:ProfileService, library:FaIconLibrary){
     library.addIcons(faPenToSquare, faFloppyDisk);
   }
   ngOnInit(): void {
-    this.service.getUser("aca123@gmail.com").subscribe(user => {
+    this.service.getUser(localStorage.getItem('email')).subscribe(user => {
       this.user = user;
-      console.log(this.user);
-      this.service.email = user.mail
+      console.log(this.user)
+      this.service.email = user.email
     })
   }
   isVisible():boolean
@@ -33,10 +34,18 @@ export class ProfileDataComponent implements OnInit {
     const edit = this.iconsName[num] === 'pen-to-square'?"true" :"false";
     const clicked = event.target as HTMLElement;
     
-    const input = clicked.closest('div')?.querySelector('p');
-    input!.setAttribute('contenteditable', edit);
-
+    let input:HTMLElement|null|undefined;
     
+    if(num != 5)
+    {
+      input = clicked.closest('div')?.querySelector('p');
+      input!.setAttribute('contenteditable', edit);
+    }
+    else
+    {
+      input = clicked.closest('div')?.querySelector('input:checked');
+      this.editRadio= edit === "true"? true : false;
+    }
     if(this.iconsName[num] === 'floppy-disk')
     {
       this.SaveChanges(input, num);
@@ -46,7 +55,7 @@ export class ProfileDataComponent implements OnInit {
   SaveChanges(input:HTMLElement|undefined|null, num:number)
   {
     console.log(input?.innerHTML);
-    if(input)
+    if(input && this.user)
     {
       switch(num)
       {
@@ -54,18 +63,34 @@ export class ProfileDataComponent implements OnInit {
           this.user.username = input?.innerHTML.substring(input.innerHTML.indexOf(" ")+1);
         break;
         case 1:
-          this.user.mail = input?.innerHTML;
+          this.user.email = input?.innerHTML;
         break;
         case 2:
-          this.user.brTelefona = Number.parseInt(input?.innerHTML);
+          this.user.brojTelefona = input?.innerHTML;
         break;
         case 3:
           this.user.datumRodjenja = new Date(input?.innerHTML);
         break;
+        case 4:
+          this.user.adresa = input.innerText;
+        break;
+        case 5:
+          let labela = input.closest('div')?.querySelector('label');
+          if(labela)
+            this.user.pol = labela?.innerText;
+        break;
         default:
       }
-      //poziv apija za update podataka update(user);
       console.log(this.user);
+      //poziv apija za update podataka update(user);
+      this.service.updateUser(this.user).subscribe({
+        next:(res) => {
+          console.log(res);
+        },
+        error:(err)=> {
+          console.log(err);
+        }
+      }) 
     }
   }
 }

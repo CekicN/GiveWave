@@ -1,24 +1,10 @@
 export interface User
 {
-            mail:string,
+            email:string,
             username:string,
-            brTelefona:number,
+            brojTelefona:string,
             adresa:string,
             datumRodjenja:Date,
             datumRegistracije:Date,
-            pol:string,
-            statusAktivnosti:boolean,
-            slika:slika,
-            lajkovi:number
-}
-interface slika
-{
-    type:string,
-    media:media
-
-}
-interface media
-{
-    binaryEncoding: string,
-    type: string
+            pol:string
 }
