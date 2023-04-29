@@ -84,28 +84,28 @@ namespace GiveWaveAPI.Controllers
             }
         }
 
-
-        //[Route("PreuzmiProfil")]
-        //[HttpPost, Authorize]
-        //public async Task<ActionResult> PreuzmiProfil([FromBody] String email)
-        //{
-        //    try
-        //    {
-        //        var profil = Context.ProfilKorisnikas.Where(korisnik => korisnik.Email == email).FirstOrDefault();
-        //        if(profil == null)
-        //        {
-        //            return BadRequest("profil nije pronajden");
-        //        }
-        //        return Ok(profil);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-
-        //}
-
+        [Route("getProfilePhoto")]
+        [HttpPost]
+        public async Task<ActionResult> getProfilePhoto([FromBody] String email)
+        {
+            try
+            {
+                byte[] imgBytes = Context.ProfilKorisnikas
+                                         .Where(profil => profil.Email == email)
+                                         .Select(i => i.Image)
+                                         .FirstOrDefault();
+                if(imgBytes == null)
+                {
+                    return BadRequest("Profilna slika nije pronadjena");
+                }
+                var memStream = new MemoryStream(imgBytes);
+                return File(memStream, "image/jpeg");
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
         //[Route("setPhoto/{id}")]
         //[HttpPost, Authorize]
         //public async Task<ActionResult> SetPhoto(int id, IFormFile file)

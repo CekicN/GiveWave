@@ -29,6 +29,10 @@ export class ProfileDataComponent implements OnInit {
     //Email iz profila === email iz prijave
     return this.service.email === localStorage.getItem('email');
   }
+  isMale()
+  {
+    return this.user.pol === "Male";
+  }
   EditData(event:Event, num:number)
   {
     const edit = this.iconsName[num] === 'pen-to-square'?"true" :"false";
@@ -40,6 +44,14 @@ export class ProfileDataComponent implements OnInit {
     {
       input = clicked.closest('div')?.querySelector('p');
       input!.setAttribute('contenteditable', edit);
+      if(edit === "true")
+      { 
+        input!.classList.remove("text-muted");
+      }
+      else
+      {
+        input!.classList.add("text-muted");
+      }
     }
     else
     {
@@ -60,11 +72,11 @@ export class ProfileDataComponent implements OnInit {
       switch(num)
       {
         case 0:
-          this.user.username = input?.innerHTML.substring(input.innerHTML.indexOf(" ")+1);
+          this.user.username = input?.innerText;
         break;
-        case 1:
-          this.user.email = input?.innerHTML;
-        break;
+        // case 1:
+        //   this.user.email = input?.innerHTML; ovo ne treba da se menja jer  je jedinstven email pri registraciji
+        // break;
         case 2:
           this.user.brojTelefona = input?.innerHTML;
         break;

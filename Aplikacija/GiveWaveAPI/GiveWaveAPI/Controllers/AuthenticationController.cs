@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.IdentityModel.Tokens.Jwt;
+using System.Reflection;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
@@ -75,6 +76,7 @@ public class AuthenticationController : ControllerBase
                     //Kreiramo profil za registrovanog korisnika
                     var profil = new ProfilKorisnika();
                     profil.Email = new_user.Email;
+                    profil.Pol = "Male";
                     profil.Username = new_user.UserName;
                     profil.DatumRegistracije = new DateTime(DateTime.Now.Ticks);
                     context.Add(profil);

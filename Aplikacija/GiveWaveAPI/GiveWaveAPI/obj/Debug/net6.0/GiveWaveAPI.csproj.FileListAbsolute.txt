@@ -82,11 +82,6 @@ C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.g
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\GiveWaveAPI.csproj.CoreCompileInputs.cache
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\GiveWaveAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\GiveWaveAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\staticwebassets\msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.GiveWaveAPI.props
-C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.GiveWaveAPI.props
-C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.GiveWaveAPI.props
-C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\scopedcss\bundle\GiveWaveAPI.styles.css
@@ -96,3 +91,4 @@ C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.g
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\GiveWaveAPI.pdb
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\GiveWaveAPI.genruntimeconfig.cache
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\ref\GiveWaveAPI.dll
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net6.0\63457.jpg

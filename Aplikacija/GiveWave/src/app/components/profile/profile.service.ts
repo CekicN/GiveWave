@@ -21,6 +21,11 @@ export class ProfileService {
   {
     return this.http.post<User>(Users + "PreuzmiProfil", `"${email}"`, { headers: { 'Content-Type': 'application/json' }});
   }
+  getProfilePicture(email:String)
+  {
+    const headers = new HttpHeaders();
+    return this.http.post('', email, {headers, responseType: 'blob'});
+  }
   updateUser(user:any)
   {
     return this.http.put<User>(Users+"updateData", user);
