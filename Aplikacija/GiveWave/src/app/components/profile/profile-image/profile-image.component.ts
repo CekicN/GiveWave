@@ -3,6 +3,7 @@ import { User } from 'app/Models/User';
 import { ProfileService } from '../profile.service';
 import { faHeart, faPen } from '@fortawesome/free-solid-svg-icons';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { Picture } from 'app/Models/UserAvatar';
 
 @Component({
   selector: 'app-profile-image',
@@ -11,15 +12,16 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 })
 export class ProfileImageComponent implements OnInit {
   public user!:User;
-  profileImageUrl!:string;
+  public userAvatar!:string;
+  imageByteArray:any;
   selectedFile!:File;
   constructor(private service:ProfileService, library:FaIconLibrary){
     library.addIcons(faHeart, faPen);
   }
    ngOnInit(): void {
-  //   this.service.getUser(localStorage.getItem('email')).subscribe(user => {
-  //     this.user = user;
-  //   })
+    this.service.getUser(localStorage.getItem('email')).subscribe(user => {
+      this.user = user;
+    })
    }
   isVisible():boolean
   {
@@ -32,15 +34,29 @@ export class ProfileImageComponent implements OnInit {
     if(f)
     {
       this.selectedFile = f;
-      this.Upload();//funkcija koja upisuje sliku u bazu
+      this.convertImageToByteArray(this.selectedFile);
+      this.Upload();
     }
     
   }
+  convertImageToByteArray(imageFile: File) {
+    const reader = new FileReader();
+    reader.readAsArrayBuffer(imageFile);
+    reader.onload = () => {
+      const arrayBuffer = reader.result as ArrayBuffer;
+      const bytes = new Uint8Array(arrayBuffer);
+      this.imageByteArray = bytes;
+    };
+  }
   Upload()
   {
-    const fileData = new FormData();
-    fileData.append('image', this.selectedFile, this.selectedFile.name);
-    // this.service.uploadImage(fileData).subscribe(res => console.log(res));
+    this.service.updateProfilePicture(this.imageByteArray, localStorage.getItem('email'))
+        .subscribe(image => {
+          // console.log(image);
+          this.userAvatar = URL.createObjectURL(image);
+          console.log(this.userAvatar);
+        });
+
   }
   // like()
   // {

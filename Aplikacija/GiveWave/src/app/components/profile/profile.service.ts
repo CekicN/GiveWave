@@ -26,6 +26,15 @@ export class ProfileService {
     const headers = new HttpHeaders();
     return this.http.post('', email, {headers, responseType: 'blob'});
   }
+  updateProfilePicture(image:any, email:any)
+  {
+    const formData = new FormData();
+
+    formData.append('email', email);
+    formData.append('image', new Blob([image]), 'image.jpg');
+    
+    return this.http.put<Blob>(Users+"updatePhoto",formData, {responseType: 'blob' as 'json'});
+  }
   updateUser(user:any)
   {
     return this.http.put<User>(Users+"updateData", user);

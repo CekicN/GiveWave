@@ -106,6 +106,33 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
+        
+        [Route("updatePhoto")]
+        [HttpPut]
+        public async Task<ActionResult> updatePhoto([FromForm] IFormFile image, String email)
+        {
+            byte[] imageBytes;
+            using (var memoryStream = new MemoryStream())
+            {
+                image.CopyTo(memoryStream);
+                imageBytes = memoryStream.ToArray();
+            }
+            try
+            {
+                var profile = Context.ProfilKorisnikas
+                                         .Where(profil => profil.Email == email)
+                                         .FirstOrDefault();
+                profile.Image = imageBytes;
+                Context.ProfilKorisnikas.Update(profile);
+                await Context.SaveChangesAsync();
+                var memStream = new MemoryStream(imageBytes);
+                return File(memStream, "image/jpeg");
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
         //[Route("setPhoto/{id}")]
         //[HttpPost, Authorize]
         //public async Task<ActionResult> SetPhoto(int id, IFormFile file)
