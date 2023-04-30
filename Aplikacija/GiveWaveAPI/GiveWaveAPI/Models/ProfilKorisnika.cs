@@ -40,7 +40,7 @@ namespace GiveWaveAPI.Models
         [MaxLength(50)]
         public string StatusAktivnosti { get; set; }
         public int BrojLajkova { get; set; }
-        public byte[] Image { get; set; }
+        public String ImageUrl { get; set; }
         public DateTime DatumRegistracije { get; set; }
         public List<Proizvod> Proizvodi { get; set; }
        // public List<User> Useri { get; set; }

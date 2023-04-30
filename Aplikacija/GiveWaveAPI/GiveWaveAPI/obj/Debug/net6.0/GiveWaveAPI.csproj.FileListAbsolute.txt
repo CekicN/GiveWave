@@ -91,7 +91,6 @@ C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.g
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\GiveWaveAPI.pdb
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\GiveWaveAPI.genruntimeconfig.cache
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\ref\GiveWaveAPI.dll
-C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net6.0\63457.jpg
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\staticwebassets\msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.GiveWaveAPI.props
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.GiveWaveAPI.props

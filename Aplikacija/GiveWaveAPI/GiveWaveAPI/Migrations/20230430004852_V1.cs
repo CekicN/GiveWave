@@ -94,7 +94,7 @@ namespace GiveWaveAPI.Migrations
                     Pol = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
                     StatusAktivnosti = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     BrojLajkova = table.Column<int>(type: "int", nullable: false),
-                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DatumRegistracije = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

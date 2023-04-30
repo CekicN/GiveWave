@@ -12,8 +12,10 @@ namespace GiveWaveAPI.Controllers
     public class ProfileController : Controller
     {
         public GiveWaveDBContext Context;
-        public ProfileController(GiveWaveDBContext context)
+        private readonly IWebHostEnvironment _environment;
+        public ProfileController(GiveWaveDBContext context, IWebHostEnvironment environment)
         {
+            _environment = environment;
             Context = context;
         }
         //MEtoda za kreiranje profila korisnika koja ce da uzme samo registraciju ostalo prazno
@@ -36,7 +38,8 @@ namespace GiveWaveAPI.Controllers
                     adresa = profil.Adresa,
                     datumRodjenja = profil.DatumRodjenja,
                     datumRegistracije = profil.DatumRegistracije,
-                    pol = profil.Pol
+                    pol = profil.Pol,
+                    imageUrl = GetImage(mail)
                 });
             }
             catch(Exception e)
@@ -84,83 +87,85 @@ namespace GiveWaveAPI.Controllers
             }
         }
 
-        [Route("getProfilePhoto")]
-        [HttpPost]
-        public async Task<ActionResult> getProfilePhoto([FromBody] String email)
+        [NonAction]
+        private string GetFilePath(string email)
         {
-            try
-            {
-                byte[] imgBytes = Context.ProfilKorisnikas
-                                         .Where(profil => profil.Email == email)
-                                         .Select(i => i.Image)
-                                         .FirstOrDefault();
-                if(imgBytes == null)
-                {
-                    return BadRequest("Profilna slika nije pronadjena");
-                }
-                var memStream = new MemoryStream(imgBytes);
-                return File(memStream, "image/jpeg");
-            }
-            catch(Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            return this._environment.WebRootPath + "\\Uploads\\Profile\\" + email;
         }
-        
-        [Route("updatePhoto")]
+        [Route("updatePhoto/{email}")]
         [HttpPut]
-        public async Task<ActionResult> updatePhoto([FromForm] IFormFile image, String email)
+        public async Task<ActionResult> updateImage(IFormFile source, String email)
         {
-            byte[] imageBytes;
-            using (var memoryStream = new MemoryStream())
-            {
-                image.CopyTo(memoryStream);
-                imageBytes = memoryStream.ToArray();
-            }
+            bool Results = false;
             try
             {
-                var profile = Context.ProfilKorisnikas
-                                         .Where(profil => profil.Email == email)
-                                         .FirstOrDefault();
-                profile.Image = imageBytes;
+                var profile = Context.ProfilKorisnikas.Where(pr => pr.Email == email).FirstOrDefault();
+                if (profile == null)
+                    return BadRequest("Profil nije pronadjen");
+                string Filename = source.FileName;
+                string Filepath = GetFilePath(email);
+
+                if (!System.IO.Directory.Exists(Filepath))
+                {
+                    System.IO.Directory.CreateDirectory(Filepath);
+                }
+
+                string imagepath = Filepath + "\\image.png";
+
+                if (System.IO.File.Exists(imagepath))
+                {
+                    System.IO.File.Delete(imagepath);
+                }
+                using (FileStream stream = System.IO.File.Create(imagepath))
+                {
+                    await source.CopyToAsync(stream);
+                    Results = true;
+                }
+                profile.ImageUrl = GetImage(email);
                 Context.ProfilKorisnikas.Update(profile);
                 await Context.SaveChangesAsync();
-                var memStream = new MemoryStream(imageBytes);
-                return File(memStream, "image/jpeg");
+                return Ok(profile.ImageUrl);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
+            
         }
-        //[Route("setPhoto/{id}")]
-        //[HttpPost, Authorize]
-        //public async Task<ActionResult> SetPhoto(int id, IFormFile file)
+        //[HttpGet("RemoveImage")]
+        //public async Task<ActionResult> RemoveImage(string email)
         //{
+        //    string FilePath = GetFilePath(email);
+        //    string ImagePath = FilePath + "\\image.png";
         //    try
         //    {
-        //        var user = Context.ProfilKorisnikas.Where(User => User.Id == id).FirstOrDefault();
-        //        if(user == null)
+        //        if (System.IO.File.Exists(ImagePath))
         //        {
-        //            return BadRequest("Korisnik nije pronadjen");
+        //            System.IO.File.Delete(ImagePath);
         //        }
-
-        //        using(var memoryStream = new MemoryStream())
-        //        {
-        //            await file.CopyToAsync(memoryStream);
-        //            user.Image = memoryStream.ToArray();
-        //        }
-
-        //        Context.ProfilKorisnikas.Update(user);
-        //        await Context.SaveChangesAsync();
-        //        return Ok("Dodata je slika");
-
+        //        return Ok(email);
         //    }
-        //    catch(Exception ex)
+        //    catch (Exception e)
         //    {
-        //        return BadRequest(ex.Message);
+        //        return BadRequest(e.Message);
         //    }
-
         //}
+        [NonAction]
+        private string GetImage(string email)
+        {
+            string imageUrl = string.Empty;
+            string Host = "https://localhost:7200/";
+            string Filepath = GetFilePath(email);
+            string imagePath = Filepath + "\\image.png";
+            if(!System.IO.File.Exists(imagePath))
+            {
+                imageUrl = Host + "/uploads/common/noimage.png";
+            }
+            else
+            {
+                imageUrl = Host + "/uploads/Profile/" + email + "/image.png";
+            }
+            return imageUrl;
+        }
     }
 }

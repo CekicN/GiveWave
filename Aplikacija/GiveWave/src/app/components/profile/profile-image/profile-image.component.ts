@@ -12,9 +12,6 @@ import { Picture } from 'app/Models/UserAvatar';
 })
 export class ProfileImageComponent implements OnInit {
   public user!:User;
-  public userAvatar!:string;
-  imageByteArray:any;
-  selectedFile!:File;
   constructor(private service:ProfileService, library:FaIconLibrary){
     library.addIcons(faHeart, faPen);
   }
@@ -33,31 +30,14 @@ export class ProfileImageComponent implements OnInit {
     const f = (<HTMLInputElement>event.target)?.files?.[0];
     if(f)
     {
-      this.selectedFile = f;
-      this.convertImageToByteArray(this.selectedFile);
-      this.Upload();
+      this.service.updateProfilePicture(f,localStorage.getItem('email')).subscribe((imageUrl:string) => {
+        console.log(imageUrl);
+        this.user.imageUrl = imageUrl;
+      })
     }
     
   }
-  convertImageToByteArray(imageFile: File) {
-    const reader = new FileReader();
-    reader.readAsArrayBuffer(imageFile);
-    reader.onload = () => {
-      const arrayBuffer = reader.result as ArrayBuffer;
-      const bytes = new Uint8Array(arrayBuffer);
-      this.imageByteArray = bytes;
-    };
-  }
-  Upload()
-  {
-    this.service.updateProfilePicture(this.imageByteArray, localStorage.getItem('email'))
-        .subscribe(image => {
-          // console.log(image);
-          this.userAvatar = URL.createObjectURL(image);
-          console.log(this.userAvatar);
-        });
-
-  }
+  
   // like()
   // {
     

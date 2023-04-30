@@ -26,14 +26,14 @@ export class ProfileService {
     const headers = new HttpHeaders();
     return this.http.post('', email, {headers, responseType: 'blob'});
   }
-  updateProfilePicture(image:any, email:any)
+  updateProfilePicture(image:any, email:String|null|undefined)
   {
     const formData = new FormData();
+    formData.append('source', image, image.name);
 
-    formData.append('email', email);
-    formData.append('image', new Blob([image]), 'image.jpg');
-    
-    return this.http.put<Blob>(Users+"updatePhoto",formData, {responseType: 'blob' as 'json'});
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    return this.http.put<string>(Users+"updatePhoto/" + email,formData, {headers});
   }
   updateUser(user:any)
   {

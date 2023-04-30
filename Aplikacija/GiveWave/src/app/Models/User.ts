@@ -6,5 +6,6 @@ export interface User
             adresa:string,
             datumRodjenja:Date,
             datumRegistracije:Date,
-            pol:string
+            pol:string,
+            imageUrl:string
 }
