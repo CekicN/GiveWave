@@ -33,7 +33,7 @@ export class ProfileService {
 
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
-    return this.http.put<string>(Users+"updatePhoto/" + email,formData, {headers});
+    return this.http.put<any>(Users+"updatePhoto/" + email,formData, {headers});
   }
   updateUser(user:any)
   {

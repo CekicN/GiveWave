@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { User } from 'app/Models/User';
 import { ProfileService } from '../profile.service';
 import { faHeart, faPen } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +11,7 @@ import { Picture } from 'app/Models/UserAvatar';
   styleUrls: ['./profile-image.component.css']
 })
 export class ProfileImageComponent implements OnInit {
+  
   public user!:User;
   constructor(private service:ProfileService, library:FaIconLibrary){
     library.addIcons(faHeart, faPen);
@@ -30,9 +31,9 @@ export class ProfileImageComponent implements OnInit {
     const f = (<HTMLInputElement>event.target)?.files?.[0];
     if(f)
     {
-      this.service.updateProfilePicture(f,localStorage.getItem('email')).subscribe((imageUrl:string) => {
+      this.service.updateProfilePicture(f,localStorage.getItem('email')).subscribe((imageUrl) => {
         console.log(imageUrl);
-        this.user.imageUrl = imageUrl;
+        this.user.imageUrl = imageUrl.imageUrl;
       })
     }
     

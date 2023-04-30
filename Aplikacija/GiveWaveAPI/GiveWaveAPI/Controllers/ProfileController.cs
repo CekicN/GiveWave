@@ -123,8 +123,8 @@ namespace GiveWaveAPI.Controllers
                 }
                 profile.ImageUrl = GetImage(email);
                 Context.ProfilKorisnikas.Update(profile);
-                await Context.SaveChangesAsync();
-                return Ok(profile.ImageUrl);
+                Context.SaveChanges();
+                return Ok(new { imageUrl = profile.ImageUrl });
             }
             catch (Exception e)
             {
