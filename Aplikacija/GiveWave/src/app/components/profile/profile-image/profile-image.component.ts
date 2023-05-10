@@ -32,13 +32,25 @@ export class ProfileImageComponent implements OnInit {
     if(f)
     {
       this.service.updateProfilePicture(f,localStorage.getItem('email')).subscribe((imageUrl) => {
-        console.log(imageUrl);
         this.user.imageUrl = imageUrl.imageUrl;
+        this.refreshImg();
       })
     }
     
   }
-  
+  refreshImg()
+  {
+    let span = document.querySelector('.span') as HTMLElement;
+    let img1  = document.querySelector('#avatar') as HTMLElement;
+    console.log(span, img1);
+    span.removeChild(img1);
+    let img = document.createElement('img');
+    img.id = 'avatar';
+    img.src = this.user.imageUrl;
+    img.classList.add('rounded-circle', 'img-fluid');
+    img.style.width = '150px';
+    span.appendChild(img);
+  }
   // like()
   // {
     

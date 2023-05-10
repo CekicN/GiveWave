@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable, filter, from, fromEvent, map, mergeMap, th
   providedIn: 'root'
 })
 export class LastActiveService {
-  private recordTimeoutMs:number = 500;
+  private recordTimeoutMs:number = 1000;
   private localStorageKey: string = '_lastActive';
   private events: string[] = ['keydown', 'click', 'wheel', 'mousemove'];
 
