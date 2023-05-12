@@ -20,7 +20,6 @@ import { AuthService } from 'app/services/auth.service';
 import { ProfileModule } from './components/profile/profile.module';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { LastActiveService } from './components/services/last-active.service';
 
 @NgModule({
   declarations: [
@@ -41,15 +40,7 @@ import { LastActiveService } from './components/services/last-active.service';
     ProfileModule,
     FontAwesomeModule
   ],
-  providers: [
-    {
-      provide:APP_INITIALIZER,
-      multi:true,
-      deps:[LastActiveService],
-      useFactory:(LastActiveService:LastActiveService) => () =>
-      LastActiveService.setUp(),
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

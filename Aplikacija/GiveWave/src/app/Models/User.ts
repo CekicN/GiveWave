@@ -7,5 +7,6 @@ export interface User
             datumRodjenja:Date,
             datumRegistracije:Date,
             pol:string,
-            imageUrl:string
+            imageUrl:string,
+            lajkovi:number
 }

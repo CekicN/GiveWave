@@ -21,11 +21,7 @@ export class ProfileService {
   {
     return this.http.post<User>(Users + "PreuzmiProfil", `"${email}"`, { headers: { 'Content-Type': 'application/json' }});
   }
-  getProfilePicture(email:String)
-  {
-    const headers = new HttpHeaders();
-    return this.http.post('', email, {headers, responseType: 'blob'});
-  }
+
   updateProfilePicture(image:any, email:String|null|undefined)
   {
     const formData = new FormData();
@@ -34,6 +30,14 @@ export class ProfileService {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
     return this.http.put<any>(Users+"updatePhoto/" + email,formData, {headers});
+  }
+  Like(email:String)
+  {
+    return this.http.patch<number>(Users+"Like/"+email, {'Content-Type':'application/json'});
+  }
+  Dislike(email:String)
+  {
+    return this.http.patch<number>(Users+"Dislike/"+email, {'Content-Type':'application/json'});
   }
   updateUser(user:any)
   {

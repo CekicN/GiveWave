@@ -46,7 +46,7 @@ p {
     border-radius: 20px;
     background-color: rgb(27, 139, 225);
     margin-bottom: 15px;
-    box-shadow: 6px -6px 10px -1px rgba(0,0,0,0.68);
+    box-shadow: 3px -3px 10px -1px rgba(0,0,0,0.68);
 }
 .carousel-item {
     width: 100%;

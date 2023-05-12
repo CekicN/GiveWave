@@ -8,7 +8,7 @@ import { HttpClient,HttpClientModule } from "@angular/common/http"
 export class AuthService {
   
   private baseUrl:string="https://localhost:7200/api/Authentication/"
-
+  public isLogged:boolean = false;
   constructor(private http: HttpClient) { }
 
   signUp(userObj:any){
