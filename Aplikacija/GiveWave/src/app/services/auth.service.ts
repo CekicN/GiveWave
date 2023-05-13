@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpClientModule } from "@angular/common/http"
+import { BehaviorSubject, tap } from 'rxjs';
 
 
 @Injectable({
@@ -8,8 +9,16 @@ import { HttpClient,HttpClientModule } from "@angular/common/http"
 export class AuthService {
   
   private baseUrl:string="https://localhost:7200/api/Authentication/"
+  private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
+  isLoggedIn = this._isLoggedIn$.asObservable();
 
-  constructor(private http: HttpClient) { }
+  get token()
+  {
+    return localStorage.getItem('token');
+  }
+  constructor(private http: HttpClient) { 
+    this._isLoggedIn$.next(!!this.token)
+  }
 
   signUp(userObj:any){
     return this.http.post<any>(`${this.baseUrl}Register`,userObj)
@@ -17,7 +26,16 @@ export class AuthService {
   }
   //https://localhost:7200/api/Authentication/Login
   login(loginObj:any){
-    return this.http.post<any>(`${this.baseUrl}Login`,loginObj)
+    return this.http.post<any>(`${this.baseUrl}Login`,loginObj).pipe(
+      tap((res:any) => {
+        this._isLoggedIn$.next(true);
+        localStorage.setItem('token', res.token);
+      })
+    )
 
+  }
+  logout()
+  {
+    this._isLoggedIn$.next(false);
   }
 }

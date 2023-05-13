@@ -19,25 +19,42 @@ export class ProfileService {
   }
   getUser(email:String|null)
   {
-    return this.http.post<User>(Users + "PreuzmiProfil", `"${email}"`, { headers: { 'Content-Type': 'application/json' }});
+    let httpOptions = new HttpHeaders()
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
+    return this.http.post<User>(Users + "PreuzmiProfil", `"${email}"`, { headers: httpOptions});
   }
-  getProfilePicture(email:String)
-  {
-    const headers = new HttpHeaders();
-    return this.http.post('', email, {headers, responseType: 'blob'});
-  }
+
   updateProfilePicture(image:any, email:String|null|undefined)
   {
     const formData = new FormData();
     formData.append('source', image, image.name);
 
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'multipart/form-data');
-    return this.http.put<any>(Users+"updatePhoto/" + email,formData, {headers});
+    let headers = new HttpHeaders()
+    .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+    .set('Content-Type', 'multipart/form-data');
+    return this.http.put<any>(Users+"updatePhoto/" + email,formData, {headers:headers});
+  }
+  Like(email:String)
+  {
+    let httpOptions = new HttpHeaders()
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
+    return this.http.patch<number>(Users+"Like/"+email, {headers:httpOptions});
+  }
+  Dislike(email:String)
+  {
+    let httpOptions = new HttpHeaders()
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
+    return this.http.patch<number>(Users+"Dislike/"+email, {headers:httpOptions});
   }
   updateUser(user:any)
   {
-    return this.http.put<User>(Users+"updateData", user);
+    let httpOptions = new HttpHeaders()
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
+    return this.http.put<User>(Users+"updateData", user, {headers:httpOptions});
   }
   getMyProducts()
   {

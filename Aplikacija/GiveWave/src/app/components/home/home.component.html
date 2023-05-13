@@ -13,6 +13,6 @@
       <div class="d-flex justify-content-center mb-3">
       <div class="dot" *ngFor="let t of text" [style.background-color]="(Active(t)) ? 'rgb(27, 139, 225)' : 'rgb(97, 100, 101)'"></div>
       </div>
-      <button>Donate</button>
+      <button (click)="Donate()">Donate</button>
     </div>
 </div>

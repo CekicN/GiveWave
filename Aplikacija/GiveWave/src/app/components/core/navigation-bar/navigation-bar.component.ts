@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from 'app/components/services/login.service';
-import { Observable } from 'rxjs';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -10,16 +9,17 @@ import { Observable } from 'rxjs';
 })
 export class NavigationBarComponent {
 
-  public loggedIn$!: Observable<boolean>;
-  constructor(private loginService:LoginService, private router:Router)
+  isLogged!:boolean;
+  constructor(public authService:AuthService, private router:Router)
   {
-    this.loggedIn$ = loginService.loggedIn$;
+    authService.isLoggedIn.subscribe(logged => this.isLogged = logged);
   }
 
   public logOut()
   {
-    this.loginService.logOut();
+    this.authService.logout();//postavlja _isLoggedIn$ na false
     localStorage.removeItem('email');
+    localStorage.removeItem('token');
     this.router.navigate(['/']);
   }
 }

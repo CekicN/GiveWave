@@ -79,6 +79,7 @@ public class AuthenticationController : ControllerBase
                     profil.Pol = "Male";
                     profil.Username = new_user.UserName;
                     profil.DatumRegistracije = new DateTime(DateTime.Now.Ticks);
+                    profil.BrojLajkova = 0;
                     context.Add(profil);
                     context.SaveChanges();
                 }

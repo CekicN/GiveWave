@@ -6,9 +6,8 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 import { faFacebook, faGithub, faGoogle} from '@fortawesome/free-brands-svg-icons';
 import { faLock, faUser, faEyeSlash, faEye} from '@fortawesome/free-solid-svg-icons';
-import { LoginService } from 'app/components/services/login.service';
+import { Res } from 'app/Models/AuthRes';
 import { AuthService } from 'app/services/auth.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +15,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  public loggedIn$!: Observable<boolean>;
-
+  isLogged!:boolean;
 
   type: string = "password";
   isText : boolean = false;
@@ -25,9 +23,9 @@ export class LoginComponent {
   loginForm!: FormGroup;
 
 
-  constructor(private fb: FormBuilder, library:FaIconLibrary, private loginService:LoginService, private route:Router, private authService:AuthService){
+  constructor(private fb: FormBuilder, library:FaIconLibrary, private route:Router, private authService:AuthService){
     library.addIcons(faFacebook, faGithub, faGoogle, faLock, faUser, faEyeSlash, faEye);
-    this.loggedIn$ = loginService.loggedIn$;
+    authService.isLoggedIn.subscribe(logged => this.isLogged = logged);
   }
   
   ngOnInit():void{
@@ -43,15 +41,12 @@ export class LoginComponent {
   }
   onSubmit(){
     if(this.loginForm.valid){
-      console.log(this.loginForm.value);
       this.authService.login(this.loginForm.value)
         .subscribe({
           next:(res) => {
             localStorage.setItem('email', this.loginForm.value.email);
-            console.log(localStorage);
             this.loginForm.reset();
             this.route.navigate(['/']);
-            this.loginService.logIn();//Funkcija koja postavlja status u logovan
           },
           error:(err)=> {
             alert("doslo je do greske");

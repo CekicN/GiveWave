@@ -66,6 +66,9 @@ export class ProfileDataComponent implements OnInit {
   }
   SaveChanges(input:HTMLElement|undefined|null, num:number)
   {
+    /*
+    Problem sa prikazom dok je prazno polje trbe da se implementira svaka funkcija za promenu posebno ->soon
+    */ 
     console.log(input?.innerHTML);
     if(input && this.user)
     {
@@ -97,7 +100,7 @@ export class ProfileDataComponent implements OnInit {
       //poziv apija za update podataka update(user);
       this.service.updateUser(this.user).subscribe({
         next:(res) => {
-          console.log(res);
+          this.user = res;
         },
         error:(err)=> {
           console.log(err);

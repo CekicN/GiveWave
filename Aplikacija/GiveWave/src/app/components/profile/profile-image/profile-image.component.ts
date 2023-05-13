@@ -3,7 +3,6 @@ import { User } from 'app/Models/User';
 import { ProfileService } from '../profile.service';
 import { faHeart, faPen } from '@fortawesome/free-solid-svg-icons';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { Picture } from 'app/Models/UserAvatar';
 
 @Component({
   selector: 'app-profile-image',
@@ -13,6 +12,7 @@ import { Picture } from 'app/Models/UserAvatar';
 export class ProfileImageComponent implements OnInit {
   
   public user!:User;
+  public isLiked:boolean = localStorage.getItem('like') === 'true';
   constructor(private service:ProfileService, library:FaIconLibrary){
     library.addIcons(faHeart, faPen);
   }
@@ -33,38 +33,33 @@ export class ProfileImageComponent implements OnInit {
     {
       this.service.updateProfilePicture(f,localStorage.getItem('email')).subscribe((imageUrl) => {
         this.user.imageUrl = imageUrl.imageUrl;
-        this.refreshImg();
       })
     }
     
   }
-  refreshImg()
+  HeartColor():string
   {
-    let span = document.querySelector('.span') as HTMLElement;
-    let img1  = document.querySelector('#avatar') as HTMLElement;
-    console.log(span, img1);
-    span.removeChild(img1);
-    let img = document.createElement('img');
-    img.id = 'avatar';
-    img.src = this.user.imageUrl;
-    img.classList.add('rounded-circle', 'img-fluid');
-    img.style.width = '150px';
-    span.appendChild(img);
+    if(this.isLiked)
+    {
+      return "color:red;";
+    }
+    return "color:grey;";
   }
-  // like()
-  // {
+  like()
+  {
     
-  //   const icon = document.querySelector('.srce');
-  //   if(icon!.getAttribute('style') === null)
-  //   {
-  //     this.user.lajkovi++;
-  //     icon?.setAttribute('style', 'color:red;');
-  //   }
-  //   else
-  //   {
-  //     this.user.lajkovi--;
-  //     icon?.removeAttribute('style');
-  //   }
-  // }
+    if(!this.isLiked)
+    {
+      this.service.Like(this.user.email).subscribe(lajk => this.user.lajkovi = lajk);
+      localStorage.setItem('like', 'true');
+      this.isLiked = true;
+    }
+    else
+    {
+      this.service.Dislike(this.user.email).subscribe(dislajk => this.user.lajkovi = dislajk);
+      localStorage.removeItem('like');
+      this.isLiked = false;
+    }
+  }
 
 }
