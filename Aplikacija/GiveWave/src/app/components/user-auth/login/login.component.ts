@@ -6,6 +6,7 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 import { faFacebook, faGithub, faGoogle} from '@fortawesome/free-brands-svg-icons';
 import { faLock, faUser, faEyeSlash, faEye} from '@fortawesome/free-solid-svg-icons';
+import { Res } from 'app/Models/AuthRes';
 import { AuthService } from 'app/services/auth.service';
 
 @Component({
@@ -24,7 +25,7 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder, library:FaIconLibrary, private route:Router, private authService:AuthService){
     library.addIcons(faFacebook, faGithub, faGoogle, faLock, faUser, faEyeSlash, faEye);
-    this.isLogged = authService.isLogged;
+    authService.isLoggedIn.subscribe(logged => this.isLogged = logged);
   }
   
   ngOnInit():void{
@@ -40,16 +41,12 @@ export class LoginComponent {
   }
   onSubmit(){
     if(this.loginForm.valid){
-      console.log(this.loginForm.value);
       this.authService.login(this.loginForm.value)
         .subscribe({
           next:(res) => {
             localStorage.setItem('email', this.loginForm.value.email);
-            localStorage.setItem('token', res);
-            console.log(localStorage.getItem('token'));
             this.loginForm.reset();
             this.route.navigate(['/']);
-            this.authService.isLogged = true;
           },
           error:(err)=> {
             alert("doslo je do greske");

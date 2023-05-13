@@ -10,9 +10,11 @@ import { AuthService } from 'app/services/auth.service';
 })
 export class HomeComponent {
 
+  isLoggedIn!:boolean;
   constructor(library: FaIconLibrary, private service:AuthService, private router:Router)
   {
     library.addIcons(faArrowLeft, faArrowRight);
+    service.isLoggedIn.subscribe(logged => this.isLoggedIn = logged);
   }
   text:string[] = [
     "a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut at eos minima repudiandae. Assumenda repudiandae neque distinctio, minima perferendis voluptas?",
@@ -34,7 +36,7 @@ export class HomeComponent {
   }
   Donate()
   {
-    if(this.service.isLogged)
+    if(this.isLoggedIn)
     {
       this.router.navigate(['donate']);
     }

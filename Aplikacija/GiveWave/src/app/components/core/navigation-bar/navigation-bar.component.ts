@@ -12,13 +12,14 @@ export class NavigationBarComponent {
   isLogged!:boolean;
   constructor(public authService:AuthService, private router:Router)
   {
-    this.isLogged = authService.isLogged;
+    authService.isLoggedIn.subscribe(logged => this.isLogged = logged);
   }
 
   public logOut()
   {
-    this.authService.isLogged = false; 
+    this.authService.logout();//postavlja _isLoggedIn$ na false
     localStorage.removeItem('email');
+    localStorage.removeItem('token');
     this.router.navigate(['/']);
   }
 }
