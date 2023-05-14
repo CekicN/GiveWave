@@ -69,43 +69,45 @@ export class ProfileDataComponent implements OnInit {
     /*
     Problem sa prikazom dok je prazno polje trbe da se implementira svaka funkcija za promenu posebno ->soon
     */ 
-    console.log(input?.innerHTML);
+    
     if(input && this.user)
     {
+      let innerText:string = input?.innerText;
       switch(num)
       {
         case 0:
-          this.user.username = input?.innerText;
+          this.service.updateUsername(localStorage.getItem('email'), innerText).subscribe(user => {
+            this.user = user;
+            input.innerText = user.brojTelefona;
+          });
         break;
         // case 1:
         //   this.user.email = input?.innerHTML; ovo ne treba da se menja jer  je jedinstven email pri registraciji
         // break;
         case 2:
-          this.user.brojTelefona = input?.innerHTML;
+          this.service.updatePhoneNumber(localStorage.getItem('email'), innerText).subscribe(user => {
+            this.user = user;
+            input.innerText = user.brojTelefona;
+          });
         break;
         case 3:
+          input.innerHTML = "";
           this.user.datumRodjenja = new Date(input?.innerHTML);
         break;
         case 4:
-          this.user.adresa = input.innerText;
+          input.innerHTML = "";
+          this.service.updateAddress(localStorage.getItem('email'), innerText).subscribe(user => {
+            this.user = user;
+            input.innerText = user.brojTelefona;
+          });
         break;
         case 5:
           let labela = input.closest('div')?.querySelector('label');
           if(labela)
-            this.user.pol = labela?.innerText;
+            this.service.updateGender(localStorage.getItem('email'), labela.innerText).subscribe(user => this.user = user);
         break;
         default:
       }
-      console.log(this.user);
-      //poziv apija za update podataka update(user);
-      this.service.updateUser(this.user).subscribe({
-        next:(res) => {
-          this.user = res;
-        },
-        error:(err)=> {
-          console.log(err);
-        }
-      }) 
     }
   }
 }

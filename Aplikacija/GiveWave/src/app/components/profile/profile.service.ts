@@ -31,8 +31,8 @@ export class ProfileService {
     formData.append('source', image, image.name);
 
     let headers = new HttpHeaders()
-    .set('Authorization', 'Bearer '+localStorage.getItem('token'))
-    .set('Content-Type', 'multipart/form-data');
+    .set('Authorization', 'Bearer '+localStorage.getItem('token'));
+    headers.append('Content-Type', 'multipart/form-data');
     return this.http.put<any>(Users+"updatePhoto/" + email,formData, {headers:headers});
   }
   Like(email:String)
@@ -45,16 +45,57 @@ export class ProfileService {
   Dislike(email:String)
   {
     let httpOptions = new HttpHeaders()
-                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
-                      .set('Content-Type', 'application/json');
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'));
+    httpOptions.append('Content-Type', 'application/json');
     return this.http.patch<number>(Users+"Dislike/"+email, {headers:httpOptions});
   }
-  updateUser(user:any)
+  updateUsername(email:string|null|undefined, data:String)
   {
+    let obj = {
+      email:email,
+      data:data
+    }
+
     let httpOptions = new HttpHeaders()
                       .set('Authorization', 'Bearer '+localStorage.getItem('token'))
                       .set('Content-Type', 'application/json');
-    return this.http.put<User>(Users+"updateData", user, {headers:httpOptions});
+    return this.http.put<User>(Users+"updateUsername", obj, {headers:httpOptions});
+  }
+  updatePhoneNumber(email:string|null|undefined, data:String)
+  {
+    let obj = {
+      email:email,
+      data:data
+    }
+
+    let httpOptions = new HttpHeaders()
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
+    return this.http.put<User>(Users+"updatePhoneNumber", obj, {headers:httpOptions});
+  }
+  updateAddress(email:string|null|undefined, data:String)
+  {
+    let obj = {
+      email:email,
+      data:data
+    }
+
+    let httpOptions = new HttpHeaders()
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
+    return this.http.put<User>(Users+"updateAddress", obj, {headers:httpOptions});
+  }
+  updateGender(email:string|null|undefined, data:String)
+  {
+    let obj = {
+      email:email,
+      data:data
+    }
+
+    let httpOptions = new HttpHeaders()
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
+    return this.http.put<User>(Users+"updateGender", obj, {headers:httpOptions});
   }
   getMyProducts()
   {

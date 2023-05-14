@@ -1,0 +1,16 @@
+.spolja
+{
+    background-color: #efefef;
+    z-index: -2;
+    height: 100vh;
+}
+
+.bg-image
+{
+    background-image: url('../../../../assets/images/Untitled.jpg');
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-position: center;
+    background-size: 100% 100vh;
+    height: 100vh;
+}

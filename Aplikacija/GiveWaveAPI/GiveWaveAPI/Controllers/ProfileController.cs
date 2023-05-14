@@ -50,39 +50,24 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
-        [Route("updateData")]
+
+        [Route("updateUsername")]
         [HttpPut]
-        public async Task<ActionResult> updateData([FromBody] ProfilKorisnika profil)
+        public async Task<ActionResult> updateUsername([FromBody] ChangeData change)
         {
+            var profil = Context.ProfilKorisnikas.Where(pr => pr.Email == change.email).FirstOrDefault();
             try
             {
-                var profile = Context.ProfilKorisnikas.Where(pr => pr.Email == profil.Email).FirstOrDefault();
-                if (profile == null)
-                    return BadRequest("Profil nije pronadjen");
-                if (profile.Adresa != profil.Adresa)
-                    profile.Adresa = profil.Adresa;
-                if(profile.Pol != profil.Pol)
-                    profile.Pol = profil.Pol;
-                if (profile.Username != profil.Username)
-                    profile.Username = profil.Username;
-                if (profile.BrojTelefona != profil.BrojTelefona)
-                    profile.BrojTelefona = profil.BrojTelefona;
-                if (profile.DatumRodjenja != profil.DatumRodjenja)
-                    profile.DatumRodjenja = profil.DatumRodjenja;
-
-                Context.ProfilKorisnikas.Update(profile);
-                await Context.SaveChangesAsync();
-
-                return Ok(new
+                if(profil == null)
                 {
-                    email = profile.Email,
-                    username = profile.Username,
-                    brojTelefona = profile.BrojTelefona,
-                    adresa = profile.Adresa,
-                    datumRodjenja = profile.DatumRodjenja,
-                    datumRegistracije = profile.DatumRegistracije,
-                    pol = profile.Pol
-                });
+                    return BadRequest("Profil nije nadjen");
+                }
+                if (profil.Username == change.data)
+                    return BadRequest("Isti je data");
+                profil.Username = change.data;
+                Context.ProfilKorisnikas.Update(profil);
+                await Context.SaveChangesAsync();
+                return Ok(profil);
             }
             catch(Exception e)
             {
@@ -90,6 +75,77 @@ namespace GiveWaveAPI.Controllers
             }
         }
 
+        [Route("updatePhoneNumber")]
+        [HttpPut]
+        public async Task<ActionResult> updateNumber([FromBody] ChangeData change)
+        {
+            var profil = Context.ProfilKorisnikas.Where(pr => pr.Email == change.email).FirstOrDefault();
+            try
+            {
+                if (profil == null)
+                {
+                    return BadRequest("Profil nije nadjen");
+                }
+                if (profil.BrojTelefona == change.data)
+                    return BadRequest("Isti je data");
+                profil.BrojTelefona = change.data;
+                Context.ProfilKorisnikas.Update(profil);
+                await Context.SaveChangesAsync();
+                return Ok(profil);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [Route("updateAddress")]
+        [HttpPut]
+        public async Task<ActionResult> updateAddress([FromBody] ChangeData change)
+        {
+            var profil = Context.ProfilKorisnikas.Where(pr => pr.Email == change.email).FirstOrDefault();
+            try
+            {
+                if (profil == null)
+                {
+                    return BadRequest("Profil nije nadjen");
+                }
+                if (profil.Adresa == change.data)
+                    return BadRequest("Isti je data");
+                profil.Adresa = change.data;
+                Context.ProfilKorisnikas.Update(profil);
+                await Context.SaveChangesAsync();
+                return Ok(profil);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [Route("updateGender")]
+        [HttpPut]
+        public async Task<ActionResult> updateGender([FromBody] ChangeData change)
+        {
+            var profil = Context.ProfilKorisnikas.Where(pr => pr.Email == change.email).FirstOrDefault();
+            try
+            {
+                if (profil == null)
+                {
+                    return BadRequest("Profil nije nadjen");
+                }
+                if (profil.Pol == change.data)
+                    return BadRequest("Isti je data");
+                profil.Pol = change.data;
+                Context.ProfilKorisnikas.Update(profil);
+                await Context.SaveChangesAsync();
+                return Ok(profil);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
         [NonAction]
         private string GetFilePath(string email)
         {
