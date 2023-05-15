@@ -1,16 +1,25 @@
-.spolja
-{
-    background-color: #efefef;
-    z-index: -2;
-    height: 100vh;
-}
+
 
 .bg-image
 {
     background-image: url('../../../../assets/images/Untitled.jpg');
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    text-align: center;
     background-position: center;
-    background-size: 100% 100vh;
-    height: 100vh;
+    background-size: 100% 70vh;
+    height: 70vh;
 }
+h2
+{
+    margin-top: 10%;
+}
+p{
+    max-width: 80%;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.row
+{
+    margin-right: 0;
+}
+

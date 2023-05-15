@@ -1,1 +1,5 @@
 /*@import url('assets/css/common.css');*/
+@import "@fontsource/quicksand";
+*{
+    font-family: "Quicksand";
+}

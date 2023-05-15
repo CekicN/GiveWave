@@ -1,8 +1,4 @@
-@import "@fontsource/quicksand";
 app-footer-bar{
     position: relative;
     bottom:0;
-}
-*{
-    font-family: "Quicksand";
 }
