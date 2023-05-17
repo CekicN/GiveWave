@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,9 @@ import { ContactComponent } from './contact/contact.component';
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AboutUsModule { }

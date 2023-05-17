@@ -1,72 +1,94 @@
 <div class="d-flex align-items-center flex-column">
-    <h3>Contact</h3>
-    <div class="card w-75">
-        <div class="card-body text-center d-flex flex-column">
-            <div class="row">
-                <div class="col-sm-3">
-                  <h3><fa-icon [icon]="['fas', 'phone']"></fa-icon></h3>
-                </div>
-                <div class="col-sm-9">
-                  <p class="mb-0">06248052</p>
-                </div>
-                <hr class="mt-2">
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                  <h3><fa-icon [icon]="['fas', 'location-dot']"></fa-icon></h3>
-                </div>
-                <div class="col-sm-9">
-                  <p class="mb-0">Aleksandra Medevedeva 14</p>
-                </div>
-                <hr class="mt-2">
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                  <h3><fa-icon [icon]="['fas', 'envelope']"></fa-icon></h3>
-                </div>
-                <div class="col-sm-9">
-                  <p class="mb-0">GiveWave@gmail.com</p>
-                </div>
-                <hr class="mt-2">
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                  <h3><fa-icon [icon]="['fab', 'instagram']"></fa-icon></h3>
-                </div>
-                <div class="col-sm-9">
-                  <p class="mb-0">GiveWaveIG</p>
-                </div>
-                <hr class="mt-2">
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                  <h3><fa-icon [icon]="['fab', 'facebook']"></fa-icon></h3>
-                </div>
-                <div class="col-sm-9">
-                  <p class="mb-0">GiveWaveFB</p>
-                </div>
-                <hr class="mt-2">
-            </div>
-            <div class="col">
-                <h4>Contact Us</h4>
-                <div class="row">
-                    <div class="col-sm-3 mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    </div>
-                    <div class="col-sm-9">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
-                </div>
-                <div class="row form-outline mb-3">
-                    <div class="col-sm-3">
-                        <label class="form-label" for="textAreaExample">Message</label>
-                    </div>
-                    <div class="col-sm-9">
-                        <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-                    </div>
-                </div>
-                <button class="btn btn-primary">Submit</button>
-            </div>
+  <h3>Contact</h3>
+  <div class="card w-75">
+    <div class="card-body text-center d-flex flex-column">
+      <div class="row">
+        <div class="col-sm-3">
+          <h3><fa-icon [icon]="['fas', 'phone']"></fa-icon></h3>
         </div>
+        <div class="col-sm-9">
+          <p class="mb-0">06248052</p>
+        </div>
+        <hr class="mt-2">
       </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <h3><fa-icon [icon]="['fas', 'location-dot']"></fa-icon></h3>
+        </div>
+        <div class="col-sm-9">
+          <p class="mb-0"><a href="https://www.google.com/maps/place/%D0%95%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D1%81%D0%BA%D0%B8+%D1%84%D0%B0%D0%BA%D1%83%D0%BB%D1%82%D0%B5%D1%82+%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D0%B7%D0%B8%D1%82%D0%B5%D1%82%D0%B0+%D1%83+%D0%9D%D0%B8%D1%88%D1%83/@43.3314416,21.8925419,19.33z/data=!4m6!3m5!1s0x4755b733e02e006f:0x2fd8f95c1eacfcfb!8m2!3d43.331296!4d21.892522!16s%2Fg%2F12302n10">Aleksandra Medevedeva 14</a></p>
+        </div>
+        <hr class="mt-2">
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <h3><fa-icon [icon]="['fas', 'envelope']"></fa-icon></h3>
+        </div>
+        <div class="col-sm-9">
+          <p class="mb-0">givewave.mail@gmail.com</p>
+        </div>
+        <hr class="mt-2">
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <h3><fa-icon [icon]="['fab', 'instagram']"></fa-icon></h3>
+        </div>
+        <div class="col-sm-9">
+          <p class="mb-0">GiveWaveIG</p>
+        </div>
+        <hr class="mt-2">
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <h3><fa-icon [icon]="['fab', 'facebook']"></fa-icon></h3>
+        </div>
+        <div class="col-sm-9">
+          <p class="mb-0">GiveWaveFB</p>
+        </div>
+        <hr class="mt-2">
+      </div>
+      <div class="col">
+        <h4>Contact Us</h4>
+        <form [formGroup]="contactForm">
+          <div class="row">
+            <div class="col-sm-3 mb-3">
+              <label for="Name" class="form-label">Name</label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" formControlName="Name" id="Name" aria-describedby="NameHelp">
+                <small *ngIf="contactForm.controls['Name'].dirty && contactForm.hasError('required','Name')" class="text-danger">*Name is required</small>
+            </div>
+            </div>
+          <div class="row">
+            <div class="col-sm-3 mb-3">
+              <label for="Email" class="form-label">Email address</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" formControlName="Email" id="Email" aria-describedby="emailHelp">
+              <small *ngIf="contactForm.controls['Name'].dirty && contactForm.hasError('required','Name')" class="text-danger">*Email is required</small>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 mb-3">
+              <label for="Subject" class="form-label">Subject</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" formControlName="Subject" id="Subject" aria-describedby="SubjectHelp">
+              <small *ngIf="contactForm.controls['Name'].dirty && contactForm.hasError('required','Name')" class="text-danger">*Subject is required</small>
+            </div>
+          </div>
+          <div class="row form-outline mb-3">
+            <div class="col-sm-3">
+              <label class="form-label" for="Text">Message</label>
+            </div>
+            <div class="col-sm-9">
+              <textarea class="form-control" formControlName="Text" id="Text" rows="4"></textarea>
+              <small *ngIf="contactForm.controls['Name'].dirty && contactForm.hasError('required','Name')" class="text-danger">*Message is required</small>
+            </div>
+          </div>
+        </form>
+        <button class="btn btn-primary" (click)="submit()">Submit</button>
+      </div>
+    </div>
+  </div>
 </div>

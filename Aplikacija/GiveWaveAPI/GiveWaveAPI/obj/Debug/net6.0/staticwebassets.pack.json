@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\ContactEmail.html",
+      "PackagePath": "staticwebassets\\EmailTemplate\\ContactEmail.html"
+    },
+    {
+      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\Logo.jpg",
+      "PackagePath": "staticwebassets\\EmailTemplate\\Logo.jpg"
+    },
+    {
       "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\ceka123@gmail.com\\image_15.05.2023._23_31_12.png",
       "PackagePath": "staticwebassets\\Uploads\\Profile\\ceka123@gmail.com\\image_15.05.2023._23_31_12.png"
     },
