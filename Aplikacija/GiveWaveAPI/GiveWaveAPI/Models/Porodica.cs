@@ -20,7 +20,7 @@ namespace GiveWaveAPI.Models
         [MaxLength(255)]
         public string Opis { get; set; }
 
-        public List<Kategorija> Kategorije { get; set;}
+        public List<Kategorije> Kategorije { get; set;}
         public List<Proizvod> Proizvodi { get; set; }
 
 

@@ -9,7 +9,7 @@ namespace GiveWaveAPI.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Ime { get; set; }
+        public string naziv { get; set; }
         public List<Hrana> Hrana { get; set; }
         public List<Igracka> Igracka { get; set;}
         public List<Krv> Krv { get; set;}
@@ -20,6 +20,7 @@ namespace GiveWaveAPI.Models
         public List<Ostalo> Ostalo { get; set;}
         public List<Porodica> Porodica { get; set; }
         public List<Proizvod> Proizvod { get; set; }
+        public Kategorije Kategorije { get; set; }
 
     }
 }

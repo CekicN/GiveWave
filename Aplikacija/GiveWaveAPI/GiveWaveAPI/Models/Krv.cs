@@ -14,7 +14,7 @@ namespace GiveWaveAPI.Models
         public DateTime DatumDoniranja { get; set; }
         public double KolicinaDoniraneKrvi { get; set; }
         public string LokacijaDoniranja { get; set; }
-        public Kategorija Kategorije { get; set; }
+        public Kategorija Kategorijaa { get; set; }
 
     }
 }

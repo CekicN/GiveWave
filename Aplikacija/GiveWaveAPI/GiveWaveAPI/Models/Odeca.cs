@@ -22,6 +22,6 @@ namespace GiveWaveAPI.Models
         public int Uzrast { get; set; }
         [MaxLength(100)]
         public string Opis { get; set; }
-        public Kategorija Kategorije { get; set; }
+        public Kategorija Kategorijaa { get; set; }
     }
 }

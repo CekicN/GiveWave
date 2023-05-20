@@ -30,6 +30,11 @@
 
   <ItemGroup>
     <Folder Include="Context\" />
+<<<<<<< HEAD
+=======
+    <Folder Include="Helpers\" />
+    <Folder Include="Migrations\" />
+>>>>>>> e4681b6ab01afe8e163ede8ba0b772afd98f2174
     <Folder Include="wwwroot\Uploads\common\" />
     <Folder Include="wwwroot\Uploads\Profile\" />
   </ItemGroup>

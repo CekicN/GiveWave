@@ -49,6 +49,6 @@ namespace GiveWaveAPI.Models
         [MaxLength(100)]
         public string ZdravstvenaOprema { get; set; }
 
-        public Kategorija Kategorije { get; set; }
+        public Kategorija Kategorijaa { get; set; }
     }
 }
