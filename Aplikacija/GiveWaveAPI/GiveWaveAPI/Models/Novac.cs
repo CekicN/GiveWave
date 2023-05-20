@@ -14,6 +14,6 @@ namespace GiveWaveAPI.Models
         [MaxLength(100)]
         public string IzvorNovca { get; set; }
         public DateTime DatumDonacije { get; set; }
-        public Kategorija Kategorije { get; set; }
+        public Kategorija Kategorijaa { get; set; }
     }
 }

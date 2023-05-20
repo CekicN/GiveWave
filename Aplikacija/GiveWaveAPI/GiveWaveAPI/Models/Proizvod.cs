@@ -18,6 +18,6 @@ namespace GiveWaveAPI.Models
         public string Opis {get; set; }
 
         public ProfilKorisnika ProfilKorisnika { get; set; }
-        public Kategorija Kategorija { get; set; }
+        public Kategorije Kategorije { get; set; }
     }
 }

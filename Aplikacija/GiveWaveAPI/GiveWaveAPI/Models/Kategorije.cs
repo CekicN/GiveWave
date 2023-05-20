@@ -5,15 +5,10 @@ using System.Text.Json;
 
 namespace GiveWaveAPI.Models
 {
-    public class Hrana
+    public partial class Kategorije
     {
         [Key]
         public int Id { get; set; }
-
-        [MaxLength(50)]
-        public DateTime DatumIsteka { get; set; }
-        public string Opis { get; set; }
-        public Kategorija Kategorija { get; set; }
-
+        public List<Kategorija> Kategorija { get; set; }
     }
 }

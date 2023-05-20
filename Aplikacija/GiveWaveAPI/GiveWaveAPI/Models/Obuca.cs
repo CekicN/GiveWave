@@ -16,6 +16,6 @@ namespace GiveWaveAPI.Models
         public string Namena { get; set; }
         public string Opis { get; set; }
 
-        public Kategorija Kategorije { get; set; }
+        public Kategorija Kategorijaa { get; set; }
     }
 }
