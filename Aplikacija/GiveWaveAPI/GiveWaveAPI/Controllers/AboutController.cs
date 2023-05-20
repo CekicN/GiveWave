@@ -48,25 +48,21 @@ namespace GiveWaveAPI.Controllers
             }
         }
 
-        //******************************
-        //Kad Se napravi model za porodice ovo da se odkomentarise i da se namesti
-        //******************************
+        [Route("CountFamilies")]
+        [HttpGet]
+        public async Task<ActionResult> CountFamilies()
+        {
+            try
+            {
 
-        //[Route("CountFamilies")]
-        //[HttpGet]
-        //public async Task<ActionResult> CountFamilies()
-        //{
-        //    try
-        //    {
-
-        //        List<ProfilKorisnika> Users = context.ProfilKorisnikas.ToList();
-        //        int count = Users.Count;
-        //        return Ok(count);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
+                List<Porodica> Families = context.Porodice.ToList();
+                int count = Families.Count;
+                return Ok(count);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

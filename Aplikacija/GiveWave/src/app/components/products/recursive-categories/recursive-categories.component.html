@@ -1,0 +1,13 @@
+<div class="col" *ngFor="let category of recursiveList">
+    <div class="btn-group dropend mb-2">
+        <button type="button" class="btn btn-primary">
+        {{category.category.naziv}}
+        </button>
+        <button type="button" class="btn category-drop-color dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropright</span>
+        </button>
+        <ul class="dropdown-menu" *ngIf="category.category.podkategorije.length > 0">
+            <app-recursive-categories [recursiveList]="category.category.podkategorije"></app-recursive-categories>
+        </ul>
+    </div>
+</div>

@@ -25,4 +25,9 @@ export class ServiceService {
   {
     return this.http.get<number>(CountUrl+"CountProducts");
   }
+  countFamilies()
+  {
+    return this.http.get<number>(CountUrl+"CountFamilies");
+  }
+
 }

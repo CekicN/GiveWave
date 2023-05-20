@@ -20,6 +20,7 @@ export class StatisticsComponent implements OnInit {
   ngOnInit(): void {
     this.service.countUsers().subscribe(count => this.vrednosti[0] = count);
     this.service.countProducts().subscribe(count => this.vrednosti[1] = count);
+    this.service.countFamilies().subscribe(count => this.vrednosti[2] = count);
   }
 
   

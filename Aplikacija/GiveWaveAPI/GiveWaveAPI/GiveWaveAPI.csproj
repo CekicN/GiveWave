@@ -30,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="Context\" />
-    <Folder Include="Helpers\" />
     <Folder Include="wwwroot\Uploads\common\" />
     <Folder Include="wwwroot\Uploads\Profile\" />
   </ItemGroup>
