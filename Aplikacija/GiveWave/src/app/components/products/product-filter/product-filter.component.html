@@ -1,0 +1,20 @@
+<div class="row">
+
+    <div class="col-xl-3">
+        <select name="city" id="city">
+            <option value="" *ngFor="let city of cities">{{city}}</option>
+        </select>
+    </div>
+    <div class="col-xl-3">
+        <select name="status" id="status">
+            <option value="" *ngFor="let status of status">{{status}}</option>
+        </select>
+    </div>
+    <div class="col-xl-6">
+        <!-- *ngFor="let product of products | myProductsFilter: searchText" -->
+        <!-- <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+        [(ngModel)]="searchText" placeholder="Enter the name of category" 
+        autofocus> -->
+
+    </div>
+</div>

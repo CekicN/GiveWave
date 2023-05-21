@@ -9,12 +9,12 @@ import { Categories, category } from 'app/Models/Categories';
 })
 export class CategoriesComponent implements OnInit {
   
-  categories!:Categories[];
+  categories!:any;
   constructor(private service:ProductService){}
   ngOnInit(): void {
     this.service.getCategories().subscribe(kategorije => {
       this.categories = kategorije
-      console.log(this.categories[0].category.podkategorije);
+      // console.log(this.categories[0].category.podkategorije);
     });
   }
 

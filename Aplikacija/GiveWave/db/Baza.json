@@ -3,12 +3,26 @@
         {
             "id":1,
             "category":{
-                "naziv":"Odeca",
+                "naziv":"Clothes",
                 "podkategorije":[
                 {
                     "category":{
-                        "naziv":"Majca",
+                        "naziv":"T-shirt",
                         "podkategorije":[ 
+                            {
+                                "category":{
+                                    "naziv":"POLO",
+                                    "podkategorije":[ 
+                                    ]
+                                }
+                            },
+                            {
+                                "category":{
+                                    "naziv":"Bez rukava",
+                                    "podkategorije":[ 
+                                    ]
+                                }
+                            }
                         ]
                     }
                 },

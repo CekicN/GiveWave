@@ -1,9 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-recursive-categories',
   templateUrl: './recursive-categories.component.html',
   styleUrls: ['./recursive-categories.component.css']
 })
 export class RecursiveCategoriesComponent {
-  @Input() recursiveList:any;
+  
+  @Input() recursiveList!:any;
+  opened:boolean = false;
+
+  toggleSubmenu() {
+    this.opened = !this.opened;
+  }
+
+  navigate(routerLink: any) {
+    //metoda za vracanje proizvoda po nazivu kategorije
+    console.log(routerLink);
+  }
 }

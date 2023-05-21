@@ -13,6 +13,6 @@ export class ProductService {
 
   getCategories()
   {
-    return this.http.get<Categories[]>(url);
+    return this.http.get<any>(url);
   }
 }
