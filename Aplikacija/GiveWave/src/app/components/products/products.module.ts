@@ -5,6 +5,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { RecursiveCategoriesComponent } from './recursive-categories/recursive-categories.component';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { ProductListComponent } from './product-list/product-list.component';
     ProductListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class ProductsModule { }

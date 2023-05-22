@@ -15,4 +15,9 @@ export class ProductService {
   {
     return this.http.get<any>(url);
   }
+
+  getCities()
+  {
+    return this.http.get("http://localhost:3001/Cities");
+  }
 }

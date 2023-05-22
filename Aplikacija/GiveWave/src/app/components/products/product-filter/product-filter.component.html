@@ -1,20 +1,22 @@
-<div class="row">
+<div class="row mt-3">
 
-    <div class="col-xl-3">
-        <select name="city" id="city">
-            <option value="" *ngFor="let city of cities">{{city}}</option>
+    <div class="col-md-3">
+        <select name="city" id="city" class="form-select single-choice">
+            <option></option>
+            <option value="{{city.city}}" *ngFor="let city of cities">{{city.city}}</option>
         </select>
     </div>
-    <div class="col-xl-3">
-        <select name="status" id="status">
-            <option value="" *ngFor="let status of status">{{status}}</option>
+    <div class="col-md-3">
+        <select name="status" id="status" class="form-select">
+            <option value="{{status}}" *ngFor="let status of status">{{status}}</option>
         </select>
     </div>
-    <div class="col-xl-6">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
         <!-- *ngFor="let product of products | myProductsFilter: searchText" -->
-        <!-- <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+        <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
         [(ngModel)]="searchText" placeholder="Enter the name of category" 
-        autofocus> -->
+        autofocus>
 
     </div>
 </div>
