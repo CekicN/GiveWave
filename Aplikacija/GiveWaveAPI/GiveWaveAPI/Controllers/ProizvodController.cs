@@ -15,36 +15,46 @@ namespace GiveWaveAPI.Controllers
         }
 
 
-        //[Route("CreateProduct")]
-        //[HttpPost]
-        //public async Task<ActionResult> CreateProduct([FromBody] ProductHelper proizvod)
-        //{
-        //    try
-        //    {
-        //        var user = context.ProfilKorisnikas
-        //        .Where(korisnik => korisnik.Email == proizvod.emailKorisnika).FirstOrDefault();
-        //        if (user == null)
-        //            return BadRequest("Korisnik nije pronadjen");
+        [Route("addProduct")]
+        [HttpPost]
+        public async Task<ActionResult> addProduct([FromBody] ProductHelper proizvod)
+        {
+            try
+            {
+                var user = context.ProfilKorisnikas
+                .Where(p => p.Email == proizvod.emailKorisnika).FirstOrDefault();
+                if (user == null)
+                {
+                    return BadRequest("Korisnik nije pronadjen");
+                }
+                else
+                {
+                    var kategorija = context.Kategorijas
+                      .Where(q => q.naziv == proizvod.Kategorija);
+                    if (kategorija == null)
+                    {
+                        return BadRequest("Kategorija ne postoji");
+                    }
+                    else
+                    {
+                        var product = new Proizvod();
+                        product.Naziv = proizvod.Naziv;
+                        product.ProfilKorisnika = user;
+                        product.Opis = proizvod.Opis;
+                        //product.Kategorije = proizvod.kategorija;
 
-        //        var kategorija = context.Kategorijas
-        //        .Where(kat => kat.Ime == proizvod.Kategorija);
-        //        if (kategorija == null)
-        //            return BadRequest("Kategorija nije pronadjena");
-
-
-
-        //        var product = new Proizvod();
-        //        product.Naziv = proizvod.Naziv;
-        //        product.ProfilKorisnika = user;
-        //        product.Opis = proizvod.Opis;
-        //        product.Kategorija = klasa;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return BadRequest(e.Message);
-        //    }
-        //    return Ok();
-        //}
+                        context.Proizvods.Add(product);
+                        await context.SaveChangesAsync();   
+                        return Ok("Proizvod je dodat");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+            
+        }
 
         [Route("VratiProizvodePremaEmailu")]
         [HttpGet]
@@ -68,7 +78,53 @@ namespace GiveWaveAPI.Controllers
             {
                 return BadRequest(e.Message);
             }
-            return Ok();
+
+            
+        }
+
+        [Route("ObrisiProizvod")]
+        [HttpDelete]
+        public async Task<ActionResult> obrisiProizvod(int id)
+        {
+            try
+            {
+                var proizvod = context.ProfilKorisnikas
+                    .Include(p => p.Proizvodi)
+                    .Where(q => q.Id == id)
+                    .FirstOrDefault();
+
+                if(proizvod == null)
+                {
+                    return BadRequest("Proizvod sa tim id-jem ne postoji");
+                }
+                else
+                {
+                    context.ProfilKorisnikas.Remove(proizvod);
+                    await context.SaveChangesAsync();
+                    return Ok("Proizvod je uspesno obrisan");
+                }
+            }
+            catch(Exception e) 
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [Route("PrikaziViseInfoOProizvodima")]
+        [HttpGet]
+        public async Task<ActionResult> prikaziViseInfoOProizvodima(int id)
+        {
+            try
+            {
+                var productInfo = context.Proizvods;
+                return Ok(productInfo);
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);   
+            }
         }
     }
+
+    
 }

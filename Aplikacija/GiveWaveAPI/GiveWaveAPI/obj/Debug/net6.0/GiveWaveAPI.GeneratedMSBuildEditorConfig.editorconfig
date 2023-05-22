@@ -9,17 +9,9 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GiveWaveAPI
 build_property.RootNamespace = GiveWaveAPI
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\
-build_property.RazorLangVersion = 6.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI
-=======
 build_property.ProjectDir = F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI
->>>>>>> ba7751de06b94327b6630273312c06dfe724f5fb
 build_property._RazorSourceGeneratorDebug = 
