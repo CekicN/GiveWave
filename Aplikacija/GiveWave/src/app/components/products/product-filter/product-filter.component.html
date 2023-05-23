@@ -2,21 +2,23 @@
 
     <div class="col-md-3">
         <select name="city" id="city" class="form-select single-choice">
-            <option></option>
+            <option>All cities</option>
             <option value="{{city.city}}" *ngFor="let city of cities">{{city.city}}</option>
         </select>
     </div>
     <div class="col-md-3">
         <select name="status" id="status" class="form-select">
+            <option value="">status</option>
             <option value="{{status}}" *ngFor="let status of status">{{status}}</option>
         </select>
     </div>
-    <div class="col-md-3"></div>
-    <div class="col-md-3">
+    <div class="col-md-3 offset-md-3">
         <!-- *ngFor="let product of products | myProductsFilter: searchText" -->
-        <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
-        [(ngModel)]="searchText" placeholder="Enter the name of category" 
-        autofocus>
-
+        <div class="d-flex">
+            <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+                [(ngModel)]="searchText" placeholder="Enter a product name" 
+                autofocus>
+        <fa-icon class="mt-2 ms-2" [icon]="['fas', 'magnifying-glass']"></fa-icon>
+        </div>
     </div>
 </div>
