@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace GiveWaveAPI.Models
 {
@@ -17,7 +18,11 @@ namespace GiveWaveAPI.Models
         [MaxLength(255)]
         public string Opis {get; set; }
 
+        [JsonIgnore]
         public ProfilKorisnika ProfilKorisnika { get; set; }
+        [JsonIgnore]
         public Kategorije Kategorije { get; set; }
+
+       
     }
 }
