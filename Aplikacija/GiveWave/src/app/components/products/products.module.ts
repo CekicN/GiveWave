@@ -6,6 +6,7 @@ import { RecursiveCategoriesComponent } from './recursive-categories/recursive-c
 import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ]
 })
 export class ProductsModule { }
