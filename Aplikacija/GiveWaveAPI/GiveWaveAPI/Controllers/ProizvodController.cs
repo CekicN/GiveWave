@@ -5,10 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GiveWaveAPI.Controllers
 {
-    public class ProizvodController : Controller
+    [ApiController]
+    [Route("controller")]
+    public class ProizvodController : ControllerBase
     {
-        private readonly GiveWaveDBContext context;
-
+        public GiveWaveDBContext context { get; set; }
         public ProizvodController(GiveWaveDBContext c)
         {
             context = c;

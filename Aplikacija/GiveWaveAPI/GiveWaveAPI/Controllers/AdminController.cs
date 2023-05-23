@@ -1,7 +1,8 @@
 ﻿using GiveWaveAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Policy;
+using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace GiveWaveAPI.Controllers
 {
@@ -97,71 +98,113 @@ namespace GiveWaveAPI.Controllers
         }
 
 
-        /*[Route("PrikaziSveKorisnike")]
+        [Route("PrikaziSveKorisnike")]
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult> prikaziSveKorisnike()
         {
             try
             {
-                //logika za dohvacivanje i prikaz svih korisnika
+                var korisnici = await Context.ProfilKorisnikas.ToListAsync();
+                return Ok(korisnici);
             }
             catch(Exception ex ) 
             {
                 return BadRequest(ex.Message);  
             }
-        }*/
+        }
 
 
-        /*[Route("PrikaziSveDonacije")]
+        [Route("PrikaziSveDonacije")]
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult> prikaziSveDonacije()
         {
             try
             {
-                //logika za dohvacivanje i prikaz svih donacija
+                var donacije = await Context.Donacijas.ToListAsync();
+                return Ok(donacije);    
             }
             catch(Exception ex)
             {
                 return BadRequest(ex.Message);  
             }
-        }*/
+        }
 
-        /*[Route("BrisanjeNeprikladneDonacije")]
+        private bool proveriNeprikladanSadraj(Donacija donacija)
+        {
+             if(donacija.Opis.Contains("Majmun") || donacija.Opis.Contains("Govedo") || donacija.Opis.Contains("Volina"))
+             {
+                return true;
+             }
+             else
+             {
+                return false;
+             }
+        }
+
+        [Route("BrisanjeNeprikladneDonacije")]
         [HttpDelete]
         [Authorize(Roles = "Admin")]
-        public async Task<ActionResult> brisanjeNeprikladneDonacije(int/string id)
+        public async Task<ActionResult> brisanjeNeprikladneDonacije(int id)
         {
             try
             {
-                //logika za brisanje donacije na osnovu int/string id
+                var donacija = await Context.Donacijas.FindAsync(id);
+                if(donacija == null)
+                {
+                    return BadRequest("Donacija nije pronadjena !");
+                }
+                else
+                {
+                    bool isNeprikladanSadrzaj = proveriNeprikladanSadraj(donacija);
+
+                    if(isNeprikladanSadrzaj == true)
+                    {
+                        Context.Donacijas.Remove(donacija);
+                        await Context.SaveChangesAsync();
+                        return Ok("Donacija je obrisana zbog neprikladnog sadrzaja !");
+                    }
+                    else
+                    {
+                        return Ok("Donacija je ok");
+                    }
+                }
             }
             catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
-        }*/
+        }
 
 
-        /*[Route("PodrskaKorisnicima")]
+        [Route("PodrskaKorisnicima")]
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult> podrskaKorisnicima(int userId)
         {
             try
             {
-                //logika za prikaz podrske korisniku na osnovu userId
+                var korisnik = await Context.ProfilKorisnikas.FindAsync(userId);
+                if(korisnik == null)
+                {
+                    return BadRequest("Korisnik nije pronadjen !");
+
+                }
+                else
+                {
+                    //prikaz podrske korisniku kada se prijavi
+                    var poruka = "Hvala vam na korištenju naše aplikacije. Ako imate bilo kakva pitanja ili trebate pomoć, slobodno nas kontaktirajte.";
+                    return Ok(poruka);
+
+                }
             }
             catch(Exception e) 
             {
                 return BadRequest(e.Message);
             }
-        }*/
+        }
 
     }
-
-
-
     
 }

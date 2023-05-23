@@ -10,6 +10,8 @@ namespace GiveWaveAPI.Models
         public string TipDonacije { get; set; }
         [Required]
         public DateTime DatumDonacije { get; set; }
+        [MaxLength(1000)]
+        public string Opis { get; set; }
 
         public ProfilKorisnika ProfilKorisnika { get; set; }
 

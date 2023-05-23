@@ -10,6 +10,7 @@ namespace GiveWaveAPI.Models
 {
     public partial class ProfilKorisnika
     {
+        
 
         [Key]
         public int Id { get; set; }
@@ -44,7 +45,7 @@ namespace GiveWaveAPI.Models
         public DateTime DatumRegistracije { get; set; }
         public List<Proizvod> Proizvodi { get; set; }
        // public List<User> Useri { get; set; }
-       public List<Donacija> Donacije { get; set; }
+        public List<Donacija> Donacije { get; set; }
        
 
 
