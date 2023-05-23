@@ -51,6 +51,36 @@ namespace GiveWaveAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Kategorijas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    naziv = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Kategorijas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Porodice",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Slika = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    BrClanova = table.Column<int>(type: "int", nullable: false),
+                    Adresa = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    NajpotrebnijeStvari = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Opis = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Porodice", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProfilKorisnikas",
                 columns: table => new
                 {
@@ -186,11 +216,16 @@ namespace GiveWaveAPI.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DatumIsteka = table.Column<DateTime>(type: "datetime2", maxLength: 50, nullable: false),
                     Opis = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    KategorijaId = table.Column<int>(type: "int", nullable: true)
+                    kategorijaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Hranas", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Hranas_Kategorijas_kategorijaId",
+                        column: x => x.kategorijaId,
+                        principalTable: "Kategorijas",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -202,25 +237,16 @@ namespace GiveWaveAPI.Migrations
                     Vrsta = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Stanje = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Opis = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    KategorijaaId = table.Column<int>(type: "int", nullable: true)
+                    kategorijaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Igrackas", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Kategorijas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    naziv = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    KategorijeId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Kategorijas", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Igrackas_Kategorijas_kategorijaId",
+                        column: x => x.kategorijaId,
+                        principalTable: "Kategorijas",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -233,14 +259,14 @@ namespace GiveWaveAPI.Migrations
                     DatumDoniranja = table.Column<DateTime>(type: "datetime2", nullable: false),
                     KolicinaDoniraneKrvi = table.Column<double>(type: "float", nullable: false),
                     LokacijaDoniranja = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    KategorijaaId = table.Column<int>(type: "int", nullable: true)
+                    kategorijaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Krvs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Krvs_Kategorijas_KategorijaaId",
-                        column: x => x.KategorijaaId,
+                        name: "FK_Krvs_Kategorijas_kategorijaId",
+                        column: x => x.kategorijaId,
                         principalTable: "Kategorijas",
                         principalColumn: "Id");
                 });
@@ -255,14 +281,14 @@ namespace GiveWaveAPI.Migrations
                     Iznos = table.Column<int>(type: "int", nullable: false),
                     IzvorNovca = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     DatumDonacije = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    KategorijaaId = table.Column<int>(type: "int", nullable: true)
+                    kategorijaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Novacs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Novacs_Kategorijas_KategorijaaId",
-                        column: x => x.KategorijaaId,
+                        name: "FK_Novacs_Kategorijas_kategorijaId",
+                        column: x => x.kategorijaId,
                         principalTable: "Kategorijas",
                         principalColumn: "Id");
                 });
@@ -277,14 +303,14 @@ namespace GiveWaveAPI.Migrations
                     Velicina = table.Column<int>(type: "int", maxLength: 2, nullable: false),
                     Namena = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     Opis = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    KategorijaaId = table.Column<int>(type: "int", nullable: true)
+                    kategorijaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Obucas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Obucas_Kategorijas_KategorijaaId",
-                        column: x => x.KategorijaaId,
+                        name: "FK_Obucas_Kategorijas_kategorijaId",
+                        column: x => x.kategorijaId,
                         principalTable: "Kategorijas",
                         principalColumn: "Id");
                 });
@@ -301,14 +327,14 @@ namespace GiveWaveAPI.Migrations
                     Namena = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Uzrast = table.Column<int>(type: "int", nullable: false),
                     Opis = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    KategorijaaId = table.Column<int>(type: "int", nullable: true)
+                    kategorijaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Odecas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Odecas_Kategorijas_KategorijaaId",
-                        column: x => x.KategorijaaId,
+                        name: "FK_Odecas_Kategorijas_kategorijaId",
+                        column: x => x.kategorijaId,
                         principalTable: "Kategorijas",
                         principalColumn: "Id");
                 });
@@ -332,37 +358,14 @@ namespace GiveWaveAPI.Migrations
                     KucniAparati = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Vozila = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     ZdravstvenaOprema = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    KategorijaaId = table.Column<int>(type: "int", nullable: true)
+                    kategorijaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Ostalos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Ostalos_Kategorijas_KategorijaaId",
-                        column: x => x.KategorijaaId,
-                        principalTable: "Kategorijas",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Porodice",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Slika = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
-                    BrClanova = table.Column<int>(type: "int", nullable: false),
-                    Adresa = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    NajpotrebnijeStvari = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    Opis = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    KategorijaId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Porodice", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Porodice_Kategorijas_KategorijaId",
-                        column: x => x.KategorijaId,
+                        name: "FK_Ostalos_Kategorijas_kategorijaId",
+                        column: x => x.kategorijaId,
                         principalTable: "Kategorijas",
                         principalColumn: "Id");
                 });
@@ -379,34 +382,40 @@ namespace GiveWaveAPI.Migrations
                     Marka = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Model = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Specifikacije = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    KategorijaaId = table.Column<int>(type: "int", nullable: true)
+                    kategorijaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tehnikas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tehnikas_Kategorijas_KategorijaaId",
-                        column: x => x.KategorijaaId,
+                        name: "FK_Tehnikas_Kategorijas_kategorijaId",
+                        column: x => x.kategorijaId,
                         principalTable: "Kategorijas",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Kategorijes",
+                name: "KategorijaPorodica",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PorodicaId = table.Column<int>(type: "int", nullable: true)
+                    KategorijeId = table.Column<int>(type: "int", nullable: false),
+                    PorodicaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Kategorijes", x => x.Id);
+                    table.PrimaryKey("PK_KategorijaPorodica", x => new { x.KategorijeId, x.PorodicaId });
                     table.ForeignKey(
-                        name: "FK_Kategorijes_Porodice_PorodicaId",
+                        name: "FK_KategorijaPorodica_Kategorijas_KategorijeId",
+                        column: x => x.KategorijeId,
+                        principalTable: "Kategorijas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_KategorijaPorodica_Porodice_PorodicaId",
                         column: x => x.PorodicaId,
                         principalTable: "Porodice",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -420,21 +429,15 @@ namespace GiveWaveAPI.Migrations
                     Opis = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     ProfilKorisnikaId = table.Column<int>(type: "int", nullable: true),
                     KategorijeId = table.Column<int>(type: "int", nullable: true),
-                    KategorijaId = table.Column<int>(type: "int", nullable: true),
                     PorodicaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Proizvods", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Proizvods_Kategorijas_KategorijaId",
-                        column: x => x.KategorijaId,
-                        principalTable: "Kategorijas",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Proizvods_Kategorijes_KategorijeId",
+                        name: "FK_Proizvods_Kategorijas_KategorijeId",
                         column: x => x.KategorijeId,
-                        principalTable: "Kategorijes",
+                        principalTable: "Kategorijas",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Proizvods_Porodice_PorodicaId",
@@ -488,59 +491,44 @@ namespace GiveWaveAPI.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Hranas_KategorijaId",
+                name: "IX_Hranas_kategorijaId",
                 table: "Hranas",
-                column: "KategorijaId");
+                column: "kategorijaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Igrackas_KategorijaaId",
+                name: "IX_Igrackas_kategorijaId",
                 table: "Igrackas",
-                column: "KategorijaaId");
+                column: "kategorijaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Kategorijas_KategorijeId",
-                table: "Kategorijas",
-                column: "KategorijeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Kategorijes_PorodicaId",
-                table: "Kategorijes",
+                name: "IX_KategorijaPorodica_PorodicaId",
+                table: "KategorijaPorodica",
                 column: "PorodicaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Krvs_KategorijaaId",
+                name: "IX_Krvs_kategorijaId",
                 table: "Krvs",
-                column: "KategorijaaId");
+                column: "kategorijaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Novacs_KategorijaaId",
+                name: "IX_Novacs_kategorijaId",
                 table: "Novacs",
-                column: "KategorijaaId");
+                column: "kategorijaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Obucas_KategorijaaId",
+                name: "IX_Obucas_kategorijaId",
                 table: "Obucas",
-                column: "KategorijaaId");
+                column: "kategorijaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Odecas_KategorijaaId",
+                name: "IX_Odecas_kategorijaId",
                 table: "Odecas",
-                column: "KategorijaaId");
+                column: "kategorijaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Ostalos_KategorijaaId",
+                name: "IX_Ostalos_kategorijaId",
                 table: "Ostalos",
-                column: "KategorijaaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Porodice_KategorijaId",
-                table: "Porodice",
-                column: "KategorijaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Proizvods_KategorijaId",
-                table: "Proizvods",
-                column: "KategorijaId");
+                column: "kategorijaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Proizvods_KategorijeId",
@@ -558,39 +546,14 @@ namespace GiveWaveAPI.Migrations
                 column: "ProfilKorisnikaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tehnikas_KategorijaaId",
+                name: "IX_Tehnikas_kategorijaId",
                 table: "Tehnikas",
-                column: "KategorijaaId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Hranas_Kategorijas_KategorijaId",
-                table: "Hranas",
-                column: "KategorijaId",
-                principalTable: "Kategorijas",
-                principalColumn: "Id");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Igrackas_Kategorijas_KategorijaaId",
-                table: "Igrackas",
-                column: "KategorijaaId",
-                principalTable: "Kategorijas",
-                principalColumn: "Id");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Kategorijas_Kategorijes_KategorijeId",
-                table: "Kategorijas",
-                column: "KategorijeId",
-                principalTable: "Kategorijes",
-                principalColumn: "Id");
+                column: "kategorijaId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Porodice_Kategorijas_KategorijaId",
-                table: "Porodice");
-
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -611,6 +574,9 @@ namespace GiveWaveAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "Igrackas");
+
+            migrationBuilder.DropTable(
+                name: "KategorijaPorodica");
 
             migrationBuilder.DropTable(
                 name: "Krvs");
@@ -640,16 +606,13 @@ namespace GiveWaveAPI.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
+                name: "Porodice");
+
+            migrationBuilder.DropTable(
                 name: "ProfilKorisnikas");
 
             migrationBuilder.DropTable(
                 name: "Kategorijas");
-
-            migrationBuilder.DropTable(
-                name: "Kategorijes");
-
-            migrationBuilder.DropTable(
-                name: "Porodice");
         }
     }
 }

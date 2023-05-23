@@ -17,10 +17,10 @@ namespace GiveWaveAPI.Models
         public List<Obuca> Obuca { get; set; }
         public List<Odeca> Odeca { get; set; }
         public List<Tehnika> Tehnika { get; set;}
-        public List<Ostalo> Ostalo { get; set;}
         public List<Porodica> Porodica { get; set; }
         public List<Proizvod> Proizvod { get; set; }
-        public Kategorije Kategorije { get; set; }
+        public List<Ostalo> Ostalo { get; set; }
+
 
     }
 }

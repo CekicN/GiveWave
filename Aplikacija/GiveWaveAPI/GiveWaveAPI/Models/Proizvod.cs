@@ -21,7 +21,7 @@ namespace GiveWaveAPI.Models
         [JsonIgnore]
         public ProfilKorisnika ProfilKorisnika { get; set; }
         [JsonIgnore]
-        public Kategorije Kategorije { get; set; }
+        public Kategorija Kategorije { get; set; }
 
        
     }

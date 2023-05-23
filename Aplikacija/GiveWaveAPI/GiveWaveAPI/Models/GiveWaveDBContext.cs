@@ -21,7 +21,6 @@ public class GiveWaveDBContext : IdentityDbContext<IdentityUser>
     public DbSet<Tehnika> Tehnikas { get; set; }
     public DbSet<Porodica> Porodice { get; set; }
     public DbSet<Proizvod> Proizvods { get; set; }
-    public DbSet<Kategorije> Kategorijes { get; set; }
 
     public GiveWaveDBContext(DbContextOptions<GiveWaveDBContext> options) : base(options)
     {
