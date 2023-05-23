@@ -63,7 +63,7 @@ namespace GiveWaveAPI.Controllers
         [Route("IzmeniKorisnika")]
         [HttpPut]
         [Authorize(Roles = "Admin")]
-        public async Task<ActionResult> izmeniKorisnika([FromBody] ProfilKorisnika profilKorisnika, EmailContent email)
+        public async Task<ActionResult> izmeniKorisnika([FromQuery] ProfilKorisnika profilKorisnika, EmailContent email)
         {
             try
             {
