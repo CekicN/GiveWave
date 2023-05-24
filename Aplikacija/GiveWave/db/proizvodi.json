@@ -1,0 +1,30 @@
+{
+    "proizvodi": [
+        {
+            "id": 1,
+            "naziv": "Krema za ruke",
+            "opis": "Polovno",
+            "uzrast": 15
+        },
+        {
+            "id": 2,
+            "naziv": "Pasta za zube",
+            "opis": "Novo",
+            "uzrast": 7
+        },
+        {
+            "id": 3,
+            "naziv": "Majica",
+            "opis": "Polovno",
+            "uzrast": 20
+        },
+        {
+            "id": 4,
+            "naziv": "Trenerke",
+            "opis": "Novo",
+            "uzrast": 11
+        }
+
+    ]
+}
+

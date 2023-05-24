@@ -5,6 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './donate.component.html',
   styleUrls: ['./donate.component.css']
 })
-export class DonateComponent {
 
-}
+export class DonateComponent {
+  
+  proizvodi: string[] = ["Krema za ruke","Pasta za zube","Majica", "Trenerke" ]
+
+  title = "Stvari";
+
+      
+  }
+
+
