@@ -72,13 +72,6 @@ namespace GiveWaveAPI.Controllers
 
         public async Task<ActionResult> preuzmiKategorije()
         {
-<<<<<<< HEAD
-=======
-            if (kategorija == null)
-            {
-                return BadRequest("Kategorija is null");
-            }
->>>>>>> 0d8691bd635323b851da06e62a2ec127e738eef1
             try
             {
                 var kategorije = await Context.Kategorijas.Include(c => c.Subcategories).ToListAsync();
@@ -111,7 +104,6 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
-<<<<<<< HEAD
         private void AddSubcategoriesRecursive(IEnumerable<Kategorija> subcategories, List<Kategorija> result, HashSet<int> processedCategoryIds)
         {
             foreach (var subcategory in subcategories)
@@ -125,8 +117,6 @@ namespace GiveWaveAPI.Controllers
                 }
             }
         }
-=======
->>>>>>> 0d8691bd635323b851da06e62a2ec127e738eef1
 
         [Route("ObrisiKategoriju")]
         [HttpDelete]
