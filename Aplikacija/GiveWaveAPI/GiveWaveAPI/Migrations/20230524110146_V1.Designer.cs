@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
-    [Migration("20230520131252_V1")]
+    [Migration("20230524110146_V1")]
     partial class V1
     {
         /// <inheritdoc />
@@ -86,15 +86,15 @@ namespace GiveWaveAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("KategorijeId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("naziv")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("parentID")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KategorijeId");
+                    b.HasIndex("parentID");
 
                     b.ToTable("Kategorijas");
                 });
@@ -107,10 +107,15 @@ namespace GiveWaveAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("KategorijaId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("PorodicaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("KategorijaId");
 
                     b.HasIndex("PorodicaId");
 
@@ -338,9 +343,6 @@ namespace GiveWaveAPI.Migrations
                     b.Property<int>("BrClanova")
                         .HasColumnType("int");
 
-                    b.Property<int?>("KategorijaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("NajpotrebnijeStvari")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
@@ -353,8 +355,6 @@ namespace GiveWaveAPI.Migrations
                         .HasColumnType("varbinary(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("KategorijaId");
 
                     b.ToTable("Porodice");
                 });
@@ -415,11 +415,15 @@ namespace GiveWaveAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("KategorijaId")
-                        .HasColumnType("int");
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("KategorijeId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Mesto")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Naziv")
                         .IsRequired()
@@ -436,13 +440,10 @@ namespace GiveWaveAPI.Migrations
                     b.Property<int?>("ProfilKorisnikaId")
                         .HasColumnType("int");
 
-                    b.Property<byte[]>("Slika")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
+                    b.Property<int>("status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("KategorijaId");
 
                     b.HasIndex("KategorijeId");
 
@@ -700,7 +701,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Hrana", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorija")
-                        .WithMany("Hrana")
+                        .WithMany()
                         .HasForeignKey("KategorijaId");
 
                     b.Navigation("Kategorija");
@@ -709,7 +710,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Igracka", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorijaa")
-                        .WithMany("Igracka")
+                        .WithMany()
                         .HasForeignKey("KategorijaaId");
 
                     b.Navigation("Kategorijaa");
@@ -717,24 +718,30 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Kategorija", b =>
                 {
-                    b.HasOne("GiveWaveAPI.Models.Kategorije", "Kategorije")
-                        .WithMany("Kategorija")
-                        .HasForeignKey("KategorijeId");
+                    b.HasOne("GiveWaveAPI.Models.Kategorija", "parentCategory")
+                        .WithMany("Subcategories")
+                        .HasForeignKey("parentID");
 
-                    b.Navigation("Kategorije");
+                    b.Navigation("parentCategory");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.Kategorije", b =>
                 {
+                    b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorija")
+                        .WithMany()
+                        .HasForeignKey("KategorijaId");
+
                     b.HasOne("GiveWaveAPI.Models.Porodica", null)
                         .WithMany("Kategorije")
                         .HasForeignKey("PorodicaId");
+
+                    b.Navigation("Kategorija");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.Krv", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorijaa")
-                        .WithMany("Krv")
+                        .WithMany()
                         .HasForeignKey("KategorijaaId");
 
                     b.Navigation("Kategorijaa");
@@ -743,7 +750,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Novac", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorijaa")
-                        .WithMany("Novac")
+                        .WithMany()
                         .HasForeignKey("KategorijaaId");
 
                     b.Navigation("Kategorijaa");
@@ -752,7 +759,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Obuca", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorijaa")
-                        .WithMany("Obuca")
+                        .WithMany()
                         .HasForeignKey("KategorijaaId");
 
                     b.Navigation("Kategorijaa");
@@ -761,7 +768,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Odeca", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorijaa")
-                        .WithMany("Odeca")
+                        .WithMany()
                         .HasForeignKey("KategorijaaId");
 
                     b.Navigation("Kategorijaa");
@@ -770,26 +777,15 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Ostalo", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorijaa")
-                        .WithMany("Ostalo")
+                        .WithMany()
                         .HasForeignKey("KategorijaaId");
 
                     b.Navigation("Kategorijaa");
                 });
 
-            modelBuilder.Entity("GiveWaveAPI.Models.Porodica", b =>
-                {
-                    b.HasOne("GiveWaveAPI.Models.Kategorija", null)
-                        .WithMany("Porodica")
-                        .HasForeignKey("KategorijaId");
-                });
-
             modelBuilder.Entity("GiveWaveAPI.Models.Proizvod", b =>
                 {
-                    b.HasOne("GiveWaveAPI.Models.Kategorija", null)
-                        .WithMany("Proizvod")
-                        .HasForeignKey("KategorijaId");
-
-                    b.HasOne("GiveWaveAPI.Models.Kategorije", "Kategorije")
+                    b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
                         .WithMany()
                         .HasForeignKey("KategorijeId");
 
@@ -809,7 +805,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Tehnika", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorijaa")
-                        .WithMany("Tehnika")
+                        .WithMany()
                         .HasForeignKey("KategorijaaId");
 
                     b.Navigation("Kategorijaa");
@@ -868,30 +864,7 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Kategorija", b =>
                 {
-                    b.Navigation("Hrana");
-
-                    b.Navigation("Igracka");
-
-                    b.Navigation("Krv");
-
-                    b.Navigation("Novac");
-
-                    b.Navigation("Obuca");
-
-                    b.Navigation("Odeca");
-
-                    b.Navigation("Ostalo");
-
-                    b.Navigation("Porodica");
-
-                    b.Navigation("Proizvod");
-
-                    b.Navigation("Tehnika");
-                });
-
-            modelBuilder.Entity("GiveWaveAPI.Models.Kategorije", b =>
-                {
-                    b.Navigation("Kategorija");
+                    b.Navigation("Subcategories");
                 });
 
             modelBuilder.Entity("GiveWaveAPI.Models.Porodica", b =>

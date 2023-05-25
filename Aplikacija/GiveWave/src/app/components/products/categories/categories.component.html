@@ -3,7 +3,7 @@
         <h3>Categories</h3>
         <ul class="list-group ">
           <li *ngFor="let kategorija of categories" class="list-group-item">
-            <app-recursive-categories [recursiveList]="kategorija.category"></app-recursive-categories>
+            <app-recursive-categories [recursiveList]="kategorija"></app-recursive-categories>
           </li>
         </ul>
     </div>

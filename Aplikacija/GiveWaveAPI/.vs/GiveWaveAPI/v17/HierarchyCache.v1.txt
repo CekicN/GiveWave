@@ -1,0 +1,821 @@
+﻿++Solution 'GiveWaveAPI' ‎(1 of 1 project)
+i:{00000000-0000-0000-0000-000000000000}:GiveWaveAPI.sln
+++GiveWaveAPI
+i:{00000000-0000-0000-0000-000000000000}:GiveWaveAPI
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\.vs\givewaveapi\
+++Connected Services 
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>662
+++Dependencies
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>661
+++Imports
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>255
+++Properties
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\properties\
+++wwwroot
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\
+++.vs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\.vs\
+++bin
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\
+++CodeTemplates
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\
+++Context
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\context\
+++Controllers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\
+++AboutController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\aboutcontroller.cs
+++AuthenticationController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\authenticationcontroller.cs
+++EmailSenderController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\emailsendercontroller.cs
+++HranaController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\hranacontroller.cs
+++IgrackaController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\igrackacontroller.cs
+++KategorijaController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\kategorijacontroller.cs
+++KategorijeController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\kategorijecontroller.cs
+++KrvController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\krvcontroller.cs
+++NovacController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\novaccontroller.cs
+++ObucaController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\obucacontroller.cs
+++OdecaController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\odecacontroller.cs
+++OstaloController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\ostalocontroller.cs
+++PorodicaController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\porodicacontroller.cs
+++ProfileController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\profilecontroller.cs
+++ProizvodController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\proizvodcontroller.cs
+++TehnikaController.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\controllers\tehnikacontroller.cs
+++Helpers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\helpers\
+++ProductHelper.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\helpers\producthelper.cs
+++Migrations
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\migrations\
+++Models
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\
+++Configuration
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\configuration\
+++DTOs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\dtos\
+++UserLoginRequestDto.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\dtos\userloginrequestdto.cs
+++UserRegisterRequest.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\dtos\userregisterrequest.cs
+++AuthResult.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\authresult.cs
+++ChangeData.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\changedata.cs
+++EmailContent.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\emailcontent.cs
+++GiveWaveDBContext.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\givewavedbcontext.cs
+++Hrana.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\hrana.cs
+++Igracka.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\igracka.cs
+++Kategorija.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\kategorija.cs
+++Kategorije.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\kategorije.cs
+++Krv.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\krv.cs
+++Novac.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\novac.cs
+++Obuca.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\obuca.cs
+++Odeca.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\odeca.cs
+++Ostalo.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\ostalo.cs
+++Porodica.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\porodica.cs
+++ProfilKorisnika.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\profilkorisnika.cs
+++Proizvod.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\proizvod.cs
+++Tehnika.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\tehnika.cs
+++obj
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\
+++appsettings.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\appsettings.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\appsettings.json
+++efpt.config.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\efpt.config.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\efpt.config.json
+++Program.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\program.cs
+++No service dependencies discovered
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>663
+++Analyzers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:analyzers
+++Frameworks
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:frameworks
+++Packages
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:packages
+++Sdk.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.web\sdk\sdk.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.illink.tasks\sdk\sdk.props
+++Sdk.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.web\sdk\sdk.targets
+++launchSettings.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\properties\launchsettings.json
+++EmailTemplate
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\emailtemplate\
+++Uploads
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\uploads\
+++ProjectSettings.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\.vs\projectsettings.json
+++slnx.sqlite
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\.vs\slnx.sqlite
+++VSWorkspaceState.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\.vs\vsworkspacestate.json
+++Debug
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\
+++CSharpDbContext
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpdbcontext\
+++CSharpEntityType
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpentitytype\
+++EFModelFromDatabase
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\efmodelfromdatabase\
+++TypeScriptDbContext
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptdbcontext\
+++TypeScriptEntityType
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptentitytype\
+++JWTConfig.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\models\configuration\jwtconfig.cs
+++GiveWaveAPI.csproj.EntityFrameworkCore.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\givewaveapi.csproj.entityframeworkcore.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\givewaveapi.csproj.entityframeworkcore.targets
+++GiveWaveAPI.csproj.nuget.dgspec.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\givewaveapi.csproj.nuget.dgspec.json
+++GiveWaveAPI.csproj.nuget.g.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\givewaveapi.csproj.nuget.g.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\givewaveapi.csproj.nuget.g.props
+++GiveWaveAPI.csproj.nuget.g.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\givewaveapi.csproj.nuget.g.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\givewaveapi.csproj.nuget.g.targets
+++project.assets.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\project.assets.json
+++project.nuget.cache
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\project.nuget.cache
+++staticwebassets.pack.sentinel
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\staticwebassets.pack.sentinel
+++appsettings.Development.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\appsettings.development.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\appsettings.development.json
+++Microsoft.AspNetCore.Analyzers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.10\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.10\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.entityframeworkcore.analyzers\7.0.5\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.extensions.logging.abstractions\7.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++System.Text.Json.SourceGeneration
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\system.text.json\7.0.0\analyzers\dotnet\roslyn4.0\cs\system.text.json.sourcegeneration.dll
+++Microsoft.AspNetCore.App
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\microsoft.aspnetcore.app
+++Microsoft.NETCore.App
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\microsoft.netcore.app
+++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.14)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>680
+++Microsoft.AspNetCore.Identity (2.2.0)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>678
+++Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.14)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>679
+++Microsoft.AspNetCore.Identity.UI (6.0.14)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>682
+++Microsoft.EntityFrameworkCore (7.0.5)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>674
+++Microsoft.EntityFrameworkCore.SqlServer (7.0.5)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>675
+++Microsoft.EntityFrameworkCore.Tools (7.0.5)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>681
+++Newtonsoft.Json (13.0.3)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>677
+++Swashbuckle.AspNetCore (6.2.3)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:>676
+++Sdk.props (C:\Program Files\dotnet\sdk\6.0.402\Sdks\Microsoft.NET.Sdk\Sdk)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\sdk\sdk.props
+++Sdk.props (C:\Program Files\dotnet\sdk\6.0.402\Sdks\Microsoft.NET.Sdk.Razor\Sdk)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\sdk\sdk.props
+++Sdk.props (C:\Program Files\dotnet\sdk\6.0.402\Sdks\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.web.projectsystem\sdk\sdk.props
+++Sdk.props (C:\Program Files\dotnet\sdk\6.0.402\Sdks\Microsoft.NET.Sdk.Publish\Sdk)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\sdk\sdk.props
+++Sdk.targets (C:\Program Files\dotnet\sdk\6.0.402\Sdks\Microsoft.NET.Sdk\Sdk)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\sdk\sdk.targets
+++Sdk.targets (C:\Program Files\dotnet\sdk\6.0.402\Sdks\Microsoft.NET.Sdk.Razor\Sdk)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\sdk\sdk.targets
+++Sdk.targets (C:\Program Files\dotnet\sdk\6.0.402\Sdks\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.web.projectsystem\sdk\sdk.targets
+++Sdk.targets (C:\Program Files\dotnet\sdk\6.0.402\Sdks\Microsoft.NET.Sdk.Publish\Sdk)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\sdk\sdk.targets
+++ContactEmail.html
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\emailtemplate\contactemail.html
+++Logo.jpg
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\emailtemplate\logo.jpg
+++common
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\uploads\common\
+++Profile
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\uploads\profile\
+++FileContentIndex
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\.vs\givewaveapi\filecontentindex\
+++v17
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\.vs\givewaveapi\v17\
+++net6.0
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\browser\lib\net6.0\
+++Partials
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpdbcontext\partials\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpentitytype\partials\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptdbcontext\partials\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptentitytype\partials\
+++DbContext.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpdbcontext\dbcontext.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptdbcontext\dbcontext.hbs
+++Class.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpentitytype\class.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptentitytype\class.hbs
+++Context.cs.t4
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\efmodelfromdatabase\context.cs.t4
+++EntityType.cs.t4
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\efmodelfromdatabase\entitytype.cs.t4
+++Microsoft.Common.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\microsoft.common.props
+++Microsoft.NET.Sdk.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.props
+++Sdk.Razor.CurrentVersion.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\sdk.razor.currentversion.props
+++Microsoft.NET.Sdk.Web.ProjectSystem.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.web.projectsystem\targets\microsoft.net.sdk.web.projectsystem.props
+++Microsoft.NET.Sdk.Publish.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\targets\microsoft.net.sdk.publish.props
+++Microsoft.NET.Sdk.BeforeCommon.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.beforecommon.targets
+++Microsoft.CSharp.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\amd64\microsoft.csharp.targets
+++Microsoft.NET.Sdk.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.targets
+++Microsoft.NET.Compatibility.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.compatibility.targets
+++NuGet.Build.Tasks.Pack.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\nuget.build.tasks.pack\build\nuget.build.tasks.pack.targets
+++Sdk.Razor.CurrentVersion.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\sdk.razor.currentversion.targets
+++Microsoft.NET.Sdk.Web.ProjectSystem.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.web.projectsystem\targets\microsoft.net.sdk.web.projectsystem.targets
+++Microsoft.NET.Sdk.Publish.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\targets\microsoft.net.sdk.publish.targets
+++noimage.png
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\uploads\common\noimage.png
+++ceka@gmail.com
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\uploads\profile\ceka@gmail.com\
+++ceka123@gmail.com
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\uploads\profile\ceka123@gmail.com\
+++cekicn668@gmail.com
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\uploads\profile\cekicn668@gmail.com\
+++b7241a06-04f5-4059-8c09-c55d060990f7.vsidx
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\.vs\givewaveapi\filecontentindex\b7241a06-04f5-4059-8c09-c55d060990f7.vsidx
+++read.lock
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\.vs\givewaveapi\filecontentindex\read.lock
+++.wsuo
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\.vs\givewaveapi\v17\.wsuo
+++runtimes
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\
+++Azure.Core.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\azure.core.dll
+++Azure.Identity.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\azure.identity.dll
+++GiveWaveAPI.deps.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\givewaveapi.deps.json
+++GiveWaveAPI.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\givewaveapi.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\ref\givewaveapi.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\refint\givewaveapi.dll
+++GiveWaveAPI.exe
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\givewaveapi.exe
+++GiveWaveAPI.pdb
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\givewaveapi.pdb
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.pdb
+++GiveWaveAPI.runtimeconfig.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\givewaveapi.runtimeconfig.json
+++GiveWaveAPI.staticwebassets.runtime.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\givewaveapi.staticwebassets.runtime.json
+++Humanizer.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\humanizer.dll
+++Microsoft.AspNetCore.Authentication.JwtBearer.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.aspnetcore.authentication.jwtbearer.dll
+++Microsoft.AspNetCore.Cryptography.Internal.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.aspnetcore.cryptography.internal.dll
+++Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.aspnetcore.cryptography.keyderivation.dll
+++Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.aspnetcore.identity.entityframeworkcore.dll
+++Microsoft.AspNetCore.Identity.UI.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.aspnetcore.identity.ui.dll
+++Microsoft.Bcl.AsyncInterfaces.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.bcl.asyncinterfaces.dll
+++Microsoft.Data.SqlClient.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.data.sqlclient.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\unix\lib\netcoreapp3.1\microsoft.data.sqlclient.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\lib\netcoreapp3.1\microsoft.data.sqlclient.dll
+++Microsoft.EntityFrameworkCore.Abstractions.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.entityframeworkcore.abstractions.dll
+++Microsoft.EntityFrameworkCore.Design.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.entityframeworkcore.design.dll
+++Microsoft.EntityFrameworkCore.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.entityframeworkcore.dll
+++Microsoft.EntityFrameworkCore.Relational.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.entityframeworkcore.relational.dll
+++Microsoft.EntityFrameworkCore.SqlServer.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.entityframeworkcore.sqlserver.dll
+++Microsoft.Extensions.Caching.Abstractions.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.caching.abstractions.dll
+++Microsoft.Extensions.Caching.Memory.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.caching.memory.dll
+++Microsoft.Extensions.Configuration.Abstractions.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.configuration.abstractions.dll
+++Microsoft.Extensions.DependencyInjection.Abstractions.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.dependencyinjection.abstractions.dll
+++Microsoft.Extensions.DependencyInjection.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.dependencyinjection.dll
+++Microsoft.Extensions.DependencyModel.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.dependencymodel.dll
+++Microsoft.Extensions.FileProviders.Embedded.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.fileproviders.embedded.dll
+++Microsoft.Extensions.Identity.Core.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.identity.core.dll
+++Microsoft.Extensions.Identity.Stores.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.identity.stores.dll
+++Microsoft.Extensions.Logging.Abstractions.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.logging.abstractions.dll
+++Microsoft.Extensions.Logging.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.logging.dll
+++Microsoft.Extensions.Options.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.options.dll
+++Microsoft.Extensions.Primitives.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.extensions.primitives.dll
+++Microsoft.Identity.Client.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.identity.client.dll
+++Microsoft.Identity.Client.Extensions.Msal.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.identity.client.extensions.msal.dll
+++Microsoft.IdentityModel.Abstractions.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.identitymodel.abstractions.dll
+++Microsoft.IdentityModel.JsonWebTokens.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.identitymodel.jsonwebtokens.dll
+++Microsoft.IdentityModel.Logging.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.identitymodel.logging.dll
+++Microsoft.IdentityModel.Protocols.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.identitymodel.protocols.dll
+++Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.identitymodel.protocols.openidconnect.dll
+++Microsoft.IdentityModel.Tokens.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.identitymodel.tokens.dll
+++Microsoft.OpenApi.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.openapi.dll
+++Microsoft.SqlServer.Server.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.sqlserver.server.dll
+++Microsoft.Win32.SystemEvents.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\microsoft.win32.systemevents.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\lib\netcoreapp3.0\microsoft.win32.systemevents.dll
+++Mono.TextTemplating.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\mono.texttemplating.dll
+++Newtonsoft.Json.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\newtonsoft.json.dll
+++Swashbuckle.AspNetCore.Swagger.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\swashbuckle.aspnetcore.swagger.dll
+++Swashbuckle.AspNetCore.SwaggerGen.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\swashbuckle.aspnetcore.swaggergen.dll
+++Swashbuckle.AspNetCore.SwaggerUI.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\swashbuckle.aspnetcore.swaggerui.dll
+++System.CodeDom.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.codedom.dll
+++System.Configuration.ConfigurationManager.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.configuration.configurationmanager.dll
+++System.Drawing.Common.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.drawing.common.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\unix\lib\netcoreapp3.0\system.drawing.common.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\lib\netcoreapp3.0\system.drawing.common.dll
+++System.IdentityModel.Tokens.Jwt.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.identitymodel.tokens.jwt.dll
+++System.Memory.Data.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.memory.data.dll
+++System.Runtime.Caching.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.runtime.caching.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\lib\netstandard2.0\system.runtime.caching.dll
+++System.Security.Cryptography.ProtectedData.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.security.cryptography.protecteddata.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\lib\netstandard2.0\system.security.cryptography.protecteddata.dll
+++System.Security.Permissions.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.security.permissions.dll
+++System.Text.Encodings.Web.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.text.encodings.web.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\browser\lib\net6.0\system.text.encodings.web.dll
+++System.Text.Json.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.text.json.dll
+++System.Windows.Extensions.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\system.windows.extensions.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\lib\netcoreapp3.0\system.windows.extensions.dll
+++DbConstructor.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpdbcontext\partials\dbconstructor.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptdbcontext\partials\dbconstructor.hbs
+++DbImports.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpdbcontext\partials\dbimports.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptdbcontext\partials\dbimports.hbs
+++DbOnConfiguring.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpdbcontext\partials\dbonconfiguring.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptdbcontext\partials\dbonconfiguring.hbs
+++DbSets.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpdbcontext\partials\dbsets.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptdbcontext\partials\dbsets.hbs
+++Constructor.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpentitytype\partials\constructor.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptentitytype\partials\constructor.hbs
+++Imports.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpentitytype\partials\imports.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptentitytype\partials\imports.hbs
+++Properties.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\csharpentitytype\partials\properties.hbs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\codetemplates\typescriptentitytype\partials\properties.hbs
+++ref
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\ref\
+++refint
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\refint\
+++staticwebassets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\staticwebassets\
+++.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\.netcoreapp,version=v6.0.assemblyattributes.cs
+++apphost.exe
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\apphost.exe
+++GiveWaveAPI.AssemblyInfo.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.assemblyinfo.cs
+++GiveWaveAPI.AssemblyInfoInputs.cache
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.assemblyinfoinputs.cache
+++GiveWaveAPI.assets.cache
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.assets.cache
+++GiveWaveAPI.csproj.AssemblyReference.cache
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.csproj.assemblyreference.cache
+++GiveWaveAPI.csproj.BuildWithSkipAnalyzers
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.csproj.buildwithskipanalyzers
+++GiveWaveAPI.csproj.CopyComplete
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.csproj.copycomplete
+++GiveWaveAPI.csproj.CoreCompileInputs.cache
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.csproj.corecompileinputs.cache
+++GiveWaveAPI.csproj.FileListAbsolute.txt
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.csproj.filelistabsolute.txt
+++GiveWaveAPI.GeneratedMSBuildEditorConfig.editorconfig
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.generatedmsbuildeditorconfig.editorconfig
+++GiveWaveAPI.genruntimeconfig.cache
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.genruntimeconfig.cache
+++GiveWaveAPI.GlobalUsings.g.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.globalusings.g.cs
+++GiveWaveAPI.MvcApplicationPartsAssemblyInfo.cache
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.mvcapplicationpartsassemblyinfo.cache
+++GiveWaveAPI.MvcApplicationPartsAssemblyInfo.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\givewaveapi.mvcapplicationpartsassemblyinfo.cs
+++project.razor.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\project.razor.json
+++staticwebassets.build.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\staticwebassets.build.json
+++staticwebassets.development.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\staticwebassets.development.json
+++staticwebassets.pack.json
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\staticwebassets.pack.json
+++Microsoft.NuGet.ImportBefore.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\imports\microsoft.common.props\importbefore\microsoft.nuget.importbefore.props
+++NuGet.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\common7\ide\commonextensions\microsoft\nuget\nuget.props
+++Microsoft.NET.Sdk.DefaultItems.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.defaultitems.props
+++Microsoft.NET.Sdk.ImportWorkloads.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.importworkloads.props
+++Microsoft.NET.SupportedTargetFrameworks.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.supportedtargetframeworks.props
+++Microsoft.NET.SupportedPlatforms.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.supportedplatforms.props
+++Microsoft.NET.WindowsSdkSupportedTargetPlatforms.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.windowssdksupportedtargetplatforms.props
+++Microsoft.NET.Sdk.CSharp.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.csharp.props
+++Microsoft.NET.ILLink.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.illink.props
+++Microsoft.NET.Compatibility.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.compatibility.props
+++Microsoft.NET.PackTool.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.packtool.props
+++Microsoft.NET.PackProjectTool.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.packprojecttool.props
+++Microsoft.NET.Sdk.WindowsDesktop.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.windowsdesktop\targets\microsoft.net.sdk.windowsdesktop.props
+++Microsoft.NET.Windows.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.windows.props
+++Sdk.Razor.StaticAssets.ProjectSystem.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\sdk\sdk.razor.staticassets.projectsystem.props
+++Microsoft.TypeScript.Default.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\v17.0\typescript\microsoft.typescript.default.props
+++Microsoft.NET.Sdk.Web.DefaultItems.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.web.projectsystem\targets\microsoft.net.sdk.web.defaultitems.props
+++Microsoft.NET.DefaultAssemblyInfo.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.defaultassemblyinfo.targets
+++Microsoft.NET.DefaultOutputPaths.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.defaultoutputpaths.targets
+++Microsoft.NET.Sdk.ImportPublishProfile.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.importpublishprofile.targets
+++Microsoft.NET.TargetFrameworkInference.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.targetframeworkinference.targets
+++Microsoft.NET.Sdk.Razor.BeforeCommon.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.beforecommon.targets
+++Microsoft.NET.Sdk.ImportWorkloads.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.importworkloads.targets
+++Microsoft.NET.RuntimeIdentifierInference.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.runtimeidentifierinference.targets
+++Microsoft.NET.EolTargetFrameworks.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.eoltargetframeworks.targets
+++Microsoft.NET.NuGetOfflineCache.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.nugetofflinecache.targets
+++Microsoft.Managed.Before.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\amd64\microsoft.managed.before.targets
+++Microsoft.CSharp.CurrentVersion.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\amd64\microsoft.csharp.currentversion.targets
+++Microsoft.Managed.After.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\amd64\microsoft.managed.after.targets
+++Microsoft.NET.Sdk.Common.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.common.targets
+++Microsoft.PackageDependencyResolution.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.packagedependencyresolution.targets
+++Microsoft.NET.Sdk.DefaultItems.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.defaultitems.targets
+++Microsoft.NET.Sdk.FrameworkReferenceResolution.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.frameworkreferenceresolution.targets
+++Microsoft.NET.Sdk.Shared.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.shared.targets
+++Microsoft.NET.DisableStandardFrameworkResolution.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.disablestandardframeworkresolution.targets
+++Microsoft.NET.DesignerSupport.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.designersupport.targets
+++Microsoft.NET.GenerateAssemblyInfo.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.generateassemblyinfo.targets
+++Microsoft.NET.GenerateGlobalUsings.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.generateglobalusings.targets
+++Microsoft.NET.GenerateSupportedRuntime.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.generatesupportedruntime.targets
+++Microsoft.NET.ComposeStore.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.composestore.targets
+++Microsoft.NET.CrossGen.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.crossgen.targets
+++Microsoft.NET.ObsoleteReferences.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.obsoletereferences.targets
+++Microsoft.NET.Publish.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.publish.targets
+++Microsoft.NET.PackTool.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.packtool.targets
+++Microsoft.NET.PackProjectTool.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.packprojecttool.targets
+++Microsoft.NET.PreserveCompilationContext.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.preservecompilationcontext.targets
+++Microsoft.NET.ConflictResolution.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.conflictresolution.targets
+++Microsoft.NET.Sdk.CSharp.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.csharp.targets
+++Microsoft.NET.ILLink.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.illink.targets
+++Microsoft.NET.Sdk.Analyzers.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.analyzers.targets
+++Microsoft.NET.Compatibility.Common.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.compatibility.common.targets
+++Microsoft.NET.Sdk.Razor.Configuration.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.configuration.targets
+++Microsoft.NET.Sdk.Razor.CodeGeneration.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.codegeneration.targets
+++Microsoft.NET.Sdk.Razor.SourceGenerators.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.sourcegenerators.targets
+++Microsoft.NET.Sdk.Razor.StaticWebAssets.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.staticwebassets.targets
+++Microsoft.NET.Sdk.Razor.ScopedCss.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.scopedcss.targets
+++Microsoft.NET.Sdk.Razor.JSModules.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.jsmodules.targets
+++Microsoft.NET.Sdk.Razor.GenerateAssemblyInfo.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.generateassemblyinfo.targets
+++Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.mvcapplicationpartsdiscovery.targets
+++Microsoft.NET.Sdk.Razor.DesignTime.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\razor\microsoft.net.sdk.razor.designtime.targets
+++Microsoft.TypeScript.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\v17.0\typescript\microsoft.typescript.targets
+++Microsoft.TypeScript.DotNetCore.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\v17.0\typescript\microsoft.typescript.dotnetcore.targets
+++Microsoft.Web.Designtime.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\managed.web\microsoft.web.designtime.targets
+++Default.pubxml
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\targets\publishprofiles\default.pubxml
+++Microsoft.NET.Sdk.Publish.ComputeFiles.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\targets\computetargets\microsoft.net.sdk.publish.computefiles.targets
+++Microsoft.NET.Sdk.Publish.FilterFiles.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\targets\copytargets\microsoft.net.sdk.publish.filterfiles.targets
+++Microsoft.NET.Sdk.Publish.CopyFiles.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\targets\copytargets\microsoft.net.sdk.publish.copyfiles.targets
+++Microsoft.NET.Sdk.Publish.TransformFiles.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\targets\transformtargets\microsoft.net.sdk.publish.transformfiles.targets
+++Microsoft.NET.Sdk.Publish.FileSystem.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\targets\publishtargets\microsoft.net.sdk.publish.filesystem.targets
+++Microsoft.NET.Sdk.DotNetCLITool.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.publish\targets\dotnetclitooltargets\microsoft.net.sdk.dotnetclitool.targets
+++image_13.05.2023._21_40_10.png
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\uploads\profile\ceka@gmail.com\image_13.05.2023._21_40_10.png
+++image_15.05.2023._23_31_12.png
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\uploads\profile\ceka123@gmail.com\image_15.05.2023._23_31_12.png
+++image_12.05.2023._16_28_29.png
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\wwwroot\uploads\profile\cekicn668@gmail.com\image_12.05.2023._16_28_29.png
+++browser
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\browser\
+++unix
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\unix\
+++win
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\
+++win-arm
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-arm\
+++win-arm64
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-arm64\
+++win-x64
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-x64\
+++win-x86
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-x86\
+++msbuild.build.GiveWaveAPI.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\staticwebassets\msbuild.build.givewaveapi.props
+++msbuild.buildMultiTargeting.GiveWaveAPI.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\staticwebassets\msbuild.buildmultitargeting.givewaveapi.props
+++msbuild.buildTransitive.GiveWaveAPI.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\staticwebassets\msbuild.buildtransitive.givewaveapi.props
+++msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\obj\debug\net6.0\staticwebassets\msbuild.givewaveapi.microsoft.aspnetcore.staticwebassets.props
+++Microsoft.Extensions.ApiDescription.Server.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.extensions.apidescription.server\3.0.0\build\microsoft.extensions.apidescription.server.props
+++Swashbuckle.AspNetCore.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\swashbuckle.aspnetcore\6.2.3\build\swashbuckle.aspnetcore.props
+++Microsoft.EntityFrameworkCore.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.entityframeworkcore\7.0.5\buildtransitive\net6.0\microsoft.entityframeworkcore.props
+++Microsoft.EntityFrameworkCore.Design.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.entityframeworkcore.design\7.0.5\build\net6.0\microsoft.entityframeworkcore.design.props
+++Microsoft.AspNetCore.Identity.UI.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.aspnetcore.identity.ui\6.0.14\build\microsoft.aspnetcore.identity.ui.props
+++Microsoft.NuGet.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\nuget\17.0\microsoft.nuget.props
+++Microsoft.NETCoreSdk.BundledVersions.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\microsoft.netcoresdk.bundledversions.props
+++Microsoft.NET.Sdk.WindowsDesktop.WindowsForms.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.windowsdesktop\targets\microsoft.net.sdk.windowsdesktop.windowsforms.props
+++Microsoft.NET.Sdk.WindowsDesktop.WPF.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.windowsdesktop\targets\microsoft.net.sdk.windowsdesktop.wpf.props
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.android)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.android\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.ios)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.ios\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.maccatalyst)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.maccatalyst\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.macos)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.macos\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.maui)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.maui\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.tvos)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk-manifests\6.0.300\microsoft.net.sdk.tvos\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.300\microsoft.net.workload.mono.toolchain)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk-manifests\6.0.300\microsoft.net.workload.mono.toolchain\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.300\microsoft.net.workload.emscripten)
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk-manifests\6.0.300\microsoft.net.workload.emscripten\workloadmanifest.targets
+++Microsoft.CSharp.Core.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\roslyn\microsoft.csharp.core.targets
+++Microsoft.CSharp.DesignTime.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\managed\microsoft.csharp.designtime.targets
+++Microsoft.Common.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\amd64\microsoft.common.targets
+++Microsoft.ServiceModel.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\amd64\microsoft.servicemodel.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\windows\microsoft.net\framework\v4.0.30319\microsoft.servicemodel.targets
+++Microsoft.NET.Sdk.DefaultItems.Shared.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.defaultitems.shared.targets
+++Microsoft.NETCoreSdk.BundledCliTools.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\microsoft.netcoresdk.bundledclitools.props
+++Microsoft.NET.DefaultPackageConflictOverrides.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\targets\microsoft.net.defaultpackageconflictoverrides.targets
+++Microsoft.CodeAnalysis.NetAnalyzers.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\analyzers\build\microsoft.codeanalysis.netanalyzers.props
+++Microsoft.CodeAnalysis.NetAnalyzers.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk\analyzers\build\microsoft.codeanalysis.netanalyzers.targets
+++lib
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\browser\lib\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\unix\lib\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\lib\
+++native
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-arm\native\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-arm64\native\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-x64\native\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-x86\native\
+++Microsoft.NET.ILLink.Tasks.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.illink.tasks\build\microsoft.net.illink.tasks.props
+++System.Windows.Forms.Analyzers.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\dotnet\sdk\6.0.402\sdks\microsoft.net.sdk.windowsdesktop\targets\system.windows.forms.analyzers.props
+++Microsoft.Managed.Core.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\roslyn\microsoft.managed.core.targets
+++Microsoft.Managed.DesignTime.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\managed\microsoft.managed.designtime.targets
+++Microsoft.Common.CurrentVersion.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\amd64\microsoft.common.currentversion.targets
+++netcoreapp3.0
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\unix\lib\netcoreapp3.0\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\lib\netcoreapp3.0\
+++netcoreapp3.1
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\unix\lib\netcoreapp3.1\
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\lib\netcoreapp3.1\
+++netstandard2.0
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win\lib\netstandard2.0\
+++Microsoft.Data.SqlClient.SNI.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-arm\native\microsoft.data.sqlclient.sni.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-arm64\native\microsoft.data.sqlclient.sni.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-x64\native\microsoft.data.sqlclient.sni.dll
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\bin\debug\net6.0\runtimes\win-x86\native\microsoft.data.sqlclient.sni.dll
+++Microsoft.Managed.Core.CurrentVersions.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\roslyn\microsoft.managed.core.currentversions.targets
+++GiveWaveAPI.csproj.user
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\givewaveapi.csproj.user
+++Microsoft.NET.props
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\amd64\microsoft.net.props
+++Microsoft.CodeAnalysis.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\v17.0\codeanalysis\microsoft.codeanalysis.targets
+++Microsoft.Xaml.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\amd64\microsoft.xaml.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\windows\microsoft.net\framework\v4.0.30319\microsoft.xaml.targets
+++Microsoft.WorkflowBuildExtensions.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\bin\amd64\microsoft.workflowbuildextensions.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\windows\microsoft.net\framework\v4.0.30319\microsoft.workflowbuildextensions.targets
+++Microsoft.TeamTest.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\v17.0\teamtest\microsoft.teamtest.targets
+++NuGet.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\common7\ide\commonextensions\microsoft\nuget\nuget.targets
+++Microsoft.Docker.ImportAfter.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\microsoft.common.targets\importafter\microsoft.docker.importafter.targets
+++Microsoft.NET.Build.Extensions.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\microsoft.common.targets\importafter\microsoft.net.build.extensions.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\microsoft.net.build.extensions\microsoft.net.build.extensions.targets
+++Microsoft.NuGet.ImportAfter.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\microsoft.common.targets\importafter\microsoft.nuget.importafter.targets
+++Microsoft.Web.ImportAfter.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\current\microsoft.common.targets\importafter\microsoft.web.importafter.targets
+++System.Text.Json.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\system.text.json\7.0.0\buildtransitive\net6.0\system.text.json.targets
+++Microsoft.Extensions.ApiDescription.Server.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.extensions.apidescription.server\3.0.0\build\microsoft.extensions.apidescription.server.targets
+++Microsoft.Extensions.Logging.Abstractions.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.extensions.logging.abstractions\7.0.0\buildtransitive\net6.0\microsoft.extensions.logging.abstractions.targets
+++Microsoft.AspNetCore.Identity.UI.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.aspnetcore.identity.ui\6.0.14\buildtransitive\microsoft.aspnetcore.identity.ui.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.aspnetcore.identity.ui\6.0.14\build\microsoft.aspnetcore.identity.ui.targets
+++Microsoft.Docker.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\sdks\microsoft.docker.sdk\build\microsoft.docker.targets
+++Microsoft.Web.IISSupport.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\managed.web\microsoft.web.iissupport.targets
+++Microsoft.AspNetCore.StaticWebAssets.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.aspnetcore.identity.ui\6.0.14\build\microsoft.aspnetcore.staticwebassets.targets
+++Microsoft.AspNetCore.StaticWebAssets.V5.targets
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\.nuget\packages\microsoft.aspnetcore.identity.ui\6.0.14\build\microsoft.aspnetcore.staticwebassets.v5.targets
+++20230523182742_V1.cs
+++20230523182742_V1.Designer.cs
+++GiveWaveDBContextModelSnapshot.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\migrations\givewavedbcontextmodelsnapshot.cs
+++20230523190039_V1.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\migrations\20230523190039_v1.cs
+++20230523190039_V1.Designer.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\migrations\20230523190039_v1.designer.cs
+++CategoryHelper.cs
+i:{f9675276-3a6e-49a5-afb7-2b66eb97b093}:c:\users\nikola\desktop\faks\3.godina\softverskoinzinjerstvo\projekat\si.23.06.givewave\aplikacija\givewaveapi\givewaveapi\helpers\categoryhelper.cs
+++RCXCBBD.tmp
+++RCX4B6.tmp

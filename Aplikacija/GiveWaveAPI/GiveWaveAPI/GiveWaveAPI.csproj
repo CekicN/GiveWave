@@ -30,9 +30,10 @@
 
   <ItemGroup>
     <Folder Include="Context\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Migrations\" />
     <Folder Include="wwwroot\Uploads\common\" />
+    <Folder Include="wwwroot\Uploads\Products\cekicn668%40gmail.com\P_8\" />
+    <Folder Include="wwwroot\Uploads\Products\cekicn668%40gmail.com\P_6\" />
     <Folder Include="wwwroot\Uploads\Profile\" />
   </ItemGroup>
 

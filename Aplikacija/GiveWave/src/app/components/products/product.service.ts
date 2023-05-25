@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Categories } from 'app/Models/Categories';
 
 
-const url = 'http://localhost:3000/Categories'
+const url = "http://localhost:3001/Cities"
+const api = "https://localhost:7200/controller/"
 @Injectable({
   providedIn: 'root'
 })
@@ -13,11 +14,11 @@ export class ProductService {
 
   getCategories()
   {
-    return this.http.get<any>(url);
+    return this.http.get<any>(api+'PreuzmiKategorije');
   }
 
   getCities()
   {
-    return this.http.get("http://localhost:3001/Cities");
+    return this.http.get(url);
   }
 }

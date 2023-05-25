@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace GiveWaveAPI.Models
 {
@@ -42,6 +43,7 @@ namespace GiveWaveAPI.Models
         public int BrojLajkova { get; set; }
         public String ImageUrl { get; set; }
         public DateTime DatumRegistracije { get; set; }
+        [JsonIgnore]
         public List<Proizvod> Proizvodi { get; set; }
        // public List<User> Useri { get; set; }
        

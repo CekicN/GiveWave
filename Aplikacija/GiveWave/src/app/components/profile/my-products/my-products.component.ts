@@ -17,7 +17,7 @@ export class MyProductsComponent implements OnInit {
   constructor(private services:ProfileService) {
   }
   ngOnInit(): void {
-    this.services.getMyProducts().subscribe(p => {
+    this.services.getMyProducts(localStorage.getItem('email')).subscribe(p => {
       this.products = p;
       console.log(this.products);
     })

@@ -9,6 +9,6 @@ namespace GiveWaveAPI.Models
     {
         [Key]
         public int Id { get; set; }
-        public List<Kategorija> Kategorija { get; set; }
+        public Kategorija Kategorija { get; set; }
     }
 }
