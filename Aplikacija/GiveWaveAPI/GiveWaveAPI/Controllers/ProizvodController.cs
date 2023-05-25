@@ -6,12 +6,19 @@ using System.Text;
 
 namespace GiveWaveAPI.Controllers
 {
-    public class ProizvodController : Controller
+    [ApiController]
+    [Route("controller")]
+    public class ProizvodController : ControllerBase
     {
+<<<<<<< HEAD
         private readonly GiveWaveDBContext context;
 
         private readonly IWebHostEnvironment _environment;
         public ProizvodController(GiveWaveDBContext c, IWebHostEnvironment environment)
+=======
+        public GiveWaveDBContext context { get; set; }
+        public ProizvodController(GiveWaveDBContext c)
+>>>>>>> 0d8691bd635323b851da06e62a2ec127e738eef1
         {
             _environment = environment;
             context = c;

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GiveWaveAPI.Models
 {
@@ -13,7 +15,7 @@ namespace GiveWaveAPI.Models
         public string Vrsta { get; set; }
         public string Stanje { get; set; }
         public string Opis { get; set; }
-
-        public Kategorija Kategorijaa { get; set; }
+        [JsonIgnore]
+        public Kategorija kategorija { get; set; }
     }
 }

@@ -5,16 +5,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace GiveWaveAPI.Controllers
 {
     [ApiController]
     [Route("controller")]
-    public class KategorijaController:ControllerBase
+    public class KategorijaController : ControllerBase
     {
         public GiveWaveDBContext Context { get; set; }
-        public KategorijaController(GiveWaveDBContext context) 
+        public KategorijaController(GiveWaveDBContext context)
         {
             Context = context;
         }
@@ -71,6 +72,13 @@ namespace GiveWaveAPI.Controllers
 
         public async Task<ActionResult> preuzmiKategorije()
         {
+<<<<<<< HEAD
+=======
+            if (kategorija == null)
+            {
+                return BadRequest("Kategorija is null");
+            }
+>>>>>>> 0d8691bd635323b851da06e62a2ec127e738eef1
             try
             {
                 var kategorije = await Context.Kategorijas.Include(c => c.Subcategories).ToListAsync();
@@ -103,6 +111,7 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
+<<<<<<< HEAD
         private void AddSubcategoriesRecursive(IEnumerable<Kategorija> subcategories, List<Kategorija> result, HashSet<int> processedCategoryIds)
         {
             foreach (var subcategory in subcategories)
@@ -116,6 +125,8 @@ namespace GiveWaveAPI.Controllers
                 }
             }
         }
+=======
+>>>>>>> 0d8691bd635323b851da06e62a2ec127e738eef1
 
         [Route("ObrisiKategoriju")]
         [HttpDelete]
@@ -135,15 +146,69 @@ namespace GiveWaveAPI.Controllers
                     return Ok("Kategorija je obrisana !");
                 }
 
-               
+
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
 
-        
-       
+
+        /*[Route("VratiSveKategorije")]
+        [HttpGet]
+        public async Task<ActionResult> vratiSveKategorije()
+        {
+            try
+            {
+                var kategorije = Context.Kategorijas;
+                if (kategorije == null)
+                {
+                    return BadRequest("Nisu pronadjene kategorije");
+                }
+                else
+                {
+                    var sveKat = kategorije.Include(p => p.Igracka)
+                                            .ThenInclude(e => e.kategorija)
+                                            .Include(q => q.Novac)
+                                            .ThenInclude(r => r.kategorija)
+                                            .Include(w => w.Odeca)
+                                            .ThenInclude(i => i.kategorija)
+                                            .Include(y => y.Ostalo)
+                                            .ThenInclude(l => l.kategorija)
+                                             .Include(o => o.Krv);
+                                                       
+
+
+                    return Ok(sveKat);
+                }
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+
+            }
+
+        }*/
+
+        [Route("VratiSveKategorije")]
+        [HttpGet]
+        public async Task<ActionResult> vratiSveKategorije()
+        {
+            try
+            {
+                var sveKategorije = Context.Kategorijas;
+
+                return Ok(sveKategorije);
+                
+            }
+            catch(Exception e) 
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+
+
     }
 }
