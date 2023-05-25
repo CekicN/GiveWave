@@ -26,6 +26,9 @@ export class ProfileImageComponent implements OnInit {
     //Email iz profila === email iz prijave
     return this.service.email === localStorage.getItem('email');
   }
+  openModal() {
+    this.service.openModal();
+  }
   onFileSelected(event:Event)//uzimanje slike sa racunara
   {
     const f = (<HTMLInputElement>event.target)?.files?.[0];

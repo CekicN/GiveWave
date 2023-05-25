@@ -1,0 +1,98 @@
+<div [ngStyle]="{'display':displayStyle}" class="modal pozadina bd-example-modal-lg" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+      </div>
+      <div class="modal-body">
+        <!-- Inputi za kreiranje proizvoda -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <!-- slika -->
+                <img src="../../../../assets/images/poklon.png" class="rounded img-thumbnail" alt="">
+              </div>
+              <div class="row">
+                <!-- choose image -->
+                <button class="btn btn-outline-primary">Choose Photos</button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <form>
+                <div class="form-group row">
+                  <label for="Name" class="col-sm-3 col-form-label">Name:</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="Name">
+                  </div>
+                </div>
+
+                <div class="form-group row mt-2">
+                  <label for="Name" class="col-sm-3 col-form-label">City:</label>
+                  <div class="col-sm-9">
+                    <select name="city" id="city" class="form-select single-choice">
+                      <option value=""></option>
+                      <option *ngFor="let city of cities">{{city.city}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group row mt-2">
+                  <label for="category" class="col-sm-3 col-form-label">Category:</label>
+                  <div class="col-sm-9">
+                    <select name="categories" id="categories" class="form-select single-choice" (change)="isOther($event)">
+                      <option value=""></option>
+                      <option value="others">Others</option>
+                      <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="row mt-2" *ngIf="other">
+                  <div class="col">
+                    <div class="form-group row">
+                      <label for="newcategory" class="col-sm-3 col-form-label">New Category:</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="newcategory">
+                      </div>
+                    </div>
+
+                    <div class="form-group row mt-2">
+                      <label for="category" class="col-sm-3 col-form-label">Parent Category:</label>
+                      <div class="col-sm-9">
+                        <select name="categories" id="categories" class="form-select single-choice">
+                          <option value=""></option>
+                          <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row mt-2">
+                  <label for="Status" class="col-sm-3 col-form-label">Status:</label>
+                  <div class="col-sm-9">
+                    <select name="city" id="Status" class="form-select single-choice">
+                      <option value=""></option>
+                      <option *ngFor="let stat of status">{{stat}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row mt-2">
+                  <label for="description" class="col-sm-3 col-form-label">Description:</label>
+                  <div class="col-sm-9">
+                    <textarea name="description" id="description" rows="5" class="form-control"></textarea>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
