@@ -8,6 +8,7 @@ import { MyProductsComponent } from './my-products/my-products.component';
 import { DonateHistoryComponent } from './donate-history/donate-history.component';
 import { MyProductsFilterPipe } from 'app/pipes/my-products-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { AddProductModalComponent } from './add-product-modal/add-product-modal.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     ProfileImageComponent,
     MyProductsComponent,
     DonateHistoryComponent,
-    MyProductsFilterPipe
+    MyProductsFilterPipe,
+    AddProductModalComponent
   ],
   imports: [
     CommonModule,

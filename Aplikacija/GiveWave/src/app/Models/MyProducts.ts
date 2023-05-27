@@ -1,7 +1,7 @@
 export interface MyProducts
 {
-    Id:number,
-    ImageUrl:string[]
-    Naziv:string,
-    Opis:string
+    id:number,
+    imageUrl:string[]
+    naziv:string,
+    opis:string
 }

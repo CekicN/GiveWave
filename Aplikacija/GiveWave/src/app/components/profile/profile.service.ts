@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { User } from 'app/Models/User';
 import { MyProducts } from 'app/Models/MyProducts';
 import { DonationHistory } from 'app/Models/DonationsHistory';
+import { BehaviorSubject } from 'rxjs';
 
 const Url = "https://localhost:7200/controller/";
 const donations = "http://localhost:3000/DonationHistory"
@@ -11,6 +12,17 @@ const donations = "http://localhost:3000/DonationHistory"
 })
 export class ProfileService {
   public email:string = '';
+  private _displayStyle$ = new BehaviorSubject<string>("none");
+  displayStyle = this._displayStyle$.asObservable();
+
+  openModal()
+  {
+    this._displayStyle$.next("block");
+  }
+  closeModal()
+  {
+    this._displayStyle$.next("none");
+  }
   constructor(private http: HttpClient) {}
   getAllUsers()
   {
