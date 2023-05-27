@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Donate } from 'app/Models/Donate';
+import { Porodica } from 'app/Models/Porodica';
+import { PorodicaService } from 'app/services/porodica.service';
+import { Observable , of} from 'rxjs';
 
 @Component({
   selector: 'app-donate',
@@ -6,13 +10,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./donate.component.css']
 })
 
-export class DonateComponent {
+export class DonateComponent implements OnInit {
+
+  porodice$: Observable<Porodica[]> = of([]);
+
+  constructor(private porodicaService: PorodicaService) {
+
   
-  proizvodi: string[] = ["Krema za ruke","Pasta za zube","Majica", "Trenerke" ]
-
-  title = "Stvari";
-
-      
   }
+
+  ngOnInit(): void {
+      this.porodice$ = this.porodicaService.getAll();
+  }
+      
+}
 
 

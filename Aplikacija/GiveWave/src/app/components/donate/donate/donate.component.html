@@ -1,6 +1,15 @@
-<div class="spolja"><p>donate works</p></div>
-<div>{{title}}</div>
-<ul *ngFor="let proizvod of proizvodi">
-    <li>{{proizvod}}</li>
-</ul>
+<div class="spolja">
+    <h2 class = "h2">Najugrozenije porodice</h2>
+    <div class = "divZaPorodice">
+    <ul *ngFor="let porodica of porodice$ | async">
+        <app-porodice [porodica]="porodica"></app-porodice>
+    </ul>
+    </div>
+
+     
+      
+</div>
+
+
+
 

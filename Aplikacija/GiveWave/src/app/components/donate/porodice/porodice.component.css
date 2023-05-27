@@ -1,0 +1,36 @@
+.brojClanova {
+    
+    border: 1px solid black;
+    flex-direction: row;
+    width: 220px;
+    background-color: rgb(230, 22, 22);
+    margin-bottom: 3px;
+
+}
+
+.roditeljskiDiv {
+    width: 500px;
+    border: 2px solid black;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    margin-right: 5px;
+    color: black;
+  }
+
+.divZabrClanova {
+    width: 456px;
+    border: 3px solid black;
+    background-color: aqua;
+    
+    
+
+}
+

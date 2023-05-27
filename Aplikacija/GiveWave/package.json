@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "api": "json-server --watch ./db/Baza.json"
+    "api": "json-server --watch ./db/Baza.json",
+    "api": "json-server --watch ./db/porodice.json"
   },
   "private": true,
   "dependencies": {
