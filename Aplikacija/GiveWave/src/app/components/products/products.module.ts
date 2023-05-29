@@ -7,6 +7,7 @@ import { ProductFilterComponent } from './product-filter/product-filter.componen
 import { ProductListComponent } from './product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SearchProductsPipe } from 'app/pipes/search-products.pipe';
 
 
 
@@ -16,7 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CategoriesComponent,
     RecursiveCategoriesComponent,
     ProductFilterComponent,
-    ProductListComponent
+    ProductListComponent,
+    SearchProductsPipe
   ],
   imports: [
     CommonModule,

@@ -1,18 +1,22 @@
 <div class="d-flex justify-content-start flex-wrap mt-2">
-    <div class="card col-md-3 margin" *ngFor="let product of products">
+    <div class="card col-md-3 margin" *ngFor="let product of products | searchProducts: searchText">
         <div class="card-body">
-            <img class="img-thumbnail" src="../../../../assets/images/poklon.png" alt="">
-            <h4>{{product}}</h4>
+            <img class="img-thumbnail w-100" [src]="product.imageUrl[0]" alt="">
+            <h4>{{product.naziv}}</h4>
             <div class="row">
                 <div class="col-sm-9">
-                    <p>Prokuplje</p>
-                    <p>New</p>
+                    <p>{{product.mesto}}</p>
+                    <p>{{product.status}}</p>
                 </div>
                 <div class="col-sm-3">
-                    <div class="d-flex justify-content-center align-items-center bg-primary mt-2" (click)="addToCart($event)">
+                    <div class="d-flex justify-content-center align-items-center bg-primary mt-2" (click)="addToCart(product.id)">
                         <fa-icon [icon]="['fas', 'shopping-cart']" style="color:white;"></fa-icon>
                     </div>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3" (click)="visitProfile(product.email)" style="cursor:pointer;">
+                <p>{{product.username}}</p>
+                <img src="../../../../assets/images/poklon.png" class="rounded" style="width:40px;" alt="">
             </div>
         </div>
     </div>

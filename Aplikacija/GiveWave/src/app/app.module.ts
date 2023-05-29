@@ -18,6 +18,7 @@ import { ProfileModule } from './components/profile/profile.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutUsModule } from './components/about-us/about-us.module';
 import { DonateComponent } from './components/donate/donate/donate.component';
+import { SearchProductsPipe } from './pipes/search-products.pipe';
 
 @NgModule({
   declarations: [

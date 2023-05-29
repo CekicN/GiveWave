@@ -3,6 +3,7 @@ import { ProfileService } from '../profile.service';
 import { User } from 'app/Models/User';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { IconName, faFloppyDisk, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile-data',
@@ -13,12 +14,14 @@ export class ProfileDataComponent implements OnInit {
   
   public user!:User;
   editRadio = false;
+  email!:string|null;
   iconsName:IconName[] = ['pen-to-square','pen-to-square','pen-to-square','pen-to-square', 'pen-to-square','pen-to-square'];
-  constructor(private service:ProfileService, library:FaIconLibrary){
+  constructor(private service:ProfileService, library:FaIconLibrary, private route:ActivatedRoute){
     library.addIcons(faPenToSquare, faFloppyDisk);
   }
   ngOnInit(): void {
-    this.service.getUser(localStorage.getItem('email')).subscribe(user => {
+    this.email = this.route.snapshot.paramMap.get('email');
+    this.service.getUser(this.email).subscribe(user => {
       this.user = user;
       console.log(this.user)
       this.service.email = user.email

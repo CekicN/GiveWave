@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MyProductsFilterPipe } from 'app/pipes/my-products-filter.pipe';
 import { ProductService } from '../product.service';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -16,9 +16,11 @@ export class ProductFilterComponent implements OnInit{
   {
     library.addIcons(faMagnifyingGlass);
   }
-
+  updateSearch()
+  {
+    this.service.setSeatchText(this.searchText);
+  }
   ngOnInit(): void {
     this.service.getCities().subscribe(p => this.cities = p);
   }
-  
 }

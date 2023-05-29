@@ -447,8 +447,8 @@ namespace GiveWaveAPI.Migrations
                     b.Property<int?>("ProfilKorisnikaId")
                         .HasColumnType("int");
 
-                    b.Property<int>("status")
-                        .HasColumnType("int");
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'signup', component:SignupComponent},
   {path: 'donate', component:DonateComponent},
   {path: 'products', component:ProductsComponent},
-  {path: 'profile', component:ProfileComponent,canActivate:[AuthGuard]}
+  {path: 'profile/:email', component:ProfileComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

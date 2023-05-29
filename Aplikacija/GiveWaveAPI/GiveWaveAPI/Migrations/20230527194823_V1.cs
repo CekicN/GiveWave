@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GiveWaveAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class V : Migration
+    public partial class V1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -412,7 +412,7 @@ namespace GiveWaveAPI.Migrations
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Naziv = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Mesto = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    status = table.Column<int>(type: "int", nullable: false),
+                    status = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Opis = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     ProfilKorisnikaId = table.Column<int>(type: "int", nullable: true),
                     KategorijeId = table.Column<int>(type: "int", nullable: true),

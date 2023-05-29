@@ -3,6 +3,7 @@ import { User } from 'app/Models/User';
 import { ProfileService } from '../profile.service';
 import { faHeart, faPen } from '@fortawesome/free-solid-svg-icons';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile-image',
@@ -12,12 +13,14 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 export class ProfileImageComponent implements OnInit {
   
   public user!:User;
+  email!:string|null;
   public isLiked:boolean = localStorage.getItem('like') === 'true';
-  constructor(private service:ProfileService, library:FaIconLibrary){
+  constructor(private service:ProfileService, library:FaIconLibrary, private route:ActivatedRoute){
     library.addIcons(faHeart, faPen);
   }
    ngOnInit(): void {
-    this.service.getUser(localStorage.getItem('email')).subscribe(user => {
+    this.email = this.route.snapshot.paramMap.get('email');
+    this.service.getUser(this.email).subscribe(user => {
       this.user = user;
     })
    }
@@ -27,6 +30,7 @@ export class ProfileImageComponent implements OnInit {
     return this.service.email === localStorage.getItem('email');
   }
   openModal() {
+    this.service.addEmptyProduct().subscribe(id => this.service.productId = id);
     this.service.openModal();
   }
   onFileSelected(event:Event)//uzimanje slike sa racunara

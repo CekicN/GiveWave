@@ -15,6 +15,10 @@ export class NavigationBarComponent {
     authService.isLoggedIn.subscribe(logged => this.isLogged = logged);
   }
 
+  viewProfile()
+  {
+    this.router.navigate(['/profile', localStorage.getItem('email')]);
+  }
   public logOut()
   {
     this.authService.logout();//postavlja _isLoggedIn$ na false
