@@ -12,8 +12,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
+<<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/Migrations/20230527194823_V1.Designer.cs
     [Migration("20230527194823_V1")]
     partial class V1
+========
+    [Migration("20230525144829_v1")]
+    partial class v1
+>>>>>>>> 8bd98b179bd64af4219db53f9412f31d186af479:Aplikacija/GiveWaveAPI/GiveWaveAPI/Migrations/20230525144829_v1.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

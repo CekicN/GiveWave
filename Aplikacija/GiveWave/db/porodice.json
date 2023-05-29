@@ -1,0 +1,32 @@
+{
+    "porodice": [
+        {
+            "id": 1,
+            "brojClanova": 11,
+            "adresa": "Ustanicka",
+            "NajpotrebnijeStvari":"Telefon,Zvucnik,Parfem",
+            "opis": "nema opis"
+        },
+        {
+            "id": 2,
+            "brojClanova": 13,
+            "adresa": "Ustanicka",
+            "NajpotrebnijeStvari":"Telefon,Zvucnik,Parfem",
+            "opis": "nema opis"
+        },
+        {
+            "id": 3,
+            "brojClanova": 12,
+            "adresa": "Ustanicka",
+            "NajpotrebnijeStvari":"Telefon,Zvucnik,Parfem",
+            "opis": "nema opis"
+        },
+        {
+            "id": 3,
+            "brojClanova": 14,
+            "adresa": "Ustanicka",
+            "NajpotrebnijeStvari":"Telefon,Zvucnik,Parfem",
+            "opis": "nema opis"
+        }
+    ]
+}
