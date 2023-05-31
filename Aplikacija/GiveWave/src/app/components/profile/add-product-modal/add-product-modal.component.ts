@@ -71,7 +71,7 @@ export class AddProductModalComponent implements OnInit{
       product.emailKorisnika = localStorage.getItem('email');
       console.log(product);
       this.service.addProduct(product,this.service.productId).subscribe(msg => {
-        
+        this.imageUrl = ["https://localhost:7200//uploads/common/noimage.png"];
       });
       this.addProductForm.reset();
       this.service.closeModal();

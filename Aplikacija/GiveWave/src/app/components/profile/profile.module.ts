@@ -9,6 +9,7 @@ import { DonateHistoryComponent } from './donate-history/donate-history.componen
 import { MyProductsFilterPipe } from 'app/pipes/my-products-filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProductModalComponent } from './add-product-modal/add-product-modal.component';
+import { ProductsModule } from '../products/products.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AddProductModalComponent } from './add-product-modal/add-product-modal.
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ProductsModule
   ],
   exports:[]
 })

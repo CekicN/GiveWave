@@ -170,6 +170,40 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpGet]
+        [Route("getProductsViaCategory/{category}")]
+        public async Task<ActionResult> getProductsViaCategory(string category)
+        {
+            try
+            {
+                var kategorija = context.Kategorijas.Include(p => p.Subcategories).Include(p => p.Proizvodi).Where(k => k.Name == category).FirstOrDefault();
+                if (kategorija == null)
+                    return BadRequest("Kategorija ne postoji");
+
+                List<Proizvod> products = new List<Proizvod>();
+                if(kategorija.Proizvodi != null)
+                    products.AddRange(kategorija.Proizvodi);
+
+                AddProductRecursive(kategorija, products);
+
+                return Ok(products);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        private void AddProductRecursive(Kategorija kategorija, List<Proizvod> products)
+        {
+                if(kategorija.Subcategories != null)
+                    foreach (var subcategory in kategorija.Subcategories)
+                    {
+                        if (subcategory.Proizvodi != null)
+                            products.AddRange(subcategory.Proizvodi);
+                        AddProductRecursive(subcategory, products);
+                    }
+        }
         [NonAction]
         private string GetFilePath(string email, int code)
         {
@@ -340,14 +374,27 @@ namespace GiveWaveAPI.Controllers
             }
         }
         //da se popravi
-        [Route("PrikaziViseInfoOProizvodu")]
+        [Route("PrikaziViseInfoOProizvodu/{id}")]
         [HttpGet]
         public async Task<ActionResult> prikaziViseInfoOProizvodima(int id)
         {
             try
             {
-                var productInfo = context.Proizvods;
-                return Ok(productInfo);
+                var proizvod = context.Proizvods.Include(p => p.ProfilKorisnika)
+                                                .Where(p => p.Id == id)
+                                                .FirstOrDefault();
+                if (proizvod == null)
+                    return BadRequest("proizvod nije nadjen");
+                return Ok(new
+                {
+                         Id = proizvod.Id,
+                         Naziv = proizvod.Naziv,
+                         Opis = proizvod.Opis,
+                         Mesto = proizvod.Mesto,
+                         Status = proizvod.status,
+                         Profil = proizvod.ProfilKorisnika.Username,
+                         Slike = proizvod.ImageUrl.Split('|')
+                });
             }
             catch(Exception e)
             {

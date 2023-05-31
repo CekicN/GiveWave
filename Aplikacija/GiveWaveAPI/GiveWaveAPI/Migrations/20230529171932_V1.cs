@@ -6,11 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GiveWaveAPI.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/Migrations/20230527194823_V1.cs
     public partial class V1 : Migration
-========
-    public partial class v1 : Migration
->>>>>>>> 8bd98b179bd64af4219db53f9412f31d186af479:Aplikacija/GiveWaveAPI/GiveWaveAPI/Migrations/20230525144829_v1.cs
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

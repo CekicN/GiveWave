@@ -1,6 +1,6 @@
 <div class="dropdown">
-  <div class="d-flex">
-    <div class="menu-item btn btn-primary" (click)="navigate(recursiveList.name)">
+  <div class="d-flex kategorija">
+    <div class="menu-item" (click)="navigate(recursiveList.name)">
       {{ recursiveList.name }}
     </div>
     <span *ngIf="recursiveList.subcategories.length > 0" class="arrow" (click)="toggleSubmenu()">

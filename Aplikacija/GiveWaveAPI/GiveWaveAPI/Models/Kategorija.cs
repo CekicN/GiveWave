@@ -16,5 +16,7 @@ namespace GiveWaveAPI.Models
         [ForeignKey("parentID")]
         public Kategorija parentCategory { get; set; }
         public List<Kategorija> Subcategories { get; set; }
+        [JsonIgnore]
+        public List<Proizvod> Proizvodi { get; set; }
     }
 }
