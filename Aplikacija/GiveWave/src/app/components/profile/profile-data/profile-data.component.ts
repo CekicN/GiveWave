@@ -81,7 +81,7 @@ export class ProfileDataComponent implements OnInit {
         case 0:
           this.service.updateUsername(localStorage.getItem('email'), innerText).subscribe(user => {
             this.user = user;
-            input.innerText = user.brojTelefona;
+            input.innerText = user.username;
           });
         break;
         // case 1:
@@ -101,7 +101,7 @@ export class ProfileDataComponent implements OnInit {
           input.innerHTML = "";
           this.service.updateAddress(localStorage.getItem('email'), innerText).subscribe(user => {
             this.user = user;
-            input.innerText = user.brojTelefona;
+            input.innerText = user.adresa;
           });
         break;
         case 5:

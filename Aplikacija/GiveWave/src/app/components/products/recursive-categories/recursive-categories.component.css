@@ -1,14 +1,25 @@
 .menu-item {
     cursor: pointer;
   }
-.list-group-item
+.kategorija
 {
-  border: none;
+  background-color: rgb(255, 255, 255);
+  width: 80px;
+  height: 20px;
+}
+.kategorija:hover
+{
+  background-color: rgb(151, 154, 155);
+}
+ul.list-group li.list-group-item {
+  background-color:transparent !important;
+  border: none !important;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 .arrow
 {
-  background-color: rgb(24, 125, 213);
-  color:white;
   box-sizing: border-box;
   width: 2rem;
   border-radius: 5px;

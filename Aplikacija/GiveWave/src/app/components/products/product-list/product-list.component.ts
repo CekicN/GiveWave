@@ -5,6 +5,7 @@ import { Product } from 'app/Models/Product';
 import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
 import { SearchProductsPipe } from 'app/pipes/search-products.pipe';
+import { ProductInfo } from 'app/Models/ProductInfo';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -32,5 +33,15 @@ export class ProductListComponent implements OnInit {
   addToCart(id:number)
   {
     console.log(id);
+  }
+
+  viewDetails(id:number)
+  {
+    
+    this.productService.getMoreInfo(id).subscribe(p => {
+      let product:ProductInfo = p;
+      this.productService.setProduct(product);
+      this.productService.openModal();
+    });
   }
 }

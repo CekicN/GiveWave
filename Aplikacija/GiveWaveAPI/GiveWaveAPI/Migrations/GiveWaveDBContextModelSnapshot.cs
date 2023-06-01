@@ -812,7 +812,7 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.Proizvod", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
-                        .WithMany()
+                        .WithMany("Proizvodi")
                         .HasForeignKey("KategorijeId");
 
                     b.HasOne("GiveWaveAPI.Models.Porodica", null)
@@ -890,6 +890,8 @@ namespace GiveWaveAPI.Migrations
 
             modelBuilder.Entity("GiveWaveAPI.Models.Kategorija", b =>
                 {
+                    b.Navigation("Proizvodi");
+
                     b.Navigation("Subcategories");
                 });
 
