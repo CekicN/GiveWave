@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\ContactEmail.html",
+      "PackagePath": "staticwebassets\\EmailTemplate\\ContactEmail.html"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\Logo.jpg",
+      "PackagePath": "staticwebassets\\EmailTemplate\\Logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\ResetEmail.html",
+      "PackagePath": "staticwebassets\\EmailTemplate\\ResetEmail.html"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekic@gmail.com\\P_1034\\image_0_28.05.2023._23_49_16.png",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\cekic@gmail.com\\P_1034\\image_0_28.05.2023._23_49_16.png"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicn668@gmail.com\\P_1032\\image_0_28.05.2023._23_45_10.png",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\cekicn668@gmail.com\\P_1032\\image_0_28.05.2023._23_45_10.png"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicn668@gmail.com\\P_1033\\image_0_28.05.2023._23_46_34.png",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\cekicn668@gmail.com\\P_1033\\image_0_28.05.2023._23_46_34.png"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\ceka123@gmail.com\\image_15.05.2023._23_31_12.png",
+      "PackagePath": "staticwebassets\\Uploads\\Profile\\ceka123@gmail.com\\image_15.05.2023._23_31_12.png"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\ceka@gmail.com\\image_13.05.2023._21_40_10.png",
+      "PackagePath": "staticwebassets\\Uploads\\Profile\\ceka@gmail.com\\image_13.05.2023._21_40_10.png"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\cekic@gmail.com\\image_28.05.2023._23_48_24.png",
+      "PackagePath": "staticwebassets\\Uploads\\Profile\\cekic@gmail.com\\image_28.05.2023._23_48_24.png"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\cekicn668@gmail.com\\image_27.05.2023._11_22_12.png",
+      "PackagePath": "staticwebassets\\Uploads\\Profile\\cekicn668@gmail.com\\image_27.05.2023._11_22_12.png"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\katarinaC@gmail.com\\image_27.05.2023._11_24_02.png",
+      "PackagePath": "staticwebassets\\Uploads\\Profile\\katarinaC@gmail.com\\image_27.05.2023._11_24_02.png"
+    },
+    {
+      "Id": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\common\\noimage.png",
+      "PackagePath": "staticwebassets\\Uploads\\common\\noimage.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.GiveWaveAPI.props",
+      "PackagePath": "build\\GiveWaveAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.GiveWaveAPI.props",
+      "PackagePath": "buildMultiTargeting\\GiveWaveAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.GiveWaveAPI.props",
+      "PackagePath": "buildTransitive\\GiveWaveAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

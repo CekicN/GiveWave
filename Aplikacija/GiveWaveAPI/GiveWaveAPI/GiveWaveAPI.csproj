@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -30,10 +30,13 @@
 
   <ItemGroup>
     <Folder Include="Context\" />
-    <Folder Include="Migrations\" />
     <Folder Include="wwwroot\Uploads\common\" />
     <Folder Include="wwwroot\Uploads\Products\cekicn668%40gmail.com\" />
     <Folder Include="wwwroot\Uploads\Profile\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GiveWaveAPIService\GiveWaveAPIService.csproj" />
   </ItemGroup>
 
 </Project>

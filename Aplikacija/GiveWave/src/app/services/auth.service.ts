@@ -21,12 +21,12 @@ export class AuthService {
   }
 
   signUp(userObj:any){
-    return this.http.post<any>(`${this.baseUrl}Register`,userObj)
+    return this.http.post<any>(`${this.baseUrl}signup`,userObj)
 
   }
   //https://localhost:7200/api/Authentication/Login
   login(loginObj:any){
-    return this.http.post<any>(`${this.baseUrl}Login`,loginObj).pipe(
+    return this.http.post<any>(`${this.baseUrl}login`,loginObj).pipe(
       tap((res:any) => {
         this._isLoggedIn$.next(true);
         localStorage.setItem('token', res.token);

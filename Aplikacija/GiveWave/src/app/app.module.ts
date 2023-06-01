@@ -19,13 +19,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutUsModule } from './components/about-us/about-us.module';
 import { DonateComponent } from './components/donate/donate/donate.component';
 import { SearchProductsPipe } from './pipes/search-products.pipe';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavigationBarComponent,
-    FooterBarComponent
+    FooterBarComponent,
+    ResetPasswordComponent
     
   ],
   imports: [

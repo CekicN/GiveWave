@@ -1,0 +1,12 @@
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\bin\Debug\net7.0\GiveWaveAPIService.deps.json
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\bin\Debug\net7.0\GiveWaveAPIService.dll
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\bin\Debug\net7.0\GiveWaveAPIService.pdb
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.csproj.AssemblyReference.cache
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.AssemblyInfoInputs.cache
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.AssemblyInfo.cs
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.csproj.CoreCompileInputs.cache
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.dll
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\refint\GiveWaveAPIService.dll
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.pdb
+C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\ref\GiveWaveAPIService.dll

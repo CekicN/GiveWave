@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj": {}
+    "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj": {}
   },
   "projects": {
-    "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj": {
+    "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
-        "projectName": "GiveWaveAPI",
-        "projectPath": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
-        "packagesPath": "C:\\Users\\Prokuplje\\.nuget\\packages\\",
-        "outputPath": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\obj\\",
+        "projectUniqueName": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj",
+        "projectName": "GiveWaveAPIService",
+        "projectPath": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj",
+        "packagesPath": "C:\\Users\\Kuca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Prokuplje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kuca\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,73 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
+        "projectName": "GiveWaveAPI",
+        "projectPath": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
+        "packagesPath": "C:\\Users\\Kuca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Kuca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj": {
+                "projectPath": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -98,7 +163,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
