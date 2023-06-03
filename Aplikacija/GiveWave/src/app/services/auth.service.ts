@@ -42,6 +42,7 @@ export class AuthService {
   logout()
   {
     this._isLoggedIn$.next(false);
+    localStorage.removeItem('token');
   }
   decodeToken(token:string|null):any
   {

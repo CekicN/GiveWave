@@ -58,8 +58,8 @@ export class ProfileService {
   Dislike(email:String)
   {
     let httpOptions = new HttpHeaders()
-                      .set('Authorization', 'Bearer '+localStorage.getItem('token'));
-    httpOptions.append('Content-Type', 'application/json');
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
     return this.http.patch<number>(Url+"Dislike/"+email, {headers:httpOptions});
   }
   updateUsername(email:string|null|undefined, data:String)
