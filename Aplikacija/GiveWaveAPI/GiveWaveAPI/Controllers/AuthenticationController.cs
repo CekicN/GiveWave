@@ -251,7 +251,7 @@ namespace GiveWaveAPI.Controllers
                 Email = registerUser.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
                 UserName = registerUser.UserName,
-                TwoFactorEnabled = true
+                TwoFactorEnabled = false
             };
             
             if (await _roleManager.RoleExistsAsync("User"))

@@ -7,6 +7,7 @@ import { User } from 'app/Models/User';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'app/components/products/product.service';
 import { ProductInfo } from 'app/Models/ProductInfo';
+import { AuthService } from 'app/services/auth.service';
 @Component({
   selector: 'app-my-products',
   templateUrl: './my-products.component.html',
@@ -18,7 +19,7 @@ export class MyProductsComponent implements OnInit {
   searchText = '';
   email!:string|null;
   products:MyProducts[] = [];
-  constructor(private services:ProfileService, private route:ActivatedRoute,private  productService:ProductService) {
+  constructor(private services:ProfileService,private authService:AuthService, private route:ActivatedRoute,private  productService:ProductService) {
   }
   ngOnInit(): void {
     this.email = this.route.snapshot.paramMap.get('email');
@@ -31,7 +32,7 @@ export class MyProductsComponent implements OnInit {
   isVisible():boolean
   {
     //Email iz profila === email iz prijave
-    return this.services.email === localStorage.getItem('email');
+    return this.services.email === this.authService.email;
   }
   deleteProduct(id:number)
   {

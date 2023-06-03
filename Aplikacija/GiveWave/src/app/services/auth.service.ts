@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpClientModule } from "@angular/common/http"
 import { BehaviorSubject, tap } from 'rxjs';
-
+import jwt_decode from 'jwt-decode'
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,11 @@ export class AuthService {
   get token()
   {
     return localStorage.getItem('token');
+  }
+  get email()
+  {
+    let email = this.decodeToken(this.token)["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] as string;
+    return email;
   }
   constructor(private http: HttpClient) { 
     this._isLoggedIn$.next(!!this.token)
@@ -37,5 +42,14 @@ export class AuthService {
   logout()
   {
     this._isLoggedIn$.next(false);
+  }
+  decodeToken(token:string|null):any
+  {
+    try {
+      if(token != null)
+        return jwt_decode(token);
+    } catch(Error) {
+      return null;
+    }
   }
 }

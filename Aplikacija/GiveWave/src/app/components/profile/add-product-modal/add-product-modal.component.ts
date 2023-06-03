@@ -4,6 +4,7 @@ import { ProductService } from 'app/components/products/product.service';
 import { ProductHelper, Status } from 'app/Models/ProductHelper';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { uploadPhoto } from 'app/Models/uploadPhoto';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-add-product-modal',
@@ -11,16 +12,16 @@ import { uploadPhoto } from 'app/Models/uploadPhoto';
   styleUrls: ['./add-product-modal.component.css']
 })
 export class AddProductModalComponent implements OnInit{
-  displayStyle:string = "none";
+  displayStyle:string = "display:none";
   other = false;
   categories!:Category[];
   cities!:any;
   addProductForm!:FormGroup;
   imageUrl:string[] = ["https://localhost:7200//uploads/common/noimage.png"];
   status = Object.keys(Status).filter((item) => isNaN(Number(item)));
-  constructor(private fb:FormBuilder,private service:ProfileService, private productService:ProductService)
+  constructor(private fb:FormBuilder,private service:ProfileService, private authService:AuthService, private productService:ProductService)
   {
-    service.displayStyle.subscribe(d => this.displayStyle = d);
+    service.displayStyle.subscribe(d => {this.displayStyle = d});
     this.addProductForm = fb.group({
       Naziv:['', Validators.required],
       Mesto:['', Validators.required],
@@ -31,6 +32,7 @@ export class AddProductModalComponent implements OnInit{
       Opis:['', Validators.required]
     },{validator:this.categoryValidator});
   }
+
   categoryValidator(formGroup: FormGroup) {
     const category = formGroup.get('Kategorija')?.value;
     const newCategory = formGroup.get('novaKategorija')?.value;
@@ -59,7 +61,7 @@ export class AddProductModalComponent implements OnInit{
   }
   closeModal()
   {
-    this.service.cancelAdding(this.service.productId, localStorage.getItem('email')).subscribe(msg => console.log(msg));
+    this.service.cancelAdding(this.service.productId, this.authService.email).subscribe(msg => console.log(msg));
     this.service.closeModal();
   }
   addProduct()
@@ -68,7 +70,7 @@ export class AddProductModalComponent implements OnInit{
     {
       //za dodavanje producta
       const product:ProductHelper = this.addProductForm.value;
-      product.emailKorisnika = localStorage.getItem('email');
+      product.emailKorisnika = this.authService.email;
       console.log(product);
       this.service.addProduct(product,this.service.productId).subscribe(msg => {
         this.imageUrl = ["https://localhost:7200//uploads/common/noimage.png"];
@@ -102,7 +104,7 @@ export class AddProductModalComponent implements OnInit{
     {
       const upload:uploadPhoto = {
         id:this.service.productId,
-        email:localStorage.getItem('email'),
+        email:this.authService.email,
         files:Array.from(files)
       } 
       console.log(upload);

@@ -20,6 +20,7 @@ import { AboutUsModule } from './components/about-us/about-us.module';
 import { DonateComponent } from './components/donate/donate/donate.component';
 import { SearchProductsPipe } from './pipes/search-products.pipe';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [

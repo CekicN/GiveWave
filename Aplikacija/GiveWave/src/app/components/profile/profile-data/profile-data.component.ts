@@ -4,6 +4,7 @@ import { User } from 'app/Models/User';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { IconName, faFloppyDisk, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-profile-data',
@@ -16,21 +17,20 @@ export class ProfileDataComponent implements OnInit {
   editRadio = false;
   email!:string|null;
   iconsName:IconName[] = ['pen-to-square','pen-to-square','pen-to-square','pen-to-square', 'pen-to-square','pen-to-square'];
-  constructor(private service:ProfileService, library:FaIconLibrary, private route:ActivatedRoute){
+  constructor(private service:ProfileService, private authService:AuthService, library:FaIconLibrary, private route:ActivatedRoute){
     library.addIcons(faPenToSquare, faFloppyDisk);
   }
   ngOnInit(): void {
     this.email = this.route.snapshot.paramMap.get('email');
     this.service.getUser(this.email).subscribe(user => {
       this.user = user;
-      console.log(this.user)
       this.service.email = user.email
     })
   }
   isVisible():boolean
   {
     //Email iz profila === email iz prijave
-    return this.service.email === localStorage.getItem('email');
+    return this.service.email === this.authService.email;
   }
   isMale()
   {
@@ -79,7 +79,7 @@ export class ProfileDataComponent implements OnInit {
       switch(num)
       {
         case 0:
-          this.service.updateUsername(localStorage.getItem('email'), innerText).subscribe(user => {
+          this.service.updateUsername(this.authService.email, innerText).subscribe(user => {
             this.user = user;
             input.innerText = user.username;
           });
@@ -88,7 +88,7 @@ export class ProfileDataComponent implements OnInit {
         //   this.user.email = input?.innerHTML; ovo ne treba da se menja jer  je jedinstven email pri registraciji
         // break;
         case 2:
-          this.service.updatePhoneNumber(localStorage.getItem('email'), innerText).subscribe(user => {
+          this.service.updatePhoneNumber(this.authService.email, innerText).subscribe(user => {
             this.user = user;
             input.innerText = user.brojTelefona;
           });
@@ -99,7 +99,7 @@ export class ProfileDataComponent implements OnInit {
         break;
         case 4:
           input.innerHTML = "";
-          this.service.updateAddress(localStorage.getItem('email'), innerText).subscribe(user => {
+          this.service.updateAddress(this.authService.email, innerText).subscribe(user => {
             this.user = user;
             input.innerText = user.adresa;
           });
@@ -107,7 +107,7 @@ export class ProfileDataComponent implements OnInit {
         case 5:
           let labela = input.closest('div')?.querySelector('label');
           if(labela)
-            this.service.updateGender(localStorage.getItem('email'), labela.innerText).subscribe(user => this.user = user);
+            this.service.updateGender(this.authService.email, labela.innerText).subscribe(user => this.user = user);
         break;
         default:
       }
