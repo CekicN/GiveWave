@@ -64,20 +64,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\common\noimage.png))</OriginalItemSpec>
     </StaticWebAsset>
-<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net6.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_1\20944629-removebg-preview.png))">
-=======
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\ceka123@gmail.com\P_3\image_0_29.05.2023._19_26_51.png))">
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net7.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
       <SourceType>Package</SourceType>
       <SourceId>GiveWaveAPI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/GiveWaveAPI</BasePath>
-<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net6.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
-      <RelativePath>Uploads/Products/cekicn668@gmail.com/P_1/20944629-removebg-preview.png</RelativePath>
-=======
       <RelativePath>Uploads/Products/ceka123@gmail.com/P_3/image_0_29.05.2023._19_26_51.png</RelativePath>
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net7.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -86,24 +78,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net6.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_1\20944629-removebg-preview.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_1\user.png))">
-=======
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\ceka123@gmail.com\P_3\image_0_29.05.2023._19_26_51.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\ceka123@gmail.com\P_5\image_0_29.05.2023._18_56_04.png))">
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net7.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
       <SourceType>Package</SourceType>
       <SourceId>GiveWaveAPI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/GiveWaveAPI</BasePath>
-<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net6.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
-      <RelativePath>Uploads/Products/cekicn668@gmail.com/P_1/user.png</RelativePath>
-=======
       <RelativePath>Uploads/Products/ceka123@gmail.com/P_5/image_0_29.05.2023._18_56_04.png</RelativePath>
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net7.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -112,11 +94,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net6.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_1\user.png))</OriginalItemSpec>
-=======
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\ceka123@gmail.com\P_5\image_0_29.05.2023._18_56_04.png))</OriginalItemSpec>
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net7.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_3\image_0_29.05.2023._18_53_29.png))">
       <SourceType>Package</SourceType>
@@ -198,20 +176,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_8\image_2_31.05.2023._16_50_46.png))</OriginalItemSpec>
     </StaticWebAsset>
-<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net6.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\cekicn668@gmail.com\image_25.05.2023._19_42_29.png))">
-=======
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\ceka123@gmail.com\image_29.05.2023._18_55_52.png))">
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net7.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicnikola31@gmail.com\P_17\image_0_03.06.2023._17_23_41.png))">
       <SourceType>Package</SourceType>
       <SourceId>GiveWaveAPI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/GiveWaveAPI</BasePath>
-<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net6.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
-      <RelativePath>Uploads/Profile/cekicn668@gmail.com/image_25.05.2023._19_42_29.png</RelativePath>
-=======
-      <RelativePath>Uploads/Profile/ceka123@gmail.com/image_29.05.2023._18_55_52.png</RelativePath>
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net7.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
+      <RelativePath>Uploads/Products/cekicnikola31@gmail.com/P_17/image_0_03.06.2023._17_23_41.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -220,9 +190,38 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net6.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\cekicn668@gmail.com\image_25.05.2023._19_42_29.png))</OriginalItemSpec>
-=======
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicnikola31@gmail.com\P_17\image_0_03.06.2023._17_23_41.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicnikola53@gmail.com\P_22\image_0_03.06.2023._19_00_33.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>GiveWaveAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GiveWaveAPI</BasePath>
+      <RelativePath>Uploads/Products/cekicnikola53@gmail.com/P_22/image_0_03.06.2023._19_00_33.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicnikola53@gmail.com\P_22\image_0_03.06.2023._19_00_33.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\ceka123@gmail.com\image_29.05.2023._18_55_52.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>GiveWaveAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GiveWaveAPI</BasePath>
+      <RelativePath>Uploads/Profile/ceka123@gmail.com/image_29.05.2023._18_55_52.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\ceka123@gmail.com\image_29.05.2023._18_55_52.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\cekicn668@gmail.com\image_27.05.2023._11_22_12.png))">
@@ -240,7 +239,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\cekicn668@gmail.com\image_27.05.2023._11_22_12.png))</OriginalItemSpec>
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49:Aplikacija/GiveWaveAPI/GiveWaveAPI/obj/Debug/net7.0/staticwebassets/msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\cekicnikola31@gmail.com\image_03.06.2023._16_22_00.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>GiveWaveAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GiveWaveAPI</BasePath>
+      <RelativePath>Uploads/Profile/cekicnikola31@gmail.com/image_03.06.2023._16_22_00.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\cekicnikola31@gmail.com\image_03.06.2023._16_22_00.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\martanedovic2001@gmail.com\image_03.06.2023._22_30_49.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>GiveWaveAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GiveWaveAPI</BasePath>
+      <RelativePath>Uploads/Profile/martanedovic2001@gmail.com/image_03.06.2023._22_30_49.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\martanedovic2001@gmail.com\image_03.06.2023._22_30_49.png))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

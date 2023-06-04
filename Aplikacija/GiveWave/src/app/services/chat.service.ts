@@ -4,8 +4,8 @@ import { UserChat } from 'app/Models/UserChat';
 import { environment } from 'environments/environment.prod';
 import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 import { Message } from 'app/Models/Message';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
 import { PrivateChatComponent } from 'app/components/private-chat/private-chat.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({
   providedIn: 'root'
@@ -92,13 +92,16 @@ export class ChatService {
       content
     };
 
-    if(!this.privateMessageInitiated){
+    if(!this.privateMessageInitiated)
+    {
       this.privateMessageInitiated = true;
       return this.chatConnection?.invoke('CreatePrivateChat', message).then(() => {
         this.privateMessages = [...this.privateMessages, message];
       })
       .catch(error => console.log(error));          
-    }else{
+    }
+    else
+    {
       return this.chatConnection?.invoke('ReceivePrivateMessage', message)
       .catch(error => console.log(error));
     }

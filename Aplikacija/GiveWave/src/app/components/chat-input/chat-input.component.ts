@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter ,ViewChild} from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-chat-input',
@@ -8,6 +9,7 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 export class ChatInputComponent implements OnInit{
   content: string = '';
   @Output() contentEmitter = new EventEmitter();
+  @ViewChild('messageForm') messageForm: NgForm | undefined;
 
   constructor() {}
 

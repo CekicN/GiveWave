@@ -8,7 +8,6 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-<<<<<<< HEAD
 using System.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.SignalR;
@@ -20,10 +19,8 @@ using Microsoft.AspNetCore.SpaServices;
 using GiveWaveAPI.Services;
 using GiveWaveAPI.Hubs;
 using Microsoft.AspNetCore.Cors;
-=======
 using GiveWaveApiService.Models;
 using GiveWaveApiService.Services;
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -58,7 +55,6 @@ builder.Services.Configure<DataProtectionTokenProviderOptions>(opts => opts.Toke
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-<<<<<<< HEAD
 
 //za chat
 builder.Services.AddSingleton<ChatService>();
@@ -66,11 +62,9 @@ builder.Services.AddSignalR();
 builder.Services.AddCors();
 
 builder.Services.AddSwaggerGen();
-builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("JWTConfig"));
-=======
+builder.Services.Configure<JwtBearerPostConfigureOptions>(builder.Configuration.GetSection("JWTConfig"));
 //builder.Services.AddSwaggerGen();
 //builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("JWTConfig"));
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49
 
 //add email config
 var emailConfig = configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();

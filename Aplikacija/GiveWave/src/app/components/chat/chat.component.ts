@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output , OnDestroy} from '@angular/core';
 import { ChatService } from 'app/services/chat.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
 import { PrivateChatComponent } from '../private-chat/private-chat.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-chat',
@@ -34,7 +34,7 @@ export class ChatComponent implements OnInit, OnDestroy{
 
   openPrivateChat(toUser: string){
     const modalRef = this.modalService.open(PrivateChatComponent);
-    modalRef.componentInstance,toUser = toUser;
+    modalRef.componentInstance.toUser = toUser;
   }
 
 }

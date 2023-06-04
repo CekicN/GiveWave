@@ -6,7 +6,7 @@
     <div class="card border-secondary">
         <div class="card-header h3 text-muted text-center">Messages</div>
         <div class="card-body">
-            <app-messages [messages]="cahtService.privateMessages"></app-messages>
+            <app-messages [messages]="chatService.privateMessages"></app-messages>
         </div>
         <div class="card-footer">
             <app-chat-input (contentEmitter)="sendMessage($event)"></app-chat-input>

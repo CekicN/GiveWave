@@ -10,10 +10,10 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class PrivateChatComponent implements OnInit,OnDestroy {
   @Input() toUser = '';
 
-  constructor(public activeModal: NgbActiveModal,public cahtService: ChatService) {}
+  constructor(public activeModal: NgbActiveModal,public chatService: ChatService) {}
 
   ngOnDestroy(): void {
-      this.cahtService.closePrivateChatMessage(this.toUser);
+      this.chatService.closePrivateChatMessage(this.toUser);
   }
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class PrivateChatComponent implements OnInit,OnDestroy {
   }
 
   sendMessage(content: string){
-    this.cahtService.sendPrivateMessage(this.toUser,content);
+    this.chatService.sendPrivateMessage(this.toUser,content);
 
   }
 }
