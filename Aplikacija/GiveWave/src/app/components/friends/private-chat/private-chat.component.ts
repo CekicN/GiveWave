@@ -1,5 +1,5 @@
 import { Component,OnInit,Input,OnDestroy} from '@angular/core';
-import { ChatService } from 'app/services/chat.service';
+import { ChatService } from '../chat.service'; 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({

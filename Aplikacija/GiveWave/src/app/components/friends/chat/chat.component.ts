@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output , OnDestroy} from '@angular/core';
-import { ChatService } from 'app/services/chat.service';
+import { ChatService } from '../chat.service'; 
 import { PrivateChatComponent } from '../private-chat/private-chat.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 

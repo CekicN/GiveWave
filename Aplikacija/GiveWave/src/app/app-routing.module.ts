@@ -10,6 +10,7 @@ import { AuthGuard } from './Guards/auth.guard';
 import { AboutComponent } from './components/about-us/about/about.component';
 import { UserAuthModule } from './components/user-auth/user-auth.module';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ChatMainComponent } from './components/friends/chat-main/chat-main.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'donate', component:DonateComponent},
   {path: 'products', component:ProductsComponent},
   {path: 'profile/:email', component:ProfileComponent,canActivate:[AuthGuard]},
+  {path: 'friends', component:ChatMainComponent},
   {path: 'reset', component:ResetPasswordComponent}
 ];
 

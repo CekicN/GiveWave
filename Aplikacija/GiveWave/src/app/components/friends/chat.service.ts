@@ -4,7 +4,7 @@ import { UserChat } from 'app/Models/UserChat';
 import { environment } from 'environments/environment.prod';
 import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 import { Message } from 'app/Models/Message';
-import { PrivateChatComponent } from 'app/components/private-chat/private-chat.component';
+import { PrivateChatComponent } from './private-chat/private-chat.component'; 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({

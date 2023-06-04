@@ -21,6 +21,12 @@ export class NavigationBarComponent {
     console.log(email);
     this.router.navigate(['/profile', email]);
   }
+  toggleCanvas()
+  {
+    const offCanvas = document.getElementById('offcanvasRight');
+    if(offCanvas)
+      offCanvas.classList.toggle('show');
+  }
   public logOut()
   {
     this.authService.logout();//postavlja _isLoggedIn$ na false
