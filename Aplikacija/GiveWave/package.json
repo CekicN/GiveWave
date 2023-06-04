@@ -35,11 +35,8 @@
     "font-awesome": "^4.7.0",
     "jqlite": "^0.2.42",
     "jquery": "^3.6.4",
-<<<<<<< HEAD
     "ngx-toastr": "^17.0.2",
-=======
     "jwt-decode": "^3.1.2",
->>>>>>> 0693e4a1c11776dca4e7dfb98d4ec6d5b7e5db49
     "popper.js": "^1.16.1",
     "rxjs": "~7.8.0",
     "toastr": "^2.1.4",
