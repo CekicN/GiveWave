@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GiveWaveAPI.Controllers
 {
+    [ApiController]
+    [Route("controller")]
     public class KorpaController : ControllerBase
     {
         public GiveWaveDBContext Context { get; set; }

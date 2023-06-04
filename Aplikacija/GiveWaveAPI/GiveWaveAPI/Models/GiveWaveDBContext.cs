@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace GiveWaveAPI.Models;
@@ -22,6 +23,8 @@ public class GiveWaveDBContext : IdentityDbContext<IdentityUser>
     public DbSet<Porodica> Porodice { get; set; }
     public DbSet<Proizvod> Proizvods { get; set; }
     public DbSet<Donacija> Donacijas { get; set; }
+    public DbSet<UserChat> UserChats { get; set; }
+    public DbSet<Message> Messages { get; set; }
 
     public GiveWaveDBContext(DbContextOptions<GiveWaveDBContext> options) : base(options)
     {
