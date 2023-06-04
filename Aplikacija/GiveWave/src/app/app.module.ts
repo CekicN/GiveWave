@@ -9,7 +9,7 @@ import { AppComponent } from './components/app/app.component';
 import { NavigationBarComponent } from './components/core/navigation-bar/navigation-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterBarComponent } from './components/core/footer-bar/footer-bar.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsModule } from './components/products/products.module';
 import { DonateModule } from './components/donate/donate.module';
 
@@ -18,6 +18,10 @@ import { ProfileModule } from './components/profile/profile.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutUsModule } from './components/about-us/about-us.module';
 import { DonateComponent } from './components/donate/donate/donate.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { ChatInputComponent } from './components/chat-input/chat-input.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { PrivateChatComponent } from './components/private-chat/private-chat.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +33,14 @@ import { DonateComponent } from './components/donate/donate/donate.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     ProductsModule,
     UserAuthModule,
-    DonateModule,
     ReactiveFormsModule,
     HttpClientModule,
     ProfileModule,
+    DonateModule,
     FontAwesomeModule,
     AboutUsModule
   ],

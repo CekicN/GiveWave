@@ -8,6 +8,7 @@ import { ProductsComponent } from './components/products/products/products.compo
 import { ProfileComponent } from './components/profile/profile/profile.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { AboutComponent } from './components/about-us/about/about.component';
+import { UserAuthModule } from './components/user-auth/user-auth.module';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'donate', component:DonateComponent},
   {path: 'products', component:ProductsComponent},
   {path: 'profile', component:ProfileComponent,canActivate:[AuthGuard]}
+ 
 ];
 
 @NgModule({
