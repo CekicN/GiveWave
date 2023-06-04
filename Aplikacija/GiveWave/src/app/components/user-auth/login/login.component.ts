@@ -8,6 +8,7 @@ import { faFacebook, faGithub, faGoogle} from '@fortawesome/free-brands-svg-icon
 import { faLock, faUser, faEyeSlash, faEye} from '@fortawesome/free-solid-svg-icons';
 import { Res } from 'app/Models/AuthRes';
 import { AuthService } from 'app/services/auth.service';
+import { ResetPasswordService } from 'app/services/reset-password.service';
 
 @Component({
   selector: 'app-login',
@@ -20,17 +21,19 @@ export class LoginComponent {
   type: string = "password";
   isText : boolean = false;
   eyeIcon: IconName = 'eye-slash'; 
+  public resetPasswordEmail!: string;
+  public isValidEmail!:boolean;
   loginForm!: FormGroup;
 
 
-  constructor(private fb: FormBuilder, library:FaIconLibrary, private route:Router, private authService:AuthService){
+  constructor(private fb: FormBuilder, library:FaIconLibrary, private route:Router, private authService:AuthService, private resetService:ResetPasswordService){
     library.addIcons(faFacebook, faGithub, faGoogle, faLock, faUser, faEyeSlash, faEye);
     authService.isLoggedIn.subscribe(logged => this.isLogged = logged);
   }
   
   ngOnInit():void{
     this.loginForm=this.fb.group({
-      email: ['',[Validators.required]],
+      username: ['',[Validators.required]],
       password:['',[Validators.required]]
     })
   }
@@ -44,7 +47,9 @@ export class LoginComponent {
       this.authService.login(this.loginForm.value)
         .subscribe({
           next:(res) => {
-            localStorage.setItem('email', this.loginForm.value.email);
+            let token = res.token as string;
+            localStorage.setItem('token', token);
+            localStorage.setItem('username', this.loginForm.value.username)
             this.loginForm.reset();
             this.route.navigate(['/']);
           },
@@ -73,6 +78,38 @@ export class LoginComponent {
         this.validateAllFormsFields(control);
       }
     })
+
+  }
+
+  checkValidEmail(event: string){
+    const value = event;
+    const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,3}$/;//regex patern for checking email
+    this.isValidEmail=pattern.test(value);
+    return this.isValidEmail
+
+
+  }
+  confirmToSend(){
+    if(this.checkValidEmail(this.resetPasswordEmail)){
+      console.log(this.resetPasswordEmail);
+      
+
+      //api call to be done
+
+      this.resetService.sendResetPasswordLink(this.resetPasswordEmail)
+      .subscribe({
+        next:(res)=>{
+          this.resetPasswordEmail="";
+          const buttonRef = document.getElementById("closeButton");
+          buttonRef?.click();
+
+        },
+        error:(err)=>{
+          alert("It doesn't work!");
+
+        }
+      })
+    }
 
   }
 

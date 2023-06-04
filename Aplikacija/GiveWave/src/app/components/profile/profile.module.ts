@@ -7,8 +7,9 @@ import { ProfileImageComponent } from './profile-image/profile-image.component';
 import { MyProductsComponent } from './my-products/my-products.component';
 import { DonateHistoryComponent } from './donate-history/donate-history.component';
 import { MyProductsFilterPipe } from 'app/pipes/my-products-filter.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProductModalComponent } from './add-product-modal/add-product-modal.component';
+import { ProductsModule } from '../products/products.module';
 
 
 @NgModule({
@@ -24,7 +25,10 @@ import { AddProductModalComponent } from './add-product-modal/add-product-modal.
   imports: [
     CommonModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    ProductsModule
   ],
   exports:[]
 })

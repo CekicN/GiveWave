@@ -20,7 +20,7 @@ namespace GiveWaveAPI.Models
         [MaxLength(20)]
         public string Naziv {get; set; }
         public string Mesto { get; set; }
-        public Status status { get; set; }
+        public string status { get; set; }
         [MaxLength(255)]
         public string Opis {get; set; }
 

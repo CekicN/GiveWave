@@ -19,7 +19,6 @@ namespace GiveWaveAPI.Controllers
             context = c;
         }
 
-
         [Route("addProduct/{id}")]
         [HttpPut]
         public async Task<ActionResult> addProduct([FromBody] ProductHelper proizvod,int id)
@@ -36,7 +35,9 @@ namespace GiveWaveAPI.Controllers
                 if (kategorija == null)
                 {
                     //mehanizam za dodavanje nepostojece kategorije ....
-                    return BadRequest("Kategorija ne postoji");
+                   kategorija =  addCategory(proizvod.novaKategorija, proizvod.parentKategorija);
+                    if (kategorija == null)
+                        return BadRequest("Kategorija vec postoji");
                 }
                 var product = context.Proizvods.Where(p => p.Id == id).FirstOrDefault();
 
@@ -47,7 +48,7 @@ namespace GiveWaveAPI.Controllers
                 product.Mesto = proizvod.Mesto;
                 product.Kategorije = kategorija;
                 product.status = proizvod.status;
-                product.ImageUrl = proizvod.ImageUrl;//ovde treba getImage fja
+                product.ImageUrl = GetImage(proizvod.emailKorisnika, id);
 
 
 
@@ -65,7 +66,43 @@ namespace GiveWaveAPI.Controllers
             }
 
         }
+        [NonAction]
+        public Kategorija addCategory(string category, string parentCategory)
+        {
+                var kategorija = context.Kategorijas.Where(c => c.Name == category).FirstOrDefault();
+                if (kategorija != null)
+                    return null;
+                var parent = context.Kategorijas.Where(c => c.Name == parentCategory).FirstOrDefault();
+                if (parentCategory != null)
+                {
+                    var subcategory = new Kategorija
+                    {
+                        Name = category,
+                        parentCategory = parent
+                    };
 
+                    context.Kategorijas.Add(subcategory);
+                    context.SaveChanges();
+
+                    return subcategory;
+                }
+                else
+                {
+                    //parent kategorija
+
+                    var subcategory = new Kategorija
+                    {
+                        Name = category,
+                        parentCategory = null
+                    };
+
+                    context.Kategorijas.Add(subcategory);
+                    context.SaveChanges();
+
+                    return subcategory;
+
+                }
+        }
         [Route("VratiProizvodePremaEmailu/{email}")]
         [HttpGet]
         public async Task<ActionResult> vratiProizvodePremaEmailu(string email)
@@ -104,6 +141,68 @@ namespace GiveWaveAPI.Controllers
 
             
         }
+        [Route("getAllProducts")]
+        [HttpGet]
+        public async Task<ActionResult> getAllProducts()
+        {
+            try
+            {
+                var products = await context.Proizvods.Include(p => p.ProfilKorisnika).ToListAsync();
+                if (products == null)
+                    return BadRequest("products not founded");
+                return Ok(products.Select(p => new
+                {
+                    Id = p.Id,
+                    ImageUrl = GetImage(p.ProfilKorisnika.Email, p.Id).Split("|"),
+                    Naziv = p.Naziv,
+                    Mesto = p.Mesto,
+                    Status = p.status,
+                    Username = p.ProfilKorisnika.Username,
+                    Email = p.ProfilKorisnika.Email
+                }));
+            }catch(Exception e)
+            {
+                if(e.InnerException != null)
+                {
+                    return BadRequest(e.InnerException.Message);
+                }
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("getProductsViaCategory/{category}")]
+        public async Task<ActionResult> getProductsViaCategory(string category)
+        {
+            try
+            {
+                var kategorija = context.Kategorijas.Include(p => p.Subcategories).Include(p => p.Proizvodi).Where(k => k.Name == category).FirstOrDefault();
+                if (kategorija == null)
+                    return BadRequest("Kategorija ne postoji");
+
+                List<Proizvod> products = new List<Proizvod>();
+                if(kategorija.Proizvodi != null)
+                    products.AddRange(kategorija.Proizvodi);
+
+                AddProductRecursive(kategorija, products);
+
+                return Ok(products);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        private void AddProductRecursive(Kategorija kategorija, List<Proizvod> products)
+        {
+                if(kategorija.Subcategories != null)
+                    foreach (var subcategory in kategorija.Subcategories)
+                    {
+                        if (subcategory.Proizvodi != null)
+                            products.AddRange(subcategory.Proizvodi);
+                        AddProductRecursive(subcategory, products);
+                    }
+        }
         [NonAction]
         private string GetFilePath(string email, int code)
         {
@@ -111,14 +210,18 @@ namespace GiveWaveAPI.Controllers
         }
         [Route("updatePhoto")]
         [HttpPut]
-        public async Task<ActionResult> updateImage([FromBody] updateImageHelper updateImage)
+        public async Task<ActionResult> updateImage()
         {
             try
             {
-                var product = context.Proizvods.Where(pr => pr.Id == updateImage.id).FirstOrDefault();
+                var id = Int32.Parse(Request.Form["id"]);
+                var email = Request.Form["email"];
+                var files = Request.Form.Files;
+
+                var product = context.Proizvods.Where(pr => pr.Id == id).FirstOrDefault();
                 if (product == null)
                     return BadRequest("Proizvod nije pronadjen");
-                string Filepath = GetFilePath(updateImage.email, updateImage.id);
+                string Filepath = GetFilePath(email, id);
 
                 if (!System.IO.Directory.Exists(Filepath))
                 {
@@ -129,7 +232,7 @@ namespace GiveWaveAPI.Controllers
 
                 StringBuilder sb = new StringBuilder(DAT);
 
-                sb.Replace(" ", "_");
+                sb.Replace(" ", "_"); 
                 sb.Replace(":", "_");
 
                 var DATE = sb.ToString();
@@ -142,7 +245,7 @@ namespace GiveWaveAPI.Controllers
                     System.IO.File.Delete(fajl);
                 }
 
-                foreach(var s in updateImage.Files.Select((value, i) => (value,i)))
+                foreach(var s in files.Select((value, i) => (value,i)))
                 {
                     string imagepath = Filepath + "\\image_" + s.i + "_"+ DATE + ".png";
                     using (FileStream stream = System.IO.File.Create(imagepath))
@@ -150,7 +253,7 @@ namespace GiveWaveAPI.Controllers
                         await s.value.CopyToAsync(stream);
                     }
                 }
-                product.ImageUrl = GetImage(updateImage.email, updateImage.id);
+                product.ImageUrl = GetImage(email, id);
                 context.Proizvods.Update(product);
                 context.SaveChanges();
 
@@ -202,9 +305,9 @@ namespace GiveWaveAPI.Controllers
             return imageUrl;
         }
 
-        [Route("CancleAdding/{id}")]
+        [Route("CancleAdding/{id}/{email}")]
         [HttpDelete]
-        public async Task<ActionResult> CancleAdding(int id)
+        public async Task<ActionResult> CancleAdding(int id, string email)
         {
             try
             {
@@ -220,6 +323,7 @@ namespace GiveWaveAPI.Controllers
                 {
                     context.Proizvods.Remove(proizvod);
                     await context.SaveChangesAsync();
+                    deleteFolder(email, id);
                     return Ok("Proizvod je uspesno obrisan");
                 }
             }
@@ -228,7 +332,20 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
-
+        [NonAction]
+        private void deleteFolder(string email, int id)
+        {
+            string path = GetFilePath(email, id);
+            if(Directory.Exists(path))
+            {
+                string[] fajlovi = Directory.GetFiles(path);
+                foreach (var fajl in fajlovi)
+                {
+                    System.IO.File.Delete(fajl);
+                }
+                Directory.Delete(path);
+            }
+        }
         [Route("addEmptyProduct")]
         [HttpPost]
         public async Task<ActionResult> addEmptyProduct()
@@ -241,7 +358,7 @@ namespace GiveWaveAPI.Controllers
                     ImageUrl = "",
                     Opis = "",
                     ProfilKorisnika = null,
-                    status = 0,
+                    status = "",
                     Mesto = "",
                     Kategorije = null
                 };
@@ -255,14 +372,28 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
-        [Route("PrikaziViseInfoOProizvodu")]
+        //da se popravi
+        [Route("PrikaziViseInfoOProizvodu/{id}")]
         [HttpGet]
         public async Task<ActionResult> prikaziViseInfoOProizvodima(int id)
         {
             try
             {
-                var productInfo = context.Proizvods;
-                return Ok(productInfo);
+                var proizvod = context.Proizvods.Include(p => p.ProfilKorisnika)
+                                                .Where(p => p.Id == id)
+                                                .FirstOrDefault();
+                if (proizvod == null)
+                    return BadRequest("proizvod nije nadjen");
+                return Ok(new
+                {
+                         Id = proizvod.Id,
+                         Naziv = proizvod.Naziv,
+                         Opis = proizvod.Opis,
+                         Mesto = proizvod.Mesto,
+                         Status = proizvod.status,
+                         Profil = proizvod.ProfilKorisnika.Username,
+                         Slike = proizvod.ImageUrl.Split('|')
+                });
             }
             catch(Exception e)
             {

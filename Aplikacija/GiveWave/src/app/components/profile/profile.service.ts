@@ -1,9 +1,11 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 import { User } from 'app/Models/User';
 import { MyProducts } from 'app/Models/MyProducts';
 import { DonationHistory } from 'app/Models/DonationsHistory';
 import { BehaviorSubject } from 'rxjs';
+import { ProductHelper } from 'app/Models/ProductHelper';
+import { uploadPhoto } from 'app/Models/uploadPhoto';
 
 const Url = "https://localhost:7200/controller/";
 const donations = "http://localhost:3000/DonationHistory"
@@ -14,7 +16,7 @@ export class ProfileService {
   public email:string = '';
   private _displayStyle$ = new BehaviorSubject<string>("none");
   displayStyle = this._displayStyle$.asObservable();
-
+  public productId!:number;
   openModal()
   {
     this._displayStyle$.next("block");
@@ -56,8 +58,8 @@ export class ProfileService {
   Dislike(email:String)
   {
     let httpOptions = new HttpHeaders()
-                      .set('Authorization', 'Bearer '+localStorage.getItem('token'));
-    httpOptions.append('Content-Type', 'application/json');
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
     return this.http.patch<number>(Url+"Dislike/"+email, {headers:httpOptions});
   }
   updateUsername(email:string|null|undefined, data:String)
@@ -108,9 +110,44 @@ export class ProfileService {
                       .set('Content-Type', 'application/json');
     return this.http.put<User>(Url+"updateGender", obj, {headers:httpOptions});
   }
+  addEmptyProduct()
+  {
+    return this.http.post<number>(Url+"addEmptyProduct", {headers:{'Content-Type':'application/json'}});
+  }
+  addProduct(data:ProductHelper, id:number)
+  {
+    return this.http.put(Url+"addProduct/"+id,data);
+  }
+  cancelAdding(id:number, email:string|null)
+  {
+    return this.http.delete(`${Url}CancleAdding/${id}/${email}`);
+  }
+  updatePhoto(upload:uploadPhoto)
+  {
+    const formData = new FormData();
+    if(upload.id)
+      formData.append('id', upload.id.toString());
+    if(upload.email)
+      formData.append('email', upload.email);
+    if(upload.files)
+      upload.files.forEach((e:File) => {
+        formData.append('files', e);
+      });
+    return this.http.put<any>(Url+"updatePhoto",formData);
+  }
   getMyProducts(email:string|null)
   {
     return this.http.get<MyProducts[]>(Url+"VratiProizvodePremaEmailu/"+email, {headers:{'Content-Type':'application/json'}});
+  }
+  getImage(email:string|null, id:number)
+  {
+    const formData = new HttpParams();
+    formData.set('id', id.toString());
+    if(email)
+      formData.set('email', email);
+    return this.http.get<string>(Url+"GetImage", {
+      params: formData
+    });
   }
   getDonations()
   {

@@ -12,7 +12,14 @@ export class RecursiveCategoriesComponent {
   toggleSubmenu() {
     this.opened = !this.opened;
   }
-
+  open()
+  {
+    this.opened = true;
+  }
+  close()
+  {
+    this.opened = false;
+  }
   navigate(routerLink: any) {
     //metoda za vracanje proizvoda po nazivu kategorije
     console.log(routerLink);

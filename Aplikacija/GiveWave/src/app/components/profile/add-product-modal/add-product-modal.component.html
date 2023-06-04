@@ -11,40 +11,70 @@
             <div class="col-md-6">
               <div class="row">
                 <!-- slika -->
-                <img src="../../../../assets/images/poklon.png" class="rounded img-thumbnail" alt="">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                  <div class="carousel-indicators">
+                    
+                    <button type="button" 
+                      data-bs-target="#carouselExampleIndicators" 
+                      [attr.data-bs-slide-to]="i" 
+                      *ngFor="let src of imageUrl; let i = index" 
+                      [class.active]="i === 0"
+                      [attr.aria-label]="'Slide ' + (i+1)">
+                  </button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" *ngFor="let src of imageUrl;let i = index" [class.active]="i === 0">
+                      <img [src]="src" class="d-block w-100" alt="Slide {{i+1}}">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
               </div>
               <div class="row">
                 <!-- choose image -->
-                <button class="btn btn-outline-primary">Choose Photos</button>
+                <button class="btn btn-outline-primary" (click)="photos.click()">
+                  <span>Upload</span>
+                  <input #photos type="file" multiple (change)="addPhotos($event)" style="display:none;">
+                </button>
               </div>
             </div>
             <div class="col-md-6">
-              <form>
+              <form [formGroup]="addProductForm">
                 <div class="form-group row">
                   <label for="Name" class="col-sm-3 col-form-label">Name:</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="Name">
+                    <input type="text" formControlName="Naziv" class="form-control" id="Name">
+                    <small *ngIf="addProductForm.controls['Naziv'].dirty && addProductForm.hasError('required','Naziv')" class="text-danger">*Name is required</small>
                   </div>
                 </div>
 
                 <div class="form-group row mt-2">
-                  <label for="Name" class="col-sm-3 col-form-label">City:</label>
+                  <label for="City" class="col-sm-3 col-form-label">City:</label>
                   <div class="col-sm-9">
-                    <select name="city" id="city" class="form-select single-choice">
+                    <select name="city" formControlName="Mesto" id="city" class="form-select single-choice">
                       <option value=""></option>
                       <option *ngFor="let city of cities">{{city.city}}</option>
                     </select>
+                    <small *ngIf="addProductForm.controls['Mesto'].dirty && addProductForm.hasError('required','Mesto')" class="text-danger">*City is required</small>
                   </div>
                 </div>
 
                 <div class="form-group row mt-2">
                   <label for="category" class="col-sm-3 col-form-label">Category:</label>
                   <div class="col-sm-9">
-                    <select name="categories" id="categories" class="form-select single-choice" (change)="isOther($event)">
+                    <select name="categories" formControlName="Kategorija" id="categories" class="form-select single-choice" (change)="isOther($event)">
                       <option value=""></option>
                       <option value="others">Others</option>
-                      <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                      <option *ngFor="let category of categories">{{category.name}}</option>
                     </select>
+                    <small *ngIf="addProductForm.controls['Kategorija'].dirty && addProductForm.hasError('required','Kategorija')" class="text-danger">*Category is required</small>
                   </div>
                 </div>
                 
@@ -53,17 +83,20 @@
                     <div class="form-group row">
                       <label for="newcategory" class="col-sm-3 col-form-label">New Category:</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="newcategory">
+                        <input type="text" formControlName="novaKategorija" class="form-control" id="newcategory">
+                        <small *ngIf="addProductForm.controls['novaKategorija'].dirty && addProductForm.hasError('required','novaKategorija')" class="text-danger">*New category is required</small>
                       </div>
                     </div>
 
                     <div class="form-group row mt-2">
                       <label for="category" class="col-sm-3 col-form-label">Parent Category:</label>
                       <div class="col-sm-9">
-                        <select name="categories" id="categories" class="form-select single-choice">
+                        <select name="categories" formControlName="parentKategorija" id="categories" class="form-select single-choice">
                           <option value=""></option>
-                          <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                          <option value="">Top of hierarchy</option>
+                          <option *ngFor="let category of categories">{{category.name}}</option>
                         </select>
+                        <small *ngIf="addProductForm.controls['parentKategorija'].dirty && addProductForm.hasError('required','parentKategorija')" class="text-danger">*Parent category is required</small>
                       </div>
                     </div>
                   </div>
@@ -72,16 +105,18 @@
                 <div class="form-group row mt-2">
                   <label for="Status" class="col-sm-3 col-form-label">Status:</label>
                   <div class="col-sm-9">
-                    <select name="city" id="Status" class="form-select single-choice">
+                    <select name="city" formControlName="status" id="Status" class="form-select single-choice">
                       <option value=""></option>
                       <option *ngFor="let stat of status">{{stat}}</option>
                     </select>
+                    <small *ngIf="addProductForm.controls['status'].dirty && addProductForm.hasError('required','status')" class="text-danger">*Status is required</small>
                   </div>
                 </div>
                 <div class="form-group row mt-2">
                   <label for="description" class="col-sm-3 col-form-label">Description:</label>
                   <div class="col-sm-9">
-                    <textarea name="description" id="description" rows="5" class="form-control"></textarea>
+                    <textarea name="description" formControlName="Opis" id="description" rows="5" class="form-control"></textarea>
+                    <small *ngIf="addProductForm.controls['Opis'].dirty && addProductForm.hasError('required','Opis')" class="text-danger">*Description is required</small>
                   </div>
                 </div>
               </form>
@@ -91,7 +126,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-primary" (click)="addProduct()">Add</button>
       </div>
     </div>
   </div>

@@ -8,6 +8,7 @@ namespace GiveWaveAPI.Controllers
 {
     [ApiController]
     [Route("controller")]
+    
     public class AdminController : ControllerBase
     {
         public GiveWaveDBContext Context { get; set; }

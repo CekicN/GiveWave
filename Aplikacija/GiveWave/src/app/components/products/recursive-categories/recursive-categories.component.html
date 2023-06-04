@@ -1,14 +1,14 @@
 <div class="dropdown">
-  <div class="d-flex">
-    <div class="menu-item btn btn-primary" (click)="navigate(recursiveList.name)">
+  <div class="d-flex kategorija" (mouseenter)="open()">
+    <div class="menu-item ms-2" (click)="navigate(recursiveList.name)">
       {{ recursiveList.name }}
     </div>
-    <span *ngIf="recursiveList.subcategories.length > 0" class="arrow" (click)="toggleSubmenu()">
+    <span *ngIf="recursiveList.subcategories.length > 0" class="me-2">
       >
     </span>
   </div>
   
-  <ul *ngIf="opened && recursiveList.subcategories.length > 0" class="list-group">
+  <ul *ngIf="opened && recursiveList.subcategories.length > 0" class="list-group" (mouseenter)="open()" (mouseleave)="close()">
     <li *ngFor="let podkategorija of recursiveList.subcategories" class="list-group-item">
       <app-recursive-categories [recursiveList]="podkategorija"></app-recursive-categories>
     </li>

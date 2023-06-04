@@ -30,12 +30,12 @@
               <p class="fw-normal mb-1">{{product.opis | slice:0:17}}...</p>
             </td>
             <td>
-              <button type="button" class="btn btn-primary btn-sm btn-rounded">
+              <button type="button" class="btn btn-primary btn-sm btn-rounded" (click)="viewDetails(product.id)">
                 Details
               </button>
             </td>
             <td>
-              <button *ngIf="isVisible()" class="btn btn-danger btn-sm btn-rounded">Delete</button>
+              <button *ngIf="isVisible()" class="btn btn-danger btn-sm btn-rounded" (click)="deleteProduct(product.id)">Delete</button>
             </td>
           </tr>
         </tbody>
