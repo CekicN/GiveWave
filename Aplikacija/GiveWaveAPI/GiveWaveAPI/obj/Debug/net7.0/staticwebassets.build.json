@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "m5+206AHcWw7JkB8gcwEgI7uC38j0h6B7XCGGy+75nE=",
+  "Hash": "BlxRjyXfLcj1MkuVLOz+XlrETfJ0Ka7AjKavbccnImk=",
   "Source": "GiveWaveAPI",
   "BasePath": "_content/GiveWaveAPI",
   "Mode": "Default",
@@ -1224,6 +1224,40 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Products\\cekicn668@gmail.com\\P_8\\image_2_31.05.2023._16_50_46.png"
     },
     {
+      "Identity": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicnikola31@gmail.com\\P_17\\image_0_03.06.2023._17_23_41.png",
+      "SourceId": "GiveWaveAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\",
+      "BasePath": "_content/GiveWaveAPI",
+      "RelativePath": "Uploads/Products/cekicnikola31@gmail.com/P_17/image_0_03.06.2023._17_23_41.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Products\\cekicnikola31@gmail.com\\P_17\\image_0_03.06.2023._17_23_41.png"
+    },
+    {
+      "Identity": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicnikola53@gmail.com\\P_22\\image_0_03.06.2023._19_00_33.png",
+      "SourceId": "GiveWaveAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\",
+      "BasePath": "_content/GiveWaveAPI",
+      "RelativePath": "Uploads/Products/cekicnikola53@gmail.com/P_22/image_0_03.06.2023._19_00_33.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Products\\cekicnikola53@gmail.com\\P_22\\image_0_03.06.2023._19_00_33.png"
+    },
+    {
       "Identity": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\ceka123@gmail.com\\image_29.05.2023._18_55_52.png",
       "SourceId": "GiveWaveAPI",
       "SourceType": "Discovered",
@@ -1256,6 +1290,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Profile\\cekicn668@gmail.com\\image_27.05.2023._11_22_12.png"
+    },
+    {
+      "Identity": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\cekicnikola31@gmail.com\\image_03.06.2023._16_22_00.png",
+      "SourceId": "GiveWaveAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\",
+      "BasePath": "_content/GiveWaveAPI",
+      "RelativePath": "Uploads/Profile/cekicnikola31@gmail.com/image_03.06.2023._16_22_00.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Profile\\cekicnikola31@gmail.com\\image_03.06.2023._16_22_00.png"
+    },
+    {
+      "Identity": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\martanedovic2001@gmail.com\\image_03.06.2023._22_30_49.png",
+      "SourceId": "GiveWaveAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\",
+      "BasePath": "_content/GiveWaveAPI",
+      "RelativePath": "Uploads/Profile/martanedovic2001@gmail.com/image_03.06.2023._22_30_49.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Profile\\martanedovic2001@gmail.com\\image_03.06.2023._22_30_49.png"
     }
   ]
 }
