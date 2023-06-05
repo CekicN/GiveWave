@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchProductsPipe } from 'app/pipes/search-products.pipe';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -20,7 +21,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductFilterComponent,
     ProductListComponent,
     SearchProductsPipe,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,

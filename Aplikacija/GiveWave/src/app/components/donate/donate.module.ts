@@ -6,7 +6,7 @@ import { PorodiceComponent } from './porodice/porodice.component';
 @NgModule({
   declarations: [
     DonateComponent,
-    PorodiceComponent,
+    PorodiceComponent
   ],
   imports: [
     CommonModule
