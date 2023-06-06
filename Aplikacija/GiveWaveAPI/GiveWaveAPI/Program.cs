@@ -22,6 +22,8 @@ using Microsoft.AspNetCore.Cors;
 using GiveWaveApiService.Models;
 using GiveWaveApiService.Services;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 // Add services to the container.
