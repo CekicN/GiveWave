@@ -7,12 +7,4 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  displayStyle:string = "none";
-  constructor(service:ProfileService)
-  {
-    service.displayStyle.subscribe(d => {
-      this.displayStyle = d
-      console.log(this.displayStyle);
-    });
-  }
 }

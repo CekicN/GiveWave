@@ -54,7 +54,7 @@ namespace GiveWaveAPI.Controllers
 
                 context.Proizvods.Update(product);
                 await context.SaveChangesAsync();
-                return Ok("Proizvod je izmenjen");
+                return Ok();
             }
             catch (Exception e)
             {
@@ -324,7 +324,7 @@ namespace GiveWaveAPI.Controllers
                     context.Proizvods.Remove(proizvod);
                     await context.SaveChangesAsync();
                     deleteFolder(email, id);
-                    return Ok("Proizvod je uspesno obrisan");
+                    return Ok();
                 }
             }
             catch(Exception e) 
