@@ -4,6 +4,7 @@ import { DonateComponent } from './donate/donate.component';
 
 @NgModule({
   declarations: [
+
     DonateComponent
   ],
   imports: [

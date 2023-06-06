@@ -37,8 +37,8 @@ export class ChatMainComponent {
   submitForm(){
     this.submitted = true;
     this.apiErrorMessages = [];
-
-    if(this.userForm.valid)
+    this.openChat = true;
+   /* if(this.userForm.valid)
     {
       this.chatService.registerUser(this.userForm.value).subscribe({
         next: () => {
@@ -54,7 +54,7 @@ export class ChatMainComponent {
         }
 
       })
-    }
+    }*/
   }
 
   closeChat(){

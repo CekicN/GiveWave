@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
-    [Migration("20230604203452_V3")]
-    partial class V3
+    [Migration("20230605132150_V1")]
+    partial class V1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -535,21 +535,21 @@ namespace GiveWaveAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "873bdbb4-f17b-4d9f-8591-25de891fc381",
+                            Id = "e475c265-3899-4f97-91ad-4bde12ea62be",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "5f4c4c8e-8298-43ba-aa4b-5f3de6054315",
+                            Id = "fd9bc8ad-e378-422d-a47c-cba8c7710685",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "92a97a3f-7f0b-4caa-8e75-5dbdef6c490e",
+                            Id = "fc70ad5e-d8b7-4ee2-89c6-2fc19e1e35cd",
                             ConcurrencyStamp = "3",
                             Name = "Friend",
                             NormalizedName = "Friend"

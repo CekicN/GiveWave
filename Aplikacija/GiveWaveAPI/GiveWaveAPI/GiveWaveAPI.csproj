@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <Folder Include="Context\" />
+    <Folder Include="Migrations\" />
     <Folder Include="wwwroot\Uploads\common\" />
     <Folder Include="wwwroot\Uploads\Products\cekicn668%40gmail.com\" />
     <Folder Include="wwwroot\Uploads\Profile\" />

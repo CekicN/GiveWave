@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GiveWaveAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class V3 : Migration
+    public partial class V1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -469,9 +469,9 @@ namespace GiveWaveAPI.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "5f4c4c8e-8298-43ba-aa4b-5f3de6054315", "2", "User", "User" },
-                    { "873bdbb4-f17b-4d9f-8591-25de891fc381", "1", "Admin", "Admin" },
-                    { "92a97a3f-7f0b-4caa-8e75-5dbdef6c490e", "3", "Friend", "Friend" }
+                    { "e475c265-3899-4f97-91ad-4bde12ea62be", "1", "Admin", "Admin" },
+                    { "fc70ad5e-d8b7-4ee2-89c6-2fc19e1e35cd", "3", "Friend", "Friend" },
+                    { "fd9bc8ad-e378-422d-a47c-cba8c7710685", "2", "User", "User" }
                 });
 
             migrationBuilder.CreateIndex(
