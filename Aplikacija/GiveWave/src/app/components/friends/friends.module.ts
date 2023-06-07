@@ -6,6 +6,7 @@ import { PrivateChatComponent } from './private-chat/private-chat.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ChatMainComponent } from './chat-main/chat-main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@microsoft/signalr';
 
 
 

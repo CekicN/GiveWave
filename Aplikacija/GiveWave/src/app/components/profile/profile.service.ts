@@ -3,11 +3,11 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 import { User } from 'app/Models/User';
 import { MyProducts } from 'app/Models/MyProducts';
 import { DonationHistory } from 'app/Models/DonationsHistory';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { ProductHelper } from 'app/Models/ProductHelper';
 import { uploadPhoto } from 'app/Models/uploadPhoto';
 
-const Url = "https://localhost:7200/controller/";
+const Url = "https://localhost:7200/controller";
 const donations = "http://localhost:3000/DonationHistory"
 @Injectable({
   providedIn: 'root'
@@ -164,4 +164,6 @@ export class ProfileService {
   {
     return this.http.get<DonationHistory[]>(donations);
   }
+
+ 
 }

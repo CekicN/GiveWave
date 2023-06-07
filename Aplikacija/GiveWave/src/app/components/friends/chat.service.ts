@@ -21,9 +21,17 @@ export class ChatService {
 
   constructor(private httpClient: HttpClient, private modalService: NgbModal ) { }
 
-  registerUser(user: UserChat){
+  
+
+  registerUser(){
     const formData = new FormData();
-    formData.append("ime",user.name);
+    const username = localStorage.getItem('username');
+    if(username != null)
+    {
+      formData.append("ime", username);
+      //return this.httpClient.post(`https://localhost:7200/api/Chat/register-user`, formData );
+    }
+    //ne bi trebalo nikad da vrati
     return this.httpClient.post(`https://localhost:7200/api/Chat/register-user`, formData );
   }
 

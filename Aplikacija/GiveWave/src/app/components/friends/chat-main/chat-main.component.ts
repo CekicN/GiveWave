@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ChatService } from '../chat.service'; 
+import { HttpClient } from '@angular/common/http';
+import { User } from 'app/Models/User';
+import { ProfileService } from 'app/components/profile/profile.service';
 
 @Component({
   selector: 'app-chat-main',
@@ -34,10 +37,27 @@ export class ChatMainComponent {
     if(offCanvas)
       offCanvas.classList.toggle('show');
   }
+
+  getUserName(){
+    var username = localStorage.getItem('username'); 
+    if(username!== null)
+    {
+      this.chatService.myName = username;
+    }   
+   }
+
   submitForm(){
     this.submitted = true;
     this.apiErrorMessages = [];
     this.openChat = true;
+
+    this.chatService.registerUser().subscribe({
+      next: () => {
+        this.getUserName();
+        this.openChat = true;
+        this.userForm.reset();
+      }
+    })
    /* if(this.userForm.valid)
     {
       this.chatService.registerUser(this.userForm.value).subscribe({
