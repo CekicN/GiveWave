@@ -1,32 +1,34 @@
-<ng-container *ngIf="true">
+<ng-container *ngIf="productss.length !=0">
     <div class="container">
         <div class="card-table">
             <div class="card-product">
                 <table class="table table-responsive">
                     <thead>
                         <tr>
-                            <th>Sr.No</th>
-                            <th>Product Name</th>
+                            <th>Number</th>
                             <th>Product Image</th>
-                            <th>Descrtiption</th>
-                            <th>Price</th>
+                            <th>Product Name</th>
+                            <th>Product place</th>
                             <th>Quantity</th>
-                            <th>Total</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Iphone</td>
-                            <td>Some Image</td>
-                            <td>this is brand new phone</td>
-                            <td>90,000</td>
-                            <td>1</td>
-                            <td>90,00</td>
+                        <tr *ngFor="let item of productss; let i = index">
+                            <td>{{i+1}}</td>
+                            <td><img style="width: 120px;" src="{{item.imageUrl}}" alt=""></td>
+                            <td>{{item.naziv}}</td>
+                            <td>{{item.mesto}}</td>
+                            <td>{{item.quantity}}</td>
                             <td>
-                                <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button (click)="removeItem(item)"  class="btn btn-danger"><fa-icon [icon]="['fas', 'trash-alt']"></fa-icon></button>
                             </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td><button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button></td>
+                            <td><button (click)="goToProducts()" class="btn btn-primary">Shop More</button></td>
+                            <td><button class="btn btn-success">Collect</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -35,7 +37,7 @@
     </div>
 </ng-container>
 
-<ng-container *ngIf="false">
+<ng-container *ngIf="productss.length == 0">
     <div class="container">
         <div class="card">
             <h5 class="card-title">My cart</h5>
@@ -44,7 +46,7 @@
             <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
             <h4>Your cart is empty</h4>
             <h6>Add item to it now</h6>
-            <button class="btn btn-primary">Shop Now</button>
+            <button (click)="goToProducts()" class="btn btn-primary">Shop Now</button>
         </div>
     </div>
     

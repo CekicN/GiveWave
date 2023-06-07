@@ -16,8 +16,10 @@ import { CartService } from '../cart.service';
 })
 export class ProductListComponent implements OnInit {
 
-  products!:Product[];
+  products!:Product[] | any;
   searchText:string = '';
+  //public productList!: Product[];
+
   constructor(library:FaIconLibrary, private productService:ProductService, private route:Router,private cartService: CartService)
   {
     library.addIcons(faShoppingCart);
@@ -28,10 +30,9 @@ export class ProductListComponent implements OnInit {
       this.products = res;
       console.log(this.products);
 
-      /*Ne znam sta je ovo, pogledaj ceko
-      this.productList..forEach( (a: any) => {
-        Object.assign(a,{quantity:1 ,total:a.price});
-      });*/
+      this.products.forEach( (a: any) => {
+        Object.assign(a,{quantity:1});
+      });
     })
   }
 
@@ -39,8 +40,8 @@ export class ProductListComponent implements OnInit {
   {
     this.route.navigate(['/profile', email]);
   }
-  addToCart(item:any)
-  {
+
+  addToCart(item: Product) {
       this.cartService.addToCart(item);
   }
 

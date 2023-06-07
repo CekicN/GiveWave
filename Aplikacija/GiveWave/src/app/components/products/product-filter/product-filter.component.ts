@@ -5,6 +5,7 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { CartService } from '../cart.service';
 
 
 @Component({
@@ -17,17 +18,23 @@ export class ProductFilterComponent implements OnInit{
   status:string[] = ['New', 'Second hand']
   searchText = '';
   productList: any;
+  public totalItem: number = 0;
 
-  constructor(private service:ProductService, library:FaIconLibrary,private router:Router)
-  {
+  constructor(private service:ProductService, library:FaIconLibrary,private router:Router,private cartService: CartService){
     library.addIcons(faMagnifyingGlass);
   }
-  updateSearch()
-  {
+
+  updateSearch(){
     this.service.setSeatchText(this.searchText);
   }
+
   ngOnInit(): void {
     this.service.getCities().subscribe(p => this.cities = p);
+
+    this.cartService.getProducts()
+    .subscribe(res => {
+      this.totalItem = res.length;
+    })
   }
 
   goToCartPage(){
