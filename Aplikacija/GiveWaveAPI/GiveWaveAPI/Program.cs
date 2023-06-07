@@ -18,6 +18,7 @@ builder.Services.AddDbContext<GiveWaveDBContext>(options =>
 {
      options.UseSqlServer(builder.Configuration.GetConnectionString("ProjekatSWE"));
 });
+builder.Services.AddCoreAdmin();
 
 builder.Services.AddCors(options =>
 {

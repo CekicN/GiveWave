@@ -401,7 +401,56 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);   
             }
         }
+
+        //public IEnumerable<Proizvod> GetProizvodByCategory(string kategorija)
+        //{
+        //    var kategorijaZaPretragu = context.Kategorijas.Where(p => p.Name == kategorija);
+        //    var filteredProizvodi = context.Proizvods.Where(p => p.Kategorije == kategorijaZaPretragu);
+        //    return filteredProizvodi;
+        //}
+
+
+
+        //[Route("prikazi odredjene proizvode")]
+        //[HttpGet]
+        //public async Task<IActionResult> prikaziProizvod
+        [Route("PreuzmiProizvodePodkategorija")]
+        [HttpGet]
+        public async Task<ActionResult> PreuzmiProizvodePodkategorija(string kategorija)
+        {
+            try
+            {
+                var kategorijaZaPretragu = await context.Kategorijas
+                    .Include(c => c.Subcategories)
+                    .Include(c => c.Proizvodi)
+                    .Where(c => c.Name == kategorija).FirstOrDefaultAsync();
+
+                if (kategorija == null)
+                {
+                    return NotFound();
+                }
+
+                var proizvodi = new List<Proizvod>();
+                DodajProizvodePodkategorija(kategorijaZaPretragu.Subcategories, proizvodi);
+
+                return Ok(proizvodi);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        private void DodajProizvodePodkategorija(IEnumerable<Kategorija> subkategorije, List<Proizvod> proizvodi)
+        {
+            foreach (var subkategorija in subkategorije)
+            {
+                proizvodi.AddRange(subkategorija.Proizvodi);
+
+                DodajProizvodePodkategorija(subkategorija.Subcategories, proizvodi);
+            }
+        }
     }
 
-    
+
 }

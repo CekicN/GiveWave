@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
-<<<<<<<< HEAD:Aplikacija/GiveWaveAPI/GiveWaveAPI/Migrations/20230529154420_initialMig.Designer.cs
-    [Migration("20230529154420_initialMig")]
-    partial class initialMig
-========
-    [Migration("20230529171932_V1")]
-    partial class V1
->>>>>>>> b5b8c20840e3382ef1556a22ef2e0baff4908cd6:Aplikacija/GiveWaveAPI/GiveWaveAPI/Migrations/20230529171932_V1.Designer.cs
+    [Migration("20230606230439_initialMigrations")]
+    partial class initialMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -540,21 +535,21 @@ namespace GiveWaveAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "56f76146-9254-47e9-855b-29b551bc98f7",
+                            Id = "21e076a7-3ec4-4ac1-a6a6-c4301862b4e7",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "e6333fa2-024d-499a-aa8e-69840fc880f8",
+                            Id = "4516a2f5-8585-4f10-b988-ee3de00d490a",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "b5b88d97-0a1a-4058-acbc-59a94a6364e9",
+                            Id = "80d1552e-583d-47fa-a2ec-578372df6d10",
                             ConcurrencyStamp = "3",
                             Name = "Friend",
                             NormalizedName = "Friend"

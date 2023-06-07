@@ -46,6 +46,28 @@
           }
         }
       },
+      "CoreAdmin/2.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.0",
+          "NonFactors.Grid.Core.Mvc6": "7.1.0"
+        },
+        "compile": {
+          "lib/net7.0/DotNetEd.CoreAdmin.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0/DotNetEd.CoreAdmin.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "buildTransitive/CoreAdmin.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/CoreAdmin.props": {}
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -1236,6 +1258,18 @@
           }
         }
       },
+      "NonFactors.Grid.Core.Mvc6/7.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Mvc.Grid.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Mvc.Grid.Core.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Portable.BouncyCastle/1.9.0": {
         "type": "package",
         "compile": {
@@ -1877,6 +1911,60 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "CoreAdmin/2.7.0": {
+      "sha512": "qwa33DYykMuQ6JCeDoIPI3NMU91MEWI35ukK/FcMCeWtNjDxuwaWoTRS8P6+vA3cF81AkuIsxCU7CH7yzK0ofw==",
+      "type": "package",
+      "path": "coreadmin/2.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/CoreAdmin.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/CoreAdmin.props",
+        "buildTransitive/CoreAdmin.props",
+        "coreadmin.2.7.0.nupkg.sha512",
+        "coreadmin.nuspec",
+        "lib/net6.0/DotNetEd.CoreAdmin.dll",
+        "lib/net7.0/DotNetEd.CoreAdmin.dll",
+        "staticwebassets/css/bootstrap-dark.css",
+        "staticwebassets/css/bootstrap-dark.min.css",
+        "staticwebassets/css/bootstrap-grid.css",
+        "staticwebassets/css/bootstrap-grid.css.map",
+        "staticwebassets/css/bootstrap-grid.min.css",
+        "staticwebassets/css/bootstrap-grid.min.css.map",
+        "staticwebassets/css/bootstrap-reboot.css",
+        "staticwebassets/css/bootstrap-reboot.css.map",
+        "staticwebassets/css/bootstrap-reboot.min.css",
+        "staticwebassets/css/bootstrap-reboot.min.css.map",
+        "staticwebassets/css/bootstrap.css",
+        "staticwebassets/css/bootstrap.css.map",
+        "staticwebassets/css/bootstrap.min.css",
+        "staticwebassets/css/bootstrap.min.css.map",
+        "staticwebassets/css/easymde/easymde-dark.css",
+        "staticwebassets/css/easymde/easymde-dark.min.css",
+        "staticwebassets/css/easymde/easymde.css",
+        "staticwebassets/css/easymde/easymde.min.css",
+        "staticwebassets/css/jquery-ui.min.css",
+        "staticwebassets/css/mvc-grid/fonts/grid-glyphs.woff",
+        "staticwebassets/css/mvc-grid/mvc-grid-dark.css",
+        "staticwebassets/css/mvc-grid/mvc-grid.css",
+        "staticwebassets/css/site.css",
+        "staticwebassets/js/additional-methods.js",
+        "staticwebassets/js/additional-methods.min.js",
+        "staticwebassets/js/bootstrap.bundle.min.js",
+        "staticwebassets/js/bootstrap.min.js",
+        "staticwebassets/js/easymde/easymde.min.js",
+        "staticwebassets/js/jquery-ui.min.js",
+        "staticwebassets/js/jquery.js",
+        "staticwebassets/js/jquery.min.js",
+        "staticwebassets/js/jquery.min.map",
+        "staticwebassets/js/jquery.validate.js",
+        "staticwebassets/js/jquery.validate.unobtrusive.js",
+        "staticwebassets/js/jquery.validate.unobtrusive.min.js",
+        "staticwebassets/js/mvc-grid/mvc-grid.js",
+        "staticwebassets/js/site.js"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -3473,6 +3561,18 @@
         "packageIcon.png"
       ]
     },
+    "NonFactors.Grid.Core.Mvc6/7.1.0": {
+      "sha512": "rvPZICY/Gyca1vEuQmxRXR1PHxlxYmw7JzBjAF6wdQy+bXyikT5aq2kWO+4V0wl62uV6u0fFtL6nVnl9IKniXg==",
+      "type": "package",
+      "path": "nonfactors.grid.core.mvc6/7.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/Mvc.Grid.Core.dll",
+        "nonfactors.grid.core.mvc6.7.1.0.nupkg.sha512",
+        "nonfactors.grid.core.mvc6.nuspec"
+      ]
+    },
     "Portable.BouncyCastle/1.9.0": {
       "sha512": "eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
       "type": "package",
@@ -4985,6 +5085,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "CoreAdmin >= 2.7.0",
       "GiveWaveAPIService >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.14",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
@@ -4998,16 +5099,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\Kuca\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\Nikola\\.nuget\\packages\\": {}
->>>>>>> b5b8c20840e3382ef1556a22ef2e0baff4908cd6
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
       "projectName": "GiveWaveAPI",
       "projectPath": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
@@ -5016,16 +5112,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kuca\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
-      "projectName": "GiveWaveAPI",
-      "projectPath": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
-      "packagesPath": "C:\\Users\\Nikola\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\Nikola\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> b5b8c20840e3382ef1556a22ef2e0baff4908cd6
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5033,7 +5119,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\Nikola\\Desktop\\Nova fascikla (3)": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5056,6 +5141,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "CoreAdmin": {
+            "target": "Package",
+            "version": "[2.7.0, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[6.0.14, )"
@@ -5106,24 +5195,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.12, 6.0.12]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.12, 6.0.12]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.12, 6.0.12]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.12, 6.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5132,11 +5203,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
->>>>>>> b5b8c20840e3382ef1556a22ef2e0baff4908cd6
       }
     }
   }

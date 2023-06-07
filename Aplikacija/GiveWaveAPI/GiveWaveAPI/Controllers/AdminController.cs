@@ -1,8 +1,12 @@
-﻿using GiveWaveAPI.Models;
+﻿using GiveWaveAPI.Enums;
+using GiveWaveAPI.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace GiveWaveAPI.Controllers
 {
@@ -11,10 +15,18 @@ namespace GiveWaveAPI.Controllers
     
     public class AdminController : ControllerBase
     {
-        public GiveWaveDBContext Context { get; set; }
-        public AdminController(GiveWaveDBContext context)
+        public GiveWaveDBContext _context { get; set; }
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly IConfiguration _configuration;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly TokenValidationParameters _tokenValidationParameters;
+        public AdminController(GiveWaveDBContext context, UserManager<IdentityUser> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager, TokenValidationParameters tokenValidationParameters)
         {
-            Context = context;
+            _context = context;
+            _userManager = userManager;
+            _configuration = configuration;
+            _roleManager = roleManager;
+            _tokenValidationParameters = tokenValidationParameters;
         }
 
 
@@ -25,15 +37,15 @@ namespace GiveWaveAPI.Controllers
         {
             try
             {
-                var user = Context.ProfilKorisnikas.Where(p => p.Email == email.Name).FirstOrDefault();
+                var user = _context.ProfilKorisnikas.Where(p => p.Email == email.Name).FirstOrDefault();
                 if (user == null) 
                 {
                     return BadRequest("Korisnik ne postoji");
                 }
                 else 
                 {
-                    Context.ProfilKorisnikas.Remove(user);
-                    await Context.SaveChangesAsync();
+                    _context.ProfilKorisnikas.Remove(user);
+                    await _context.SaveChangesAsync();
                     return Ok("Korisnik je uspesno obrisan !");
                 }
 
@@ -52,8 +64,8 @@ namespace GiveWaveAPI.Controllers
         {
             try
             {
-                Context.ProfilKorisnikas.Add(profilKorisnika);
-                await Context.SaveChangesAsync();
+                _context.ProfilKorisnikas.Add(profilKorisnika);
+                await _context.SaveChangesAsync();
                 return Ok("Korisnik je dodat !");
             }
             catch(Exception ex) 
@@ -69,7 +81,7 @@ namespace GiveWaveAPI.Controllers
         {
             try
             {
-                var korisnikZaPromenu = Context.ProfilKorisnikas.Where(p => p.Email == email.Name).FirstOrDefault();
+                var korisnikZaPromenu = _context.ProfilKorisnikas.Where(p => p.Email == email.Name).FirstOrDefault();
 
                 if(korisnikZaPromenu == null) 
                 {
@@ -88,7 +100,7 @@ namespace GiveWaveAPI.Controllers
                     korisnikZaPromenu.ImageUrl = profilKorisnika.ImageUrl;
                     korisnikZaPromenu.DatumRegistracije = profilKorisnika.DatumRegistracije;
 
-                    await Context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
                     return Ok("Uspesno ste izmenili korisnika");
                 }
             }
@@ -106,7 +118,7 @@ namespace GiveWaveAPI.Controllers
         {
             try
             {
-                var korisnici = await Context.ProfilKorisnikas.ToListAsync();
+                var korisnici = await _context.ProfilKorisnikas.ToListAsync();
                 return Ok(korisnici);
             }
             catch(Exception ex ) 
@@ -123,7 +135,7 @@ namespace GiveWaveAPI.Controllers
         {
             try
             {
-                var donacije = await Context.Donacijas.ToListAsync();
+                var donacije = await _context.Donacijas.ToListAsync();
                 return Ok(donacije);    
             }
             catch(Exception ex)
@@ -151,7 +163,7 @@ namespace GiveWaveAPI.Controllers
         {
             try
             {
-                var donacija = await Context.Donacijas.FindAsync(id);
+                var donacija = await _context.Donacijas.FindAsync(id);
                 if(donacija == null)
                 {
                     return BadRequest("Donacija nije pronadjena !");
@@ -162,8 +174,8 @@ namespace GiveWaveAPI.Controllers
 
                     if(isNeprikladanSadrzaj == true)
                     {
-                        Context.Donacijas.Remove(donacija);
-                        await Context.SaveChangesAsync();
+                        _context.Donacijas.Remove(donacija);
+                        await _context.SaveChangesAsync();
                         return Ok("Donacija je obrisana zbog neprikladnog sadrzaja !");
                     }
                     else
@@ -186,7 +198,7 @@ namespace GiveWaveAPI.Controllers
         {
             try
             {
-                var korisnik = await Context.ProfilKorisnikas.FindAsync(userId);
+                var korisnik = await _context.ProfilKorisnikas.FindAsync(userId);
                 if(korisnik == null)
                 {
                     return BadRequest("Korisnik nije pronadjen !");
@@ -205,7 +217,20 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
+        //[HttpPost]
+        //[Route("AddRoles")]
+        //public async Task<IActionResult> AddRoles(string id)
+        //{
+        //    await CreateRole(RoleEnum.User.ToString());
+        //    await CreateRole(RoleEnum.Admin.ToString());
+        //    await CreateRole(RoleEnum.Friend.ToString());
 
+        //    var res = await AddToRoles(id);
+
+        //    if (!res) return StatusCode(StatusCodes.Status400BadRequest, "Failed");
+
+        //    return StatusCode(StatusCodes.Status201Created, "Success");
+        //}
     }
     
 }
