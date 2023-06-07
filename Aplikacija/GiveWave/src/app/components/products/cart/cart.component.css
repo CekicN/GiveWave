@@ -3,7 +3,12 @@
     margin: 25px;
     padding: 25px;
 }
-
+.spolja
+{
+    background-color: #efefef;
+    height: 100vh;
+    z-index: -2;
+}
 .center {
     position: absolute;
     top: 50%;
