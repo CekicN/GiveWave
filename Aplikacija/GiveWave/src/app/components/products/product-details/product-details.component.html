@@ -48,7 +48,7 @@
                             <h5>Status: <span>{{product.status}}</span></h5>
                         </div>
                     </div>
-                    <div class="d-flex row">
+                    <div class="d-flex row" *ngIf="!isVisible()">
                         <button type="button" class="btn btn-primary"><fa-icon [icon]="['fas', 'shopping-cart']"></fa-icon> Dodaj U Korpu</button>
                     </div>
                 </div>

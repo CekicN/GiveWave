@@ -1,0 +1,33 @@
+<div class="card text-center mt-3 me-2">
+    <div class="card-header">
+        Gallery of Happiness
+    </div>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <div class="card-body" *ngFor="let story of stories">
+            <h4 class="card-title">{{story.user}}</h4>
+            <div class="card border-primary text-center mt-2">
+                <div class="card-body text-primary">
+                    <p class="card-text">{{story.text}}</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <form class="border border-primary" style="box-shadow: black 0px -4px 20px -5px;">
+        <div class="">
+            <div class="col text-center">
+              <label for="Subject" class="form-label">Subject</label>
+              <input type="text" class="form-control" formControlName="Subject" id="Subject" aria-describedby="SubjectHelp">
+              <!-- <small *ngIf="contactForm.controls['Name'].dirty && contactForm.hasError('required','Name')" class="text-danger">*Subject is required</small> -->
+            </div>
+          </div>
+        <div class="form-outline mb-3">
+            <div class="col text-center">
+              <label class="form-label mb-1" for="Text">Message</label>
+              <textarea class="form-control" formControlName="Text" id="Text" rows="4"></textarea>
+              <!-- <small *ngIf="contactForm.controls['Name'].dirty && contactForm.hasError('required','Name')" class="text-danger">*Message is required</small> -->
+            </div>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>

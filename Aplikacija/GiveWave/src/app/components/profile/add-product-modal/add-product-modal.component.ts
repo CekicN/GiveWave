@@ -68,6 +68,8 @@ export class AddProductModalComponent implements OnInit{
   closeModal()
   {
     this.service.cancelAdding(this.service.productId, this.authService.email).subscribe(msg => console.log(msg));
+    this.imageUrl = ["https://localhost:7200//uploads/common/noimage.png"];
+    this.addProductForm.reset();
     this.service.closeModal();
   }
   addProduct()
