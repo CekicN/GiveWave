@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
 @Component({
   selector: 'app-recursive-categories',
   templateUrl: './recursive-categories.component.html',
@@ -9,6 +10,10 @@ export class RecursiveCategoriesComponent {
   @Input() recursiveList!:any;
   opened:boolean = false;
 
+  constructor(private service:ProductService)
+  {
+
+  }
   toggleSubmenu() {
     this.opened = !this.opened;
   }
@@ -20,8 +25,7 @@ export class RecursiveCategoriesComponent {
   {
     this.opened = false;
   }
-  navigate(routerLink: any) {
-    //metoda za vracanje proizvoda po nazivu kategorije
-    console.log(routerLink);
+  navigate(routerLink: string) {
+    this.service.setCategory(routerLink);
   }
 }

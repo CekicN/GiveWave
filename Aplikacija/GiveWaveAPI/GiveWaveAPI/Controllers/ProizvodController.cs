@@ -176,31 +176,49 @@ namespace GiveWaveAPI.Controllers
         {
             try
             {
-                var kategorija = context.Kategorijas.Include(p => p.Subcategories).Include(p => p.Proizvodi).Where(k => k.Name == category).FirstOrDefault();
+                var kategorija = context.Kategorijas
+                                        .Include(p => p.Subcategories)
+                                        .Include(p => p.Proizvodi)
+                                        .ThenInclude(p => p.ProfilKorisnika)
+                                        .Where(k => k.Name == category).FirstOrDefault();
                 if (kategorija == null)
                     return BadRequest("Kategorija ne postoji");
 
                 List<Proizvod> products = new List<Proizvod>();
                 if(kategorija.Proizvodi != null)
                     products.AddRange(kategorija.Proizvodi);
-
                 AddProductRecursive(kategorija, products);
 
-                return Ok(products);
+                return Ok(products.Select(p => new
+                {
+                    Id = p.Id,
+                    ImageUrl = GetImage(p.ProfilKorisnika.Email, p.Id).Split("|"),
+                    Naziv = p.Naziv,
+                    Mesto = p.Mesto,
+                    Status = p.status,
+                    Username = p.ProfilKorisnika.Username,
+                    Email = p.ProfilKorisnika.Email
+                }));
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
-        private void AddProductRecursive(Kategorija kategorija, List<Proizvod> products)
+        private void AddProductRecursive(Kategorija category, List<Proizvod> products)
         {
-                if(kategorija.Subcategories != null)
-                    foreach (var subcategory in kategorija.Subcategories)
+                if(category.Subcategories != null)
+                    foreach (var sub in category.Subcategories)
                     {
-                        if (subcategory.Proizvodi != null)
-                            products.AddRange(subcategory.Proizvodi);
-                        AddProductRecursive(subcategory, products);
+                    var kategorija = context.Kategorijas
+                                            .Include(q => q.Subcategories)
+                                            .Include(q => q.Proizvodi)
+                                            .ThenInclude(p => p.ProfilKorisnika)
+                                            .Where(q => q.Id == sub.Id)
+                                            .FirstOrDefault();
+                        if (kategorija.Proizvodi != null)
+                            products.AddRange(kategorija.Proizvodi);
+                        AddProductRecursive(kategorija, products);
                     }
         }
         [NonAction]

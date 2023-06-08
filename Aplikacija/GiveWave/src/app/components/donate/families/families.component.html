@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-start flex-wrap mt-2 ms-2">
     <div class="card col-md-4 margin" *ngFor="let n of niz">
-        <div class="card-body">
+        <div class="card-body" (click)="viewFamily()">
             <img [ngbPopover]="content"
                     triggers="mouseenter:mouseleave"
                     popoverTitle="Essential Supplies"

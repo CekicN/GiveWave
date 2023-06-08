@@ -1,9 +1,10 @@
 <div class="spolja row">
     <div class="col-md-9">
-        <div>
+        <app-family-details *ngIf="prikaz"></app-family-details>
+        <div *ngIf="!prikaz">
             <app-donate-filter></app-donate-filter>
         </div>
-        <div>
+        <div *ngIf="!prikaz">
             <app-families></app-families>
         </div>
 

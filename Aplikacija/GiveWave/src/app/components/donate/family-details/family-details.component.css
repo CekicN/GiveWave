@@ -1,0 +1,17 @@
+.row
+{
+    --bs-gutter-x: 0.5rem;
+}
+.my-custom-scrollbar {
+    position: relative;
+    height: 240px;
+    overflow: auto;
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
+.progress
+{
+    border: rgb(78, 77, 77) 1px solid;
+    --bs-progress-bar-bg: #0502f9;
+}

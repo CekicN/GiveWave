@@ -5,7 +5,8 @@ import { DonateFilterComponent } from './donate-filter/donate-filter.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LuckyGalleryComponent } from './lucky-gallery/lucky-gallery.component';
 import { FamiliesComponent } from './families/families.component';
-import { NgbPopoverModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPopoverModule} from '@ng-bootstrap/ng-bootstrap';
+import { FamilyDetailsComponent } from './family-details/family-details.component';
 
 @NgModule({
   declarations: [
@@ -13,13 +14,13 @@ import { NgbPopoverModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstr
     DonateComponent,
       DonateFilterComponent,
       LuckyGalleryComponent,
-      FamiliesComponent
+      FamiliesComponent,
+      FamilyDetailsComponent
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
-    NgbPopoverModule,
-    NgbProgressbarModule
+    NgbPopoverModule
   ]
 })
 
