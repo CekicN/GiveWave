@@ -390,7 +390,7 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
-        //da se popravi
+
         [Route("PrikaziViseInfoOProizvodu/{id}")]
         [HttpGet]
         public async Task<ActionResult> prikaziViseInfoOProizvodima(int id)

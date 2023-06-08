@@ -45,11 +45,7 @@ namespace GiveWaveAPI.Models
         public DateTime DatumRegistracije { get; set; }
         [JsonIgnore]
         public List<Proizvod> Proizvodi { get; set; }
-       // public List<User> Useri { get; set; }
         public List<Donacija> Donacije { get; set; }
-       
-
-
 
     }
 }
