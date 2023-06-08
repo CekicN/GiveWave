@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6SQ/0gOPL1QoBIpOMnaI0oUaO0bKD5Wh6PQ6VP4YtkL9yWNdP2RARmjv197MTho1uJcQpQsJ8hnSTieLZHYWIA==",
+  "dgSpecHash": "TkRdI9IBAfy52VZNDQMwOQiZYoMH6lTBkazY9Ctc33UysCRVN7nbthY7BdsgBKYBDPRydzY8vNUc2WynRX2fwA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
   "expectedPackageFiles": [
@@ -51,7 +51,7 @@
     "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.5\\microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
     "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.5\\microsoft.entityframeworkcore.design.7.0.5.nupkg.sha512",
     "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.5\\microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
-    "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.5\\microsoft.entityframeworkcore.sqlserver.7.0.5.nupkg.sha512",
+    "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.1\\microsoft.entityframeworkcore.sqlserver.7.0.1.nupkg.sha512",
     "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.5\\microsoft.entityframeworkcore.tools.7.0.5.nupkg.sha512",
     "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",

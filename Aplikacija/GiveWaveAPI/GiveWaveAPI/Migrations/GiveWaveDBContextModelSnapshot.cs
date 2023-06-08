@@ -345,6 +345,7 @@ namespace GiveWaveAPI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Adresa")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -352,14 +353,23 @@ namespace GiveWaveAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Grad")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Naziv")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Opis")
+                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool>("Potvrda")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ProfilKorisnikaId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
@@ -368,10 +378,13 @@ namespace GiveWaveAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("najpotrebnijestvari")
+                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProfilKorisnikaId");
 
                     b.ToTable("Porodice");
                 });
@@ -536,21 +549,21 @@ namespace GiveWaveAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "bd9533fb-33b0-4e12-89f3-d67a35b55efc",
+                            Id = "49337cbf-943e-4191-a8fd-aa6908a13db6",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "77dfe448-1c89-402a-9674-7ceb7e9c244d",
+                            Id = "5761d9e0-5eab-4ad4-96fc-3239411602e9",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "90750a20-0fb5-483c-bdde-ee9d94be604e",
+                            Id = "74f3ee0e-60a1-4965-845e-12674750cf1e",
                             ConcurrencyStamp = "3",
                             Name = "Friend",
                             NormalizedName = "Friend"
@@ -815,6 +828,15 @@ namespace GiveWaveAPI.Migrations
                     b.Navigation("kategorija");
                 });
 
+            modelBuilder.Entity("GiveWaveAPI.Models.Porodica", b =>
+                {
+                    b.HasOne("GiveWaveAPI.Models.ProfilKorisnika", "ProfilKorisnika")
+                        .WithMany("Porodice")
+                        .HasForeignKey("ProfilKorisnikaId");
+
+                    b.Navigation("ProfilKorisnika");
+                });
+
             modelBuilder.Entity("GiveWaveAPI.Models.Proizvod", b =>
                 {
                     b.HasOne("GiveWaveAPI.Models.Kategorija", "Kategorije")
@@ -905,6 +927,8 @@ namespace GiveWaveAPI.Migrations
             modelBuilder.Entity("GiveWaveAPI.Models.ProfilKorisnika", b =>
                 {
                     b.Navigation("Donacije");
+
+                    b.Navigation("Porodice");
 
                     b.Navigation("Proizvodi");
                 });

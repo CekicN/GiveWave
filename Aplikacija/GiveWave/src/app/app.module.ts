@@ -19,6 +19,7 @@ import { SearchProductsPipe } from './pipes/search-products.pipe';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AuthService } from './services/auth.service';
 import { FriendsModule } from './components/friends/friends.module';
+// import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,9 +27,9 @@ import { FriendsModule } from './components/friends/friends.module';
     NavigationBarComponent,
     FooterBarComponent,
     ResetPasswordComponent
-    
   ],
   imports: [
+    // CommonModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
