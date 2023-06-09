@@ -7,6 +7,8 @@ import { LuckyGalleryComponent } from './lucky-gallery/lucky-gallery.component';
 import { FamiliesComponent } from './families/families.component';
 import { NgbPopoverModule} from '@ng-bootstrap/ng-bootstrap';
 import { FamilyDetailsComponent } from './family-details/family-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchFamiliesPipe } from 'app/pipes/search-families.pipe';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,15 @@ import { FamilyDetailsComponent } from './family-details/family-details.componen
       DonateFilterComponent,
       LuckyGalleryComponent,
       FamiliesComponent,
-      FamilyDetailsComponent
+      FamilyDetailsComponent,
+      SearchFamiliesPipe
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
-    NgbPopoverModule
+    NgbPopoverModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 

@@ -6,13 +6,13 @@ namespace GiveWaveAPI.Controllers
 {
     public class DonacijaController : ControllerBase
     {
-        public GiveWaveDBContext context { get; set; }
+        private readonly GiveWaveDBContext context;
 
         public DonacijaController(GiveWaveDBContext c)
         {
             context = c;
         }
-
+        
         [Route("VratiSveDonacije")]
         [HttpGet]
         public async Task<ActionResult> vratiSveDonacije()

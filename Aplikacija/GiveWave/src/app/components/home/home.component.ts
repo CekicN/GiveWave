@@ -17,10 +17,10 @@ export class HomeComponent {
     service.isLoggedIn.subscribe(logged => this.isLoggedIn = logged);
   }
   text:string[] = [
-    "a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut at eos minima repudiandae. Assumenda repudiandae neque distinctio, minima perferendis voluptas?",
-    "a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut at eos minima repudiandae. ",
-    "a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut",
-    "a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ufdjfhdjfbdjbwbfjnfdnft"
+    "Dosta ljudi sirom sveta koristi ovu aplikaciju jer omogucava jednostavan,brz i siguran nacin za doniranje.",
+    "Ova aplikacija je dobrinela hiljadama ljudi sirom sveta razne potrebstine.",
+    "Uz ovu aplikaciju je sve manje ugrozenih osoba.",
+    "Klikni na dugme i postavi stvari koje zelis da doniras!"
   ];
   isActive = 1;
   next() {

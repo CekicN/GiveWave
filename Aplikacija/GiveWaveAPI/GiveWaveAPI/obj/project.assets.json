@@ -871,11 +871,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/7.0.5": {
+      "Microsoft.EntityFrameworkCore.SqlServer/7.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.5"
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.1"
         },
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
@@ -3305,17 +3305,17 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/7.0.5": {
-      "sha512": "cUJqCiamT0EvpKNgZEV5fqNv2MyVfKNgOPQfFINqHiIKHOYrS0nTCUJP97+UuG0JIIrP792/PwnuNjbekImtBg==",
+    "Microsoft.EntityFrameworkCore.SqlServer/7.0.1": {
+      "sha512": "bO01yAzgXNoJNbtHfrRFOpJxcP8R0bP5yrCTVULOXVR9MQVbpehqt94R19vwE+Bw+9P3xHZdotBTDucwR4rxLg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/7.0.5",
+      "path": "microsoft.entityframeworkcore.sqlserver/7.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.7.0.1.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -6218,7 +6218,7 @@
       "Microsoft.AspNetCore.SignalR >= 1.1.0",
       "Microsoft.AspNetCore.SpaServices >= 3.1.32",
       "Microsoft.EntityFrameworkCore >= 7.0.5",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.5",
       "Newtonsoft.Json >= 13.0.3",
       "Swashbuckle.AspNetCore >= 6.2.3",
@@ -6226,19 +6226,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nikola\\.nuget\\packages\\": {}
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
+      "projectUniqueName": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
       "projectName": "GiveWaveAPI",
-      "projectPath": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
-      "packagesPath": "C:\\Users\\Nikola\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\obj\\",
+      "projectPath": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
+      "packagesPath": "C:\\Users\\Prokuplje\\.nuget\\packages\\",
+      "outputPath": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nikola\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Prokuplje\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6246,14 +6246,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj": {
-              "projectPath": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj"
+            "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj": {
+              "projectPath": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj"
             }
           }
         }
@@ -6302,7 +6303,7 @@
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "[7.0.5, )"
+            "version": "[7.0.1, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -6342,7 +6343,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

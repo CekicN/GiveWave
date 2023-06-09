@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "aAKytrCow6DiIITJKj4v8cr6lIpYtlXHiCaXnZLRzPaG2+8r5uHDFFKa+WG5QzwfMPppzzVa1/xCDB8Ls3sqSA==",
+  "dgSpecHash": "0pB3yvzTCebUmtvXYNS/l4kAPuQl8N/rvIPDhmIg1C8Vrmj6kHvjSG1q1fhdDitTRCgE9DdDgONl6luEu6aqjQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj",
+  "projectFilePath": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Nikola\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
-    "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
-    "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\Nikola\\.nuget\\packages\\mimekit\\3.2.0\\mimekit.3.2.0.nupkg.sha512",
-    "C:\\Users\\Nikola\\.nuget\\packages\\netcore.mailkit\\2.1.0\\netcore.mailkit.2.1.0.nupkg.sha512",
-    "C:\\Users\\Nikola\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
-    "C:\\Users\\Nikola\\.nuget\\packages\\system.formats.asn1\\6.0.0\\system.formats.asn1.6.0.0.nupkg.sha512",
-    "C:\\Users\\Nikola\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\Nikola\\.nuget\\packages\\system.security.cryptography.pkcs\\6.0.0\\system.security.cryptography.pkcs.6.0.0.nupkg.sha512"
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\mimekit\\3.2.0\\mimekit.3.2.0.nupkg.sha512",
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\netcore.mailkit\\2.1.0\\netcore.mailkit.2.1.0.nupkg.sha512",
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\system.formats.asn1\\6.0.0\\system.formats.asn1.6.0.0.nupkg.sha512",
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\system.security.cryptography.pkcs\\6.0.0\\system.security.cryptography.pkcs.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

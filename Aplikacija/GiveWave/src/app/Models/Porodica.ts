@@ -1,7 +1,12 @@
 export interface Porodica {
     id: number;
-    brojClanova: number;
-    adresa: string;
-    NajpotrebnijeStvari: string;
-    opis: string; 
+    urlSlika:string[],
+    naziv: string,
+    grad:string,
+    adresa: string,
+    brClanova:number,
+    status:string,
+    najpotrebnijestvari: string[];
+    email:string,
+    user:string 
 }

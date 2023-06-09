@@ -30,7 +30,9 @@ namespace GiveWaveAPI.Models
         public string Opis { get; set; }
         public string Status { get; set; }
 
+        public bool Potvrda { get; set; }
         public List<Donacija> Donacije { get; set; }
+        public ProfilKorisnika ProfilKorisnika { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GiveWaveAPI.Models;
+using GiveWaveAPI.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -50,6 +51,8 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        #region updateData
 
         [Route("updateUsername")]
         [HttpPut]
@@ -146,6 +149,9 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
+        #endregion
+
+        #region MethodsForImage
         [NonAction]
         private string GetFilePath(string email)
         {
@@ -250,7 +256,9 @@ namespace GiveWaveAPI.Controllers
             }
             return imageUrl;
         }
+        #endregion
 
+        #region Like
         [Route("Like/{email}")]
         [HttpPatch]
         public async Task<ActionResult> Like(string email)
@@ -292,5 +300,6 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
+        #endregion
     }
 }

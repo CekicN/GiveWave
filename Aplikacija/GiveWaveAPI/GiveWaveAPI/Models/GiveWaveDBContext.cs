@@ -23,6 +23,9 @@ public class GiveWaveDBContext : IdentityDbContext<IdentityUser>
     public DbSet<Porodica> Porodice { get; set; }
     public DbSet<Proizvod> Proizvods { get; set; }
     public DbSet<Donacija> Donacijas { get; set; }
+    public DbSet<chat> Chats { get; set; }
+    public DbSet<chatUser> chatUserr { get; set; }
+    public DbSet<chatLine> chatLinee { get; set; }
 
     public GiveWaveDBContext(DbContextOptions<GiveWaveDBContext> options) : base(options)
     {
@@ -39,7 +42,8 @@ public class GiveWaveDBContext : IdentityDbContext<IdentityUser>
             (
                 new IdentityRole() { Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
                 new IdentityRole() { Name = "User", ConcurrencyStamp = "2", NormalizedName = "User" },
-                new IdentityRole() { Name = "Friend", ConcurrencyStamp = "3", NormalizedName = "Friend" }
+                new IdentityRole() { Name = "Friend", ConcurrencyStamp = "3", NormalizedName = "Friend" },
+                new IdentityRole() { Name = "Service", ConcurrencyStamp = "4", NormalizedName = "Service" }
             );
     }
     //protected override void OnModelCreating(ModelBuilder modelBuilder)

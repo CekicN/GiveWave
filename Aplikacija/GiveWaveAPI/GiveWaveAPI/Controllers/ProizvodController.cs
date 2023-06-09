@@ -19,6 +19,7 @@ namespace GiveWaveAPI.Controllers
             context = c;
         }
 
+        #region Product
         [Route("addProduct/{id}")]
         [HttpPut]
         public async Task<ActionResult> addProduct([FromBody] ProductHelper proizvod,int id)
@@ -66,43 +67,7 @@ namespace GiveWaveAPI.Controllers
             }
 
         }
-        [NonAction]
-        public Kategorija addCategory(string category, string parentCategory)
-        {
-                var kategorija = context.Kategorijas.Where(c => c.Name == category).FirstOrDefault();
-                if (kategorija != null)
-                    return null;
-                var parent = context.Kategorijas.Where(c => c.Name == parentCategory).FirstOrDefault();
-                if (parentCategory != null)
-                {
-                    var subcategory = new Kategorija
-                    {
-                        Name = category,
-                        parentCategory = parent
-                    };
 
-                    context.Kategorijas.Add(subcategory);
-                    context.SaveChanges();
-
-                    return subcategory;
-                }
-                else
-                {
-                    //parent kategorija
-
-                    var subcategory = new Kategorija
-                    {
-                        Name = category,
-                        parentCategory = null
-                    };
-
-                    context.Kategorijas.Add(subcategory);
-                    context.SaveChanges();
-
-                    return subcategory;
-
-                }
-        }
         [Route("VratiProizvodePremaEmailu/{email}")]
         [HttpGet]
         public async Task<ActionResult> vratiProizvodePremaEmailu(string email)
@@ -221,6 +186,45 @@ namespace GiveWaveAPI.Controllers
                         AddProductRecursive(kategorija, products);
                     }
         }
+        #endregion
+        [NonAction]
+        public Kategorija addCategory(string category, string parentCategory)
+        {
+            var kategorija = context.Kategorijas.Where(c => c.Name == category).FirstOrDefault();
+            if (kategorija != null)
+                return null;
+            var parent = context.Kategorijas.Where(c => c.Name == parentCategory).FirstOrDefault();
+            if (parentCategory != null)
+            {
+                var subcategory = new Kategorija
+                {
+                    Name = category,
+                    parentCategory = parent
+                };
+
+                context.Kategorijas.Add(subcategory);
+                context.SaveChanges();
+
+                return subcategory;
+            }
+            else
+            {
+                //parent kategorija
+
+                var subcategory = new Kategorija
+                {
+                    Name = category,
+                    parentCategory = null
+                };
+
+                context.Kategorijas.Add(subcategory);
+                context.SaveChanges();
+
+                return subcategory;
+
+            }
+        }
+        #region Images
         [NonAction]
         private string GetFilePath(string email, int code)
         {
@@ -322,6 +326,7 @@ namespace GiveWaveAPI.Controllers
             }
             return imageUrl;
         }
+        #endregion
 
         [Route("CancleAdding/{id}/{email}")]
         [HttpDelete]

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GiveWaveAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class v1 : Migration
+    public partial class V1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -53,6 +53,47 @@ namespace GiveWaveAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "chatLinee",
+                columns: table => new
+                {
+                    id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    chatId = table.Column<int>(type: "int", nullable: false),
+                    userId = table.Column<int>(type: "int", nullable: false),
+                    lineText = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_chatLinee", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Chats",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Chats", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "chatUserr",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    handle = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_chatUserr", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Kategorijas",
                 columns: table => new
                 {
@@ -69,26 +110,6 @@ namespace GiveWaveAPI.Migrations
                         column: x => x.parentID,
                         principalTable: "Kategorijas",
                         principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Porodice",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Naziv = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UrlSlika = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BrClanova = table.Column<int>(type: "int", nullable: false),
-                    Grad = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Adresa = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    najpotrebnijestvari = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    Opis = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Porodice", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -406,27 +427,27 @@ namespace GiveWaveAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Donacijas",
+                name: "Porodice",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    donacija = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DatumDonacije = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Opis = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
-                    ProfilKorisnikaId = table.Column<int>(type: "int", nullable: true),
-                    PorodicaId = table.Column<int>(type: "int", nullable: true)
+                    Naziv = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UrlSlika = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BrClanova = table.Column<int>(type: "int", nullable: false),
+                    Grad = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Adresa = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    najpotrebnijestvari = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Opis = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Potvrda = table.Column<bool>(type: "bit", nullable: false),
+                    ProfilKorisnikaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Donacijas", x => x.Id);
+                    table.PrimaryKey("PK_Porodice", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Donacijas_Porodice_PorodicaId",
-                        column: x => x.PorodicaId,
-                        principalTable: "Porodice",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Donacijas_ProfilKorisnikas_ProfilKorisnikaId",
+                        name: "FK_Porodice_ProfilKorisnikas_ProfilKorisnikaId",
                         column: x => x.ProfilKorisnikaId,
                         principalTable: "ProfilKorisnikas",
                         principalColumn: "Id");
@@ -461,14 +482,42 @@ namespace GiveWaveAPI.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Donacijas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    donacija = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DatumDonacije = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Opis = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
+                    ProfilKorisnikaId = table.Column<int>(type: "int", nullable: true),
+                    PorodicaId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Donacijas", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Donacijas_Porodice_PorodicaId",
+                        column: x => x.PorodicaId,
+                        principalTable: "Porodice",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Donacijas_ProfilKorisnikas_ProfilKorisnikaId",
+                        column: x => x.ProfilKorisnikaId,
+                        principalTable: "ProfilKorisnikas",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "77dfe448-1c89-402a-9674-7ceb7e9c244d", "2", "User", "User" },
-                    { "90750a20-0fb5-483c-bdde-ee9d94be604e", "3", "Friend", "Friend" },
-                    { "bd9533fb-33b0-4e12-89f3-d67a35b55efc", "1", "Admin", "Admin" }
+                    { "854bef0c-5d28-4e90-b109-05f84158a370", "3", "Friend", "Friend" },
+                    { "df0a43c4-934d-4908-85f0-c198a57b565f", "1", "Admin", "Admin" },
+                    { "fc2af38c-ca27-4ec2-bbde-bc7843d24b0b", "2", "User", "User" },
+                    { "fde3512c-710d-404b-99bd-3ed0cf2d1cd6", "4", "Service", "Service" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -561,6 +610,11 @@ namespace GiveWaveAPI.Migrations
                 column: "kategorijaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Porodice_ProfilKorisnikaId",
+                table: "Porodice",
+                column: "ProfilKorisnikaId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Proizvods_KategorijeId",
                 table: "Proizvods",
                 column: "KategorijeId");
@@ -593,6 +647,15 @@ namespace GiveWaveAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "chatLinee");
+
+            migrationBuilder.DropTable(
+                name: "Chats");
+
+            migrationBuilder.DropTable(
+                name: "chatUserr");
 
             migrationBuilder.DropTable(
                 name: "Donacijas");
@@ -634,10 +697,10 @@ namespace GiveWaveAPI.Migrations
                 name: "Porodice");
 
             migrationBuilder.DropTable(
-                name: "ProfilKorisnikas");
+                name: "Kategorijas");
 
             migrationBuilder.DropTable(
-                name: "Kategorijas");
+                name: "ProfilKorisnikas");
         }
     }
 }
