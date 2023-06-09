@@ -7,6 +7,8 @@ import { User } from 'app/Models/User';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'app/components/products/product.service';
 import { ProductInfo } from 'app/Models/ProductInfo';
+import { AuthService } from 'app/services/auth.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-my-products',
   templateUrl: './my-products.component.html',
@@ -18,25 +20,35 @@ export class MyProductsComponent implements OnInit {
   searchText = '';
   email!:string|null;
   products:MyProducts[] = [];
-  constructor(private services:ProfileService, private route:ActivatedRoute,private  productService:ProductService) {
+  constructor(private services:ProfileService,
+              private authService:AuthService,
+              private route:ActivatedRoute,
+              private productService:ProductService,
+              private cdr:ChangeDetectorRef) 
+  {    
+    services.getClickEvent().subscribe(() => {this.getMyProducts();});
   }
   ngOnInit(): void {
+    this.getMyProducts();
+  }
+  getMyProducts()
+  {
     this.email = this.route.snapshot.paramMap.get('email');
     this.services.getMyProducts(this.email).subscribe(p => {
       this.products = p;
-      console.log(this.products);
+      this.cdr.detectChanges();
     })
-    console.log(localStorage);
   }
   isVisible():boolean
   {
     //Email iz profila === email iz prijave
-    return this.services.email === localStorage.getItem('email');
+    return this.services.email === this.authService.email;
   }
   deleteProduct(id:number)
   {
-    this.services.cancelAdding(id,this.email).subscribe(msg => {
-      console.log(msg)
+    this.services.cancelAdding(id,this.email).subscribe(() => {
+      this.products = this.products.filter(product => product.id !== id);
+      this.cdr.detectChanges();
     });
   }
 

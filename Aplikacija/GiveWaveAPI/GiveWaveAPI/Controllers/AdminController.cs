@@ -1,4 +1,4 @@
-﻿using GiveWaveAPI.Enums;
+﻿
 using GiveWaveAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -20,13 +20,15 @@ namespace GiveWaveAPI.Controllers
         private readonly IConfiguration _configuration;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly TokenValidationParameters _tokenValidationParameters;
-        public AdminController(GiveWaveDBContext context, UserManager<IdentityUser> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager, TokenValidationParameters tokenValidationParameters)
+        private readonly SignInManager<IdentityUser> _signInManager;
+        public AdminController(GiveWaveDBContext context, UserManager<IdentityUser> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager, TokenValidationParameters tokenValidationParameters, SignInManager<IdentityUser> signInManager)
         {
             _context = context;
             _userManager = userManager;
             _configuration = configuration;
             _roleManager = roleManager;
             _tokenValidationParameters = tokenValidationParameters;
+            _signInManager = signInManager;
         }
 
 
@@ -217,20 +219,23 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
-        //[HttpPost]
-        //[Route("AddRoles")]
-        //public async Task<IActionResult> AddRoles(string id)
-        //{
-        //    await CreateRole(RoleEnum.User.ToString());
-        //    await CreateRole(RoleEnum.Admin.ToString());
-        //    await CreateRole(RoleEnum.Friend.ToString());
-
-        //    var res = await AddToRoles(id);
-
-        //    if (!res) return StatusCode(StatusCodes.Status400BadRequest, "Failed");
-
-        //    return StatusCode(StatusCodes.Status201Created, "Success");
-        //}
+        [Route("SuspendujKorisnika")]
+        [Authorize(Roles ="Admin")]
+        [HttpPut]
+        public async Task<IActionResult> SuspendUser(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            if (user != null)
+            {
+                await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.MaxValue);
+                await _signInManager.SignOutAsync();
+                return Ok("Uspesno suspendovan");
+            }
+            else
+            {
+                return BadRequest("Korisnik NIJE suspendovan");
+            }
+        }
     }
     
 }

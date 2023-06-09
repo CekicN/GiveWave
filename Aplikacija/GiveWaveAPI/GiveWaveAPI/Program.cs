@@ -8,8 +8,21 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.SpaServices;
+using GiveWaveAPI.Services;
+using GiveWaveAPI.Hubs;
+using Microsoft.AspNetCore.Cors;
 using GiveWaveApiService.Models;
 using GiveWaveApiService.Services;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -18,6 +31,7 @@ builder.Services.AddDbContext<GiveWaveDBContext>(options =>
 {
      options.UseSqlServer(builder.Configuration.GetConnectionString("ProjekatSWE"));
 });
+//builder.Services.AddCoreAdmin();
 builder.Services.AddCoreAdmin();
 
 builder.Services.AddCors(options =>
@@ -26,11 +40,13 @@ builder.Services.AddCors(options =>
     {
         policy.AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowAnyOrigin();
-              //.WithOrigins("https://localhost:5555/",
-              //             "https://localhost:5555/",
-              //             "https://localhost:4200/",
-              //             "http://localhost:4200/");
+              .AllowAnyOrigin()
+              .AllowCredentials()
+              .WithOrigins("https://localhost:5555/",
+                           "https://localhost:5555/",
+                           "https://localhost:4200",
+                           "http://localhost:4200",
+                           "http://localhost:7200");
     });
 });
 //add config for required email
@@ -39,9 +55,18 @@ builder.Services.Configure<IdentityOptions>(
 
 builder.Services.Configure<DataProtectionTokenProviderOptions>(opts => opts.TokenLifespan = TimeSpan.FromHours(10));
 
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+//za chat
+builder.Services.AddSingleton<ChatService>();
+builder.Services.AddSignalR();
+builder.Services.AddCors();
+
+builder.Services.AddSwaggerGen();
+builder.Services.Configure<JwtBearerPostConfigureOptions>(builder.Configuration.GetSection("JWTConfig"));
 //builder.Services.AddSwaggerGen();
 //builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("JWTConfig"));
 
@@ -131,16 +156,26 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+app.UseRouting();
 app.UseStaticFiles();
 
 app.UseCors("CORS");
+
+
 
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
 
+app.UseStaticFiles();
+
 app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapHub<ChatHub>("/hubs/chat");
+
 app.Run();
+
+

@@ -532,21 +532,21 @@ namespace GiveWaveAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d3b9f638-b925-4b85-90a1-930389bd354d",
+                            Id = "6e6b1f6e-15d7-4a88-ad78-c1c13a8a579b",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "65923d56-f0da-4a48-8fad-ac07b2d85734",
+                            Id = "53be973c-93cf-4705-8412-5cad2a70a2e5",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "bf0f7d8c-fa5e-4c99-8be7-7d8e2bbd7c33",
+                            Id = "fa8d49fa-94dd-407e-9bd3-b06f8e0a14f2",
                             ConcurrencyStamp = "3",
                             Name = "Friend",
                             NormalizedName = "Friend"

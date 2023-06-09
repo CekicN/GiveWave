@@ -96,6 +96,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\ceka123@gmail.com\P_5\image_0_29.05.2023._18_56_04.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_11\image_0_06.06.2023._11_27_06.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>GiveWaveAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GiveWaveAPI</BasePath>
+      <RelativePath>Uploads/Products/cekicn668@gmail.com/P_11/image_0_06.06.2023._11_27_06.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_11\image_0_06.06.2023._11_27_06.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_2032\image_0_06.06.2023._19_39_31.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>GiveWaveAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GiveWaveAPI</BasePath>
+      <RelativePath>Uploads/Products/cekicn668@gmail.com/P_2032/image_0_06.06.2023._19_39_31.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_2032\image_0_06.06.2023._19_39_31.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_3\image_0_29.05.2023._18_53_29.png))">
       <SourceType>Package</SourceType>
       <SourceId>GiveWaveAPI</SourceId>
@@ -112,12 +144,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_3\image_0_29.05.2023._18_53_29.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_6\image_0_31.05.2023._16_48_08.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicnikola31@gmail.com\P_17\image_0_03.06.2023._17_23_41.png))">
       <SourceType>Package</SourceType>
       <SourceId>GiveWaveAPI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/GiveWaveAPI</BasePath>
-      <RelativePath>Uploads/Products/cekicn668@gmail.com/P_6/image_0_31.05.2023._16_48_08.png</RelativePath>
+      <RelativePath>Uploads/Products/cekicnikola31@gmail.com/P_17/image_0_03.06.2023._17_23_41.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -126,14 +158,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_6\image_0_31.05.2023._16_48_08.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicnikola31@gmail.com\P_17\image_0_03.06.2023._17_23_41.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_8\image_0_31.05.2023._16_50_46.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicnikola53@gmail.com\P_22\image_0_03.06.2023._19_00_33.png))">
       <SourceType>Package</SourceType>
       <SourceId>GiveWaveAPI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/GiveWaveAPI</BasePath>
-      <RelativePath>Uploads/Products/cekicn668@gmail.com/P_8/image_0_31.05.2023._16_50_46.png</RelativePath>
+      <RelativePath>Uploads/Products/cekicnikola53@gmail.com/P_22/image_0_03.06.2023._19_00_33.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -142,14 +174,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_8\image_0_31.05.2023._16_50_46.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicnikola53@gmail.com\P_22\image_0_03.06.2023._19_00_33.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_8\image_1_31.05.2023._16_50_46.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\stevanruzic1702@gmail.com\P_51\image_0_6.6.2023._22_13_48.png))">
       <SourceType>Package</SourceType>
       <SourceId>GiveWaveAPI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/GiveWaveAPI</BasePath>
-      <RelativePath>Uploads/Products/cekicn668@gmail.com/P_8/image_1_31.05.2023._16_50_46.png</RelativePath>
+      <RelativePath>Uploads/Products/stevanruzic1702@gmail.com/P_51/image_0_6.6.2023._22_13_48.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -158,23 +190,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_8\image_1_31.05.2023._16_50_46.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_8\image_2_31.05.2023._16_50_46.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>GiveWaveAPI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/GiveWaveAPI</BasePath>
-      <RelativePath>Uploads/Products/cekicn668@gmail.com/P_8/image_2_31.05.2023._16_50_46.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\cekicn668@gmail.com\P_8\image_2_31.05.2023._16_50_46.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\stevanruzic1702@gmail.com\P_51\image_0_6.6.2023._22_13_48.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\ceka123@gmail.com\image_29.05.2023._18_55_52.png))">
       <SourceType>Package</SourceType>
@@ -207,6 +223,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\cekicn668@gmail.com\image_27.05.2023._11_22_12.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\cekicnikola31@gmail.com\image_03.06.2023._16_22_00.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>GiveWaveAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GiveWaveAPI</BasePath>
+      <RelativePath>Uploads/Profile/cekicnikola31@gmail.com/image_03.06.2023._16_22_00.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\cekicnikola31@gmail.com\image_03.06.2023._16_22_00.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\martanedovic2001@gmail.com\image_03.06.2023._22_30_49.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>GiveWaveAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GiveWaveAPI</BasePath>
+      <RelativePath>Uploads/Profile/martanedovic2001@gmail.com/image_03.06.2023._22_30_49.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Profile\martanedovic2001@gmail.com\image_03.06.2023._22_30_49.png))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

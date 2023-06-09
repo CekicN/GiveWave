@@ -8,7 +8,7 @@ using System.Text;
 
 namespace GiveWaveAPI.Controllers
 {
-    [Authorize]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [ApiController]
     [Route("controller")]
     public class ProfileController : Controller

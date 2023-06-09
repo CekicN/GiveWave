@@ -3,6 +3,15 @@
     height: 90vh;
     overflow: auto;
     }
+.category
+{
+    background-color: white;
+    border-radius: 7px;
+    height: 90vh;
+    width: 15%;
+    box-shadow: black 0px 0px 3px 0px;
+    position: fixed;
+}
 .table-wrapper-scroll-y {
     display: block;
 }

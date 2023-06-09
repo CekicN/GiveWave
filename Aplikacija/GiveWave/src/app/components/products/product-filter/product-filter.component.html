@@ -12,7 +12,14 @@
             <option value="{{status}}" *ngFor="let status of status">{{status}}</option>
         </select>
     </div>
-    <div class="col-md-3 offset-md-3">
+    <div class="col-md-1">
+        <button class="byn btn-primary" (click)="goToCartPage()">
+            <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+            <div style="font-size: 10px;"  class="badge bg-danger">{{totalItem}}</div>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        </button>
+    </div>
+    <div class="col-md-3 ">
         <!-- *ngFor="let product of products | myProductsFilter: searchText" -->
         <div class="d-flex">
             <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
@@ -22,3 +29,6 @@
         </div>
     </div>
 </div>
+
+
+

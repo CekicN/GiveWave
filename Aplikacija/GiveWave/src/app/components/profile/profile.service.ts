@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 import { User } from 'app/Models/User';
 import { MyProducts } from 'app/Models/MyProducts';
 import { DonationHistory } from 'app/Models/DonationsHistory';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { ProductHelper } from 'app/Models/ProductHelper';
 import { uploadPhoto } from 'app/Models/uploadPhoto';
 
@@ -17,6 +17,17 @@ export class ProfileService {
   private _displayStyle$ = new BehaviorSubject<string>("none");
   displayStyle = this._displayStyle$.asObservable();
   public productId!:number;
+
+  private subject = new Subject<any>();
+
+  sendClickEvent()
+  {
+    this.subject.next(null);
+  }
+  getClickEvent()
+  {
+    return this.subject.asObservable();
+  }
   openModal()
   {
     this._displayStyle$.next("block");
@@ -58,8 +69,8 @@ export class ProfileService {
   Dislike(email:String)
   {
     let httpOptions = new HttpHeaders()
-                      .set('Authorization', 'Bearer '+localStorage.getItem('token'));
-    httpOptions.append('Content-Type', 'application/json');
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
     return this.http.patch<number>(Url+"Dislike/"+email, {headers:httpOptions});
   }
   updateUsername(email:string|null|undefined, data:String)

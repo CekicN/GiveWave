@@ -10,3 +10,27 @@ C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\Gi
 C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\refint\GiveWaveAPIService.dll
 C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.pdb
 C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\ref\GiveWaveAPIService.dll
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\bin\Debug\net7.0\GiveWaveAPIService.deps.json
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\bin\Debug\net7.0\GiveWaveAPIService.dll
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\bin\Debug\net7.0\GiveWaveAPIService.pdb
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.csproj.AssemblyReference.cache
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.AssemblyInfoInputs.cache
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.AssemblyInfo.cs
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.csproj.CoreCompileInputs.cache
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.dll
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\refint\GiveWaveAPIService.dll
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.pdb
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\ref\GiveWaveAPIService.dll
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\bin\Debug\net7.0\GiveWaveAPIService.deps.json
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\bin\Debug\net7.0\GiveWaveAPIService.dll
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\bin\Debug\net7.0\GiveWaveAPIService.pdb
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.csproj.AssemblyReference.cache
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.GeneratedMSBuildEditorConfig.editorconfig
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.AssemblyInfoInputs.cache
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.AssemblyInfo.cs
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.csproj.CoreCompileInputs.cache
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.dll
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\refint\GiveWaveAPIService.dll
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\GiveWaveAPIService.pdb
+F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\obj\Debug\net7.0\ref\GiveWaveAPIService.dll

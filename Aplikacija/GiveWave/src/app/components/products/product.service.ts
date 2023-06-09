@@ -12,6 +12,7 @@ const api = "https://localhost:7200/controller/"
   providedIn: 'root'
 })
 export class ProductService {
+  
 
   private searchText$ = new BehaviorSubject<string>('');
   searchText = this.searchText$.asObservable();
@@ -58,5 +59,9 @@ export class ProductService {
   setProduct(_product:ProductInfo)
   {
     this.product$.next(_product);
+  }
+  getStatus()
+  {
+    return this.http.get
   }
 }

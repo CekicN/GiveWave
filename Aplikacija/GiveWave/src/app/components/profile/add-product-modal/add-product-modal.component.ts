@@ -1,9 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { ProfileService } from '../profile.service';
 import { ProductService } from 'app/components/products/product.service';
 import { ProductHelper, Status } from 'app/Models/ProductHelper';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { uploadPhoto } from 'app/Models/uploadPhoto';
+import { AuthService } from 'app/services/auth.service';
+import { MyProductsComponent } from '../my-products/my-products.component';
 
 @Component({
   selector: 'app-add-product-modal',
@@ -11,16 +13,20 @@ import { uploadPhoto } from 'app/Models/uploadPhoto';
   styleUrls: ['./add-product-modal.component.css']
 })
 export class AddProductModalComponent implements OnInit{
-  displayStyle:string = "none";
+  displayStyle:string = 'none';
   other = false;
   categories!:Category[];
   cities!:any;
   addProductForm!:FormGroup;
   imageUrl:string[] = ["https://localhost:7200//uploads/common/noimage.png"];
   status = Object.keys(Status).filter((item) => isNaN(Number(item)));
-  constructor(private fb:FormBuilder,private service:ProfileService, private productService:ProductService)
+  constructor(private fb:FormBuilder,
+              private service:ProfileService, 
+              private authService:AuthService, 
+              private productService:ProductService,
+              private cdr:ChangeDetectorRef)
   {
-    service.displayStyle.subscribe(d => this.displayStyle = d);
+    service.displayStyle.subscribe(d => {this.displayStyle = d; cdr.detectChanges()});
     this.addProductForm = fb.group({
       Naziv:['', Validators.required],
       Mesto:['', Validators.required],
@@ -31,6 +37,7 @@ export class AddProductModalComponent implements OnInit{
       Opis:['', Validators.required]
     },{validator:this.categoryValidator});
   }
+
   categoryValidator(formGroup: FormGroup) {
     const category = formGroup.get('Kategorija')?.value;
     const newCategory = formGroup.get('novaKategorija')?.value;
@@ -56,10 +63,13 @@ export class AddProductModalComponent implements OnInit{
       this.other = true;
     else
       this.other = false;
+    this.cdr.detectChanges();
   }
   closeModal()
   {
-    this.service.cancelAdding(this.service.productId, localStorage.getItem('email')).subscribe(msg => console.log(msg));
+    this.service.cancelAdding(this.service.productId, this.authService.email).subscribe(msg => console.log(msg));
+    this.imageUrl = ["https://localhost:7200//uploads/common/noimage.png"];
+    this.addProductForm.reset();
     this.service.closeModal();
   }
   addProduct()
@@ -68,17 +78,20 @@ export class AddProductModalComponent implements OnInit{
     {
       //za dodavanje producta
       const product:ProductHelper = this.addProductForm.value;
-      product.emailKorisnika = localStorage.getItem('email');
+      product.emailKorisnika = this.authService.email;
       console.log(product);
-      this.service.addProduct(product,this.service.productId).subscribe(msg => {
+      this.service.addProduct(product,this.service.productId).subscribe(() => {
+        this.service.sendClickEvent();
         this.imageUrl = ["https://localhost:7200//uploads/common/noimage.png"];
+        this.addProductForm.reset();
+        this.service.closeModal();
+        this.cdr.detectChanges();
       });
-      this.addProductForm.reset();
-      this.service.closeModal();
     }  
     else
     {
       this.validateAllFormsFields(this.addProductForm);
+      this.cdr.detectChanges();
     }
   }
   private validateAllFormsFields(formGroup:FormGroup){
@@ -102,12 +115,12 @@ export class AddProductModalComponent implements OnInit{
     {
       const upload:uploadPhoto = {
         id:this.service.productId,
-        email:localStorage.getItem('email'),
+        email:this.authService.email,
         files:Array.from(files)
       } 
-      console.log(upload);
       this.service.updatePhoto(upload).subscribe((res:any) => {
         this.imageUrl = res.imageUrls
+        this.cdr.detectChanges();
       });
     }
   }

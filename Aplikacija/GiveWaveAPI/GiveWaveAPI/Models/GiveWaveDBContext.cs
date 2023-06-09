@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace GiveWaveAPI.Models;
@@ -28,14 +29,14 @@ public class GiveWaveDBContext : IdentityDbContext<IdentityUser>
     {
 
     }
-    protected override void OnModelCreating(ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(builder);
-        SeedRoles(builder);
+        base.OnModelCreating(modelBuilder);
+        SeedRoles(modelBuilder);
     }
-    private static void SeedRoles(ModelBuilder builder)
+    private static void SeedRoles(ModelBuilder modelBuilder)
     {
-        builder.Entity<IdentityRole>().HasData
+        modelBuilder.Entity<IdentityRole>().HasData
             (
                 new IdentityRole() { Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
                 new IdentityRole() { Name = "User", ConcurrencyStamp = "2", NormalizedName = "User" },

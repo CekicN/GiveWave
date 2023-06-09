@@ -28,7 +28,7 @@ namespace GiveWaveAPI.Controllers
         private readonly IConfiguration _configuration;
         private readonly GiveWaveDBContext _context;
         private readonly IWebHostEnvironment _environment;
-        public AuthenticationController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IEmailService emailService, IConfiguration configuration, SignInManager<IdentityUser> signInManager, GiveWaveDBContext context, IWebHostEnvironment environment, TokenValidationParameters tokenValidationParameters)
+        public AuthenticationController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IEmailService emailService, IConfiguration configuration, SignInManager<IdentityUser> signInManager, GiveWaveDBContext context, IWebHostEnvironment environment)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -55,7 +55,7 @@ namespace GiveWaveAPI.Controllers
                 Email = registerUser.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
                 UserName = registerUser.UserName,
-                TwoFactorEnabled = true
+                TwoFactorEnabled = false
             };
 
             if (await _roleManager.RoleExistsAsync("User"))
@@ -80,7 +80,7 @@ namespace GiveWaveAPI.Controllers
                 //add token to verify email
                 var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 var confirmationLink = Url.Action(nameof(ConfirmEmail), "Authentication", new { token, email = user.Email }, Request.Scheme);
-                var message = new Message(new string[] { user.Email }, "Confirmation email link", confirmationLink);
+                var message = new GiveWaveApiService.Models.Message(new string[] { user.Email }, "Confirmation email link", confirmationLink);
                 _emailService.SendEmail(message);
 
                 return StatusCode(StatusCodes.Status200OK,
@@ -128,7 +128,7 @@ namespace GiveWaveAPI.Controllers
             //        new Response { Status = "Success", Message = $"We have sent an OTP to your email {user.Email}" });
             //}
             //check the password
-            if (user != null && await _userManager.CheckPasswordAsync(user, loginModel.Password))
+            if (user != null && await _userManager.CheckPasswordAsync(user, loginModel.Password) && user.EmailConfirmed)
             {
                 //claimlist creation
                 var authClaims = new List<Claim>
@@ -247,7 +247,7 @@ namespace GiveWaveAPI.Controllers
 
                 var token = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var forgotPasswordLink = Url.Action((nameof(ResettPassword)), "Authentication", new { token, email = user.Email }, Request.Scheme);// (nameof(ResettPassword)
-                var message = new Message(new string[] { user.Email! }, "Forgot password link",/*forgotPasswordLink!*/ /*EmailBody.EmailStringBody(email,token)*/CreateBody(email, token));
+                var message = new GiveWaveApiService.Models.Message(new string[] { user.Email! }, "Forgot password link",/*forgotPasswordLink!*/ /*EmailBody.EmailStringBody(email,token)*/CreateBody(email,token));
                 _emailService.SendEmail(message);
                 return StatusCode(StatusCodes.Status200OK,
                     new Response { Status = "Success", Message = $"Password changed request is sent on Email {user.Email}. Please open your email & click on link" });

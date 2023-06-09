@@ -6,6 +6,9 @@ import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
 import { SearchProductsPipe } from 'app/pipes/search-products.pipe';
 import { ProductInfo } from 'app/Models/ProductInfo';
+import { ApiService } from '../api.service';
+import { ChatService } from 'app/components/friends/chat.service';
+import { CartService } from '../cart.service';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -13,9 +16,11 @@ import { ProductInfo } from 'app/Models/ProductInfo';
 })
 export class ProductListComponent implements OnInit {
 
-  products!:Product[];
+  products!:Product[] | any;
   searchText:string = '';
-  constructor(library:FaIconLibrary, private productService:ProductService, private route:Router)
+  //public productList!: Product[];
+
+  constructor(library:FaIconLibrary, private productService:ProductService, private route:Router,private cartService: CartService)
   {
     library.addIcons(faShoppingCart);
     productService.searchText.subscribe(p => this.searchText = p);
@@ -24,15 +29,20 @@ export class ProductListComponent implements OnInit {
     this.productService.getAllProducts().subscribe(res => {
       this.products = res;
       console.log(this.products);
-    });
+
+      this.products.forEach( (a: any) => {
+        Object.assign(a,{quantity:1});
+      });
+    })
   }
+
   visitProfile(email:string)
   {
     this.route.navigate(['/profile', email]);
   }
-  addToCart(id:number)
-  {
-    console.log(id);
+
+  addToCart(item: Product) {
+      this.cartService.addToCart(item);
   }
 
   viewDetails(id:number)

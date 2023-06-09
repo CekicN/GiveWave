@@ -4,6 +4,7 @@ import { ProfileService } from '../profile.service';
 import { faHeart, faPen } from '@fortawesome/free-solid-svg-icons';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-profile-image',
@@ -15,7 +16,7 @@ export class ProfileImageComponent implements OnInit {
   public user!:User;
   email!:string|null;
   public isLiked:boolean = localStorage.getItem('like') === 'true';
-  constructor(private service:ProfileService, library:FaIconLibrary, private route:ActivatedRoute){
+  constructor(private service:ProfileService, private authService:AuthService, library:FaIconLibrary, private route:ActivatedRoute){
     library.addIcons(faHeart, faPen);
   }
    ngOnInit(): void {
@@ -27,7 +28,7 @@ export class ProfileImageComponent implements OnInit {
   isVisible():boolean
   {
     //Email iz profila === email iz prijave
-    return this.service.email === localStorage.getItem('email');
+    return this.service.email === this.authService.email;
   }
   openModal() {
     this.service.addEmptyProduct().subscribe(id => this.service.productId = id);
@@ -38,7 +39,7 @@ export class ProfileImageComponent implements OnInit {
     const f = (<HTMLInputElement>event.target)?.files?.[0];
     if(f)
     {
-      this.service.updateProfilePicture(f,localStorage.getItem('email')).subscribe((imageUrl) => {
+      this.service.updateProfilePicture(f,this.authService.email).subscribe((imageUrl) => {
         this.user.imageUrl = imageUrl.imageUrl;
       })
     }
