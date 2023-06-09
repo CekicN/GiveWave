@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { ProductHelper } from 'app/Models/ProductHelper';
 import { uploadPhoto } from 'app/Models/uploadPhoto';
 
-const Url = "https://localhost:7200/controller";
+const Url = "https://localhost:7200/controller/";
 const donations = "http://localhost:3000/DonationHistory"
 @Injectable({
   providedIn: 'root'
