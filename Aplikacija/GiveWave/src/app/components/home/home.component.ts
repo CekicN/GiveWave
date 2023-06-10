@@ -17,10 +17,12 @@ export class HomeComponent {
     service.isLoggedIn.subscribe(logged => this.isLoggedIn = logged);
   }
   text:string[] = [
-    "Dosta ljudi sirom sveta koristi ovu aplikaciju jer omogucava jednostavan,brz i siguran nacin za doniranje.",
-    "Ova aplikacija je dobrinela hiljadama ljudi sirom sveta razne potrebstine.",
-    "Uz ovu aplikaciju je sve manje ugrozenih osoba.",
-    "Klikni na dugme i postavi stvari koje zelis da doniras!"
+    "Help at your fingertips - donate money, food, shoes and clothes for the vulnerable and give them hope for a better future!",
+    "Your donation changes lives - together we can support those most at risk and build a community of solidarity.",
+    "Donate with ease - our application allows you to easily and quickly donate what is most needed by the vulnerable.",
+    "Give love, donate resources - with your contribution, you help people in need to cope with difficult situations and rebuild their lives.",
+    "Let your generosity be an echo of hope - your donation can be the key to providing basic needs and support to those most vulnerable.",
+    "Simply donate, make a big impact - your small gesture can have a big impact on the lives of those who need help the most."
   ];
   isActive = 1;
   next() {
