@@ -23,9 +23,6 @@ public class GiveWaveDBContext : IdentityDbContext<IdentityUser>
     public DbSet<Porodica> Porodice { get; set; }
     public DbSet<Proizvod> Proizvods { get; set; }
     public DbSet<Donacija> Donacijas { get; set; }
-    public DbSet<chat> Chats { get; set; }
-    public DbSet<chatUser> chatUserr { get; set; }
-    public DbSet<chatLine> chatLinee { get; set; }
 
     public GiveWaveDBContext(DbContextOptions<GiveWaveDBContext> options) : base(options)
     {

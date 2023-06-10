@@ -5,6 +5,7 @@ import { faHeart, faPen } from '@fortawesome/free-solid-svg-icons';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
+import { DonateService } from 'app/components/donate/donate.service';
 
 @Component({
   selector: 'app-profile-image',
@@ -16,7 +17,7 @@ export class ProfileImageComponent implements OnInit {
   public user!:User;
   email!:string|null;
   public isLiked:boolean = localStorage.getItem('like') === 'true';
-  constructor(private service:ProfileService, private authService:AuthService, library:FaIconLibrary, private route:ActivatedRoute){
+  constructor(private donateService:DonateService,private service:ProfileService, private authService:AuthService, library:FaIconLibrary, private route:ActivatedRoute){
     library.addIcons(faHeart, faPen);
   }
    ngOnInit(): void {
@@ -33,6 +34,10 @@ export class ProfileImageComponent implements OnInit {
   openModal() {
     this.service.addEmptyProduct().subscribe(id => this.service.productId = id);
     this.service.openModal();
+  }
+  openModalFamily() {
+    this.donateService.addEmptyFamily().subscribe(id => this.service.setFamilyId(id));
+    this.service.openFamilyModal();
   }
   onFileSelected(event:Event)//uzimanje slike sa racunara
   {

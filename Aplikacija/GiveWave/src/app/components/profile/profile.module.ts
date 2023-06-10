@@ -10,6 +10,7 @@ import { MyProductsFilterPipe } from 'app/pipes/my-products-filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProductModalComponent } from './add-product-modal/add-product-modal.component';
 import { ProductsModule } from '../products/products.module';
+import { AddFamilyModalComponent } from './add-family-modal/add-family-modal.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ProductsModule } from '../products/products.module';
     MyProductsComponent,
     DonateHistoryComponent,
     MyProductsFilterPipe,
-    AddProductModalComponent
+    AddProductModalComponent,
+    AddFamilyModalComponent
   ],
   imports: [
     CommonModule,

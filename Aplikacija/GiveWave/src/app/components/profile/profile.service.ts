@@ -18,8 +18,26 @@ export class ProfileService {
   displayStyle = this._displayStyle$.asObservable();
   public productId!:number;
 
+  private familyId$ = new BehaviorSubject<number>(-1);
+  familyId = this.familyId$.asObservable();
+
+  private displayFamilyModal$ = new BehaviorSubject<string>("none");
+  displayFamilyModal = this.displayFamilyModal$.asObservable();
+
   private subject = new Subject<any>();
 
+  openFamilyModal()
+  {
+    this.displayFamilyModal$.next("block");
+  }
+  closeFamilyModal()
+  {
+    this.displayFamilyModal$.next("none");
+  }
+  setFamilyId(id:number)
+  {
+    this.familyId$.next(id);
+  }
   sendClickEvent()
   {
     this.subject.next(null);
