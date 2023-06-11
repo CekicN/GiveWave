@@ -1,39 +1,53 @@
-﻿using GiveWaveAPI.Models;
+﻿
+using GiveWaveAPI.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace GiveWaveAPI.Controllers
 {
     [ApiController]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("controller")]
+    [Authorize(Roles ="Admin")]
     
     public class AdminController : ControllerBase
     {
-        public GiveWaveDBContext Context { get; set; }
-        public AdminController(GiveWaveDBContext context)
+        public GiveWaveDBContext _context { get; set; }
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly IConfiguration _configuration;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        public AdminController(GiveWaveDBContext context, UserManager<IdentityUser> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager,SignInManager<IdentityUser> signInManager)
         {
-            Context = context;
+            _context = context;
+            _userManager = userManager;
+            _configuration = configuration;
+            _roleManager = roleManager;
+            _signInManager = signInManager;
         }
 
 
         [Route("ObrisiKorisnika")]
         [HttpDelete]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult> obrisiKorisnika(EmailContent email)
         {
             try
             {
-                var user = Context.ProfilKorisnikas.Where(p => p.Email == email.Name).FirstOrDefault();
+                var user = _context.ProfilKorisnikas.Where(p => p.Email == email.Name).FirstOrDefault();
                 if (user == null) 
                 {
                     return BadRequest("Korisnik ne postoji");
                 }
                 else 
                 {
-                    Context.ProfilKorisnikas.Remove(user);
-                    await Context.SaveChangesAsync();
+                    _context.ProfilKorisnikas.Remove(user);
+                    await _context.SaveChangesAsync();
                     return Ok("Korisnik je uspesno obrisan !");
                 }
 
@@ -47,13 +61,13 @@ namespace GiveWaveAPI.Controllers
 
         [Route("DodajKorisnika")]
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult> dodajKorisnika([FromBody] ProfilKorisnika profilKorisnika)
         {
             try
             {
-                Context.ProfilKorisnikas.Add(profilKorisnika);
-                await Context.SaveChangesAsync();
+                _context.ProfilKorisnikas.Add(profilKorisnika);
+                await _context.SaveChangesAsync();
                 return Ok("Korisnik je dodat !");
             }
             catch(Exception ex) 
@@ -64,12 +78,12 @@ namespace GiveWaveAPI.Controllers
 
         [Route("IzmeniKorisnika")]
         [HttpPut]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult> izmeniKorisnika([FromQuery] ProfilKorisnika profilKorisnika, EmailContent email)
         {
             try
             {
-                var korisnikZaPromenu = Context.ProfilKorisnikas.Where(p => p.Email == email.Name).FirstOrDefault();
+                var korisnikZaPromenu = _context.ProfilKorisnikas.Where(p => p.Email == email.Name).FirstOrDefault();
 
                 if(korisnikZaPromenu == null) 
                 {
@@ -88,7 +102,7 @@ namespace GiveWaveAPI.Controllers
                     korisnikZaPromenu.ImageUrl = profilKorisnika.ImageUrl;
                     korisnikZaPromenu.DatumRegistracije = profilKorisnika.DatumRegistracije;
 
-                    await Context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
                     return Ok("Uspesno ste izmenili korisnika");
                 }
             }
@@ -101,12 +115,12 @@ namespace GiveWaveAPI.Controllers
 
         [Route("PrikaziSveKorisnike")]
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public async Task<ActionResult> prikaziSveKorisnike()
         {
             try
             {
-                var korisnici = await Context.ProfilKorisnikas.ToListAsync();
+                var korisnici = await _context.ProfilKorisnikas.ToListAsync();
                 return Ok(korisnici);
             }
             catch(Exception ex ) 
@@ -118,12 +132,12 @@ namespace GiveWaveAPI.Controllers
 
         [Route("PrikaziSveDonacije")]
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public async Task<ActionResult> prikaziSveDonacije()
         {
             try
             {
-                var donacije = await Context.Donacijas.ToListAsync();
+                var donacije = await _context.Donacijas.ToListAsync();
                 return Ok(donacije);    
             }
             catch(Exception ex)
@@ -146,12 +160,12 @@ namespace GiveWaveAPI.Controllers
 
         [Route("BrisanjeNeprikladneDonacije")]
         [HttpDelete]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult> brisanjeNeprikladneDonacije(int id)
         {
             try
             {
-                var donacija = await Context.Donacijas.FindAsync(id);
+                var donacija = await _context.Donacijas.FindAsync(id);
                 if(donacija == null)
                 {
                     return BadRequest("Donacija nije pronadjena !");
@@ -162,8 +176,8 @@ namespace GiveWaveAPI.Controllers
 
                     if(isNeprikladanSadrzaj == true)
                     {
-                        Context.Donacijas.Remove(donacija);
-                        await Context.SaveChangesAsync();
+                        _context.Donacijas.Remove(donacija);
+                        await _context.SaveChangesAsync();
                         return Ok("Donacija je obrisana zbog neprikladnog sadrzaja !");
                     }
                     else
@@ -181,12 +195,12 @@ namespace GiveWaveAPI.Controllers
 
         [Route("PodrskaKorisnicima")]
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public async Task<ActionResult> podrskaKorisnicima(int userId)
         {
             try
             {
-                var korisnik = await Context.ProfilKorisnikas.FindAsync(userId);
+                var korisnik = await _context.ProfilKorisnikas.FindAsync(userId);
                 if(korisnik == null)
                 {
                     return BadRequest("Korisnik nije pronadjen !");
@@ -205,7 +219,48 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [Route("SuspendujKorisnika")]
+        //[Authorize(Roles ="Admin")]
+        [HttpPut]
+        public async Task<IActionResult> SuspendUser(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            if (user != null)
+            {
+                await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.MaxValue);
+                await _signInManager.SignOutAsync();
+                return Ok("Uspesno suspendovan");
+            }
+            else
+            {
+                return BadRequest("Korisnik NIJE suspendovan");
+            }
+        }
+        [Authorize(Roles ="Admin")]
+        [Route("PromeniRolu")]
+        [HttpPut]
+        public async Task<IActionResult> ChangeRole(string userName)
+        {
+            var userExist = await _userManager.FindByNameAsync(userName);
+            if (userExist == null)
+            {
+                return BadRequest("User ne postoji");
+            }
+            else
+            {
 
+                var result = await _userManager.RemoveFromRoleAsync(userExist, "User");
+                if(result.Succeeded)
+                {
+                    result = await _userManager.AddToRoleAsync(userExist, "Friend");
+                    return Ok("Uspesna promena");
+                }
+                else
+                {
+                    return BadRequest("Nesupesna promena");
+                }
+            }
+        }
     }
     
 }

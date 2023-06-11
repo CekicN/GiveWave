@@ -19,7 +19,9 @@ import { SearchProductsPipe } from './pipes/search-products.pipe';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AuthService } from './services/auth.service';
 import { FriendsModule } from './components/friends/friends.module';
-// import { CommonModule } from '@angular/common';
+import { GiveWaveadminComponent } from './components/admin/give-waveadmin/give-waveadmin.component';
+import { AdminModule } from './components/admin/admin.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,8 @@ import { FriendsModule } from './components/friends/friends.module';
     FontAwesomeModule,
     AboutUsModule,
     ReactiveFormsModule,
-    FriendsModule
+    FriendsModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

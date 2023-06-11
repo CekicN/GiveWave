@@ -38,7 +38,7 @@
                                     <span (click)="hideShowPass()" class="fa fa-eye-slash"></span>
                                 </div>
                             </div>
-                            <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" class="text-danger">*Password is required</small>
+                            <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" class="text-danger">*Password is required and need to have at least one capital letter,small letter, number and character!</small>
                             <button type="submit" class="btn btn-primary btn-blcok mt-4 w-100" (click)="onSignup()"> Sign Up </button>
                             <div class="text-center pt-4 text-muted">Already have an account?<a id="forget" routerLink="/login" href="login">Login</a> </div>
                         </form>

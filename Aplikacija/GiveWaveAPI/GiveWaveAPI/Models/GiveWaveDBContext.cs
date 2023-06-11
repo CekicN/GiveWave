@@ -24,18 +24,19 @@ public class GiveWaveDBContext : IdentityDbContext<IdentityUser>
     public DbSet<Proizvod> Proizvods { get; set; }
     public DbSet<Donacija> Donacijas { get; set; }
 
+
     public GiveWaveDBContext(DbContextOptions<GiveWaveDBContext> options) : base(options)
     {
 
     }
-    protected override void OnModelCreating(ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(builder);
-        SeedRoles(builder);
+        base.OnModelCreating(modelBuilder);
+        SeedRoles(modelBuilder);
     }
-    private static void SeedRoles(ModelBuilder builder)
+    private static void SeedRoles(ModelBuilder modelBuilder)
     {
-        builder.Entity<IdentityRole>().HasData
+        modelBuilder.Entity<IdentityRole>().HasData
             (
                 new IdentityRole() { Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
                 new IdentityRole() { Name = "User", ConcurrencyStamp = "2", NormalizedName = "User" },

@@ -1,0 +1,68 @@
+body {
+    background-color: #f8f9fa;
+  }
+
+  .navbar {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nav-link {
+    font-size: 18px;
+  }
+
+  .content {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    min-height: 400px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .jumbotron {
+    background-color: #007bff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+
+  .jumbotron h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .jumbotron p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .table-container {
+    margin-top: 20px;
+  }
+
+  .table-container table {
+    width: 100%;
+  }
+
+  .table-container table th,
+  .table-container table td {
+    text-align: center;
+  }
+
+  .table-container table th:last-child,
+  .table-container table td:last-child {
+    text-align: right;
+  }
+
+  .btn {
+    margin-right: 5px;
+  }

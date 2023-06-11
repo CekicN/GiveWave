@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "2qOYb0ljSgMp4+02/M3cL+YK4csalRhgM68+J6oIto7OvfSdDqMVb3nhiCKY1pr1POJgJCmbJczoTsyICV80rw==",
+  "dgSpecHash": "emKQI0nHUMZPWuOIRakSv5cH9GQ168kr/Q1jZpp3lYvEEcJyK7zawolzSbZ5ence7zWJ7E3odl5z8Pnr4lzYYg==",
   "success": true,
   "projectFilePath": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\GiveWaveAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Prokuplje\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Prokuplje\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\coreadmin\\2.7.0\\coreadmin.2.7.0.nupkg.sha512",
     "C:\\Users\\Prokuplje\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Prokuplje\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Prokuplje\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
@@ -95,6 +96,7 @@
     "C:\\Users\\Prokuplje\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Prokuplje\\.nuget\\packages\\netcore.mailkit\\2.1.0\\netcore.mailkit.2.1.0.nupkg.sha512",
     "C:\\Users\\Prokuplje\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Prokuplje\\.nuget\\packages\\nonfactors.grid.core.mvc6\\7.1.0\\nonfactors.grid.core.mvc6.7.1.0.nupkg.sha512",
     "C:\\Users\\Prokuplje\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\Prokuplje\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Prokuplje\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
