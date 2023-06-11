@@ -465,13 +465,13 @@ namespace GiveWaveAPI.Controllers
         }
 
 
-    }
+
 
         [HttpGet]
         [Route("PrikaziPoGradu/{grad}")]
         public async Task<IActionResult> prikaziPoGradu(string grad)
         {
-            if(grad == "All cities")
+            if (grad == "All cities")
             {
                 try
                 {
@@ -498,7 +498,7 @@ namespace GiveWaveAPI.Controllers
                     return BadRequest(e.Message);
                 }
             }
-            var filteredProizvod = context.Proizvods.Include(p => p.ProfilKorisnika).Where(p=>p.Mesto==grad).ToList();
+            var filteredProizvod = context.Proizvods.Include(p => p.ProfilKorisnika).Where(p => p.Mesto == grad).ToList();
             if (filteredProizvod == null) return BadRequest("Nema proizvoda");
             return Ok(filteredProizvod.Select(p => new
             {
@@ -515,7 +515,7 @@ namespace GiveWaveAPI.Controllers
         [Route("PrikaziPoStatusu/{status}")]
         public async Task<IActionResult> prikaziPoStatusu(string status)
         {
-            var filteredProizvod = context.Proizvods.Include(p=>p.ProfilKorisnika).Where(p => p.status == status).ToList();
+            var filteredProizvod = context.Proizvods.Include(p => p.ProfilKorisnika).Where(p => p.status == status).ToList();
             if (filteredProizvod == null) return BadRequest("Nema proizvoda");
             return Ok(filteredProizvod.Select(p => new
             {
