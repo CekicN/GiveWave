@@ -1,13 +1,13 @@
 <div class="row mt-3">
 
     <div class="col-md-3">
-        <select name="city" id="city" class="form-select single-choice">
+        <select name="city" id="city" class="form-select single-choice" [ngModel]="selectedItem1" (ngModelChange)="onChangeCity($event)">
             <option>All cities</option>
             <option value="{{city.city}}" *ngFor="let city of cities">{{city.city}}</option>
         </select>
     </div>
     <div class="col-md-3">
-        <select name="status" id="status" class="form-select">
+        <select name="status" id="status" class="form-select" [ngModel]="selectedItem2" (ngModelChange)="onChangeStatus($event)">
             <option value="">status</option>
             <option value="{{status}}" *ngFor="let status of status">{{status}}</option>
         </select>

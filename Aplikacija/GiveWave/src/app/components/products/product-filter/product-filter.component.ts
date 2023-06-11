@@ -19,6 +19,8 @@ export class ProductFilterComponent implements OnInit{
   searchText = '';
   productList: any;
   public totalItem: number = 0;
+  selectedItem1! : string;
+  selectedItem2! : string;
 
   constructor(private service:ProductService, library:FaIconLibrary,private router:Router,private cartService: CartService){
     library.addIcons(faMagnifyingGlass);
@@ -39,5 +41,16 @@ export class ProductFilterComponent implements OnInit{
 
   goToCartPage(){
     this.router.navigate(['/cart']);
+  }
+  onChangeCity(newValue:any) {
+    console.log(newValue);
+    this.selectedItem1 = newValue;
+    this.service._city = newValue;
+  }
+
+  onChangeStatus(newValue:any) {
+    console.log(newValue);
+    this.selectedItem2 = newValue;
+    this.service._status = newValue;
   }
 }

@@ -304,7 +304,7 @@ namespace GiveWaveAPI.Controllers
             }
             return imageUrl;
         }
-
+        
         [Route("CancleAdding/{id}/{email}")]
         [HttpDelete]
         public async Task<ActionResult> CancleAdding(int id, string email)
@@ -401,20 +401,65 @@ namespace GiveWaveAPI.Controllers
             }
         }
         [HttpGet]
-        [Route("Prikazi po gradu")]
+        [Route("PrikaziPoGradu/{grad}")]
         public async Task<IActionResult> prikaziPoGradu(string grad)
         {
-            var filteredProizvod = context.Proizvods.Where(p=>p.Mesto==grad).ToList();
+            if(grad == "All cities")
+            {
+                try
+                {
+                    var products = await context.Proizvods.Include(p => p.ProfilKorisnika).ToListAsync();
+                    if (products == null)
+                        return BadRequest("products not founded");
+                    return Ok(products.Select(p => new
+                    {
+                        Id = p.Id,
+                        ImageUrl = GetImage(p.ProfilKorisnika.Email, p.Id).Split("|"),
+                        Naziv = p.Naziv,
+                        Mesto = p.Mesto,
+                        Status = p.status,
+                        Username = p.ProfilKorisnika.Username,
+                        Email = p.ProfilKorisnika.Email
+                    }));
+                }
+                catch (Exception e)
+                {
+                    if (e.InnerException != null)
+                    {
+                        return BadRequest(e.InnerException.Message);
+                    }
+                    return BadRequest(e.Message);
+                }
+            }
+            var filteredProizvod = context.Proizvods.Include(p => p.ProfilKorisnika).Where(p=>p.Mesto==grad).ToList();
             if (filteredProizvod == null) return BadRequest("Nema proizvoda");
-            return Ok(filteredProizvod);
+            return Ok(filteredProizvod.Select(p => new
+            {
+                Id = p.Id,
+                ImageUrl = GetImage(p.ProfilKorisnika.Email, p.Id).Split("|"),
+                Naziv = p.Naziv,
+                Mesto = p.Mesto,
+                Status = p.status,
+                Username = p.ProfilKorisnika.Username,
+                Email = p.ProfilKorisnika.Email
+            }));
         }
         [HttpGet]
-        [Route("Prikazi po statusu")]
+        [Route("PrikaziPoStatusu/{status}")]
         public async Task<IActionResult> prikaziPoStatusu(string status)
         {
-            var filteredProizvod = context.Proizvods.Where(p => p.status == status).ToList();
+            var filteredProizvod = context.Proizvods.Include(p=>p.ProfilKorisnika).Where(p => p.status == status).ToList();
             if (filteredProizvod == null) return BadRequest("Nema proizvoda");
-            return Ok(filteredProizvod);
+            return Ok(filteredProizvod.Select(p => new
+            {
+                Id = p.Id,
+                ImageUrl = GetImage(p.ProfilKorisnika.Email, p.Id).Split("|"),
+                Naziv = p.Naziv,
+                Mesto = p.Mesto,
+                Status = p.status,
+                Username = p.ProfilKorisnika.Username,
+                Email = p.ProfilKorisnika.Email
+            }));
         }
 
         //[Route("prikazi odredjene proizvode")]

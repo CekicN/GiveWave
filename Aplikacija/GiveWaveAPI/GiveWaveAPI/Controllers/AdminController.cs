@@ -11,7 +11,9 @@ using System.IdentityModel.Tokens.Jwt;
 namespace GiveWaveAPI.Controllers
 {
     [ApiController]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("controller")]
+    [Authorize(Roles ="Admin")]
     
     public class AdminController : ControllerBase
     {
@@ -19,22 +21,20 @@ namespace GiveWaveAPI.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IConfiguration _configuration;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly TokenValidationParameters _tokenValidationParameters;
         private readonly SignInManager<IdentityUser> _signInManager;
-        public AdminController(GiveWaveDBContext context, UserManager<IdentityUser> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager, TokenValidationParameters tokenValidationParameters, SignInManager<IdentityUser> signInManager)
+        public AdminController(GiveWaveDBContext context, UserManager<IdentityUser> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager,SignInManager<IdentityUser> signInManager)
         {
             _context = context;
             _userManager = userManager;
             _configuration = configuration;
             _roleManager = roleManager;
-            _tokenValidationParameters = tokenValidationParameters;
             _signInManager = signInManager;
         }
 
 
         [Route("ObrisiKorisnika")]
         [HttpDelete]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult> obrisiKorisnika(EmailContent email)
         {
             try
@@ -61,7 +61,7 @@ namespace GiveWaveAPI.Controllers
 
         [Route("DodajKorisnika")]
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult> dodajKorisnika([FromBody] ProfilKorisnika profilKorisnika)
         {
             try
@@ -78,7 +78,7 @@ namespace GiveWaveAPI.Controllers
 
         [Route("IzmeniKorisnika")]
         [HttpPut]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult> izmeniKorisnika([FromQuery] ProfilKorisnika profilKorisnika, EmailContent email)
         {
             try
@@ -115,7 +115,7 @@ namespace GiveWaveAPI.Controllers
 
         [Route("PrikaziSveKorisnike")]
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public async Task<ActionResult> prikaziSveKorisnike()
         {
             try
@@ -132,7 +132,7 @@ namespace GiveWaveAPI.Controllers
 
         [Route("PrikaziSveDonacije")]
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public async Task<ActionResult> prikaziSveDonacije()
         {
             try
@@ -160,7 +160,7 @@ namespace GiveWaveAPI.Controllers
 
         [Route("BrisanjeNeprikladneDonacije")]
         [HttpDelete]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult> brisanjeNeprikladneDonacije(int id)
         {
             try
@@ -195,7 +195,7 @@ namespace GiveWaveAPI.Controllers
 
         [Route("PodrskaKorisnicima")]
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public async Task<ActionResult> podrskaKorisnicima(int userId)
         {
             try
@@ -220,7 +220,7 @@ namespace GiveWaveAPI.Controllers
             }
         }
         [Route("SuspendujKorisnika")]
-        [Authorize(Roles ="Admin")]
+        //[Authorize(Roles ="Admin")]
         [HttpPut]
         public async Task<IActionResult> SuspendUser(string userName)
         {
@@ -234,6 +234,31 @@ namespace GiveWaveAPI.Controllers
             else
             {
                 return BadRequest("Korisnik NIJE suspendovan");
+            }
+        }
+        [Authorize(Roles ="Admin")]
+        [Route("PromeniRolu")]
+        [HttpPut]
+        public async Task<IActionResult> ChangeRole(string userName)
+        {
+            var userExist = await _userManager.FindByNameAsync(userName);
+            if (userExist == null)
+            {
+                return BadRequest("User ne postoji");
+            }
+            else
+            {
+
+                var result = await _userManager.RemoveFromRoleAsync(userExist, "User");
+                if(result.Succeeded)
+                {
+                    result = await _userManager.AddToRoleAsync(userExist, "Friend");
+                    return Ok("Uspesna promena");
+                }
+                else
+                {
+                    return BadRequest("Nesupesna promena");
+                }
             }
         }
     }

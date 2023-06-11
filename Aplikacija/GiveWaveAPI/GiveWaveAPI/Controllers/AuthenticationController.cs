@@ -172,31 +172,31 @@ namespace GiveWaveAPI.Controllers
             var token = new JwtSecurityToken(
                 issuer: _configuration["JWT:ValidIssuer"],
                 audience: _configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddMinutes(10),
+                expires: DateTime.Now.AddHours(1),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                 );
             return token;
         }
-        [HttpPost]
-        [Route("RefreshToken")]
-        public string RefreshToken(JwtSecurityToken expiredToken)
-        {
-            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+        //[HttpPost]
+        //[Route("RefreshToken")]
+        //public string RefreshToken(JwtSecurityToken expiredToken)
+        //{
+        //    var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
 
-            var tokenHandler = new JwtSecurityTokenHandler();
+        //    var tokenHandler = new JwtSecurityTokenHandler();
 
-            var originalClaims = expiredToken.Claims.ToList();
-            var newToken = new JwtSecurityToken(
-                issuer: expiredToken.Issuer,
-                audience: expiredToken.Audiences.FirstOrDefault(),
-                claims: originalClaims,
-                expires: DateTime.UtcNow.AddDays(7),
-                signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
-                );
-            var refreshedToken = tokenHandler.WriteToken(newToken);
-            return refreshedToken;
-        }
+        //    var originalClaims = expiredToken.Claims.ToList();
+        //    var newToken = new JwtSecurityToken(
+        //        issuer: expiredToken.Issuer,
+        //        audience: expiredToken.Audiences.FirstOrDefault(),
+        //        claims: originalClaims,
+        //        expires: DateTime.UtcNow.AddDays(7),
+        //        signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+        //        );
+        //    var refreshedToken = tokenHandler.WriteToken(newToken);
+        //    return refreshedToken;
+        //}
 
         //[HttpPost]
         //[Route("login-2FA")]

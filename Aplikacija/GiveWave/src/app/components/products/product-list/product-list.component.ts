@@ -19,11 +19,13 @@ export class ProductListComponent implements OnInit {
   products!:Product[] | any;
   searchText:string = '';
   //public productList!: Product[];
-
   constructor(library:FaIconLibrary, private productService:ProductService, private route:Router,private cartService: CartService)
   {
     library.addIcons(faShoppingCart);
     productService.searchText.subscribe(p => this.searchText = p);
+    productService.city.subscribe(p => productService.getCitiesFilter(p).subscribe(q=>this.products=q));
+    productService.status.subscribe(p => productService.getStatusFilter(p).subscribe(q=>this.products=q));
+
   }
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe(res => {
