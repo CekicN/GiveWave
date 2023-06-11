@@ -1,67 +1,71 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\ContactEmail.html",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\ContactEmail.html",
       "PackagePath": "staticwebassets\\EmailTemplate\\ContactEmail.html"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\Logo.jpg",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\Logo.jpg",
       "PackagePath": "staticwebassets\\EmailTemplate\\Logo.jpg"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\ResetEmail.html",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\EmailTemplate\\ResetEmail.html",
       "PackagePath": "staticwebassets\\EmailTemplate\\ResetEmail.html"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\ceka123@gmail.com\\P_3\\image_0_29.05.2023._19_26_51.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\ceka123@gmail.com\\P_3\\image_0_29.05.2023._19_26_51.png",
       "PackagePath": "staticwebassets\\Uploads\\Products\\ceka123@gmail.com\\P_3\\image_0_29.05.2023._19_26_51.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\ceka123@gmail.com\\P_5\\image_0_29.05.2023._18_56_04.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\ceka123@gmail.com\\P_5\\image_0_29.05.2023._18_56_04.png",
       "PackagePath": "staticwebassets\\Uploads\\Products\\ceka123@gmail.com\\P_5\\image_0_29.05.2023._18_56_04.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicn668@gmail.com\\P_11\\image_0_06.06.2023._11_27_06.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicn668@gmail.com\\P_11\\image_0_06.06.2023._11_27_06.png",
       "PackagePath": "staticwebassets\\Uploads\\Products\\cekicn668@gmail.com\\P_11\\image_0_06.06.2023._11_27_06.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicn668@gmail.com\\P_2037\\image_0_07.06.2023._22_32_04.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicn668@gmail.com\\P_2037\\image_0_07.06.2023._22_32_04.png",
       "PackagePath": "staticwebassets\\Uploads\\Products\\cekicn668@gmail.com\\P_2037\\image_0_07.06.2023._22_32_04.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicn668@gmail.com\\P_3\\image_0_29.05.2023._18_53_29.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicn668@gmail.com\\P_3\\image_0_29.05.2023._18_53_29.png",
       "PackagePath": "staticwebassets\\Uploads\\Products\\cekicn668@gmail.com\\P_3\\image_0_29.05.2023._18_53_29.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicnikola31@gmail.com\\P_17\\image_0_03.06.2023._17_23_41.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicnikola31@gmail.com\\P_17\\image_0_03.06.2023._17_23_41.png",
       "PackagePath": "staticwebassets\\Uploads\\Products\\cekicnikola31@gmail.com\\P_17\\image_0_03.06.2023._17_23_41.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicnikola53@gmail.com\\P_22\\image_0_03.06.2023._19_00_33.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\cekicnikola53@gmail.com\\P_22\\image_0_03.06.2023._19_00_33.png",
       "PackagePath": "staticwebassets\\Uploads\\Products\\cekicnikola53@gmail.com\\P_22\\image_0_03.06.2023._19_00_33.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\stevanruzic1702@gmail.com\\P_51\\image_0_6.6.2023._22_13_48.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Products\\stevanruzic1702@gmail.com\\P_51\\image_0_6.6.2023._22_13_48.png",
       "PackagePath": "staticwebassets\\Uploads\\Products\\stevanruzic1702@gmail.com\\P_51\\image_0_6.6.2023._22_13_48.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\ceka123@gmail.com\\image_29.05.2023._18_55_52.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\ceka123@gmail.com\\image_29.05.2023._18_55_52.png",
       "PackagePath": "staticwebassets\\Uploads\\Profile\\ceka123@gmail.com\\image_29.05.2023._18_55_52.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\cekicn668@gmail.com\\image_27.05.2023._11_22_12.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\cekicn668@gmail.com\\image_27.05.2023._11_22_12.png",
       "PackagePath": "staticwebassets\\Uploads\\Profile\\cekicn668@gmail.com\\image_27.05.2023._11_22_12.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\cekicnikola31@gmail.com\\image_03.06.2023._16_22_00.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\cekicnikola31@gmail.com\\image_03.06.2023._16_22_00.png",
       "PackagePath": "staticwebassets\\Uploads\\Profile\\cekicnikola31@gmail.com\\image_03.06.2023._16_22_00.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\martanedovic2001@gmail.com\\image_03.06.2023._22_30_49.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\martanedovic2001@gmail.com\\image_03.06.2023._22_30_49.png",
       "PackagePath": "staticwebassets\\Uploads\\Profile\\martanedovic2001@gmail.com\\image_03.06.2023._22_30_49.png"
     },
     {
-      "Id": "C:\\Users\\Nikola\\Desktop\\Faks\\3.godina\\SoftverskoInzinjerstvo\\Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\common\\noimage.png",
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\Profile\\stevanruzic1702@gmail.com\\image_11.6.2023._18_25_38.png",
+      "PackagePath": "staticwebassets\\Uploads\\Profile\\stevanruzic1702@gmail.com\\image_11.6.2023._18_25_38.png"
+    },
+    {
+      "Id": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPI\\wwwroot\\Uploads\\common\\noimage.png",
       "PackagePath": "staticwebassets\\Uploads\\common\\noimage.png"
     },
     {

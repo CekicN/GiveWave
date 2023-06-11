@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Product } from 'app/Models/Product';
 import { BehaviorSubject } from 'rxjs';
 
@@ -9,8 +10,11 @@ export class CartService {
 
   public cartItemList: Product[] = [];
   public productList = new BehaviorSubject<any>([]);
+  private baseUrl:string = "https://localhost:7200/controller/";
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { 
+
+  }
 
   getProducts(){
     return this.productList.asObservable();
@@ -43,6 +47,10 @@ export class CartService {
     this.cartItemList = [];
     this.productList.next(this.cartItemList);
 
+  }
+
+  sendEmailProducts(email:string){
+    return this.httpClient.post<any>(`${this.baseUrl}PosaljiMailZaProizvod?email=${email}`,{});
   }
 
 
