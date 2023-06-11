@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DonateService } from '../donate.service';
 
 
 @Component({
@@ -9,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class DonateComponent{
 
+  prikaz!:boolean;
+  constructor(private service:DonateService)
+  {
+    service.view.subscribe(p => this.prikaz = p);
+  }
  
 }
 

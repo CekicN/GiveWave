@@ -21,6 +21,7 @@ import { AuthService } from './services/auth.service';
 import { FriendsModule } from './components/friends/friends.module';
 import { GiveWaveadminComponent } from './components/admin/give-waveadmin/give-waveadmin.component';
 import { AdminModule } from './components/admin/admin.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +29,9 @@ import { AdminModule } from './components/admin/admin.module';
     NavigationBarComponent,
     FooterBarComponent,
     ResetPasswordComponent
-    
   ],
   imports: [
+    // CommonModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,

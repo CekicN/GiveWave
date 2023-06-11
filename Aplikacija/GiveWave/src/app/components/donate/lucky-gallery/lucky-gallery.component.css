@@ -6,3 +6,7 @@
 .table-wrapper-scroll-y {
     display: block;
 }
+.spoljni-card
+{
+    height: 100vh;
+}

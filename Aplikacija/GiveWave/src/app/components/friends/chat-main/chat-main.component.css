@@ -9,6 +9,7 @@
 
 /* Offcanvas styling */
 .offcanvas {
+  width: 600px;
   background-color: #f8f9fa;
 }
 

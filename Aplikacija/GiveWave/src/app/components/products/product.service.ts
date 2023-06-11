@@ -28,6 +28,8 @@ export class ProductService {
 
   private status$ = new BehaviorSubject<string>('');
   status = this.status$.asObservable();
+  private category$ = new BehaviorSubject<string>('');
+  category = this.category$.asObservable();
 
   constructor(private http:HttpClient) { }
 
@@ -50,6 +52,15 @@ export class ProductService {
   getAllProducts()
   {
     return this.http.get<Product[]>(`${api}getAllProducts`);
+  }
+
+  getProductsViaCategory(category:string)
+  {
+    return this.http.get<Product[]>(`${api}getProductsViaCategory/${category}`);
+  }
+  setCategory(c:string)
+  {
+    this.category$.next(c);
   }
   getCities()
   {

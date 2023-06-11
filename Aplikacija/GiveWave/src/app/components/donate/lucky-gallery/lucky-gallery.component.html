@@ -1,19 +1,19 @@
-<div class="card text-center mt-3 me-2">
+<div class="spoljni-card card text-center mt-3 me-2">
     <div class="card-header">
         Gallery of Happiness
     </div>
     <div class="table-wrapper-scroll-y my-custom-scrollbar">
         <div class="card-body" *ngFor="let story of stories">
             <h4 class="card-title">{{story.user}}</h4>
-            <div class="card border-primary text-center mt-2">
-                <div class="card-body text-primary">
+            <div class="card bg-primary text-center mt-2">
+                <div class="card-body text-white">
                     <p class="card-text">{{story.text}}</p>
                 </div>
             </div>
             <hr>
         </div>
     </div>
-    <form class="border border-primary" style="box-shadow: black 0px -4px 20px -5px;">
+    <form class="border border-dark p-2">
         <div class="">
             <div class="col text-center">
               <label for="Subject" class="form-label">Subject</label>
@@ -28,6 +28,6 @@
               <!-- <small *ngIf="contactForm.controls['Name'].dirty && contactForm.hasError('required','Name')" class="text-danger">*Message is required</small> -->
             </div>
         </div>
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary mb-4">Submit</button>
     </form>
 </div>

@@ -16,7 +16,8 @@
         <!-- *ngFor="let product of products | myProductsFilter: searchText" -->
         <div class="d-flex">
             <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
-                  placeholder="Enter a family name" 
+                  placeholder="Enter a family name"
+                  [(ngModel)]="searchText" (ngModelChange)="updateSearch()"
                 autofocus>
         <fa-icon class="mt-2 ms-2" [icon]="['fas', 'magnifying-glass']"></fa-icon>
         </div>

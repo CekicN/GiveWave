@@ -1,0 +1,66 @@
+<div class="col p-2">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row">
+                <h1><fa-icon [icon]="['fas', 'arrow-left-long']" (click)="viewFamilies()" style="cursor:pointer;"></fa-icon></h1>
+            </div>
+            <div class="row">
+                <img src="../../../../assets/images/Logo.jpg" class="img-thumbnail" alt="">
+            </div>
+        </div>
+        <div class="col-md-5 mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row text-center">
+                        <h3>Cekic</h3>
+                    </div>
+                    <div class="col" *ngFor="let d of data">
+                        <div class="d-flex justify-content-between mb-3" >
+                            <span class="fw-bold h4">{{d}}</span><span class="h4">Prokuplje</span>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card mt-2">
+            <div class="card-body fs-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro perspiciatis omnis delectus a nihil sed fuga eum soluta error deserunt harum eveniet magnam enim eaque sint, excepturi vero unde ad?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro perspiciatis omnis delectus a nihil sed fuga eum soluta error deserunt harum eveniet magnam enim eaque sint, excepturi vero unde ad?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro perspiciatis omnis delectus a nihil sed fuga eum soluta error deserunt harum eveniet magnam enim eaque sint, excepturi vero unde ad?
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mt-2">
+            <h4 class="text-center">Essential Supplies</h4>
+            <ul class="list-group table-wrapper-scroll-y my-custom-scrollbar">
+                <li class="list-group-item fs-5" *ngFor="let i of items">{{i}}</li>
+            </ul>
+        </div>
+        <div class="col-md-6  position-relative">
+            <div class="row">
+                <div class="col mt-2">
+                    <h4 class="text-center">Progress</h4>
+                    <div class="progress" style="height: 40px">
+                        <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 25%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        >
+                        25%
+                        </div>
+                  </div>
+                </div>
+            </div>
+            <div class="row position-absolute bottom-0 w-100">
+                <button class="btn btn-primary w-100 mb-2">Donate <fa-icon [icon]="['fas', 'hand-holding-heart']" style="color:white;" size="xl"></fa-icon></button>
+            </div>
+        </div>
+    </div>
+</div>

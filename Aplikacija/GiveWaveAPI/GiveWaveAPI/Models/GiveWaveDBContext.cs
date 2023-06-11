@@ -40,7 +40,8 @@ public class GiveWaveDBContext : IdentityDbContext<IdentityUser>
             (
                 new IdentityRole() { Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
                 new IdentityRole() { Name = "User", ConcurrencyStamp = "2", NormalizedName = "User" },
-                new IdentityRole() { Name = "Friend", ConcurrencyStamp = "3", NormalizedName = "Friend" }
+                new IdentityRole() { Name = "Friend", ConcurrencyStamp = "3", NormalizedName = "Friend" },
+                new IdentityRole() { Name = "Service", ConcurrencyStamp = "4", NormalizedName = "Service" }
             );
     }
     //protected override void OnModelCreating(ModelBuilder modelBuilder)

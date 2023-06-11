@@ -18,6 +18,7 @@ export class ProductListComponent implements OnInit {
 
   products!:Product[] | any;
   searchText:string = '';
+
   //public productList!: Product[];
   constructor(library:FaIconLibrary, private productService:ProductService, private route:Router,private cartService: CartService)
   {
@@ -26,6 +27,9 @@ export class ProductListComponent implements OnInit {
     productService.city.subscribe(p => productService.getCitiesFilter(p).subscribe(q=>this.products=q));
     productService.status.subscribe(p => productService.getStatusFilter(p).subscribe(q=>this.products=q));
 
+    productService.category.subscribe(p => {
+      productService.getProductsViaCategory(p).subscribe(products => this.products = products);
+    })
   }
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe(res => {

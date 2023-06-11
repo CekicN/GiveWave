@@ -16,7 +16,7 @@ import { CartService } from '../cart.service';
 export class ProductFilterComponent implements OnInit{
   cities:any;
   status:string[] = ['New', 'Second hand']
-  searchText = '';
+  searchText:string = '';
   productList: any;
   public totalItem: number = 0;
   selectedItem1! : string;

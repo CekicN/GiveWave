@@ -20,6 +20,7 @@ namespace GiveWaveAPI.Controllers
         {
             var ime = Request.Form["ime"];
 
+
             if (_chatService.AddUserToList(ime))
             {
                 //204 Status code

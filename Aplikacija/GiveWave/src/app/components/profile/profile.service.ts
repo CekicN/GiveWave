@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 import { User } from 'app/Models/User';
 import { MyProducts } from 'app/Models/MyProducts';
 import { DonationHistory } from 'app/Models/DonationsHistory';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { ProductHelper } from 'app/Models/ProductHelper';
 import { uploadPhoto } from 'app/Models/uploadPhoto';
 
@@ -18,8 +18,26 @@ export class ProfileService {
   displayStyle = this._displayStyle$.asObservable();
   public productId!:number;
 
+  private familyId$ = new BehaviorSubject<number>(-1);
+  familyId = this.familyId$.asObservable();
+
+  private displayFamilyModal$ = new BehaviorSubject<string>("none");
+  displayFamilyModal = this.displayFamilyModal$.asObservable();
+
   private subject = new Subject<any>();
 
+  openFamilyModal()
+  {
+    this.displayFamilyModal$.next("block");
+  }
+  closeFamilyModal()
+  {
+    this.displayFamilyModal$.next("none");
+  }
+  setFamilyId(id:number)
+  {
+    this.familyId$.next(id);
+  }
   sendClickEvent()
   {
     this.subject.next(null);
@@ -164,4 +182,6 @@ export class ProfileService {
   {
     return this.http.get<DonationHistory[]>(donations);
   }
+
+ 
 }
