@@ -8,6 +8,7 @@ import { ProfileService } from 'app/components/profile/profile.service';
 import { MyProducts } from 'app/Models/MyProducts';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import { ProductInfo } from 'app/Models/ProductInfo';
 
 @Component({
   selector: 'app-cart',
@@ -21,6 +22,7 @@ export class CartComponent implements OnInit {
   public cartItemList: Product[] = [];
   public productList = new BehaviorSubject<any>([]);
   
+  
   constructor(private library: FaIconLibrary, private cartService: CartService, private router: Router,
     private profileService: ProfileService,private cdr:ChangeDetectorRef, private httpClient: HttpClient) {
     library.addIcons(faTrashAlt);
@@ -32,6 +34,10 @@ export class CartComponent implements OnInit {
         this.productss = res;
       })
   }
+
+  ifTrue(object: any): object is ProductInfo {
+    return 'slike' in object;
+}
 
   removeItem(item: any){
     this.cartService.removeCartItem(item);

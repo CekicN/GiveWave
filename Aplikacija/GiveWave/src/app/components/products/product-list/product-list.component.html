@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-start flex-wrap mt-2">
+<div *ngIf="products" class="d-flex justify-content-start flex-wrap mt-2">
     <div class="card col-md-3 margin" *ngFor="let product of products | searchProducts: searchText">
         <div class="card-body">
             <img class="img-thumbnail w-100 h-50" [src]="product.imageUrl[0]" alt="" (click)="viewDetails(product.id)" style="cursor:pointer;">
@@ -8,15 +8,17 @@
                 <div class="d-flex justify-content-between mb-3">
                     <span>Mesto: </span><span>{{product.mesto}}</span>
                 </div>
+                <hr>
                 <div class="d-flex justify-content-between">
                     <span>Status: </span><span>{{product.status}}</span>
                 </div>
+                <hr>
                 <div class="row position-absolute bottom-0">
                     <div class="col-10">
                         <span (click)="visitProfile(product.email)" style="cursor:pointer;">Postavio: {{product.username}}</span>
                     </div>
                     <div class="col-2">
-                        <div class="d-flex justify-content-center align-items-center bg-primary mb-3 ms-3" (click)="addToCart(product)">
+                        <div class="d-flex justify-content-center align-items-center bg-primary mb-3 ms-3" (click)="addToCart(product)" [ngClass]="{'disabled': isClicked}">
                             <fa-icon [icon]="['fas', 'shopping-cart']" style="color:white;"></fa-icon>
                         </div>
                     </div>

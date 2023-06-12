@@ -13,7 +13,7 @@ import { CartService } from '../cart.service';
   templateUrl: './product-filter.component.html',
   styleUrls: ['./product-filter.component.css']
 })
-export class ProductFilterComponent implements OnInit{
+export class ProductFilterComponent implements OnInit {
   cities:any;
   status:string[] = ['New', 'Second hand']
   searchText:string = '';

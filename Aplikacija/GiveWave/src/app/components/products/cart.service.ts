@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from 'app/Models/Product';
 import { BehaviorSubject } from 'rxjs';
+import { ProductInfo } from 'app/Models/ProductInfo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  public cartItemList: Product[] = [];
+  public cartItemList: Product[] |  ProductInfo[]= [];
   public productList = new BehaviorSubject<any>([]);
   private baseUrl:string = "https://localhost:7200/controller/";
 
@@ -30,7 +31,7 @@ export class CartService {
     this.productList.next(product);
   }
 
-  addToCart(product: Product) {
+  addToCart(product: Product | any) {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
   }

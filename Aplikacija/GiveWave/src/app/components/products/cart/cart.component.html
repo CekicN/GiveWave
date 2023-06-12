@@ -5,22 +5,29 @@
                 <div class="card-product">
                     <table class="table table-responsive">
                         <thead>
-                            <tr>
+                            <tr >
                                 <th>Number</th>
                                 <th>Product Image</th>
                                 <th>Product Name</th>
                                 <th>Product place</th>
-                                <th>Quantity</th>
+                                <th>Condition</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let item of productss; let i = index">
                                 <td>{{i+1}}</td>
-                                <td><img style="width: 120px;" src="{{item.imageUrl}}" alt=""></td>
-                                <td>{{item.naziv}}</td>
-                                <td>{{item.mesto}}</td>
-                                <td>{{item.quantity}}</td>
+                                <td *ngIf="ifTrue(item)">
+                                    <img style="width: 120px;" src="{{item.slike[0]}}" alt="">
+                                </td>
+                                <td *ngIf="!ifTrue(item)">
+                                    <img style="width: 120px;" src="{{item.imageUrl}}" alt="">
+                                    <td>{{item.naziv}}</td>
+                                    <td>{{item.mesto}}</td>
+                                    <td>{{item.status}}</td>
+
+                                
+                                
                                 <td>
                                     <button (click)="removeItem(item)"  class="btn btn-danger"><fa-icon [icon]="['fas', 'trash-alt']"></fa-icon></button>
                                     
