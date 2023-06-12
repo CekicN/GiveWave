@@ -10,6 +10,7 @@ C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.g
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\GiveWaveAPI.pdb
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\DotNetEd.CoreAdmin.dll
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\EntityFramework.SqlServer.dll
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\EntityFramework.dll
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Humanizer.dll
@@ -42,6 +43,7 @@ C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.g
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\NETCore.MailKit.dll
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Mvc.Grid.Core.dll
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\BouncyCastle.Crypto.dll
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -97,102 +99,3 @@ C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.g
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.pdb
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.genruntimeconfig.cache
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\ref\GiveWaveAPI.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\appsettings.Development.json
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\appsettings.json
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\efpt.config.json
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\package-lock.json
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\GiveWaveAPI.staticwebassets.runtime.json
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\GiveWaveAPI.exe
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\GiveWaveAPI.deps.json
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\GiveWaveAPI.runtimeconfig.json
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\GiveWaveAPI.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\GiveWaveAPI.pdb
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Azure.Core.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Azure.Identity.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\EntityFramework.SqlServer.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\EntityFramework.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Humanizer.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\MailKit.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.UI.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.AspNetCore.NodeServices.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.AspNetCore.SpaServices.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.Identity.Client.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.OpenApi.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\MimeKit.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Mono.TextTemplating.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\NETCore.MailKit.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\BouncyCastle.Crypto.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.CodeDom.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.Data.SqlClient.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.Drawing.Common.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.Memory.Data.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.Net.WebSockets.WebSocketProtocol.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.Runtime.Caching.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.Security.Permissions.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\System.Windows.Extensions.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win-x64\native\sni.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\GiveWaveAPIService.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\GiveWaveAPIService.pdb
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.csproj.AssemblyReference.cache
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.GeneratedMSBuildEditorConfig.editorconfig
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.AssemblyInfoInputs.cache
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.AssemblyInfo.cs
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.csproj.CoreCompileInputs.cache
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.MvcApplicationPartsAssemblyInfo.cs
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.MvcApplicationPartsAssemblyInfo.cache
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\staticwebassets\msbuild.GiveWaveAPI.Microsoft.AspNetCore.StaticWebAssets.props
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\staticwebassets\msbuild.build.GiveWaveAPI.props
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.GiveWaveAPI.props
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.GiveWaveAPI.props
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\staticwebassets.pack.json
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\staticwebassets.build.json
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\staticwebassets.development.json
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\scopedcss\bundle\GiveWaveAPI.styles.css
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.csproj.CopyComplete
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\refint\GiveWaveAPI.dll
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.pdb
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.genruntimeconfig.cache
-F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\ref\GiveWaveAPI.dll

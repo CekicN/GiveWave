@@ -12,6 +12,7 @@ const api = "https://localhost:7200/controller/"
   providedIn: 'root'
 })
 export class ProductService {
+  
 
   private searchText$ = new BehaviorSubject<string>('');
   searchText = this.searchText$.asObservable();
@@ -22,10 +23,24 @@ export class ProductService {
   private product$ = new BehaviorSubject<any>(null);
   product= this.product$.asObservable();
 
+  private city$ = new BehaviorSubject<string>('');
+  city = this.city$.asObservable();
+
+  private status$ = new BehaviorSubject<string>('');
+  status = this.status$.asObservable();
   private category$ = new BehaviorSubject<string>('');
   category = this.category$.asObservable();
 
   constructor(private http:HttpClient) { }
+
+  set _city(c:string)
+  {
+    this.city$.next(c);
+  }
+  set _status(c:string)
+  {
+    this.status$.next(c);
+  }
   setSeatchText(searchText:string)
   {
     this.searchText$.next(searchText);
@@ -70,5 +85,16 @@ export class ProductService {
   setProduct(_product:ProductInfo)
   {
     this.product$.next(_product);
+  }
+  getStatus()
+  {
+    return this.http.get
+  }
+  getCitiesFilter(grad:string)
+  {
+    return this.http.get<Product[]>(`${api}PrikaziPoGradu/${grad}`);
+  }
+  getStatusFilter(status:string){
+    return this.http.get<Product[]>(`${api}PrikaziPoStatusu/${status}`);
   }
 }

@@ -24,6 +24,10 @@ export class FamiliesComponent implements OnInit {
     this.service.getAllFamilies().subscribe(families => this.families = families )
   }
 
+  openModal(id:number)
+  {
+    this.service.openModal(id);
+  }
   viewFamily(id:number)
   {
     this.service.familyDetails(id).subscribe(f => {
@@ -31,4 +35,5 @@ export class FamiliesComponent implements OnInit {
       this.service.setTrue();
     });
   }
+
 }

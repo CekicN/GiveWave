@@ -22,7 +22,7 @@
                                     <fa-icon (click)="hideShowPass()" [icon]="['fas', eyeIcon]"></fa-icon>
                                 </div>
                             </div>
-                            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Password is required</small>
+                            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Password is required! </small>
                             <div class="form-inline fr mt-4">
                                 <a id="forgot" data-bs-toggle="modal" data-bs-target="#exampleModal" class="font-weight-bold">Forget Password?</a>
                             </div>

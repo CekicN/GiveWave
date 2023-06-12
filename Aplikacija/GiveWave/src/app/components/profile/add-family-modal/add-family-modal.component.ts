@@ -40,6 +40,8 @@ export class AddFamilyModalComponent implements OnInit {
       brClanova:['', Validators.required],
       grad:['', Validators.required],
       adresa:['', Validators.required],
+      phone:['', Validators.required],
+      bank:['', Validators.required],
       supplies:this.fb.array([]),
       opis:['', Validators.required]
     });

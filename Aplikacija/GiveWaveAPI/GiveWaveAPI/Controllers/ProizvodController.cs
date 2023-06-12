@@ -1,8 +1,12 @@
 ﻿using GiveWaveAPI.Helpers;
 using GiveWaveAPI.Models;
+using GiveWaveApiService.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
+
 
 namespace GiveWaveAPI.Controllers
 {
@@ -13,16 +17,21 @@ namespace GiveWaveAPI.Controllers
         private readonly GiveWaveDBContext context;
 
         private readonly IWebHostEnvironment _environment;
-        public ProizvodController(GiveWaveDBContext c, IWebHostEnvironment environment)
+        private readonly UserManager<IdentityUser> _userManager;
+
+        private readonly IEmailService _emailService;
+        public ProizvodController(GiveWaveDBContext c, IWebHostEnvironment environment, UserManager<IdentityUser> userManager, IEmailService emailService)
         {
             _environment = environment;
             context = c;
+            _userManager = userManager;
+            _emailService = emailService;
         }
 
         #region Product
         [Route("addProduct/{id}")]
         [HttpPut]
-        public async Task<ActionResult> addProduct([FromBody] ProductHelper proizvod,int id)
+        public async Task<ActionResult> addProduct([FromBody] ProductHelper proizvod, int id)
         {
             try
             {
@@ -36,7 +45,7 @@ namespace GiveWaveAPI.Controllers
                 if (kategorija == null)
                 {
                     //mehanizam za dodavanje nepostojece kategorije ....
-                   kategorija =  addCategory(proizvod.novaKategorija, proizvod.parentKategorija);
+                    kategorija = addCategory(proizvod.novaKategorija, proizvod.parentKategorija);
                     if (kategorija == null)
                         return BadRequest("Kategorija vec postoji");
                 }
@@ -59,7 +68,7 @@ namespace GiveWaveAPI.Controllers
             }
             catch (Exception e)
             {
-                if(e.InnerException != null)
+                if (e.InnerException != null)
                 {
                     return BadRequest(e.InnerException.Message);
                 }
@@ -91,8 +100,8 @@ namespace GiveWaveAPI.Controllers
                 return Ok(proizvodi.Select(p => new
                 {
                     Id = p.Id,
-                    ImageUrl = GetImage(email,p.Id).Split("|"),
-                    Naziv = p.Naziv, 
+                    ImageUrl = GetImage(email, p.Id).Split("|"),
+                    Naziv = p.Naziv,
                     Opis = p.Opis
                 }));
 
@@ -104,7 +113,7 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
 
-            
+
         }
         [Route("getAllProducts")]
         [HttpGet]
@@ -125,9 +134,10 @@ namespace GiveWaveAPI.Controllers
                     Username = p.ProfilKorisnika.Username,
                     Email = p.ProfilKorisnika.Email
                 }));
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
-                if(e.InnerException != null)
+                if (e.InnerException != null)
                 {
                     return BadRequest(e.InnerException.Message);
                 }
@@ -150,7 +160,7 @@ namespace GiveWaveAPI.Controllers
                     return BadRequest("Kategorija ne postoji");
 
                 List<Proizvod> products = new List<Proizvod>();
-                if(kategorija.Proizvodi != null)
+                if (kategorija.Proizvodi != null)
                     products.AddRange(kategorija.Proizvodi);
                 AddProductRecursive(kategorija, products);
 
@@ -172,19 +182,19 @@ namespace GiveWaveAPI.Controllers
         }
         private void AddProductRecursive(Kategorija category, List<Proizvod> products)
         {
-                if(category.Subcategories != null)
-                    foreach (var sub in category.Subcategories)
-                    {
+            if (category.Subcategories != null)
+                foreach (var sub in category.Subcategories)
+                {
                     var kategorija = context.Kategorijas
                                             .Include(q => q.Subcategories)
                                             .Include(q => q.Proizvodi)
                                             .ThenInclude(p => p.ProfilKorisnika)
                                             .Where(q => q.Id == sub.Id)
                                             .FirstOrDefault();
-                        if (kategorija.Proizvodi != null)
-                            products.AddRange(kategorija.Proizvodi);
-                        AddProductRecursive(kategorija, products);
-                    }
+                    if (kategorija.Proizvodi != null)
+                        products.AddRange(kategorija.Proizvodi);
+                    AddProductRecursive(kategorija, products);
+                }
         }
         #endregion
         [NonAction]
@@ -254,7 +264,7 @@ namespace GiveWaveAPI.Controllers
 
                 StringBuilder sb = new StringBuilder(DAT);
 
-                sb.Replace(" ", "_"); 
+                sb.Replace(" ", "_");
                 sb.Replace(":", "_");
 
                 var DATE = sb.ToString();
@@ -267,9 +277,9 @@ namespace GiveWaveAPI.Controllers
                     System.IO.File.Delete(fajl);
                 }
 
-                foreach(var s in files.Select((value, i) => (value,i)))
+                foreach (var s in files.Select((value, i) => (value, i)))
                 {
-                    string imagepath = Filepath + "\\image_" + s.i + "_"+ DATE + ".png";
+                    string imagepath = Filepath + "\\image_" + s.i + "_" + DATE + ".png";
                     using (FileStream stream = System.IO.File.Create(imagepath))
                     {
                         await s.value.CopyToAsync(stream);
@@ -280,7 +290,7 @@ namespace GiveWaveAPI.Controllers
                 context.SaveChanges();
 
                 var ListOfUrls = product.ImageUrl.Split('|');
-                return Ok(new { imageUrls = ListOfUrls});
+                return Ok(new { imageUrls = ListOfUrls });
             }
             catch (Exception e)
             {
@@ -304,7 +314,7 @@ namespace GiveWaveAPI.Controllers
                 if (fajlovi.Length > 0)
                 {
                     imagePaths = fajlovi;
-                    foreach(var imagePath in imagePaths)
+                    foreach (var imagePath in imagePaths)
                     {
                         img.Add(imagePath.Substring(imagePath.IndexOf("wwwroot") + 7));
                     }
@@ -312,7 +322,7 @@ namespace GiveWaveAPI.Controllers
                 }
             }
 
-            if(PostojeFajlovi)
+            if (PostojeFajlovi)
             {
                 foreach (var image in img)
                 {
@@ -326,7 +336,9 @@ namespace GiveWaveAPI.Controllers
             }
             return imageUrl;
         }
+
         #endregion
+
 
         [Route("CancleAdding/{id}/{email}")]
         [HttpDelete]
@@ -338,7 +350,7 @@ namespace GiveWaveAPI.Controllers
                     .Where(q => q.Id == id)
                     .FirstOrDefault();
 
-                if(proizvod == null)
+                if (proizvod == null)
                 {
                     return BadRequest("Proizvod sa tim id-jem ne postoji");
                 }
@@ -350,7 +362,7 @@ namespace GiveWaveAPI.Controllers
                     return Ok();
                 }
             }
-            catch(Exception e) 
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
@@ -359,7 +371,7 @@ namespace GiveWaveAPI.Controllers
         private void deleteFolder(string email, int id)
         {
             string path = GetFilePath(email, id);
-            if(Directory.Exists(path))
+            if (Directory.Exists(path))
             {
                 string[] fajlovi = Directory.GetFiles(path);
                 foreach (var fajl in fajlovi)
@@ -409,21 +421,163 @@ namespace GiveWaveAPI.Controllers
                     return BadRequest("proizvod nije nadjen");
                 return Ok(new
                 {
-                         Id = proizvod.Id,
-                         Naziv = proizvod.Naziv,
-                         Opis = proizvod.Opis,
-                         Mesto = proizvod.Mesto,
-                         Status = proizvod.status,
-                         Profil = proizvod.ProfilKorisnika.Username,
-                         Slike = proizvod.ImageUrl.Split('|')
+                    Id = proizvod.Id,
+                    Naziv = proizvod.Naziv,
+                    Opis = proizvod.Opis,
+                    Mesto = proizvod.Mesto,
+                    Status = proizvod.status,
+                    Profil = proizvod.ProfilKorisnika.Username,
+                    Slike = proizvod.ImageUrl.Split('|')
                 });
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                return BadRequest(e.Message);   
+                return BadRequest(e.Message);
             }
         }
+
+
+
+        [HttpPost]
+        [Route("PosaljiMailZaProizvod")]
+        public async Task<ActionResult> posaljiMailZaProizvod([Required] string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                //var poruceniProizvod = vratiProizvodePremaEmailu(email);
+
+                var message = new GiveWaveApiService.Models.Message(new string[] { user.Email! }, "Poruka o proizvodu", "Proizvod je uspesno narucen"/*$"Uspesno je porucen proizvod!\n\nPodaci o proizvodu:\nNaziv: {poruceniProizvod.}\nMesto: {poruceniProizvod.Mesto}\nStatus: {poruceniProizvod.Status}\nOpis: {poruceniProizvod.opis}"*/);
+                _emailService.SendEmail(message);
+                return StatusCode(StatusCodes.Status200OK);
+            }
+        }
+
+        [NonAction]
+        private string vratiPodatkeOPorucenomProizvodu(string email)
+        {
+
+            return null;
+        }
+
+
+
+
+        [HttpGet]
+        [Route("PrikaziPoGradu/{grad}")]
+        public async Task<IActionResult> prikaziPoGradu(string grad)
+        {
+            if (grad == "All cities")
+            {
+                try
+                {
+                    var products = await context.Proizvods.Include(p => p.ProfilKorisnika).ToListAsync();
+                    if (products == null)
+                        return BadRequest("products not founded");
+                    return Ok(products.Select(p => new
+                    {
+                        Id = p.Id,
+                        ImageUrl = GetImage(p.ProfilKorisnika.Email, p.Id).Split("|"),
+                        Naziv = p.Naziv,
+                        Mesto = p.Mesto,
+                        Status = p.status,
+                        Username = p.ProfilKorisnika.Username,
+                        Email = p.ProfilKorisnika.Email
+                    }));
+                }
+                catch (Exception e)
+                {
+                    if (e.InnerException != null)
+                    {
+                        return BadRequest(e.InnerException.Message);
+                    }
+                    return BadRequest(e.Message);
+                }
+            }
+            var filteredProizvod = context.Proizvods.Include(p => p.ProfilKorisnika).Where(p => p.Mesto == grad).ToList();
+            if (filteredProizvod == null) return BadRequest("Nema proizvoda");
+            return Ok(filteredProizvod.Select(p => new
+            {
+                Id = p.Id,
+                ImageUrl = GetImage(p.ProfilKorisnika.Email, p.Id).Split("|"),
+                Naziv = p.Naziv,
+                Mesto = p.Mesto,
+                Status = p.status,
+                Username = p.ProfilKorisnika.Username,
+                Email = p.ProfilKorisnika.Email
+            }));
+        }
+        [HttpGet]
+        [Route("PrikaziPoStatusu/{status}")]
+        public async Task<IActionResult> prikaziPoStatusu(string status)
+        {
+            var filteredProizvod = context.Proizvods.Include(p => p.ProfilKorisnika).Where(p => p.status == status).ToList();
+            if (filteredProizvod == null) return BadRequest("Nema proizvoda");
+            return Ok(filteredProizvod.Select(p => new
+            {
+                Id = p.Id,
+                ImageUrl = GetImage(p.ProfilKorisnika.Email, p.Id).Split("|"),
+                Naziv = p.Naziv,
+                Mesto = p.Mesto,
+                Status = p.status,
+                Username = p.ProfilKorisnika.Username,
+                Email = p.ProfilKorisnika.Email
+            }));
+        }
+
+        //[Route("prikazi odredjene proizvode")]
+        //[HttpGet]
+        //public async Task<IActionResult> prikaziProizvod(string kategorija)
+        //{
+        //    var filteredProizvodi = context.Proizvods
+        //        .Where(p => p.Kategorije(k => k.Name == kategorija))
+        //        .ToList();
+
+        //    return Ok(filteredProizvodi);
+        //}
+        //[Route("PreuzmiProizvodePodkategorija")]
+        //[HttpGet]
+        //public async Task<ActionResult> PreuzmiProizvodePodkategorija(string kategorija)
+        //{
+        //    try
+        //    {
+        //        var kategorijaZaPretragu = await context.Kategorijas
+        //            .Include(c => c.Subcategories)
+        //            .Include(c => c.Proizvodi)
+        //            .Where(c => c.Name == kategorija).FirstOrDefaultAsync();
+
+        //        if (kategorijaZaPretragu == null)
+        //        {
+        //            return NotFound();
+        //        }
+
+        //        var proizvodi = new List<Proizvod>();
+        //        DodajProizvodePodkategorija(kategorijaZaPretragu.Subcategories, proizvodi);
+
+        //        return Ok(proizvodi);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return BadRequest(e.Message);
+        //    }
+        //}
+
+        //private void DodajProizvodePodkategorija(IEnumerable<Kategorija> subkategorije, List<Proizvod> proizvodi)
+        //{
+        //    foreach (var subkategorija in subkategorije)
+        //    {
+        //        proizvodi.AddRange(subkategorija.Proizvodi);
+
+        //        DodajProizvodePodkategorija(subkategorija.Subcategories, proizvodi);
+        //    }
+        //}
+
     }
 
-    
+
+
 }

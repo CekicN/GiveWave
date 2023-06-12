@@ -20,7 +20,8 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { AuthService } from './services/auth.service';
 import { FriendsModule } from './components/friends/friends.module';
 import { FamilyServiceModule } from './components/family-service/family-service.module';
-// import { CommonModule } from '@angular/common';
+import { AdminModule } from './components/admin/admin.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { FamilyServiceModule } from './components/family-service/family-service.
     AboutUsModule,
     ReactiveFormsModule,
     FriendsModule,
-    FamilyServiceModule
+    FamilyServiceModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

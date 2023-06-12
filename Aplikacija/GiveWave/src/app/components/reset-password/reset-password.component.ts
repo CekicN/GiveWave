@@ -30,29 +30,15 @@ export class ResetPasswordComponent {
   this.activatedRoute.queryParams.subscribe(val=>{
     this.emailToReset = val['email'];
     let uriToken = val['code'];
-    //this.token=val['code'];
-
-    //this.token=uriToken.replace(/ /g,'+');
-    //let etoken = decodeURIComponent(uriToken);
+  
    let etoken=decodeURIComponent(uriToken.replace(/%2F/g,'/'));
    this.token=etoken.replace(/ /g,'+');
-    //const etoken = val['code'];
-//const parts = etoken.split('.');
-//const header = parts[0];
-//const payload = parts[1];
-//const signature = parts[2];
 
-//const encodedHeader = btoa(header).replace('+', '-').replace('/', '_').replace(/=+$/, '');
-//const encodedPayload = btoa(payload).replace('+', '-').replace('/', '_').replace(/=+$/, '');
-//const encodedSignature = btoa(signature).replace('+', '-').replace('/', '_').replace(/=+$/, '');
 
-//const encodedToken = `${encodedHeader}.${encodedPayload}.${encodedSignature}`;
-//this.token=encodedToken;
-//console.log(encodedToken);
+
     console.log(this.token);
     console.log(this.emailToReset);
-    //console.log(this.resetPasswordObj.confirmPassword);
-    //console.log(this.resetPasswordObj.newPassword);
+ 
   })
 }
 private validateAllFormsFields(formGroup:FormGroup){

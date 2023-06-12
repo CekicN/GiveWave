@@ -29,7 +29,8 @@ namespace GiveWaveAPI.Models
         [MaxLength(255)]
         public string Opis { get; set; }
         public string Status { get; set; }
-
+        public string BrTelefona { get; set; }
+        public string ZiroRacun { get; set; }
         public bool Potvrda { get; set; }
         public List<Donacija> Donacije { get; set; }
         public ProfilKorisnika ProfilKorisnika { get; set; }

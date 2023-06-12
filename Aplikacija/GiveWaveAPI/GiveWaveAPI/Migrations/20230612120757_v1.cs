@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GiveWaveAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class V1 : Migration
+    public partial class v1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -50,47 +50,6 @@ namespace GiveWaveAPI.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "chatLinee",
-                columns: table => new
-                {
-                    id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    chatId = table.Column<int>(type: "int", nullable: false),
-                    userId = table.Column<int>(type: "int", nullable: false),
-                    lineText = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_chatLinee", x => x.id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Chats",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Chats", x => x.id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "chatUserr",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    handle = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_chatUserr", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -440,6 +399,8 @@ namespace GiveWaveAPI.Migrations
                     najpotrebnijestvari = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Opis = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BrTelefona = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ZiroRacun = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Potvrda = table.Column<bool>(type: "bit", nullable: false),
                     ProfilKorisnikaId = table.Column<int>(type: "int", nullable: true)
                 },
@@ -514,10 +475,10 @@ namespace GiveWaveAPI.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "854bef0c-5d28-4e90-b109-05f84158a370", "3", "Friend", "Friend" },
-                    { "df0a43c4-934d-4908-85f0-c198a57b565f", "1", "Admin", "Admin" },
-                    { "fc2af38c-ca27-4ec2-bbde-bc7843d24b0b", "2", "User", "User" },
-                    { "fde3512c-710d-404b-99bd-3ed0cf2d1cd6", "4", "Service", "Service" }
+                    { "0a20cac6-9002-4fb1-a0e4-55e17d662a11", "4", "Service", "Service" },
+                    { "8373e5cd-acac-4051-8138-74f03113038e", "2", "User", "User" },
+                    { "c0fa0056-f5e5-4460-bec7-f993cb1cc151", "1", "Admin", "Admin" },
+                    { "f0fa943e-9d0c-46b7-a66c-609f00c49cbc", "3", "Friend", "Friend" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -647,15 +608,6 @@ namespace GiveWaveAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
-
-            migrationBuilder.DropTable(
-                name: "chatLinee");
-
-            migrationBuilder.DropTable(
-                name: "Chats");
-
-            migrationBuilder.DropTable(
-                name: "chatUserr");
 
             migrationBuilder.DropTable(
                 name: "Donacijas");

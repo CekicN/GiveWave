@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
-    [Migration("20230609162928_V1")]
-    partial class V1
+    [Migration("20230612120757_v1")]
+    partial class v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -355,6 +355,9 @@ namespace GiveWaveAPI.Migrations
                     b.Property<int>("BrClanova")
                         .HasColumnType("int");
 
+                    b.Property<string>("BrTelefona")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Grad")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -378,6 +381,9 @@ namespace GiveWaveAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UrlSlika")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ZiroRacun")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("najpotrebnijestvari")
@@ -523,60 +529,6 @@ namespace GiveWaveAPI.Migrations
                     b.ToTable("Tehnikas");
                 });
 
-            modelBuilder.Entity("GiveWaveAPI.Models.chat", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.HasKey("id");
-
-                    b.ToTable("Chats");
-                });
-
-            modelBuilder.Entity("GiveWaveAPI.Models.chatLine", b =>
-                {
-                    b.Property<long>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"));
-
-                    b.Property<int>("chatId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("createdAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("lineText")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("userId")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.ToTable("chatLinee");
-                });
-
-            modelBuilder.Entity("GiveWaveAPI.Models.chatUser", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("handle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("chatUserr");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -606,28 +558,28 @@ namespace GiveWaveAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "df0a43c4-934d-4908-85f0-c198a57b565f",
+                            Id = "c0fa0056-f5e5-4460-bec7-f993cb1cc151",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "fc2af38c-ca27-4ec2-bbde-bc7843d24b0b",
+                            Id = "8373e5cd-acac-4051-8138-74f03113038e",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "854bef0c-5d28-4e90-b109-05f84158a370",
+                            Id = "f0fa943e-9d0c-46b7-a66c-609f00c49cbc",
                             ConcurrencyStamp = "3",
                             Name = "Friend",
                             NormalizedName = "Friend"
                         },
                         new
                         {
-                            Id = "fde3512c-710d-404b-99bd-3ed0cf2d1cd6",
+                            Id = "0a20cac6-9002-4fb1-a0e4-55e17d662a11",
                             ConcurrencyStamp = "4",
                             Name = "Service",
                             NormalizedName = "Service"

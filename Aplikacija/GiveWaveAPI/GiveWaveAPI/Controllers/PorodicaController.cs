@@ -114,6 +114,8 @@ namespace GiveWaveAPI.Controllers
                     Status = porodica.Status,
                     najpotrebnijestvari = porodica.najpotrebnijestvari.Split("|"),
                     opis = porodica.Opis,
+                    BrTelefona = porodica.BrTelefona,
+                    ZiroRacun = porodica.ZiroRacun,
                     Email = porodica.ProfilKorisnika.Email,
                     User = porodica.ProfilKorisnika.Username
                 });
@@ -185,6 +187,8 @@ namespace GiveWaveAPI.Controllers
                 porodica.Grad = family.Grad;
                 porodica.Opis = family.Opis;
                 porodica.ProfilKorisnika = user;
+                porodica.ZiroRacun = family.Bank; 
+                porodica.BrTelefona = family.Phone;
                 porodica.Potvrda = false;
                 porodica.UrlSlika = GetImage(family.email, id);
 

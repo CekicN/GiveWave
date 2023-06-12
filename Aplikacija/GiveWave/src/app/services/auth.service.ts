@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpClientModule } from "@angular/common/http"
 import { BehaviorSubject, tap } from 'rxjs';
-import jwt_decode from 'jwt-decode'
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'

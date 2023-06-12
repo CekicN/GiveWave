@@ -27,7 +27,7 @@
                 </div>
                 <hr>
                 <div>
-                    <button class="btn btn-primary w-100 mb-5">Donate <fa-icon [icon]="['fas', 'hand-holding-heart']" style="color:white;" size="xl"></fa-icon></button>
+                    <button class="btn btn-primary w-100 mb-5" (click)="openModal(family.id)">Donate <fa-icon [icon]="['fas', 'hand-holding-heart']" style="color:white;" size="xl"></fa-icon></button>
                 </div>
                 <!-- <p><ngb-progressbar type="info" [value]="50" [striped]="true"></ngb-progressbar></p> -->
                 <ng-template #content>
