@@ -14,6 +14,7 @@ import { ChatMainComponent } from './components/friends/chat-main/chat-main.comp
 import { CartComponent } from './components/products/cart/cart.component';
 import { ServiceComponent } from './components/family-service/service/service.component';
 import { GiveWaveadminComponent } from './components/admin/give-waveadmin/give-waveadmin.component';
+import { AdminGuard } from './Guards/admin.guard';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'friends', component:ChatMainComponent},
   {path: 'reset', component:ResetPasswordComponent},
   {path: 'cart', component: CartComponent},
+  {path: 'admin', component:GiveWaveadminComponent, canActivate:[AdminGuard]},
   {path:'service', component:ServiceComponent},
   {path: 'admin', component:GiveWaveadminComponent}  
 ];

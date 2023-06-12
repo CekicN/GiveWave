@@ -1,4 +1,5 @@
-﻿using GiveWaveAPI.Models;
+﻿using GiveWaveAPI.Helpers;
+using GiveWaveAPI.Models;
 using GiveWaveAPI.Models.Authentication.Login;
 using GiveWaveAPI.Models.Authentication.Signup;
 using GiveWaveApiService.Models;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using MimeKit;
 using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -247,7 +249,7 @@ namespace GiveWaveAPI.Controllers
 
                 var token = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var forgotPasswordLink = Url.Action((nameof(ResettPassword)), "Authentication", new { token, email = user.Email }, Request.Scheme);// (nameof(ResettPassword)
-                var message = new GiveWaveApiService.Models.Message(new string[] { user.Email! }, "Forgot password link",/*forgotPasswordLink!*/ /*EmailBody.EmailStringBody(email,token)*/CreateBody(email,token));
+                var message = new GiveWaveApiService.Models.Message(new string[] { user.Email! }, "Forgot password link",/*forgotPasswordLink!*/ EmailBody.EmailStringBody(email, token));//CreateBody(email,token));
                 _emailService.SendEmail(message);
                 return StatusCode(StatusCodes.Status200OK,
                     new Response { Status = "Success", Message = $"Password changed request is sent on Email {user.Email}. Please open your email & click on link" });
@@ -310,6 +312,89 @@ namespace GiveWaveAPI.Controllers
         public async Task<ActionResult<IdentityUser>> GetAllUsers()
         {
             return Ok(await _context.Users.ToListAsync());
-        } 
+        }
+        public static MimeMessage CreateEmailMessage(string recipientEmail, string recipientName)
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("GiveWave", "givewave@gmail.com"));
+            message.To.Add(new MailboxAddress(recipientName, recipientEmail));
+            message.Subject = "Welcome to our newsletter";
+
+            // Load the HTML template from a file or a string
+            string htmlTemplate = LoadEmailTemplate();
+
+            // Replace the placeholders with actual values
+            string emailBody = htmlTemplate.Replace("{Name}", recipientName)
+                                           .Replace("{Email}", recipientEmail);
+
+            // Create the HTML body part
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.HtmlBody = emailBody;
+
+            message.Body = bodyBuilder.ToMessageBody();
+
+            return message;
+        }
+        private static string LoadEmailTemplate()
+        {
+            // Load the HTML template from a file, a database, or a string literal
+            // In this example, we'll use a string literal
+            string template = @"<html> 
+<head>
+    <style>
+      /* CSS styles for your email */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      h1 {
+        color: #333;
+        font-size: 24px;
+      }
+      p {
+        color: #555;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0d6efd;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class=""container"">
+      <h1>Reset Your Password</h1>
+      <p>
+        You're receiving this email because a password reset request has been made
+        for your account.
+      </p>
+      <p>Please click the button below to reset your password:</p>
+      <p>
+        <a class=""button"" href=""{resetLink}"">Reset Password</a>
+      </p>
+      <p>
+        If you didn't request a password reset, please ignore this email. Your
+        password will remain unchanged.
+      </p>
+    </div>
+  </body>
+</html>";
+
+            return template;
+        }
+
     }
 }

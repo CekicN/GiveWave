@@ -398,19 +398,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Prokuplje\\.nuget\\packages\\": {}
+    "C:\\Users\\Kuca\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj",
+      "projectUniqueName": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj",
       "projectName": "GiveWaveAPIService",
-      "projectPath": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj",
-      "packagesPath": "C:\\Users\\Prokuplje\\.nuget\\packages\\",
-      "outputPath": "F:\\SWE Projekat\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\obj\\",
+      "projectPath": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\GiveWaveAPIService.csproj",
+      "packagesPath": "C:\\Users\\Kuca\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Prokuplje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kuca\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -457,8 +457,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Kuca\\Desktop\\Projekat clone\\si.23.06.givewave\\Aplikacija\\GiveWaveAPI\\GiveWaveAPIService\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

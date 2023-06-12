@@ -15,12 +15,13 @@ namespace GiveWaveAPI.Controllers
             _environment = environment;
         }
 
-        [Route("getDonationHistory/{email}")]
+        [Route("getDonationHistory")]
         [HttpGet]
-        public async Task<ActionResult> getDonationHistory(string email)
+        public async Task<ActionResult> getDonationHistory()
         {
             try
             {
+                string email = Request.Form["email"];
                 var donacija = context.Donacijas
                                         .Include(p => p.Porodica)
                                         .Include(p => p.ProfilKorisnika)
