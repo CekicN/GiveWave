@@ -99,6 +99,7 @@ F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\n
 F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.pdb
 F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.genruntimeconfig.cache
 F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\ref\GiveWaveAPI.dll
+<<<<<<< HEAD
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\appsettings.json
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\bin\Debug\net7.0\efpt.config.json
@@ -200,3 +201,5 @@ C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.g
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.pdb
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\GiveWaveAPI.genruntimeconfig.cache
 C:\Users\Nikola\Desktop\Faks\3.godina\SoftverskoInzinjerstvo\Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPI\obj\Debug\net7.0\ref\GiveWaveAPI.dll
+=======
+>>>>>>> f1f27c0b9bead6bf68861811ddd7383bdea667c5
