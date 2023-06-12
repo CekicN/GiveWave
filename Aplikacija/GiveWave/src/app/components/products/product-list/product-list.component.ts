@@ -18,6 +18,8 @@ export class ProductListComponent implements OnInit {
 
   products!:Product[] | any;
   searchText:string = '';
+  isClicked: boolean = false;
+
 
   //public productList!: Product[];
   constructor(library:FaIconLibrary, private productService:ProductService, private route:Router,private cartService: CartService)
@@ -48,7 +50,11 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(item: Product) {
+    if(!this.isClicked)
+    {
       this.cartService.addToCart(item);
+      this.isClicked = true;
+    }
   }
 
   viewDetails(id:number)
