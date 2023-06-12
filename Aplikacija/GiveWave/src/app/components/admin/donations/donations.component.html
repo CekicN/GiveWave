@@ -11,38 +11,21 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>Tip</th>
-                <th>Datum</th>
+                <th>Id</th>
                 <th>Opis</th>
-                <th>Donor</th>
-                <th>Porodica</th>
+                <th>Donacija</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let item of donationsData">
-                <td></td>
-                <td>2023-06-01</td>
-                <td>Description 1</td>
-                <td>Donor 1</td>
-                <td>Porodica 1</td>
+                <td>{{item.id}}</td>
+                <td>{{item.opis}}</td>
+                <td>{{item.donacija}}</td>
                 <td>
-                  <button class="btn btn-primary">Update</button>
-                  <button class="btn btn-danger">Delete</button>
+                  <button (click)="removeDonacije(item.id)" class="btn btn-danger">Delete</button>
                 </td>
               </tr>
-              <tr>
-                <td>Tip 2</td>
-                <td>2023-06-02</td>
-                <td>Description 2</td>
-                <td>Donor 2</td>
-                <td>Porodica 2</td>
-                <td>
-                  <button class="btn btn-primary">Update</button>
-                  <button class="btn btn-danger">Delete</button>
-                </td>
-              </tr>
-              <!-- Add more rows as needed -->
             </tbody>
           </table>
         </div>

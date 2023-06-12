@@ -42,12 +42,14 @@ namespace GiveWaveAPI.Controllers
             try
             {
                 var user = _context.ProfilKorisnikas.Where(p => p.Email == email).FirstOrDefault();
-                if (user == null) 
+                var userExisted = await _userManager.FindByEmailAsync(email);
+                if (user == null || userExisted==null) 
                 {
                     return BadRequest("Korisnik ne postoji");
                 }
                 else 
                 {
+                    await _userManager.DeleteAsync(userExisted);
                     _context.ProfilKorisnikas.Remove(user);
                     await _context.SaveChangesAsync();
                     return Ok("Korisnik je uspesno obrisan !");
@@ -160,7 +162,7 @@ namespace GiveWaveAPI.Controllers
              }
         }
 
-        [Route("BrisanjeNeprikladneDonacije")]
+        [Route("BrisanjeNeprikladneDonacije/{id}")]
         [HttpDelete]
         //[Authorize(Roles = "Admin")]
         public async Task<ActionResult> brisanjeNeprikladneDonacije(int id)
@@ -239,11 +241,11 @@ namespace GiveWaveAPI.Controllers
             }
         }
         [Authorize(Roles ="Admin")]
-        [Route("PromeniRolu/{username}")]
+        [Route("PromeniRolu/{email}")]
         [HttpPut]
-        public async Task<IActionResult> ChangeRole(string userName)
+        public async Task<IActionResult> ChangeRole(string email)
         {
-            var userExist = await _userManager.FindByNameAsync(userName);
+            var userExist = await _userManager.FindByEmailAsync(email);
             if (userExist == null)
             {
                 return BadRequest("User ne postoji");
@@ -263,6 +265,24 @@ namespace GiveWaveAPI.Controllers
                 }
             }
         }
+        [Authorize(Roles ="Admin")]
+        [Route("ObrisiProduct/{id}")]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var productfordelete = _context.Proizvods.Where(p=>p.Id == id).FirstOrDefault();
+            if(productfordelete == null)
+            {
+                return BadRequest("Nema product-a");
+            }
+            else
+            {
+                _context.Proizvods.Remove(productfordelete);
+                await _context.SaveChangesAsync();
+                return Ok("Proizvod je uspesno obrisan !");
+            }
+        }
+
         //[Authorize(Roles ="Admin")]
         //[Route("getAllProducts")]
         //[HttpGet]

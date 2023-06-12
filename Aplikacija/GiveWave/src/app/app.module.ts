@@ -19,7 +19,7 @@ import { SearchProductsPipe } from './pipes/search-products.pipe';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AuthService } from './services/auth.service';
 import { FriendsModule } from './components/friends/friends.module';
-import { GiveWaveadminComponent } from './components/admin/give-waveadmin/give-waveadmin.component';
+import { FamilyServiceModule } from './components/family-service/family-service.module';
 import { AdminModule } from './components/admin/admin.module';
 
 @NgModule({
@@ -44,6 +44,7 @@ import { AdminModule } from './components/admin/admin.module';
     AboutUsModule,
     ReactiveFormsModule,
     FriendsModule,
+    FamilyServiceModule,
     AdminModule
   ],
   providers: [],

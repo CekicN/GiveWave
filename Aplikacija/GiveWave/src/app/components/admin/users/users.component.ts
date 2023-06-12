@@ -17,11 +17,11 @@ export class UsersComponent implements OnInit{
       })
   }
   removeUsera(item: string){
-    this.adminService.removeUser(item);
+    this.adminService.removeUser(item).subscribe(p=>{this.data=this.data.filter((q:User)=>q.email!=item)});
   }
-  changeRole(item:string){
-    this.adminService.changeRoles(item);
-  }
+  //changeRole(item:string){
+    //this.adminService.changeRoles(item).subscribe(p=>{this.data=this.data.filter((q:User)=>q.email!=item)});
+  //}
 }
 
 

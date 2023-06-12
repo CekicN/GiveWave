@@ -18,5 +18,9 @@ export class ProductsComponent implements OnInit {
         this.productss = res;
       })
   }
+  removeProducta(iden: number){
+    this.adminService.removeProducts(iden).subscribe(p=>{this.productss=this.productss.filter((q:Product)=>q.id!=iden)});
+  }
+
 
 }

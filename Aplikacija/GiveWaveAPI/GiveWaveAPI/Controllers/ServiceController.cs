@@ -38,23 +38,6 @@ namespace GiveWaveAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
-        [HttpGet]
-        [Route("getAllFamiliesToValidate")]
-        public async Task<ActionResult> getAllFamiliesToValidate()
-        {
-            try
-            {
-                var validFamilies = context.Porodice.Where(p => p.Potvrda == false).ToList();
-                if (validFamilies == null)
-                    return BadRequest("Nema potvrdjenih porodica");
-
-                return Ok(validFamilies);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
         [HttpDelete]
         [Route("removeFamily/{id}")]
         public async Task<ActionResult> removeFamily(int id)

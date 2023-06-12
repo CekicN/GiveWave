@@ -23,8 +23,7 @@
                 <td>{{item.naziv}}</td>
                 <td>{{item.status}}</td>
                 <td>
-                  <button class="btn btn-primary">Update</button>
-                  <button class="btn btn-danger">Delete</button>
+                  <button (click)="removeProducta(item.id)" class="btn btn-danger">Delete</button>
                 </td>
               </tr>
             </tbody>

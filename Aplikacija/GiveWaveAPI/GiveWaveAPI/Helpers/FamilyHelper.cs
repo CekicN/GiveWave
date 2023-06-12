@@ -9,6 +9,8 @@
         public string Adresa { get; set; }
         public List<string> najpotrebnijestvari { get; set; }
         public string Opis { get; set; }
+        public string Phone { get; set; }
+        public string Bank { get; set; }
         public string email { get; set; }
     }
 }

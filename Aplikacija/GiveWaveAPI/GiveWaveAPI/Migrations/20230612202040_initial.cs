@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GiveWaveAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -399,6 +399,8 @@ namespace GiveWaveAPI.Migrations
                     najpotrebnijestvari = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Opis = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BrTelefona = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ZiroRacun = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Potvrda = table.Column<bool>(type: "bit", nullable: false),
                     ProfilKorisnikaId = table.Column<int>(type: "int", nullable: true)
                 },
@@ -473,10 +475,10 @@ namespace GiveWaveAPI.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "415baafb-542b-4f25-ac91-99f90f77a06d", "3", "Friend", "Friend" },
-                    { "57d9204e-02c2-49a8-aed8-f120f339cf9c", "4", "Service", "Service" },
-                    { "c5951623-a87c-4a3a-ae19-9e8afc4a9c46", "2", "User", "User" },
-                    { "ce51cfe8-993c-4930-9c80-2b2700e16150", "1", "Admin", "Admin" }
+                    { "4a15cf44-667c-4d15-87f7-d868f02cbc2f", "1", "Admin", "Admin" },
+                    { "7bb188d2-5913-4d1b-a538-43772c3b8f46", "3", "Friend", "Friend" },
+                    { "953a544b-f709-43b3-9af1-c9ddb165abcd", "2", "User", "User" },
+                    { "d8050170-5c55-4d5b-8de8-bdd1699c61e5", "4", "Service", "Service" }
                 });
 
             migrationBuilder.CreateIndex(

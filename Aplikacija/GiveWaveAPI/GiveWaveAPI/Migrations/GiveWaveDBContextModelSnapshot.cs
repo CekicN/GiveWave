@@ -352,6 +352,9 @@ namespace GiveWaveAPI.Migrations
                     b.Property<int>("BrClanova")
                         .HasColumnType("int");
 
+                    b.Property<string>("BrTelefona")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Grad")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -375,6 +378,9 @@ namespace GiveWaveAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UrlSlika")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ZiroRacun")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("najpotrebnijestvari")
@@ -549,28 +555,28 @@ namespace GiveWaveAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ce51cfe8-993c-4930-9c80-2b2700e16150",
+                            Id = "4a15cf44-667c-4d15-87f7-d868f02cbc2f",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "c5951623-a87c-4a3a-ae19-9e8afc4a9c46",
+                            Id = "953a544b-f709-43b3-9af1-c9ddb165abcd",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "415baafb-542b-4f25-ac91-99f90f77a06d",
+                            Id = "7bb188d2-5913-4d1b-a538-43772c3b8f46",
                             ConcurrencyStamp = "3",
                             Name = "Friend",
                             NormalizedName = "Friend"
                         },
                         new
                         {
-                            Id = "57d9204e-02c2-49a8-aed8-f120f339cf9c",
+                            Id = "d8050170-5c55-4d5b-8de8-bdd1699c61e5",
                             ConcurrencyStamp = "4",
                             Name = "Service",
                             NormalizedName = "Service"
