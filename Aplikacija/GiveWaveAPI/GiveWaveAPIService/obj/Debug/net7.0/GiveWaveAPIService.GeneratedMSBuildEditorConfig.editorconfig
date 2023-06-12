@@ -8,8 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GiveWaveAPIService
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Kuca\Desktop\Projekat clone\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\
-=======
-build_property.ProjectDir = F:\SWE Projekat\si.23.06.givewave\Aplikacija\GiveWaveAPI\GiveWaveAPIService\
->>>>>>> f1f27c0b9bead6bf68861811ddd7383bdea667c5

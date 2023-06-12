@@ -32,7 +32,9 @@ namespace GiveWaveAPI.Models
         public string BrTelefona { get; set; }
         public string ZiroRacun { get; set; }
         public bool Potvrda { get; set; }
+        [JsonIgnore]
         public List<Donacija> Donacije { get; set; }
+        [JsonIgnore]
         public ProfilKorisnika ProfilKorisnika { get; set; }
 
     }
