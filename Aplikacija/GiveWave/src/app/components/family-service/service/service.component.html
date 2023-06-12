@@ -1,35 +1,37 @@
-<form [formGroup]="serviceForm">
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Photo</th>
-				<th scope="col">Name</th>
-				<th scope="col">City</th>
-				<th scope="col">Address</th>
-				<th scope="col">Num of members</th>
-				<th scope="col">Buttons</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr *ngFor="let family of families">
-				<th scope="row">{{ family.id }}</th>
-				<td><img [src]="family.urlSlika[0]" alt=""></td>
-				<td>{{family.naziv}}</td>
-				<td>{{family.grad}}</td>
-				<td>{{family.adresa}}</td>
-				<td>{{family.brClanova}}</td>
-				<td><button class="btn btn-success" (click)="overi(family.id)">Success</button></td>
-				<td><button class="btn btn-danger" (click)="obrisi(family.id, family.email)">Delete</button></td>
-				<td>
-					<select name="" id="" class="form-select single-choice" formControlName = "status">
-						<option></option>
-						<option *ngFor="let stat of statusi">{{stat}}</option>
-					</select>
-					<small *ngIf="serviceForm.controls['status'].dirty && serviceForm.hasError('required','status')" class="text-danger">*Status is required</small>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</form>
+<div class="spolja">
+	<form [formGroup]="serviceForm">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Photo</th>
+					<th scope="col">Name</th>
+					<th scope="col">City</th>
+					<th scope="col">Address</th>
+					<th scope="col">Num of members</th>
+					<th scope="col">Buttons</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let family of families">
+					<th scope="row">{{ family.id }}</th>
+					<td><img [src]="family.urlSlika[0]" class="img-thumbnail" style="width: 200px;" alt=""></td>
+					<td>{{family.naziv}}</td>
+					<td>{{family.grad}}</td>
+					<td>{{family.adresa}}</td>
+					<td>{{family.brClanova}}</td>
+					<td><button class="btn btn-success" (click)="overi(family.id)">Success</button></td>
+					<td><button class="btn btn-danger" (click)="obrisi(family.id, family.email)">Delete</button></td>
+					<td>
+						<select name="" id="" class="form-select single-choice" formControlName = "status">
+							<option></option>
+							<option *ngFor="let stat of statusi">{{stat}}</option>
+						</select>
+						<small *ngIf="serviceForm.controls['status'].dirty && serviceForm.hasError('required','status')" class="text-danger">*Status is required</small>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</div>
