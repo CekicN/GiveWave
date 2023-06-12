@@ -32,6 +32,7 @@ export class DonateService {
   {
     this.family$.next(p);
   }
+
   setSearchText(searchText:string)
   {
     this.searchText$.next(searchText);

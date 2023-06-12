@@ -3,36 +3,25 @@
     <table class="table table-bordered align-middle mb-0 bg-white">
         <thead class="bg-light">
           <tr>
-            <th>Name</th>
+            <th>#</th>
             <th>Donation</th>
-            <th>Quantity</th>
+            <th>Date</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let donation of donations">
+          <tr *ngFor="let donation of donations; let i = index">
             <td>
-              <div class="d-flex align-items-center">
-                <img
-                    src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                    alt=""
-                    style="width: 45px; height: 45px"
-                    class="rounded-circle"
-                    />
-                <div class="ms-3">
-                  <p class="fw-bold mb-1">{{donation.Naziv}}</p>
-                </div>
-              </div>
+              <p class="fw-bold mb-1">{{i}}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">{{donation.donacija.naziv}}</p>
+                  <p class="fw-bold mb-1">{{donation.donacija}}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">{{donation.donacija.kolicina}}</p>
+              <p class="fw-normal mb-1">{{donation.datumDonacije | date}}</p>
             </td>
             <td>
-              <button type="button" class="btn btn-primary btn-sm btn-rounded">
-                Details
-              </button>
+              <p class="fw-normal mb-1">{{donation.opis}}</p>
             </td>
           </tr>
         </tbody>

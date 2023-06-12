@@ -5,6 +5,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DonationHelper } from 'app/Models/DonationHelper';
 import { AuthService } from 'app/services/auth.service';
+import { Porodica } from 'app/Models/Porodica';
 
 @Component({
   selector: 'app-donate-modal',
@@ -16,8 +17,10 @@ export class DonateModalComponent implements OnInit{
   familyId!:number;
   donateForm!:FormGroup;
   supp!:string[];
+  family!:Porodica|null;
   constructor(private service:DonateService, private library:FaIconLibrary, private fb:FormBuilder, private authService:AuthService){
     service.donateFamily.subscribe(p => this.displayStyle = p);
+    service.family.subscribe(p => this.family = p);
     service.familyId.subscribe(p => {
       this.familyId = p;
       this.service.getSupplies(this.familyId).subscribe((q:string[]) => 
@@ -81,7 +84,6 @@ export class DonateModalComponent implements OnInit{
       console.log(donacija);
 
       this.service.donate(donacija).subscribe(q => {
-        console.log(q)
         this.service.closeModal();
         this.donateForm.reset();
       });

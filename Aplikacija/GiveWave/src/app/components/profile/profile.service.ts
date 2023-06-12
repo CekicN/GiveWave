@@ -9,6 +9,7 @@ import { uploadPhoto } from 'app/Models/uploadPhoto';
 
 const Url = "https://localhost:7200/controller/";
 const donations = "http://localhost:3000/DonationHistory"
+const api = "http://localhost:7200/";
 @Injectable({
   providedIn: 'root'
 })
@@ -178,9 +179,9 @@ export class ProfileService {
       params: formData
     });
   }
-  getDonations()
+  getDonations(email:string)
   {
-    return this.http.get<DonationHistory[]>(donations);
+    return this.http.get<DonationHistory[]>(`${api}getDonationHistory/${email}`,{headers:{'Content-Type':'application/json'}});
   }
 
  
