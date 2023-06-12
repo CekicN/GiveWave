@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { ProfileService } from 'app/components/profile/profile.service';
 import { MyProducts } from 'app/Models/MyProducts';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -17,6 +18,8 @@ export class CartComponent implements OnInit {
   email!:string|null;
   //products:MyProducts[] = [];
   public productss: Product[] | any = [];
+  public cartItemList: Product[] = [];
+  public productList = new BehaviorSubject<any>([]);
   
   constructor(private library: FaIconLibrary, private cartService: CartService, private router: Router,
     private profileService: ProfileService,private cdr:ChangeDetectorRef, private httpClient: HttpClient) {
@@ -47,6 +50,8 @@ export class CartComponent implements OnInit {
       this.profileService.cancelAdding(element.id,this.email).subscribe(() => {
         this.productss = this.productss.filter( (ab: Product) => ab.id !== element.id);
         this.cdr.detectChanges();
+        this.cartService.cartItemList = [];
+        this.cartService.productList.next(this.cartItemList);
     });
 
     

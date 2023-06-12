@@ -15,6 +15,10 @@ export class CartService {
   constructor(private httpClient: HttpClient) { 
 
   }
+  
+  updateCartItemCount(){
+    
+  }
 
   getProducts(){
     return this.productList.asObservable();
