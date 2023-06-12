@@ -6,6 +6,7 @@ import { DonateService } from 'app/components/donate/donate.service';
 import { ProductService } from 'app/components/products/product.service';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FamilyHelper } from 'app/Models/FamilyHelper';
+import { Porodica } from 'app/Models/Porodica';
 
 @Component({
   selector: 'app-add-family-modal',
@@ -19,6 +20,12 @@ export class AddFamilyModalComponent implements OnInit {
   cities!:any;
   imageUrl:string[] = ["https://localhost:7200//uploads/common/noimage.png"];
   addFamilyForm!:FormGroup;
+
+  get supplies():FormArray
+  {
+    return this.addFamilyForm.get('supplies') as FormArray;
+  }
+
   constructor(private profileService:ProfileService,
               private authService:AuthService,
               private donateService:DonateService,
@@ -33,22 +40,25 @@ export class AddFamilyModalComponent implements OnInit {
       brClanova:['', Validators.required],
       grad:['', Validators.required],
       adresa:['', Validators.required],
-      najpotrebnijestvari:new FormArray([]),
+      supplies:this.fb.array([]),
       opis:['', Validators.required]
     });
   }
   ngOnInit(): void {
     this.productService.getCities().subscribe(c => this.cities = c);
-  }
-  get najpotrebnijestvari(): FormArray {
-    return this.addFamilyForm.get('najpotrebnijestvari') as FormArray;
+    this.addItem();
   }
   addItem() {
-    const newItem = this.fb.control('', Validators.required);
-    this.najpotrebnijestvari.push(newItem);
+    this.supplies.push(this.build());
   }
-  removeItem(index: number) {
-    this.najpotrebnijestvari.removeAt(index);
+  build():FormGroup
+  {
+    return this.fb.group({
+      supply:new FormControl('',[Validators.required])
+    })
+  }
+  removeItem() {
+    this.supplies.removeAt(this.supplies.length - 1);
   }
   addPhotos(event:Event)
   {
@@ -74,14 +84,28 @@ export class AddFamilyModalComponent implements OnInit {
     this.profileService.closeFamilyModal();
   }
 
+  omit(obj: any, field: string) {
+    const { [field]: _, ...rest } = obj;
+    return rest;
+  }
+
   addFamily()
   {
     if(this.addFamilyForm.valid)
     {
       //za dodavanjNewType
-      const family:FamilyHelper = this.addFamilyForm.value;
-      family.email = this.authService.email;
-      console.log(family);
+      let data:any = this.addFamilyForm.value;
+      let porodica:FamilyHelper = this.addFamilyForm.value;
+      porodica = this.omit(porodica, 'supplies');
+      porodica.najpotrebnijestvari = data.supplies.map((obj:any) => obj.supply);
+      porodica.email = this.authService.email;
+
+      console.log(porodica);
+      this.donateService.addFamily(porodica, this.familyId).subscribe(p => {
+        this.imageUrl = ["https://localhost:7200//uploads/common/noimage.png"];
+        this.addFamilyForm.reset();
+        this.profileService.closeFamilyModal();
+      });
     }  
     else
     {

@@ -5,18 +5,66 @@
                 <h1><fa-icon [icon]="['fas', 'arrow-left-long']" (click)="viewFamilies()" style="cursor:pointer;"></fa-icon></h1>
             </div>
             <div class="row">
-                <img src="../../../../assets/images/Logo.jpg" class="img-thumbnail" alt="">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" 
+                        data-bs-target="#carouselExampleIndicators" 
+                        [attr.data-bs-slide-to]="i" 
+                        *ngFor="let src of family.urlSlika; let i = index" 
+                        [class.active]="i === 0"
+                        [attr.aria-label]="'Slide ' + (i+1)">
+                    </button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" *ngFor="let src of family.urlSlika;let i = index" [class.active]="i === 0">
+                        <img [src]="src" class="d-block w-100" alt="Slide {{i+1}}">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                
             </div>
         </div>
         <div class="col-md-5 mt-2">
             <div class="card">
                 <div class="card-body">
                     <div class="row text-center">
-                        <h3>Cekic</h3>
+                        <h3>{{family.naziv}}</h3>
                     </div>
-                    <div class="col" *ngFor="let d of data">
+                    <div class="col">
                         <div class="d-flex justify-content-between mb-3" >
-                            <span class="fw-bold h4">{{d}}</span><span class="h4">Prokuplje</span>
+                            <span class="fw-bold h4">City</span><span class="h4">{{family.grad}}</span>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex justify-content-between mb-3" >
+                            <span class="fw-bold h4">Address</span><span class="h4">{{family.adresa}}</span>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex justify-content-between mb-3" >
+                            <span class="fw-bold h4">Num of family member</span><span class="h4">{{family.brClanova}}</span>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex justify-content-between mb-3" >
+                            <span class="fw-bold h4">Phone number</span><span class="h4">Prokuplje</span>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex justify-content-between mb-3" >
+                            <span class="fw-bold h4">Bank account</span><span class="h4">Prokuplje</span>
                         </div>
                         <hr>
                     </div>
@@ -27,9 +75,7 @@
     <div class="row">
         <div class="card mt-2">
             <div class="card-body fs-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro perspiciatis omnis delectus a nihil sed fuga eum soluta error deserunt harum eveniet magnam enim eaque sint, excepturi vero unde ad?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro perspiciatis omnis delectus a nihil sed fuga eum soluta error deserunt harum eveniet magnam enim eaque sint, excepturi vero unde ad?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro perspiciatis omnis delectus a nihil sed fuga eum soluta error deserunt harum eveniet magnam enim eaque sint, excepturi vero unde ad?
+                {{family.opis}}
             </div>
         </div>
     </div>
@@ -37,7 +83,7 @@
         <div class="col-md-6 mt-2">
             <h4 class="text-center">Essential Supplies</h4>
             <ul class="list-group table-wrapper-scroll-y my-custom-scrollbar">
-                <li class="list-group-item fs-5" *ngFor="let i of items">{{i}}</li>
+                <li class="list-group-item fs-5" *ngFor="let i of family.najpotrebnijestvari">{{i}}</li>
             </ul>
         </div>
         <div class="col-md-6  position-relative">

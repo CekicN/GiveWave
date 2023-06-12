@@ -19,6 +19,7 @@ import { SearchProductsPipe } from './pipes/search-products.pipe';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AuthService } from './services/auth.service';
 import { FriendsModule } from './components/friends/friends.module';
+import { FamilyServiceModule } from './components/family-service/family-service.module';
 // import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FriendsModule } from './components/friends/friends.module';
     FontAwesomeModule,
     AboutUsModule,
     ReactiveFormsModule,
-    FriendsModule
+    FriendsModule,
+    FamilyServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

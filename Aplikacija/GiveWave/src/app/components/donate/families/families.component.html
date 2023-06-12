@@ -1,13 +1,13 @@
 <div class="d-flex justify-content-start flex-wrap mt-2 ms-2">
     <div class="card col-md-4 margin" *ngFor="let family of families | searchFamilies: searchText">
-        <div class="card-body" (click)="viewFamily()">
-            <img [ngbPopover]="content"
+        <div class="card-body">
+            <img [ngbPopover]="content" (click)="viewFamily(family.id)"
                     triggers="mouseenter:mouseleave"
                     popoverTitle="Essential Supplies"
                     [closeDelay]="2000"
                     placement="end"
                     class="img-thumbnail w-100 h-50" [src]="family.urlSlika[0]" alt="" style="cursor:pointer;">
-            <h4 class="text-center mt-1">{{family.naziv}}</h4>
+            <h4 class="text-center mt-1" (click)="viewFamily(family.id)">{{family.naziv}}</h4>
             <hr>
             <div>
                 <div class="d-flex justify-content-between mb-3">

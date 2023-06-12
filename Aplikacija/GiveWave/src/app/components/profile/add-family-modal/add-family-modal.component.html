@@ -84,16 +84,20 @@
 
                   <div class="form-group row">
                     <label for="Essential Supplies" class="col-sm-3 col-form-label">Essential Supplies:</label>
-                    <div formArrayName="najpotrebnijestvari">
-                        <div *ngFor="let item of najpotrebnijestvari.controls; let i = index">
-                          <div [formGroupName]="i">
-                            <input type="text" class="form-control" formControlName="{{ i }}">
-                            <button type="button" class="btn btn-danger" (click)="removeItem(i)">-</button>
-                          </div>
-                        </div>
-                        
-                        <button type="button" class="btn btn-success" (click)="addItem()">+</button>
+                    <!-- <div class="col-sm-9">
+                      <input type="text" formControlName="najpotrebnijestvari" class="form-control" id="Address">
+                      <small *ngIf="addFamilyForm.controls['najpotrebnijestvari'].dirty && addFamilyForm.hasError('required','najpotrebnijestvari')" class="text-danger">*Essential supplies are required</small>
+                    </div> -->
+                    <div formArrayName="supplies" class="col-sm-9" *ngFor="let item of supplies.controls;let i = index">
+                      <div [formGroupName]="i" >
+                        <input type="text" [id] = "i" [value] = "addFamilyForm.value.supplies[i].supply" formControlName="supply" class="form-control" >
+                        <!-- <small *ngIf="addFamilyForm.controls['supply'].dirty && addFamilyForm.hasError('required','supply')" class="text-danger">*Essential supplies are required</small> -->
                       </div>
+                    </div>
+                    <div class="row">
+                      <button class="btn-success btn col-sm-3 offset-sm-3" (click)="addItem()">+</button>
+                      <button class="btn btn-danger col-sm-3 offset-sm-3" (click)="removeItem()">-</button>
+                    </div>
                   </div>
 
                   <div class="form-group row mt-2">

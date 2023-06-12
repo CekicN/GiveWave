@@ -15,8 +15,16 @@ export class DonateService {
 
   private view$ = new BehaviorSubject<boolean>(false);
   view = this.view$.asObservable();
+
+  private family$ = new BehaviorSubject<Porodica|null>(null);
+  family = this.family$.asObservable();
+
   constructor(private http:HttpClient) { }
 
+  set _family(p:Porodica)
+  {
+    this.family$.next(p);
+  }
   setSearchText(searchText:string)
   {
     this.searchText$.next(searchText);
@@ -60,5 +68,10 @@ export class DonateService {
         formData.append('files', e);
       });
     return this.http.put<any>(api+"updatePhoto",formData);
+  }
+
+  familyDetails(id:number)
+  {
+    return this.http.get<Porodica>(`${api}getDetails/${id}`);
   }
 }
