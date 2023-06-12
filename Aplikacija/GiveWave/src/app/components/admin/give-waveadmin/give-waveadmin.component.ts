@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class GiveWaveadminComponent {
 
+  ruta!:string;
+  goTo(putanja:string){
+    this.ruta=putanja;
+  }
+
 }
+

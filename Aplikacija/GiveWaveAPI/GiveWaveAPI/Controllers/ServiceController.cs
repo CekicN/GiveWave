@@ -1,7 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GiveWaveAPI.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
+
 namespace GiveWaveAPI.Controllers
 {
+    [ApiController]
+    [Authorize(AuthenticationSchemes = "Bearer")]
+    [Route("controller")]
+    [Authorize(Roles = "Service")]
     public class ServiceController : Controller
     {
         private readonly GiveWaveDBContext context;

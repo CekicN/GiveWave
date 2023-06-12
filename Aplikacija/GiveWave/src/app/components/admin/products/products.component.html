@@ -1,32 +1,9 @@
-
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#">Admin Panel</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Users</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Donations</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
   <div class="container-fluid">
     <div class="row">
       <!-- Content -->
       <div class="col-lg-12 content">
         <div class="jumbotron">
-          <h1>Welcome to the Products Page</h1>
-          <p>Manage and view products here.</p>
+          <h1>Manage and view products here.</h1>
         </div>
 
         <!-- Products Table -->
@@ -37,32 +14,19 @@
                 <th>Slika</th>
                 <th>Naziv</th>
                 <th>Stanje</th>
-                <th>Opis</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Product Image 1</td>
-                <td>Product 1</td>
-                <td>In Stock</td>
-                <td>Product Description 1</td>
+              <tr *ngFor="let item of productss">
+                <td><img style="width: 120px;" src="{{item.imageUrl[0]}}" alt=""></td>
+                <td>{{item.naziv}}</td>
+                <td>{{item.status}}</td>
                 <td>
                   <button class="btn btn-primary">Update</button>
                   <button class="btn btn-danger">Delete</button>
                 </td>
               </tr>
-              <tr>
-                <td>Product Image 2</td>
-                <td>Product 2</td>
-                <td>Out of Stock</td>
-                <td>Product Description 2</td>
-                <td>
-                  <button class="btn btn-primary">Update</button>
-                  <button class="btn btn-danger">Delete</button>
-                </td>
-              </tr>
-              <!-- Add more rows as needed -->
             </tbody>
           </table>
         </div>

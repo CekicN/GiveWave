@@ -22,24 +22,26 @@ namespace GiveWaveAPI.Controllers
         private readonly IConfiguration _configuration;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        public AdminController(GiveWaveDBContext context, UserManager<IdentityUser> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager,SignInManager<IdentityUser> signInManager)
+        private readonly IWebHostEnvironment _environment;
+        public AdminController(GiveWaveDBContext context, UserManager<IdentityUser> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager,SignInManager<IdentityUser> signInManager, IWebHostEnvironment environment)
         {
             _context = context;
             _userManager = userManager;
             _configuration = configuration;
             _roleManager = roleManager;
             _signInManager = signInManager;
+            _environment = environment;
         }
 
 
-        [Route("ObrisiKorisnika")]
+        [Route("ObrisiKorisnika/{email}")]
         [HttpDelete]
         //[Authorize(Roles = "Admin")]
-        public async Task<ActionResult> obrisiKorisnika(EmailContent email)
+        public async Task<ActionResult> obrisiKorisnika(string email)
         {
             try
             {
-                var user = _context.ProfilKorisnikas.Where(p => p.Email == email.Name).FirstOrDefault();
+                var user = _context.ProfilKorisnikas.Where(p => p.Email == email).FirstOrDefault();
                 if (user == null) 
                 {
                     return BadRequest("Korisnik ne postoji");
@@ -237,7 +239,7 @@ namespace GiveWaveAPI.Controllers
             }
         }
         [Authorize(Roles ="Admin")]
-        [Route("PromeniRolu")]
+        [Route("PromeniRolu/{username}")]
         [HttpPut]
         public async Task<IActionResult> ChangeRole(string userName)
         {
@@ -252,7 +254,7 @@ namespace GiveWaveAPI.Controllers
                 var result = await _userManager.RemoveFromRoleAsync(userExist, "User");
                 if(result.Succeeded)
                 {
-                    result = await _userManager.AddToRoleAsync(userExist, "Friend");
+                    result = await _userManager.AddToRoleAsync(userExist, "Service");
                     return Ok("Uspesna promena");
                 }
                 else
@@ -261,6 +263,79 @@ namespace GiveWaveAPI.Controllers
                 }
             }
         }
+        //[Authorize(Roles ="Admin")]
+        //[Route("getAllProducts")]
+        //[HttpGet]
+        //public async Task<ActionResult> getAllProducts()
+        //{
+        //    try
+        //    {
+        //        var products = await _context.Proizvods.Include(p => p.ProfilKorisnika).ToListAsync();
+        //        if (products == null)
+        //            return BadRequest("products not founded");
+        //        return Ok(products.Select(p => new
+        //        {
+        //            Id = p.Id,
+        //            ImageUrl = GetImage(p.ProfilKorisnika.Email, p.Id).Split("|"),
+        //            Naziv = p.Naziv,
+        //            Mesto = p.Mesto,
+        //            Status = p.status,
+        //            Username = p.ProfilKorisnika.Username,
+        //            Email = p.ProfilKorisnika.Email
+        //        }));
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        if (e.InnerException != null)
+        //        {
+        //            return BadRequest(e.InnerException.Message);
+        //        }
+        //        return BadRequest(e.Message);
+        //    }
+        //}
+        //[NonAction]
+        //private string GetImage(string email, int id)
+        //{
+        //    string imageUrl = string.Empty;
+        //    string Host = "https://localhost:7200/";
+        //    string Filepath = GetFilePath(email, id);
+        //    List<string> img = new List<string>();
+
+        //    bool PostojeFajlovi = false;
+        //    string[] imagePaths;
+        //    if (Directory.Exists(Filepath))
+        //    {
+        //        string[] fajlovi = Directory.GetFiles(Filepath, "*.png");
+        //        if (fajlovi.Length > 0)
+        //        {
+        //            imagePaths = fajlovi;
+        //            foreach (var imagePath in imagePaths)
+        //            {
+        //                img.Add(imagePath.Substring(imagePath.IndexOf("wwwroot") + 7));
+        //            }
+        //            PostojeFajlovi = true;
+        //        }
+        //    }
+
+        //    if (PostojeFajlovi)
+        //    {
+        //        foreach (var image in img)
+        //        {
+        //            imageUrl += Host + image + "|";
+        //        }
+        //        imageUrl = imageUrl.Substring(0, imageUrl.Length - 1);
+        //    }
+        //    else
+        //    {
+        //        imageUrl = Host + "/uploads/common/noimage.png";
+        //    }
+        //    return imageUrl;
+        //}
+        //[NonAction]
+        //private string GetFilePath(string email, int code)
+        //{
+        //    return this._environment.WebRootPath + "\\Uploads\\Products\\" + email + "\\P_" + code;
+        //}
     }
     
 }

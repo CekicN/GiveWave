@@ -125,9 +125,10 @@ namespace GiveWaveAPI.Controllers
                     Username = p.ProfilKorisnika.Username,
                     Email = p.ProfilKorisnika.Email
                 }));
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
-                if(e.InnerException != null)
+                if (e.InnerException != null)
                 {
                     return BadRequest(e.InnerException.Message);
                 }
