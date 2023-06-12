@@ -8,5 +8,8 @@ export interface Porodica {
     status:string,
     najpotrebnijestvari: string[];
     email:string,
-    user:string 
+    ziroRacun:string,
+    brTelefona:string,
+    user:string,
+    opis:string
 }

@@ -24,8 +24,16 @@ export class FamiliesComponent implements OnInit {
     this.service.getAllFamilies().subscribe(families => this.families = families )
   }
 
-  viewFamily()
+  openModal(id:number)
   {
-    this.service.setTrue();
+    this.service.openModal(id);
   }
+  viewFamily(id:number)
+  {
+    this.service.familyDetails(id).subscribe(f => {
+      this.service._family = f
+      this.service.setTrue();
+    });
+  }
+
 }

@@ -10,6 +10,7 @@ import { FamilyDetailsComponent } from './family-details/family-details.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchFamiliesPipe } from 'app/pipes/search-families.pipe';
 import { DonateService } from './donate.service';
+import { DonateModalComponent } from './donate-modal/donate-modal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DonateService } from './donate.service';
       LuckyGalleryComponent,
       FamiliesComponent,
       FamilyDetailsComponent,
-      SearchFamiliesPipe
+      SearchFamiliesPipe,
+      DonateModalComponent
   ],
   imports: [
     CommonModule,

@@ -12,6 +12,7 @@ import { UserAuthModule } from './components/user-auth/user-auth.module';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ChatMainComponent } from './components/friends/chat-main/chat-main.component';
 import { CartComponent } from './components/products/cart/cart.component';
+import { ServiceComponent } from './components/family-service/service/service.component';
 import { GiveWaveadminComponent } from './components/admin/give-waveadmin/give-waveadmin.component';
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'friends', component:ChatMainComponent},
   {path: 'reset', component:ResetPasswordComponent},
   {path: 'cart', component: CartComponent},
+  {path:'service', component:ServiceComponent},
   {path: 'admin', component:GiveWaveadminComponent}  
 ];
 

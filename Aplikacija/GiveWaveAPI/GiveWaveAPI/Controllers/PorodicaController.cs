@@ -15,6 +15,57 @@ namespace GiveWaveAPI.Controllers
             _environment = environment;
         }
 
+        [Route("getDonationHistory/{email}")]
+        [HttpGet]
+        public async Task<ActionResult> getDonationHistory(string email)
+        {
+            try
+            {
+                var donacija = context.Donacijas
+                                        .Include(p => p.Porodica)
+                                        .Include(p => p.ProfilKorisnika)
+                                        .Where(p => p.ProfilKorisnika.Email == email)
+                                        .ToList();
+                if (donacija == null)
+                    return BadRequest("donacija nije nadjena");
+                return Ok(donacija);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("getAllFamiliesToValidate")]
+        public async Task<ActionResult> getAllFamiliesToValidate()
+        {
+            try
+            {
+                var validFamilies = context.Porodice.Include(p => p.ProfilKorisnika)
+                                                    .Where(p => p.Potvrda == false).ToList();
+                if (validFamilies == null)
+                    return BadRequest("Nema potvrdjenih porodica");
+
+                return Ok(validFamilies.Select(p => new
+                {
+                    Id = p.Id,
+                    UrlSlika = GetImage(p.ProfilKorisnika.Email, p.Id).Split("|"),
+                    Naziv = p.Naziv,
+                    Grad = p.Grad,
+                    Adresa = p.Adresa,
+                    BrClanova = p.BrClanova,
+                    Status = p.Status,
+                    najpotrebnijestvari = p.najpotrebnijestvari.Split("|"),
+                    Email = p.ProfilKorisnika.Email
+                }));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         [Route("CancleAddingFamily/{id}/{email}")]
         [HttpDelete]
         public async Task<ActionResult> CancleAdding(int id, string email)
@@ -37,6 +88,39 @@ namespace GiveWaveAPI.Controllers
                 }
             }
             catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("getDetails/{id}")]
+        public async Task<ActionResult> getDetails(int id)
+        {
+            try
+            {
+                var porodica = context.Porodice.Include(q => q.ProfilKorisnika).Where(p => p.Id == id).FirstOrDefault();
+                if (porodica == null)
+                    return BadRequest("porodica nije nadjena");
+
+                return Ok(new
+                {
+                    Id = porodica.Id,
+                    UrlSlika = GetImage(porodica.ProfilKorisnika.Email, porodica.Id).Split("|"),
+                    Naziv = porodica.Naziv,
+                    Grad = porodica.Grad,
+                    Adresa = porodica.Adresa,
+                    BrClanova = porodica.BrClanova,
+                    Status = porodica.Status,
+                    najpotrebnijestvari = porodica.najpotrebnijestvari.Split("|"),
+                    opis = porodica.Opis,
+                    BrTelefona = porodica.BrTelefona,
+                    ZiroRacun = porodica.ZiroRacun,
+                    Email = porodica.ProfilKorisnika.Email,
+                    User = porodica.ProfilKorisnika.Username
+                });
+            }
+            catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
@@ -103,6 +187,8 @@ namespace GiveWaveAPI.Controllers
                 porodica.Grad = family.Grad;
                 porodica.Opis = family.Opis;
                 porodica.ProfilKorisnika = user;
+                porodica.ZiroRacun = family.Bank; 
+                porodica.BrTelefona = family.Phone;
                 porodica.Potvrda = false;
                 porodica.UrlSlika = GetImage(family.email, id);
 

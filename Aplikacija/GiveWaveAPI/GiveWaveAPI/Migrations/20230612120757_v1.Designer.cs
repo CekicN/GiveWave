@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiveWaveAPI.Migrations
 {
     [DbContext(typeof(GiveWaveDBContext))]
-    [Migration("20230611235814_V1")]
-    partial class V1
+    [Migration("20230612120757_v1")]
+    partial class v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -355,6 +355,9 @@ namespace GiveWaveAPI.Migrations
                     b.Property<int>("BrClanova")
                         .HasColumnType("int");
 
+                    b.Property<string>("BrTelefona")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Grad")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -378,6 +381,9 @@ namespace GiveWaveAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UrlSlika")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ZiroRacun")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("najpotrebnijestvari")
@@ -552,28 +558,28 @@ namespace GiveWaveAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "85505c75-4948-417a-83ab-e5dd2564845f",
+                            Id = "c0fa0056-f5e5-4460-bec7-f993cb1cc151",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "aff5399e-4e2b-4fe2-ad9a-74671966239b",
+                            Id = "8373e5cd-acac-4051-8138-74f03113038e",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "ceb0e8a1-b213-4f21-a6c8-bfddb5528465",
+                            Id = "f0fa943e-9d0c-46b7-a66c-609f00c49cbc",
                             ConcurrencyStamp = "3",
                             Name = "Friend",
                             NormalizedName = "Friend"
                         },
                         new
                         {
-                            Id = "8b27b8e0-5858-400a-b563-3210df001eca",
+                            Id = "0a20cac6-9002-4fb1-a0e4-55e17d662a11",
                             ConcurrencyStamp = "4",
                             Name = "Service",
                             NormalizedName = "Service"

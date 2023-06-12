@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GiveWaveAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class V1 : Migration
+    public partial class v1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -399,6 +399,8 @@ namespace GiveWaveAPI.Migrations
                     najpotrebnijestvari = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Opis = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BrTelefona = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ZiroRacun = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Potvrda = table.Column<bool>(type: "bit", nullable: false),
                     ProfilKorisnikaId = table.Column<int>(type: "int", nullable: true)
                 },
@@ -473,10 +475,10 @@ namespace GiveWaveAPI.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "85505c75-4948-417a-83ab-e5dd2564845f", "1", "Admin", "Admin" },
-                    { "8b27b8e0-5858-400a-b563-3210df001eca", "4", "Service", "Service" },
-                    { "aff5399e-4e2b-4fe2-ad9a-74671966239b", "2", "User", "User" },
-                    { "ceb0e8a1-b213-4f21-a6c8-bfddb5528465", "3", "Friend", "Friend" }
+                    { "0a20cac6-9002-4fb1-a0e4-55e17d662a11", "4", "Service", "Service" },
+                    { "8373e5cd-acac-4051-8138-74f03113038e", "2", "User", "User" },
+                    { "c0fa0056-f5e5-4460-bec7-f993cb1cc151", "1", "Admin", "Admin" },
+                    { "f0fa943e-9d0c-46b7-a66c-609f00c49cbc", "3", "Friend", "Friend" }
                 });
 
             migrationBuilder.CreateIndex(
