@@ -16,7 +16,7 @@
                         <span (click)="visitProfile(product.email)" style="cursor:pointer;">Postavio: {{product.username}}</span>
                     </div>
                     <div class="col-2">
-                        <div class="d-flex justify-content-center align-items-center bg-primary mb-3 ms-3" (click)="addToCart(product)">
+                        <div class="d-flex justify-content-center align-items-center bg-primary mb-3 ms-3" (click)="addToCart(product)" [ngClass]="{'disabled': isClicked}">
                             <fa-icon [icon]="['fas', 'shopping-cart']" style="color:white;"></fa-icon>
                         </div>
                     </div>
