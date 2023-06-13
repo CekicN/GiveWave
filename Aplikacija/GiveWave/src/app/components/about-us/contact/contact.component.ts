@@ -32,9 +32,9 @@ export class ContactComponent {
     {
       this.content = this.contactForm.value;
       this.service.sendEmail(this.content).subscribe(res => {
-        alert("Mejl je poslat");
-        this.contactForm.reset();
       })
+      alert("Mejl je poslat");
+      this.contactForm.reset();
     }
     else
     {

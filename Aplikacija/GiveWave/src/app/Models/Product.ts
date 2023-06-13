@@ -5,6 +5,7 @@ export interface Product
     naziv: string,
     mesto:string,
     status:string,
+    opis:string,
     username:string,
     email:string 
 }

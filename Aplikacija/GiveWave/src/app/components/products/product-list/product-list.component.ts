@@ -50,11 +50,7 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(item: Product) {
-    if(!this.isClicked)
-    {
       this.cartService.addToCart(item);
-      this.isClicked = true;
-    }
   }
 
   viewDetails(id:number)

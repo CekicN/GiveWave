@@ -21,6 +21,10 @@ export class AuthService {
     let email = this.decodeToken(this.token)["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] as string;
     return email;
   }
+  get role(){
+    let role = this.decodeToken(this.token)["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] as string;
+    return role;
+  }
   constructor(private http: HttpClient) { 
     this._isLoggedIn$.next(!!this.token)
   }
@@ -35,6 +39,7 @@ export class AuthService {
       tap((res:any) => {
         this._isLoggedIn$.next(true);
         localStorage.setItem('token', res.token);
+        console.log(this.role);
       })
     )
 

@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Users</a>
+          <a class="nav-link" (click)="goTo('Users')">Users</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
+          <a class="nav-link" (click)="goTo('Products')">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Donations</a>
+          <a class="nav-link" (click)="goTo('Donations')">Donations</a>
         </li>
       </ul>
     </div>
@@ -27,6 +27,12 @@
         <div class="jumbotron">
           <h1>Welcome to the Admin Panel</h1>
         </div>
+        <app-donations *ngIf="ruta=='Donations'"></app-donations>
+    <app-products *ngIf="ruta=='Products'"></app-products>
+    <app-users *ngIf="ruta=='Users'"></app-users>
       </div>
+      
     </div>
+    
   </div>
+

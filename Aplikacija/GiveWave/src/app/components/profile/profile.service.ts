@@ -181,6 +181,7 @@ export class ProfileService {
   }
   getDonations(email:string)
   {
+    email = email.replace('@', "%40");
     return this.http.get<DonationHistory[]>(`${api}getDonationHistory/${email}`,{headers:{'Content-Type':'application/json'}});
   }
 

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 
 import { Porodica } from 'app/Models/Porodica';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const api = "https://localhost:7200/"
 
@@ -21,7 +21,10 @@ export class FamilyServiceService {
 
 	overi(id:number, status:string)
 	{
-		return this.http.put(`${api}validateFamily/${id}/${status}`, {headers:{'Content-Type':'application/json'}});
+		let httpOptions = new HttpHeaders()
+                      .set('Authorization', 'Bearer '+localStorage.getItem('token'))
+                      .set('Content-Type', 'application/json');
+		return this.http.put(`${api}controller/validateFamily/${id}/${status}`, {headers:httpOptions});
 	}
 	cancelAdding(id:number, email:string)
 	{
